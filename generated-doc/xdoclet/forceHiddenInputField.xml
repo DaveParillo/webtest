@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="forceHiddenInputField"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"><level3 name="alert" url="alert.html"/><level3 name="antWrapper" url="antWrapper.html"/><level3 name="clickElement" url="clickElement.html"/><level3 name="closeWindow" url="closeWindow.html"/><level3 name="condition" url="condition.html"/><level3 name="confirm" url="confirm.html"/><level3 name="countWebtestResults" url="countWebtestResults.html"/><level3 name="dataDriven" url="dataDriven.html"/><level3 name="dragAndDrop" url="dragAndDrop.html"/><level3 name="enableJavaScript" url="enableJavaScript.html"/><level3 name="expectDialog" url="expectDialog.html"/><level3 name="expectDialogs" url="expectDialogs.html"/><level3 name="forceHiddenInputField" url="forceHiddenInputField.html"/><level3 name="forceInputFieldAttribute" url="forceInputFieldAttribute.html"/><level3 name="groovy" url="groovy.html"/><level3 name="ifStep" url="ifStep.html"/><level3 name="mouseOut" url="mouseOut.html"/><level3 name="mouseOver" url="mouseOver.html"/><level3 name="prompt" url="prompt.html"/><level3 name="reportLinks" url="reportLinks.html"/><level3 name="reportSite" url="reportSite.html"/><level3 name="retry" url="retry.html"/><level3 name="scriptStep" url="scriptStep.html"/><level3 name="selectWebClient" url="selectWebClient.html"/><level3 name="selectWindow" url="selectWindow.html"/><level3 name="storeDigest" url="storeDigest.html"/><level3 name="storeElementAttribute" url="storeElementAttribute.html"/><level3 name="storeInputFieldAttribute" url="storeInputFieldAttribute.html"/><level3 name="storeLength" url="storeLength.html"/><level3 name="storeLinkParameter" url="storeLinkParameter.html"/><level3 name="storeRandom" url="storeRandom.html"/><level3 name="storeResponseCode" url="storeResponseCode.html"/><level3 name="timedGroup" url="timedGroup.html"/><level3 name="verifyContent" url="verifyContent.html"/><level3 name="verifyDocumentURL" url="verifyDocumentURL.html"/><level3 name="verifyHeader" url="verifyHeader.html"/><level3 name="verifyImages" url="verifyImages.html"/><level3 name="verifyLinkedContent" url="verifyLinkedContent.html"/><level3 name="verifyNoDialogs" url="verifyNoDialogs.html"/></level2>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Extension Step| forceHiddenInputField"/><section title="Description"><b>Sets the value of a hidden input field. An example usage would be for a hidden input field that would normally be set by some unsupported <key>javascript</key>.</b><pre>
+    <b>
+        This step provides a mechanism to alter the value of a hidden input field.
+        Hidden input fields are often used within forms to help with state management
+        of a web application. They are often set using <key>javascript</key> and because
+        not all features of <key>javascript</key> are supported by <key>CWT</key>,
+        it can sometimes be useful to mimic what the <key>javascript</key> would
+        do with a manual step.
+    </b>
+    <b>
+        If you have a very sophisticated web application that makes use of a lot of
+        hidden input fields for your state management, this step can assist you in
+        partitioning your tests into their functional and "unit" aspects. Firstly,
+        you write "unit" tests where you manipulate your application in various
+        ways and check that the hidden fields are set appropriately. These don't
+        require invoking the server application so they run fast. Then you run
+        some functional tests which check that for a given set of values of
+        the hidden fields, your application performs as expected.
+    </b>
+</pre></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>value</name><description>The value to use when setting the field of interest.</description><required>yes</required></attribute><attribute><name>name</name><description>The name of the input field of interest. One of <em>forLabel</em>, <em>htmlId</em>, <em>name</em>, or <em>xpath</em> is required.</description><required>yes/no</required></attribute><attribute><name>forLabel</name><description>The text of the label field associated with the input field of interest. One of <em>forLabel</em>, <em>htmlId</em>, <em>name</em>, or <em>xpath</em> is required.</description><required>yes/no</required></attribute><attribute><name>xpath</name><description>The xpath of the input field of interest. One of <em>forLabel</em>, <em>htmlId</em>, <em>name</em>, or <em>xpath</em> is required.</description><required>yes/no</required></attribute><attribute><name>formName</name><description>The name of the form containing the field of interest. Ignored if <em>htmlId</em> is used.</description><required>no, default is
+					the last form selected using 'selectForm', otherwise searches all forms</required></attribute><attribute><name>htmlId</name><description>The id of the input field of interest. One of <em>forLabel</em>, <em>htmlId</em>, <em>name</em>, or <em>xpath</em> is required.</description><required>yes/no</required></attribute><attribute><name>fieldIndex</name><description>The index of the field of interest (starting at 0) if more than one field matches criteria. Ignored if <em>htmlId</em> or <em>xpath</em> is used.</description><required>no, default is
+					the first field found that matches criteria</required></attribute><attribute><name>save</name><description>A shorthand: <em>save='prefixName'</em> is the same as <em>savePrefix='prefixName' saveResponse='true'</em>.</description><required>no</required></attribute><attribute><name>savePrefix</name><description>A name prefix can be specified for making a permanent copy of received responses. A unique number and the file extension (depending on the MIME-Type) will be appended. The <em>resultpath</em> attribute of the &lt;config&gt; element is used for determining the location of the saved result.</description><required>no, default is
+					the 'savePrefix' parameter as specified in &lt;config&gt;.</required></attribute><attribute><name>saveResponse</name><description>Whether to make a permanent copy of received responses. Overrides the default value set in the &lt;config&gt; element.</description><required>no</required></attribute></attributes></section><section title="Inline Text"><b>The
+							<em>inline text</em>
+							is all the text between the start tag (
+							<example>&lt;forceHiddenInputField&gt;</example>
+							) and the end tag (
+							<example>&lt;/forceHiddenInputField&gt;</example>
+							), including blanks, tabs or newlines. Using a pair of start/end tags (
+							<example>&lt;forceHiddenInputField&gt; &lt;/forceHiddenInputField&gt;</example>
+							) has not the same behavior than the seemingly equivalent empty element tag (
+							<example>&lt;forceHiddenInputField/&gt;</example>
+							)! See
+							<ext href="browse/WT-228" base="jira">this issue</ext>
+							for an example.
+						</b><attributes><attribute><name>text</name><description>An alternative to the attribute value for e.g. large TextAreas.</description><required>no</required></attribute></attributes></section><section title="Details"><post>
+
+    <b>Consider the following <key>HTML</key> form:</b>
+
+    <code caption="hiddenInputFieldPage.html">
+    <include src="examples/forceHiddenInputFieldPageHtml.xml"/>
+    </code>
+
+    <b>This page contains some <key>javascript</key> functionality which sets a hidden field.
+    We would like to use the <em>&lt;forceHiddenInputField&gt;</em> step to check that the hidden
+    field is being set correctly. When the form is first loaded, the hidden field should
+    be set to 'zzz'. We can then place some content into 'field1'. We can then check that the
+    hidden field was successfully changed to 'xxx'. Here is an example test script:</b>
+
+    <code caption="hiddenInputField Example1">
+        <include src="examples/forceHiddenInputFieldExample1.xml"/>
+    </code>
+
+    <b>We can try to do the same thing for 'field2', however because the <em>onkeyup</em> <key>javascript</key>
+    event is not supported, the hidden field remains unchanged. We can then use the
+    <em>&lt;forceHiddenInputField&gt;</em> to force the hidden field change to 'yyy'.
+    Here is the script code:</b>
+
+    <code caption="hiddenInputField Example2">
+        <include src="examples/forceHiddenInputFieldExample2.xml"/>
+    </code>
+
+    <b><em>See also</em>: the <stepref name="storeXPath" category="Core"/> and <stepref name="verifyXPath" category="Core"/> steps which can be used to read/verify hidden fields.</b>
+
+</post></section></manpage>

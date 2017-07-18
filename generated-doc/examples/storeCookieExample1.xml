@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>cookie:&nbsp;visit&nbsp;count&nbsp;test&nbsp;example</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>reset&nbsp;in&nbsp;case&nbsp;someone&nbsp;else&nbsp;has&nbsp;used&nbsp;this&nbsp;page</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>url</att><val>visitCount.jsp?reset=true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>expect&nbsp;cookie-based&nbsp;counter&nbsp;to&nbsp;be&nbsp;0</val>&nbsp;<att>url</att><val>visitCount.jsp</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyTitle</tag>&nbsp;<att>description</att><val>confirm&nbsp;correct&nbsp;page</val>&nbsp;<att>regex</att><val>true</val>&nbsp;<att>text</att><val>Visit&nbsp;Counter.*</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeCookie</tag>&nbsp;<att>name</att><val>JSESSIONID</val>&nbsp;<att>property</att><val>sessid</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyCookie</tag>&nbsp;<att>name</att><val>VISITCOUNT</val>&nbsp;<att>text</att><val>1</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>session&nbsp;id&nbsp;shouldn't&nbsp;change,&nbsp;cookie-based&nbsp;counter&nbsp;should&nbsp;increment</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>url</att><val>visitCount.jsp</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyCookie</tag>&nbsp;<att>name</att><val>JSESSIONID</val>&nbsp;<att>text</att><val>#{sessid}</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyCookie</tag>&nbsp;<att>name</att><val>VISITCOUNT</val>&nbsp;<att>text</att><val>2</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+...<n/>
+&lt;<tag>form</tag>&nbsp;<att>method</att><val>post</val>&nbsp;<att>action</att><val>formTest</val>&gt;<n/>
+<t/>&lt;<tag>br</tag>/&gt;Text:<n/>
+<t/>&lt;<tag>input</tag>&nbsp;<att>type</att><val>text</val>&nbsp;<att>name</att><val>field1</val>&nbsp;<att>value</att><val></val>&nbsp;/&gt;<n/>
+<t/>&lt;<tag>input</tag>&nbsp;<att>type</att><val>submit</val>&nbsp;<att>name</att><val>doIt</val>&nbsp;/&gt;<n/>
+&lt;/<tag>form</tag>&gt;<n/>
+...<n/>
+</source>

@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+Heading&nbsp;One<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;Subheading<n/>
+Heading&nbsp;Two<n/>
+</source>

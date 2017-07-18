@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>invoke</tag><n/>
+<t/><att>description</att><val>goto&nbsp;start&nbsp;page</val><n/>
+<t/><att>url</att><val>${start.page}</val>&nbsp;/&gt;<n/>
+&lt;<tag>setInputField</tag>&nbsp;<att>description</att><val>set&nbsp;user&nbsp;name</val><n/>
+<t/><att>name</att><val>username</val><n/>
+<t/><att>value</att><val>${user}</val>&nbsp;/&gt;<n/>
+&lt;<tag>setInputField</tag>&nbsp;<att>description</att><val>set&nbsp;password</val><n/>
+<t/><att>name</att><val>password</val><n/>
+<t/><att>value</att><val>${login.ok.password}</val>&nbsp;/&gt;<n/>
+&lt;<tag>clickButton</tag><n/>
+<t/><att>label</att><val>login</val><n/>
+<t/><att>description</att><val>Click&nbsp;the&nbsp;submit&nbsp;button</val>&nbsp;/&gt;<n/>
+&lt;<tag>verifyTitle</tag>&nbsp;<att>description</att><val>Home&nbsp;Page&nbsp;follows&nbsp;if&nbsp;login&nbsp;ok</val><n/>
+<t/><att>text</att><val>${login.ok.title}</val>&nbsp;&nbsp;/&gt;<n/>
+</source>

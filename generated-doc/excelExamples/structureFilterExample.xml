@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>exceltest&nbsp;-&nbsp;structure&nbsp;filter</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testExcel.xls</val>/&gt;<n/>
+<t/><t/>&lt;<tag>compareToExpected</tag>&nbsp;<att>saveFiltered</att><val>true</val>&nbsp;<att>readFiltered</att><val>false</val>&nbsp;<att>toFile</att><val>${expectedFile}</val>&gt;<n/>
+<t/><t/><t/>&lt;<tag>excelStructureFilter</tag>&nbsp;<att>description</att><val>extract&nbsp;XLS&nbsp;structure</val>/&gt;<n/>
+<t/><t/><t/>&lt;<tag>lineSeparatorFilter</tag>&nbsp;<att>description</att><val>normalise&nbsp;line&nbsp;separators</val>/&gt;<n/>
+<t/><t/>&lt;/<tag>compareToExpected</tag>&gt;<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

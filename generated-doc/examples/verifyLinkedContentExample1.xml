@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>verifyLinkedContent</tag><n/>
+<t/><att>xpath</att><val>/html/head/link[@rel='stylesheet']/@href</val><n/>
+<t/>/&gt;<n/>
+</source>

@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailSetConfig</tag>&nbsp;.../&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;plain&nbsp;message&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>mailtest&nbsp;-&nbsp;multifiles&nbsp;-&nbsp;plain</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>mid1</val>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>compareToExpected</tag>&nbsp;<att>saveFiltered</att><val>true</val>&nbsp;<att>readFiltered</att><val>false</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>toFile</att><val>plainStructure.txt</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailMessageStructureFilter</tag>&nbsp;<att>messageId</att><val>#{mid1}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>compareToExpected</tag>&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;MIME&nbsp;message&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>mailtest&nbsp;-&nbsp;multifiles&nbsp;-&nbsp;mime</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>mid2</val>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>compareToExpected</tag>&nbsp;<att>saveFiltered</att><val>true</val>&nbsp;<att>readFiltered</att><val>false</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>toFile</att><val>mimeStructure.txt</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailMessageStructureFilter</tag>&nbsp;<att>messageId</att><val>#{mid2}</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>headers</att><val>subject</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>compareToExpected</tag>&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;uuencoded&nbsp;message&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>mailtest&nbsp;-&nbsp;multifiles&nbsp;-&nbsp;uu</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>mid3</val>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>compareToExpected</tag>&nbsp;<att>saveFiltered</att><val>true</val>&nbsp;<att>readFiltered</att><val>false</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>toFile</att><val>uuStructure.txt</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailMessageStructureFilter</tag>&nbsp;<att>headers</att><val>subject,from,to</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>messageId</att><val>#{mid3}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>compareToExpected</tag>&gt;<n/>
+<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

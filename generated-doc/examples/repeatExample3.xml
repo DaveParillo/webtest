@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Verify&nbsp;details&nbsp;of&nbsp;each&nbsp;client</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>get&nbsp;the&nbsp;client&nbsp;list</val>&nbsp;<att>url</att><val>/myClientsList</val>/&gt;<n/>
+<n/>
+<t/><t/>&lt;<tag>repeat</tag>&nbsp;<att>xpath</att><val>//table[@id='clientList']//tr</val>&nbsp;<att>counterName</att><val>curRow</val>&nbsp;<n/>
+<t/><t/><t/><t/><att>description</att><val>iterate&nbsp;on&nbsp;all&nbsp;rows&nbsp;of&nbsp;the&nbsp;table</val>&gt;<n/>
+<t/><t/><t/>&lt;<tag>storeXPath</tag>&nbsp;<att>xpath</att><val>$curRow/td[4]</val>&nbsp;<att>property</att><val>lastName</val>&nbsp;<n/>
+<t/><t/><t/><t/><att>description</att><val>store&nbsp;client's&nbsp;last&nbsp;name</val>/&gt;<n/>
+<t/><t/><t/>&lt;<tag>clickLink</tag>&nbsp;<att>xpath</att><val>$curRow//a[@class='detailPopup']</val>&nbsp;<n/>
+<t/><t/><t/><t/><att>description</att><val>open&nbsp;the&nbsp;detail&nbsp;popup</val>/&gt;<n/>
+<t/><t/><t/>&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>#{lastName}</val><n/>
+<t/><t/><t/><t/><att>description</att><val>Check&nbsp;that&nbsp;the&nbsp;detail&nbsp;of&nbsp;the&nbsp;selected&nbsp;client&nbsp;are&nbsp;displayed</val>/&gt;<n/>
+<t/><t/>&lt;/<tag>repeat</tag>&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

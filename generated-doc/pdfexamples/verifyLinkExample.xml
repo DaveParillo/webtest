@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testDocLinks.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyLink</tag>&nbsp;<att>text</att><val>.*external.*</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyLink</tag>&nbsp;<att>href</att><val>#top</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>expect&nbsp;to&nbsp;fail:&nbsp;unknown&nbsp;link</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyLink</tag>&nbsp;<att>text</att><val>into&nbsp;the&nbsp;unknown</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>Bookmarks.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>expect&nbsp;to&nbsp;fail:&nbsp;document&nbsp;has&nbsp;no&nbsp;links</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyLink</tag>&nbsp;<att>text</att><val>.*</val>&nbsp;<att>regex</att><val>true</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

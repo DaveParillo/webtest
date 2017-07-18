@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>forceHiddenInputField:&nbsp;Show&nbsp;usage&nbsp;of&nbsp;forceHiddenInputField&nbsp;step&nbsp;for&nbsp;non-working&nbsp;javascript</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifytitle</tag>&nbsp;<att>description</att><val>check&nbsp;we&nbsp;are&nbsp;on&nbsp;the&nbsp;test&nbsp;page</val>&nbsp;<att>text</att><val>Hidden&nbsp;Field&nbsp;Test&nbsp;Page</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>check&nbsp;original&nbsp;value&nbsp;of&nbsp;hidden&nbsp;field</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>xpath</att><val>//form/input[@id='real']/@value</val>&nbsp;<att>text</att><val>zzz</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>setInputField</tag>&nbsp;<att>description</att><val>javascript&nbsp;limitations&nbsp;inhibit&nbsp;change&nbsp;to&nbsp;hidden&nbsp;field</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>name</att><val>field2</val>&nbsp;<att>value</att><val>dummy</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>check&nbsp;value&nbsp;of&nbsp;hidden&nbsp;field&nbsp;remains&nbsp;the&nbsp;same</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>xpath</att><val>//form/input[@id='real']/@value</val>&nbsp;<att>text</att><val>zzz</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>forceHiddenInputField</tag>&nbsp;<att>name</att><val>hiddenField</val>&nbsp;<att>value</att><val>yyy</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>check&nbsp;updated&nbsp;value&nbsp;of&nbsp;hidden&nbsp;field</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>xpath</att><val>//form/input[@id='real']/@value</val>&nbsp;<att>text</att><val>yyy</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;could&nbsp;now&nbsp;submit&nbsp;form&nbsp;to&nbsp;backend&nbsp;server&nbsp;expecting&nbsp;modified&nbsp;value&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

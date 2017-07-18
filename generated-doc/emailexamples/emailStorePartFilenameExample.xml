@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailSetConfig</tag>&nbsp;.../&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;uuencoded&nbsp;message&nbsp;has&nbsp;2&nbsp;uuencoded&nbsp;attachments&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>/mailtest.*uu/</val>&nbsp;<att>property</att><val>mid1</val>&nbsp;<att>messageIndex</att><val>0</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStorePartFilename</tag>&nbsp;<att>property</att><val>filename1_0</val>&nbsp;<att>messageId</att><val>#{mid1}</val>&nbsp;<att>partIndex</att><val>0</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>filename1_0</val>&nbsp;<att>text</att><val>ok.gif</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStorePartFilename</tag>&nbsp;<att>property</att><val>filename1_1</val>&nbsp;<att>messageId</att><val>#{mid1}</val>&nbsp;<att>partIndex</att><val>1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>filename1_1</val>&nbsp;<att>text</att><val>testDocLinks.pdf</val>/&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;MIME&nbsp;message&nbsp;has&nbsp;1&nbsp;plain&nbsp;body&nbsp;part&nbsp;plus&nbsp;gif&nbsp;and&nbsp;pdf&nbsp;attachment&nbsp;parts&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>/mailtest.*mime/</val>&nbsp;<att>property</att><val>mid2</val>&nbsp;<att>messageIndex</att><val>0</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>expected&nbsp;to&nbsp;fail:&nbsp;text&nbsp;part&nbsp;of&nbsp;message&nbsp;is&nbsp;inline&nbsp;and&nbsp;has&nbsp;no&nbsp;filename</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStorePartFilename</tag>&nbsp;<att>property</att><val>filename2_0</val>&nbsp;<att>messageId</att><val>#{mid2}</val>&nbsp;<att>partIndex</att><val>0</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStorePartFilename</tag>&nbsp;<att>property</att><val>filename2_1</val>&nbsp;<att>messageId</att><val>#{mid2}</val>&nbsp;<att>partIndex</att><val>1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>filename2_1</val>&nbsp;<att>text</att><val>ok.gif</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStorePartFilename</tag>&nbsp;<att>property</att><val>filename2_2</val>&nbsp;<att>messageId</att><val>#{mid2}</val>&nbsp;<att>partIndex</att><val>2</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>filename2_2</val>&nbsp;<att>text</att><val>testDocLinks.pdf</val>/&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

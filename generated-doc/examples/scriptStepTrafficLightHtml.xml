@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>html</tag>&gt;<n/>
+...<n/>
+&lt;<tag>img</tag>&nbsp;id='traffic_light'&nbsp;src='green.gif'&nbsp;alt='go'&gt;<n/>
+...<n/>
+&lt;/<tag>html</tag>&gt;<n/>
+</source>

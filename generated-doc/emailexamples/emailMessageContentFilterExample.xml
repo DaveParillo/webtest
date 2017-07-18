@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailSetConfig</tag>&nbsp;.../&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;plain&nbsp;message&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>mailtest&nbsp;-&nbsp;multifiles&nbsp;-&nbsp;plain</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>mid1</val>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailMessageContentFilter</tag>&nbsp;<att>save</att><val>plain</val>&nbsp;<att>messageId</att><val>#{mid1}</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;text&nbsp;of&nbsp;message&nbsp;becomes&nbsp;current&nbsp;content&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>plain&nbsp;body&nbsp;text</val>/&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;MIME&nbsp;message&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>mailtest&nbsp;-&nbsp;multifiles&nbsp;-&nbsp;mime</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>mid2</val>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeLength</tag>&nbsp;<att>property</att><val>ok.gif.length</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;attachment&nbsp;will&nbsp;become&nbsp;available&nbsp;to&nbsp;storeLength&nbsp;and<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType&nbsp;will&nbsp;be&nbsp;checked&nbsp;against&nbsp;supplied&nbsp;value&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailMessageContentFilter</tag>&nbsp;<att>messageId</att><val>#{mid2}</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>contentType</att><val>image/gif;&nbsp;name=ok.gif</val>&nbsp;<att>partIndex</att><val>1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>storeLength</tag>&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;uuencoded&nbsp;message&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>mailtest&nbsp;-&nbsp;multifiles&nbsp;-&nbsp;uu</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>mid3</val>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeLength</tag>&nbsp;<att>property</att><val>ok.gif.length</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;attachment&nbsp;will&nbsp;become&nbsp;available&nbsp;to&nbsp;storeLength&nbsp;and<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;supplied&nbsp;value&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailMessageContentFilter</tag>&nbsp;<att>messageId</att><val>#{mid3}</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>contentType</att><val>image/gif</val>&nbsp;<att>partIndex</att><val>0</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>storeLength</tag>&gt;<n/>
+<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

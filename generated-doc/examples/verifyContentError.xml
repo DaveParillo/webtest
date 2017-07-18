@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>log</tag>&gt;<n/>
+****&nbsp;The&nbsp;last&nbsp;response&nbsp;and&nbsp;the&nbsp;expected&nbsp;file&nbsp;'expected/expectedDummyWithChanges.html'&nbsp;differ.<n/>
+The&nbsp;differences&nbsp;are:<n/>
+[3]&nbsp;&gt;&gt;&nbsp;&lt;<tag>title</tag>&gt;Dummy&lt;/<tag>title</tag>&gt;<n/>
+[3]&nbsp;&lt;&lt;&nbsp;&lt;<tag>title</tag>&gt;Dummy&nbsp;with&nbsp;Changes&lt;/<tag>title</tag>&gt;<n/>
+[7]&nbsp;&gt;&gt;&nbsp;Dummy&nbsp;page<n/>
+[7]&nbsp;&lt;&lt;&nbsp;Altered&nbsp;Dummy&nbsp;page<n/>
+&lt;/<tag>log</tag>&gt;<n/>
+</source>

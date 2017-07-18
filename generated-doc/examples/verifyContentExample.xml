@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>testVerifyContentRegex</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>property</tag>&nbsp;<att>name</att><val>variableNumberRegex</val>&nbsp;<att>value</att><val>(?&amp;lt;=&nbsp;)[0-9]+(?=&nbsp;time)</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>verifyContent:&nbsp;verifyContent&nbsp;with&nbsp;regex&nbsp;replace</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>visitCount.jsp</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyContent</tag>&nbsp;<att>referenceFile</att><val>verifyContent/expectedVisitCount.html</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>replaceFilter</tag>&nbsp;<att>regex</att><val>(as&nbsp;at&nbsp;).*(&amp;lt;/title&amp;gt;)</val>&nbsp;<att>replacement</att><val>$1[DATE&nbsp;REMOVED]$2</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>replaceFilter</tag>&nbsp;<att>regex</att><val>${variableNumberRegex}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>lineSeparatorFilter</tag>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>verifyContent</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>load&nbsp;page&nbsp;again&nbsp;-&nbsp;content&nbsp;will&nbsp;change</val>&nbsp;<att>url</att><val>visitCount.jsp</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyContent</tag>&nbsp;<att>referenceFile</att><val>verifyContent/expectedVisitCount.html</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>replaceFilter</tag>&nbsp;<att>regex</att><val>(as&nbsp;at&nbsp;).*(&amp;lt;/title&amp;gt;)</val>&nbsp;<att>replacement</att><val>$1[DATE&nbsp;REMOVED]$2</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>replaceFilter</tag>&nbsp;<att>regex</att><val>${variableNumberRegex}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>lineSeparatorFilter</tag>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>verifyContent</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>webtest</tag>&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+</source>

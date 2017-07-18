@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;previous&nbsp;steps&nbsp;...&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;random&nbsp;font&nbsp;extracted&nbsp;from&nbsp;dropdown&nbsp;select&nbsp;list&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeXPath</tag>&nbsp;<att>property</att><val>numsel</val>&nbsp;<att>xpath</att><val>count(//select[@name='font']/option)</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeRandom</tag>&nbsp;<att>property</att><val>fontIndex</val>&nbsp;<att>from</att><val>2</val>&nbsp;<att>to</att><val>#{numsel}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeXPath</tag>&nbsp;<att>property</att><val>expectedFont</val>&nbsp;<att>xpath</att><val>//select[@name='font']/option[#{fontIndex}]/@value</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>setSelectField</tag>&nbsp;<att>name</att><val>font</val>&nbsp;<att>value</att><val>#{expectedFont}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;additonal&nbsp;steps&nbsp;...&nbsp;--&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

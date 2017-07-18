@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+...<n/>
+&lt;<tag>taskdef</tag>&nbsp;<att>name</att><val>sqlunit</val>&nbsp;<att>classname</att><val>net.sourceforge.sqlunit.ant.SqlunitTask</val>/&gt;<n/>
+...<n/>
+&lt;--&nbsp;Testing&nbsp;SQLUnit&nbsp;using&nbsp;flat&nbsp;form&nbsp;of&nbsp;sqlunit&nbsp;call&nbsp;--&gt;<n/>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>sqlunit-flat</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&lt;<tag>sqlunit</tag>&nbsp;<att>testfile</att><val>${testfile}</val>&nbsp;<att>haltOnFailure</att><val>true</val>&nbsp;<att>debug</att><val>${debug}</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>logfile</att><val>${result.file}</val>&nbsp;<att>logformat</att><val>${log.format}</val>&nbsp;/&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+<n/>
+&lt;--&nbsp;Testing&nbsp;SQLUnit&nbsp;using&nbsp;nested&nbsp;form&nbsp;of&nbsp;sqlunit&nbsp;call&nbsp;--&gt;<n/>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>sqlunit-nested</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&lt;<tag>sqlunit</tag>&nbsp;<att>haltOnFailure</att><val>false</val>&nbsp;<att>debug</att><val>${debug}</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>logfile</att><val>${result.file}</val>&nbsp;<att>logformat</att><val>${log.format}</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>fileset</tag>&nbsp;<att>dir</att><val>${test.dir}/${testdir}</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>include</tag>&nbsp;<att>name</att><val>**/*.xml</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>fileset</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>sqlunit</tag>&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+...<n/>
+&lt;--&nbsp;reporting&nbsp;--&gt;<n/>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>canoo2html</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&lt;<tag>delete</tag>&nbsp;<att>file</att><val>${output.dir}/${output.file}.html</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&lt;<tag>xslt</tag>&nbsp;<att>in</att><val>${result.file}</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>out</att><val>${output.dir}/${output.file}.html</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>style</att><val>${etc.dir}/${webtest.style}.xsl</val>&nbsp;/&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+...<n/>
+</source>

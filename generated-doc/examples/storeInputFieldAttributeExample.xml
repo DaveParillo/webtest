@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>testInputFieldAttributeSteps:&nbsp;Show&nbsp;usage&nbsp;of&nbsp;storeInputFieldAttribute&nbsp;step&nbsp;using&nbsp;disabled&nbsp;attribute</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifytitle</tag>&nbsp;<att>description</att><val>check&nbsp;we&nbsp;are&nbsp;on&nbsp;the&nbsp;test&nbsp;page</val>&nbsp;<att>text</att><val>InputField&nbsp;Attribute&nbsp;Test&nbsp;Page</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeInputFieldAttribute</tag>&nbsp;<att>propertyName</att><val>isDisabled1a</val>&nbsp;<att>name</att><val>button1</val>&nbsp;<att>attributeName</att><val>disabled</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>description</att><val>check&nbsp;if&nbsp;button&nbsp;is&nbsp;disabled</val>&nbsp;<att>name</att><val>isDisabled1a</val>&nbsp;<att>text</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>Attempt&nbsp;submit&nbsp;but&nbsp;should&nbsp;be&nbsp;ignored&nbsp;as&nbsp;button&nbsp;is&nbsp;disabled</val>&nbsp;<att>name</att><val>button1</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifytitle</tag>&nbsp;<att>description</att><val>check&nbsp;we&nbsp;are&nbsp;still&nbsp;on&nbsp;the&nbsp;test&nbsp;page</val>&nbsp;<att>text</att><val>InputField&nbsp;Attribute&nbsp;Test&nbsp;Page</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>setInputField</tag>&nbsp;<att>description</att><val>set&nbsp;field&nbsp;value&nbsp;should&nbsp;enabled&nbsp;button</val>&nbsp;<att>name</att><val>value1</val>&nbsp;<att>value</att><val>someText</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>Attempt&nbsp;submit&nbsp;should&nbsp;work&nbsp;as&nbsp;button&nbsp;is&nbsp;enabled</val>&nbsp;<att>name</att><val>button1</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifytitle</tag>&nbsp;<att>description</att><val>check&nbsp;we&nbsp;are&nbsp;now&nbsp;on&nbsp;the&nbsp;dummy&nbsp;page</val>&nbsp;<att>text</att><val>Dummy</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

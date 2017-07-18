@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="scriptStep"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"><level3 name="alert" url="alert.html"/><level3 name="antWrapper" url="antWrapper.html"/><level3 name="clickElement" url="clickElement.html"/><level3 name="closeWindow" url="closeWindow.html"/><level3 name="condition" url="condition.html"/><level3 name="confirm" url="confirm.html"/><level3 name="countWebtestResults" url="countWebtestResults.html"/><level3 name="dataDriven" url="dataDriven.html"/><level3 name="dragAndDrop" url="dragAndDrop.html"/><level3 name="enableJavaScript" url="enableJavaScript.html"/><level3 name="expectDialog" url="expectDialog.html"/><level3 name="expectDialogs" url="expectDialogs.html"/><level3 name="forceHiddenInputField" url="forceHiddenInputField.html"/><level3 name="forceInputFieldAttribute" url="forceInputFieldAttribute.html"/><level3 name="groovy" url="groovy.html"/><level3 name="ifStep" url="ifStep.html"/><level3 name="mouseOut" url="mouseOut.html"/><level3 name="mouseOver" url="mouseOver.html"/><level3 name="prompt" url="prompt.html"/><level3 name="reportLinks" url="reportLinks.html"/><level3 name="reportSite" url="reportSite.html"/><level3 name="retry" url="retry.html"/><level3 name="scriptStep" url="scriptStep.html"/><level3 name="selectWebClient" url="selectWebClient.html"/><level3 name="selectWindow" url="selectWindow.html"/><level3 name="storeDigest" url="storeDigest.html"/><level3 name="storeElementAttribute" url="storeElementAttribute.html"/><level3 name="storeInputFieldAttribute" url="storeInputFieldAttribute.html"/><level3 name="storeLength" url="storeLength.html"/><level3 name="storeLinkParameter" url="storeLinkParameter.html"/><level3 name="storeRandom" url="storeRandom.html"/><level3 name="storeResponseCode" url="storeResponseCode.html"/><level3 name="timedGroup" url="timedGroup.html"/><level3 name="verifyContent" url="verifyContent.html"/><level3 name="verifyDocumentURL" url="verifyDocumentURL.html"/><level3 name="verifyHeader" url="verifyHeader.html"/><level3 name="verifyImages" url="verifyImages.html"/><level3 name="verifyLinkedContent" url="verifyLinkedContent.html"/><level3 name="verifyNoDialogs" url="verifyNoDialogs.html"/></level2>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Extension Step| scriptStep"/><section title="Description"><b>Provides the ability to use scripting code in your tests.</b><pre>
+    <b><key>ANT</key> has a normal style requiring declarative specification
+        of your build tasks. If you find this too limiting in certain scenarios,
+        Ant provides a <em>script</em> task which lets you dive into
+        (non-declarative) scripting code. The same need occurs within your <key>CWT</key>
+        steps; perhaps you need to do something not supported by the standard
+        steps, or perhaps you wish to perform some tests in a way better-suited
+        to programmatic rather than declarative means.</b>
+    <b>This step helps in these scenarios by providing a wrapper around the
+        <key>ANT</key> <em>script</em> task. Before providing the supplied
+        script to the <key>ANT</key> script task, <em>scriptStep</em>
+        expands any WebTest dynamic properties and defines some useful variables.
+        Results from running the script can be made available for subsequent steps to use.
+    </b>
+
+    <b>
+        The language must be one of those supported by the
+        <key>BSF</key> which means one of
+        <key>javascript</key>, Python (using either Jython or JPython), Tcl (using Jacl), NetRexx,
+        <key>XSLT</key> Stylesheets, Java (using BeanShell), JRuby,
+        <key>groovy</key>, ObjectScript, and JudoScript. See also the BSF
+        documentation for other languages which BSF has supported in the past - you might
+        be able to get other languages working with a bit of work.
+    </b>
+
+    <b>WebTest has all the necessary files
+        to support <key>groovy</key> and <key>javascript</key>
+        natively (and also <key>XSLT</key> but it isn't usually
+        used directly). For other languages you will need to download the
+        necessary support files - usually just one jar - and update your classpath appropriately.
+    </b>
+
+    <b>Note: although <em>scriptStep</em> does support <key>javascript</key>, at the moment,
+    it doesn't provide the mechanism to call JavaScript functions in your
+        <key>HTML</key> pages under test.</b>
+</pre></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>language</name><description>The scripting language to use. Required unless using the <em>keep</em> attribute in which case the value is optional but must agree with the original language if used. The value can be any language supported by the <key>BSF</key>, e.g. javascript, jacl, netrexx, java, javaclass, bml, vbscript, jscript, perlscript, perl, jpython, jython, lotusscript, xslt, pnuts, beanbasic, beanshell, ruby, judoscript, groovy.</description><required>yes/no</required></attribute><attribute><name>src</name><description>The name of the file containing the scripting code. You may omit this parameter if you have embedded script code.</description><required>yes/no</required></attribute><attribute><name>keep</name><description>Indicates that the script engine should be kept for future steps. Variables created during one script step will remain available.</description><required>no, default is
+					false</required></attribute></attributes></section><section title="Inline Text"><b>The
+							<em>inline text</em>
+							is all the text between the start tag (
+							<example>&lt;scriptStep&gt;</example>
+							) and the end tag (
+							<example>&lt;/scriptStep&gt;</example>
+							), including blanks, tabs or newlines. Using a pair of start/end tags (
+							<example>&lt;scriptStep&gt; &lt;/scriptStep&gt;</example>
+							) has not the same behavior than the seemingly equivalent empty element tag (
+							<example>&lt;scriptStep/&gt;</example>
+							)! See
+							<ext href="browse/WT-228" base="jira">this issue</ext>
+							for an example.
+						</b><attributes><attribute><name>text</name><description>The nested script code. You may omit this if you use the parameter src.</description><required>yes/no</required></attribute></attributes></section><section title="Details"><post>
+    <b>In order for the script to access its environment, the step sets some variables. These variables are set to
+        Java objects in WebTest model. The API of WebTest will tell what these objects provide, but the scripting
+        language
+        used determine how the objects are accessed.</b>
+        <dl>
+            <li>
+                <dt>step</dt>
+                <dd>The scriptStep enclosing the script.</dd>
+            </li>
+            <li>
+                <dt>response</dt>
+                <dd>The last response received from the server.</dd>
+            </li>
+            <li>
+                <dt>document</dt>
+                <dd>The html or xml DOM for the last response.</dd>
+            </li>
+        </dl>
+
+    <b>
+        <em>Order Example</em>
+    </b>
+
+    <b>Consider the following fictitious order information
+        embedded in an
+        <key>HTML</key>
+        page as follows:
+    </b>
+
+    <code caption="OrderPage">
+        <include src="examples/scriptStepOrderPageHtml.xml"/>
+    </code>
+
+    <b>Suppose we are testing that this order
+        contains the correct information. For each line item,
+        we want to check that the quantity times the unit
+        price equals the total price for that line and that the total
+        quantity and total price values in the final row actually
+        agree with the values summed from previous line item rows.
+        Here is some code we might use to perform these checks:</b>
+
+    <code caption="JavascriptOrderTest">
+        <include src="examples/scriptStepOrderJavaScriptExample.xml"/>
+    </code>
+
+    <b>We could have done most of this using
+        <key>XPATH</key>
+        but
+        the simple approach of hard-coding an
+        <key>XPATH</key>
+        statement for
+        each line item would make our tests brittle if the
+        number of line items could change in future tests.
+    </b>
+
+    <b>Here is the same example again using Groovy and making use of Groovy's <em>assert</em> functionality.</b>
+
+    <code caption="GroovyOrderTest">
+        <include src="examples/scriptStepOrderGroovyExample.xml"/>
+    </code>
+
+    <b>
+        <em>Traffic Light Example</em>
+    </b>
+
+    <b>Here is an example which shows some script code used to
+        calculate what the alt text should be for a particular image.
+        It assumes your page has
+        <key>HTML</key>
+        similar to the following:
+    </b>
+
+    <code caption="TrafficLightPage">
+        <include src="examples/scriptStepTrafficLightHtml.xml"/>
+    </code>
+
+    <b>We want to test that the correct alt text is used
+        for the correct image. Here is the test code using
+        <key>javascript</key>:
+    </b>
+
+    <code caption="JavascriptTrafficLightTest">
+        <include src="examples/scriptStepTrafficLightJavaScriptExample.xml"/>
+    </code>
+
+    <b>In this case, scripting is not strictly necessary because we
+        could have used
+        <key>XPATH</key>
+        but it provides a useful simple example.
+    </b>
+
+    <b>Here is the same example using <key>groovy</key>:</b>
+
+    <code caption="GroovyTrafficLightTest">
+        <include src="examples/scriptStepTrafficLightGroovyExample.xml"/>
+    </code>
+
+    <b>And the same again illustrating the <em>keep</em> attribute:</b>
+
+    <code caption="GroovyTrafficLightWithKeepTest">
+        <include src="examples/scriptStepTrafficLightGroovyWithKeepExample.xml"/>
+    </code>
+
+    <b>Rather than having the scripting code inline, you can place
+        it in a file and reference that file as follows:</b>
+
+    <code caption="GroovyFileTrafficLightTest">
+        <include src="examples/scriptStepTrafficLightGroovyFileExample.xml"/>
+    </code>
+
+    <b>
+        <em>Fibonacci Example</em>
+    </b>
+
+    <b>Consider an
+        <key>HTML</key>
+        page displaying mathematically significant
+        numbers with markup as follows:
+    </b>
+
+    <code caption="FibonacciPage">
+        <include src="examples/scriptStepFibonacciHtml.xml"/>
+    </code>
+
+    <b>Here is a JRuby example
+        (requires
+        <em>jruby.jar</em>
+        in your CLASSPATH),
+        showing how to test that a web page
+        displaying a Fibonacci number does in fact display a correct value:
+    </b>
+
+    <code caption="RubyFibonacciTest">
+        <include src="examples/scriptStepFibonacciRubyExample.xml"/>
+    </code>
+
+    <b>Here is the example again using Jython (requires
+        <em>jython.jar</em>
+        in your CLASSPATH):
+    </b>
+
+    <code caption="JythonFibonacciTest">
+        <include src="examples/scriptStepFibonacciJythonExample.xml"/>
+    </code>
+
+    <b>Here is the example again using BeanShell (requires
+        <em>bsh-XX.YY.jar</em>
+        in your CLASSPATH):
+    </b>
+
+    <code caption="BeanShellFibonacciTest">
+        <include src="examples/scriptStepFibonacciBeanShellExample.xml"/>
+    </code>
+
+    <b><em>See also:</em> the <stepref name="groovy" category="extension"/> step which offers
+        the same functionality but specifically for the <key>groovy</key> language. The
+        groovy functionality also allows test scripts to be written in groovy and
+        call back into <key>ANT</key> and WebTest.</b>
+</post></section></manpage>

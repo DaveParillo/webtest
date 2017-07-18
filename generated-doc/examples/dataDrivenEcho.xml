@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>dataDriven</tag>&nbsp;<att>tableContainer</att><val>simple.xls</val>&gt;<n/>
+<t/>&lt;<tag>echo</tag>&nbsp;<att>message</att><val>Hello&nbsp;${FirstName}&nbsp;${LastName}</val>/&gt;<n/>
+&lt;/<tag>dataDriven</tag>&gt;<n/>
+</source>

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>retry:&nbsp;illustrate&nbsp;RETRY&nbsp;of&nbsp;nested&nbsp;steps&nbsp;until&nbsp;they&nbsp;succeed</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>retry</tag>&nbsp;<att>description</att><val>retry&nbsp;nested&nbsp;steps&nbsp;until&nbsp;the&nbsp;visit&nbsp;count&nbsp;is&nbsp;3</val>&nbsp;<att>maxcount</att><val>10</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>Open&nbsp;page&nbsp;which&nbsp;increments&nbsp;visit&nbsp;count</val>&nbsp;<att>url</att><val>visitCount.jsp</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>sleep</tag>&nbsp;<att>description</att><val>it&nbsp;is&nbsp;typically&nbsp;wise&nbsp;to&nbsp;include&nbsp;a&nbsp;sleep</val>&nbsp;<att>seconds</att><val>1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>confirm&nbsp;server-based&nbsp;counter&nbsp;is&nbsp;working&nbsp;-&nbsp;iteration&nbsp;#{count}</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>xpath</att><val>//p[@id='totalinfo']</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>text</att><val>This&nbsp;page&nbsp;has&nbsp;been&nbsp;accessed&nbsp;a&nbsp;total&nbsp;of&nbsp;3&nbsp;time(s).</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>retry</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;name="setSelectField:&nbsp;Show&nbsp;usage&nbsp;of&nbsp;setFileField&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&amp;sharedConfiguration;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>setFileField.jsp</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>setFileField</tag>&nbsp;<att>formName</att><val>myForm</val>&nbsp;<att>fileName</att><val>myFile.csv</val>&nbsp;<att>name</att><val>myFileFieldName</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickButton</tag>&nbsp;<att>name</att><val>myButton</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>myFile.csv&nbsp;was&nbsp;successfully&nbsp;uploaded</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

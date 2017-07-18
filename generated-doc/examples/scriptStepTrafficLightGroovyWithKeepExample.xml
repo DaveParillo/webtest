@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>testInlineGroovyWithKeep</val>&gt;<n/>
+<t/>&lt;<tag>property</tag>&nbsp;<att>name</att><val>image_id</val>&nbsp;<att>value</att><val>traffic_light</val>/&gt;<n/>
+<t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>scriptStep:&nbsp;test&nbsp;scriptStep&nbsp;with&nbsp;inlined&nbsp;groovy&nbsp;Script&nbsp;and&nbsp;using&nbsp;keep</val>&gt;<n/>
+<t/><t/>&amp;sharedConfiguration;<n/>
+<t/><t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/><t/>&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>Load&nbsp;Initial&nbsp;Page</val><n/>
+<t/><t/><t/><t/><att>url</att><val>trafficlight.html</val>/&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>storeXPath</tag>&nbsp;<att>description</att><val>extract&nbsp;src&nbsp;attribute&nbsp;from&nbsp;image&nbsp;with&nbsp;id=${image_id}</val><n/>
+<t/><t/><t/><t/><t/><att>xpath</att><val>//img[@id='${image_id}']/@src</val><n/>
+<t/><t/><t/><t/><t/><att>property</att><val>imagesrc</val>/&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>scriptStep</tag>&nbsp;<att>description</att><val>calculate&nbsp;expected&nbsp;alt&nbsp;text&nbsp;for&nbsp;src=#{imagesrc}</val><n/>
+<t/><t/><t/><t/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>keep</att><val>true</val>&nbsp;<att>language</att><val>groovy</val>&gt;<n/>
+<t/><t/><t/><t/><t/>src2alt&nbsp;=&nbsp;['red.gif':'stop',&nbsp;'orange.gif':'wait',&nbsp;'green.gif':'go']<n/>
+<t/><t/><t/><t/><t/>step.setWebtestProperty('image_alt',&nbsp;src2alt[step.webtestProperties.imagesrc])<n/>
+<t/><t/><t/><t/>&lt;/<tag>scriptStep</tag>&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>check&nbsp;alt&nbsp;value</val><n/>
+<t/><t/><t/><t/><t/><att>xpath</att><val>//img[@id='${image_id}']/@alt</val><n/>
+<t/><t/><t/><t/><t/><att>text</att><val>#{image_alt}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>scriptStep</tag>&nbsp;<att>description</att><val>test&nbsp;variables&nbsp;are&nbsp;persistent&nbsp;when&nbsp;using&nbsp;keep</val>&nbsp;<att>language</att><val>groovy</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step.setWebtestProperty('stopvar',&nbsp;src2alt["red.gif"]);<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>scriptStep</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>stopvar</val>&nbsp;<att>text</att><val>stop</val>/&gt;<n/>
+<t/><t/>&lt;/<tag>steps</tag>&gt;<n/>
+<t/>&lt;/<tag>webtest</tag>&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+</source>

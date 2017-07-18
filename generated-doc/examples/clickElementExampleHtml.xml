@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>html</tag>&gt;<n/>
+&lt;<tag>head</tag>&gt;<n/>
+&lt;<tag>script</tag>&nbsp;<att>type</att><val>text/JavaScript</val>&gt;<n/>
+&lt;--<n/>
+function&nbsp;flipColor(obj)&nbsp;{<n/>
+&nbsp;&nbsp;var&nbsp;color=(obj.style.backgroundColor==obj.id)&nbsp;?&nbsp;"yellow"&nbsp;:&nbsp;obj.id;<n/>
+&nbsp;&nbsp;obj.style.backgroundColor=color;<n/>
+}<n/>
+//&nbsp;--&gt;<n/>
+&lt;/<tag>script</tag>&gt;<n/>
+&lt;/<tag>head</tag>&gt;<n/>
+&lt;<tag>body</tag>&gt;<n/>
+&lt;<tag>table</tag>&nbsp;<att>cellspacing</att><val>1</val>&nbsp;<att>border</att><val>1</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>tr</tag>&nbsp;<att>style</att><val>backgroundColor:red;background:red</val>&nbsp;<att>id</att><val>red</val>&nbsp;<att>onclick</att><val>flipColor(this)</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>td</tag>&nbsp;<att>width</att><val>150</val>&nbsp;<att>height</att><val>30</val>&gt;&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&nbsp;<att>width</att><val>150</val>&gt;&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&nbsp;<att>width</att><val>150</val>&gt;&lt;/<tag>td</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>tr</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>tr</tag>&nbsp;<att>style</att><val>backgroundColor:green;background:green</val>&nbsp;<att>id</att><val>green</val>&nbsp;<att>onclick</att><val>flipColor(this)</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>td</tag>&nbsp;<att>width</att><val>150</val>&nbsp;<att>height</att><val>30</val>&gt;&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&nbsp;<att>width</att><val>150</val>&gt;&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&nbsp;<att>width</att><val>150</val>&gt;&lt;/<tag>td</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>tr</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>tr</tag>&nbsp;<att>style</att><val>backgroundColor:blue;background:blue</val>&nbsp;<att>id</att><val>blue</val>&nbsp;<att>onclick</att><val>flipColor(this)</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>td</tag>&nbsp;<att>width</att><val>150</val>&nbsp;<att>height</att><val>30</val>&gt;&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&nbsp;<att>width</att><val>150</val>&gt;&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&nbsp;<att>width</att><val>150</val>&gt;&lt;/<tag>td</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>tr</tag>&gt;<n/>
+&lt;/<tag>table</tag>&gt;<n/>
+&lt;/<tag>body</tag>&gt;<n/>
+&lt;/<tag>html</tag>&gt;<n/>
+</source>

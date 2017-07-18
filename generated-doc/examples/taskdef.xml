@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>?xml</tag>&nbsp;<att>version</att><val>1.0</val>&nbsp;?&gt;<n/>
+&lt;<tag>project</tag>&nbsp;<att>name</att><val>taskdef</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>description</tag>&gt;<n/>
+DEPRECATED&nbsp;since&nbsp;November&nbsp;2007:&nbsp;use&nbsp;webtest.xml&nbsp;instead&nbsp;of&nbsp;this&nbsp;file!<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;project&nbsp;provides&nbsp;following&nbsp;elements&nbsp;to&nbsp;use&nbsp;in&nbsp;your&nbsp;test&nbsp;scripts:<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(0)&nbsp;all&nbsp;webtest's&nbsp;steps&nbsp;loaded&nbsp;and&nbsp;ready&nbsp;to&nbsp;use,<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)&nbsp;the&nbsp;path&nbsp;"webtest.path.id"&nbsp;that&nbsp;includes&nbsp;all&nbsp;of&nbsp;webtest's&nbsp;libraries,<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)&nbsp;the&nbsp;class&nbsp;loader&nbsp;"webtest.loader"&nbsp;that&nbsp;is&nbsp;the&nbsp;original&nbsp;loader&nbsp;for&nbsp;webtest.<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usage:<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;property&nbsp;webtest.home&nbsp;to&nbsp;the&nbsp;directory&nbsp;in&nbsp;which&nbsp;the&nbsp;build.zip&nbsp;is&nbsp;extracted,<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;calls:<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;import&nbsp;<att>file</att><val>${webtest.home}/lib/taskdef.xml</val>&nbsp;&amp;gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>description</tag>&gt;<n/>
+<n/>
+<t/>&lt;<tag>echo</tag>&nbsp;<att>message</att><val>DEPRECATED&nbsp;since&nbsp;November&nbsp;2007:&nbsp;use&nbsp;webtest.xml&nbsp;instead&nbsp;of&nbsp;lib/taskdef.xml!</val>&nbsp;<att>level</att><val>warning</val>/&gt;<n/>
+<n/>
+<t/>&lt;<tag>dirname</tag>&nbsp;<att>property</att><val>taskdef.dir</val>&nbsp;<att>file</att><val>${ant.file.taskdef}</val>/&gt;<n/>
+<t/>&lt;<tag>import</tag>&nbsp;<att>file</att><val>${taskdef.dir}/classpath.xml</val>&nbsp;/&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>taskdef</tag>&nbsp;<att>resource</att><val>webtest.taskdef</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>loaderref</att><val>webtest.loader</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>classpathref</att><val>webtest.path.id</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

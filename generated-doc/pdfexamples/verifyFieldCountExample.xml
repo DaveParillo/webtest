@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>pdftest&nbsp;-&nbsp;verify&nbsp;field&nbsp;count</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyFieldCount</tag>&nbsp;<att>description</att><val>Field&nbsp;count</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>page</att><val>2</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>count</att><val>8</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>includeDuplicates</att><val>no</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;...<n/>
+&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

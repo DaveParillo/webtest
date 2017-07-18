@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Verify&nbsp;user&nbsp;name&nbsp;in&nbsp;document&nbsp;title</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/><t/>&lt;<tag>verifyTitle</tag>&nbsp;<att>description</att><val>Title&nbsp;can&nbsp;include&nbsp;variable&nbsp;user&nbsp;name</val><n/>
+<t/><t/><t/><att>text</att><val>User&nbsp;.*&nbsp;-&nbsp;Main&nbsp;View</val><n/>
+<t/><t/><t/><att>regex</att><val>true</val>&nbsp;/&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

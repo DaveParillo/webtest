@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="pdfVerifyFont"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"/>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"><level3 name="pdfDecryptDocument" url="pdfDecryptDocument.html"/><level3 name="pdfToBookmarksFilter" url="pdfToBookmarksFilter.html"/><level3 name="pdfToFontsFilter" url="pdfToFontsFilter.html"/><level3 name="pdfToLinksFilter" url="pdfToLinksFilter.html"/><level3 name="pdfToTextFilter" url="pdfToTextFilter.html"/><level3 name="pdfVerifyBookmark" url="pdfVerifyBookmark.html"/><level3 name="pdfVerifyCheckboxField" url="pdfVerifyCheckboxField.html"/><level3 name="pdfVerifyEncryption" url="pdfVerifyEncryption.html"/><level3 name="pdfVerifyEncryptionPermissions" url="pdfVerifyEncryptionPermissions.html"/><level3 name="pdfVerifyEncryptionProperty" url="pdfVerifyEncryptionProperty.html"/><level3 name="pdfVerifyEncryptionStrength" url="pdfVerifyEncryptionStrength.html"/><level3 name="pdfVerifyField" url="pdfVerifyField.html"/><level3 name="pdfVerifyFieldCount" url="pdfVerifyFieldCount.html"/><level3 name="pdfVerifyFont" url="pdfVerifyFont.html"/><level3 name="pdfVerifyInfoProperty" url="pdfVerifyInfoProperty.html"/><level3 name="pdfVerifyLink" url="pdfVerifyLink.html"/><level3 name="pdfVerifyPageCount" url="pdfVerifyPageCount.html"/><level3 name="pdfVerifyReadOnlyField" url="pdfVerifyReadOnlyField.html"/><level3 name="pdfVerifyText" url="pdfVerifyText.html"/><level3 name="pdfVerifyTextField" url="pdfVerifyTextField.html"/><level3 name="pdfVerifyTitle" url="pdfVerifyTitle.html"/></level2>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="PDF Step| pdfVerifyFont"/><section title="Description"><b>This step verifies the existence of a font within the current <key>pdf</key> document.</b></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>name</name><description>The name of the font to find, e.g. <em>Times</em>, <em>Courier-Bold</em> or <em>Helvetica-Oblique</em>. One of <em>name</em> or <em>type</em> must be set.</description><required>yes/no</required></attribute><attribute><name>type</name><description>The type of the font to find, e.g. <em>Type 1</em> or <em>TrueType</em>. One of <em>name</em> or <em>type</em> must be set.</description><required>yes/no</required></attribute><attribute><name>page</name><description>The page on which to search.</description><required>no, default is
+					all pages</required></attribute><attribute><name>matchCase</name><description>Specifies whether to match case when comparing the expected and actual name and type values of a font.</description><required>no, default is
+					'false'</required></attribute></attributes></section><section title="Details"><post>
+    <b>
+        Here is an example of using <em>pdfVerifyFont</em>:
+    </b>
+
+    <code caption="pdfVerifyFont example">
+        <include src="pdfexamples/verifyFontExample.xml"/>
+    </code>
+
+</post></section></manpage>

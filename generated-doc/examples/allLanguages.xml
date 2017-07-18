@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>project</tag>&nbsp;<att>default</att><val>testSuite</val>&gt;<n/>
+<n/>
+<t/>&lt;<tag>property</tag>&nbsp;<att>name</att><val>suite.xml</val>&nbsp;<att>value</att><val>allUseCases.xml</val>&nbsp;/&gt;<n/>
+<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>testSuite</val>&nbsp;<att>depends</att><val>testSuiteFrench,testSuiteEnglish</val>&nbsp;/&gt;<n/>
+<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>testSuiteFrench</val>&gt;<n/>
+<t/><t/>&lt;<tag>ant</tag>&nbsp;<att>antfile</att><val>${suite.xml}</val>&gt;<n/>
+<t/><t/><t/>&lt;<tag>property</tag>&nbsp;<att>file</att><val>properties/french.properties</val>/&gt;<n/>
+<t/><t/>&lt;/<tag>ant</tag>&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>testSuiteEnglish</val>&gt;<n/>
+<t/><t/>&lt;<tag>ant</tag>&nbsp;<att>antfile</att><val>${suite.xml}</val>&gt;<n/>
+<t/><t/><t/>&lt;<tag>property</tag>&nbsp;<att>file</att><val>properties/english.properties</val>/&gt;<n/>
+<t/><t/>&lt;/<tag>ant</tag>&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

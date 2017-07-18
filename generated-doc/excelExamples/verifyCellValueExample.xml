@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>exceltest&nbsp;-&nbsp;verify&nbsp;cell&nbsp;value</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testExcel.xls</val>/&gt;<n/>
+<t/><t/>...<n/>
+<t/><t/>&lt;<tag>excelVerifyCellValue</tag>&nbsp;<att>cell</att><val>O99</val>&nbsp;<att>text</att><val>/\d+/</val>&nbsp;<att>description</att><val>Check&nbsp;number</val>/&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

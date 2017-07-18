@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testDocBookmarks.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyBookmark</tag>&nbsp;<att>name</att><val>He.*One</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyBookmark</tag>&nbsp;<att>name</att><val>Subheading</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>expect&nbsp;to&nbsp;fail:&nbsp;unknown&nbsp;bookmark</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyBookmark</tag>&nbsp;<att>name</att><val>Heading&nbsp;Three</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testDocForms.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>expect&nbsp;to&nbsp;fail:&nbsp;document&nbsp;has&nbsp;no&nbsp;bookmarks</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyBookmark</tag>&nbsp;<att>name</att><val>.*</val>&nbsp;<att>regex</att><val>true</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

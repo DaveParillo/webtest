@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testDocFonts.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyFont</tag>&nbsp;<att>name</att><val>times-roman</val>&nbsp;<att>type</att><val>type1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>expected&nbsp;to&nbsp;fail:&nbsp;wrong&nbsp;case</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyFont</tag>&nbsp;<att>name</att><val>times-roman</val>&nbsp;<att>matchCase</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyFont</tag>&nbsp;<att>page</att><val>2</val>&nbsp;<att>name</att><val>ComicSansMS-Bold</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyFont</tag>&nbsp;<att>page</att><val>2</val>&nbsp;<att>type</att><val>TrueType</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyFont</tag>&nbsp;<att>page</att><val>2</val>&nbsp;<att>name</att><val>ComicSansMS-Bold</val>&nbsp;<att>type</att><val>TrueType</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>expect&nbsp;to&nbsp;fail:&nbsp;incorrect&nbsp;page</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyFont</tag>&nbsp;<att>page</att><val>1</val>&nbsp;<att>name</att><val>ComicSansMS-Bold</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>expect&nbsp;to&nbsp;fail:&nbsp;incorrect&nbsp;type</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyFont</tag>&nbsp;<att>name</att><val>ComicSansMS-Bold</val>&nbsp;<att>type</att><val>Type1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>expect&nbsp;to&nbsp;fail:&nbsp;unknown&nbsp;font</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyFont</tag>&nbsp;<att>name</att><val>invisible&nbsp;font</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

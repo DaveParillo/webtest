@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Sleep&nbsp;Example</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>initiate&nbsp;asynchronous&nbsp;server&nbsp;task</val>&nbsp;...&nbsp;/&gt;<n/>
+<t/><t/>&lt;<tag>sleep</tag>&nbsp;<att>description</att><val>pause&nbsp;for&nbsp;1&nbsp;sec</val>&nbsp;<att>seconds</att><val>1</val>/&gt;<n/>
+<t/><t/>...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;check&nbsp;initial&nbsp;results&nbsp;--&gt;<n/>
+<t/><t/>&lt;<tag>sleep</tag>&nbsp;<att>description</att><val>pause&nbsp;for&nbsp;another&nbsp;1.5&nbsp;sec</val>&nbsp;<att>millis</att><val>1500</val>/&gt;<n/>
+<t/><t/>...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;check&nbsp;final&nbsp;results&nbsp;--&gt;<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

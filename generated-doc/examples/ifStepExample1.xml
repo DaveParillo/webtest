@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>testNewUserOne</val>&nbsp;<att>depends</att><val>init</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>echo</tag>&nbsp;<att>message</att><val>Testing&nbsp;Creation&nbsp;of&nbsp;New&nbsp;Users&nbsp;(don't&nbsp;run&nbsp;on&nbsp;prod)</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>property</tag>&nbsp;<att>name</att><val>isOnProduction</val>&nbsp;<att>value</att><val>true</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>testNewUser</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>ifStep</tag>&nbsp;<att>description</att><val>production&nbsp;tests</val>&nbsp;<att>test</att><val>${isOnProduction}</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>check&nbsp;DEBUG&nbsp;message&nbsp;not&nbsp;on&nbsp;prod</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>description</att><val>Find&nbsp;Debug&nbsp;statements</val>&nbsp;<att>text</att><val>DEBUG:</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>ifStep</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>ifStep</tag>&nbsp;<att>description</att><val>non-production&nbsp;tests</val>&nbsp;<att>unless</att><val>${isOnProduction}</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>description</att><val>Find&nbsp;Debug&nbsp;statements</val>&nbsp;<att>text</att><val>DEBUG:</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;...&nbsp;fill&nbsp;out&nbsp;form&nbsp;...&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>register&nbsp;new&nbsp;user</val>&nbsp;<att>name</att><val>createButton</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>ifStep</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;/<tag>webtest</tag>&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+</source>

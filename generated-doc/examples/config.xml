@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>config</tag><n/>
+<t/><att>host</att><val>www.myserver.com</val><n/>
+<t/><att>port</att><val>8080</val><n/>
+<t/><att>protocol</att><val>http</val><n/>
+<t/><att>basepath</att><val>myApp</val>&nbsp;/&gt;<n/>
+</source>

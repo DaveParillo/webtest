@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>testFileGroovy</val>&gt;<n/>
+<t/>&lt;<tag>property</tag>&nbsp;<att>name</att><val>image_id</val>&nbsp;<att>value</att><val>traffic_light</val>/&gt;<n/>
+<t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>scriptStep:&nbsp;test&nbsp;Groovy&nbsp;Code&nbsp;from&nbsp;file</val>&gt;<n/>
+<t/><t/>&amp;sharedConfiguration;<n/>
+<t/><t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/><t/>&lt;<tag>scriptStep</tag>&nbsp;<att>description</att><val>use&nbsp;from&nbsp;file&nbsp;like&nbsp;a&nbsp;macro</val><n/>
+<t/><t/><t/><t/><att>language</att><val>groovy</val>&nbsp;<att>src</att><val>${basedir}/GMacroSteps.groovy</val>/&gt;<n/>
+<t/><t/>&lt;/<tag>steps</tag>&gt;<n/>
+<t/>&lt;/<tag>webtest</tag>&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+</source>

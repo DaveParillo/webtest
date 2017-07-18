@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>project</tag>&nbsp;<att>default</att><val>wt.full</val>&gt;<n/>
+<n/>
+<t/>&lt;<tag>property</tag>&nbsp;<att>name</att><val>webtest.home</val>&nbsp;<att>location</att><val>C:/java/webtest</val>&nbsp;/&gt;<n/>
+<t/>&lt;<tag>import</tag>&nbsp;<att>file</att><val>${webtest.home}/webtest.xml</val>/&gt;<n/>
+<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>wt.testInWork</val>&gt;<n/>
+<t/><t/>&lt;<tag>ant</tag>&nbsp;<att>dir</att><val>tests</val>&nbsp;<att>file</att><val>allTests.xml</val>/&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

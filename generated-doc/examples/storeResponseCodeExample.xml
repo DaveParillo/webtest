@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>httpResponseCode:&nbsp;confirm&nbsp;error&nbsp;page</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>option</tag>&nbsp;<att>name</att><val>ThrowExceptionOnFailingStatusCode</val>&nbsp;<att>value</att><val>false</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>config</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>Load&nbsp;Image</val>&nbsp;<att>url</att><val>missing.gif</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeResponseCode</tag>&nbsp;<att>description</att><val>store&nbsp;response&nbsp;code</val>&nbsp;<att>property</att><val>status</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>description</att><val>should&nbsp;be&nbsp;error</val>&nbsp;<att>name</att><val>status</val>&nbsp;<att>text</att><val>404</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

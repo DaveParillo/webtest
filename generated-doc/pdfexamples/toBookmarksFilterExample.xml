@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testDocBookmarks.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>compareToExpected</tag>&nbsp;<att>saveFiltered</att><val>true</val>&nbsp;<att>readFiltered</att><val>false</val>&nbsp;<att>toFile</att><val>${expectedFile}</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfToBookmarksFilter</tag>&nbsp;<att>description</att><val>extract&nbsp;PDF&nbsp;bookmarks</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>lineSeparatorFilter</tag>&nbsp;<att>description</att><val>normalise&nbsp;line&nbsp;separators</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>compareToExpected</tag>&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

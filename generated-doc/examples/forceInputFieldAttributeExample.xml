@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>testInputFieldAttributeSteps:&nbsp;Show&nbsp;usage&nbsp;of&nbsp;forceInputFieldAttribute&nbsp;step&nbsp;using&nbsp;disabled&nbsp;attribute</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifytitle</tag>&nbsp;<att>description</att><val>check&nbsp;we&nbsp;are&nbsp;on&nbsp;the&nbsp;test&nbsp;page</val>&nbsp;<att>text</att><val>InputField&nbsp;Attribute&nbsp;Test&nbsp;Page</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeInputFieldAttribute</tag>&nbsp;<att>propertyName</att><val>isDisabled2a</val>&nbsp;<att>name</att><val>button2</val>&nbsp;<att>attributeName</att><val>disabled</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>description</att><val>check&nbsp;if&nbsp;button&nbsp;is&nbsp;disabled</val>&nbsp;<att>name</att><val>isDisabled2a</val>&nbsp;<att>text</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>Attempt&nbsp;submit&nbsp;but&nbsp;should&nbsp;be&nbsp;ignored&nbsp;as&nbsp;button&nbsp;is&nbsp;disabled</val>&nbsp;<att>name</att><val>button2</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifytitle</tag>&nbsp;<att>description</att><val>check&nbsp;we&nbsp;are&nbsp;still&nbsp;on&nbsp;the&nbsp;test&nbsp;page</val>&nbsp;<att>text</att><val>InputField&nbsp;Attribute&nbsp;Test&nbsp;Page</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>setInputField</tag>&nbsp;<att>description</att><val>set&nbsp;field&nbsp;value&nbsp;would&nbsp;enabled&nbsp;button&nbsp;if&nbsp;onkeyup()&nbsp;was&nbsp;supported&nbsp;event&nbsp;in&nbsp;htmlunit</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>name</att><val>value2</val>&nbsp;<att>value</att><val>someText</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>Attempt&nbsp;submit&nbsp;should&nbsp;fail&nbsp;because&nbsp;of&nbsp;onkeyup()&nbsp;limitation</val>&nbsp;<att>name</att><val>button2</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifytitle</tag>&nbsp;<att>description</att><val>check&nbsp;we&nbsp;are&nbsp;still&nbsp;on&nbsp;the&nbsp;test&nbsp;page</val>&nbsp;<att>text</att><val>InputField&nbsp;Attribute&nbsp;Test&nbsp;Page</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>forceInputFieldAttribute</tag>&nbsp;<att>name</att><val>button2</val>&nbsp;<att>attributeName</att><val>disabled</val>&nbsp;<att>attributeValue</att><val></val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeInputFieldAttribute</tag>&nbsp;<att>propertyName</att><val>isDisabled2b</val>&nbsp;<att>name</att><val>button2</val>&nbsp;<att>attributeName</att><val>disabled</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>isDisabled2b</val>&nbsp;<att>text</att><val>false</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>Attempt&nbsp;submit&nbsp;should&nbsp;work&nbsp;as&nbsp;button&nbsp;is&nbsp;enabled</val>&nbsp;<att>name</att><val>button2</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifytitle</tag>&nbsp;<att>description</att><val>check&nbsp;we&nbsp;are&nbsp;now&nbsp;on&nbsp;the&nbsp;dummy&nbsp;page</val>&nbsp;<att>text</att><val>Dummy</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

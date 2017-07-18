@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>verifyLinkedContent</tag><n/>
+<t/><att>xpath</att><val>//img/@src&nbsp;|&nbsp;//input[@type='image']/@src</val><n/>
+<t/><att>accept</att><val>image/gif;image/png</val><n/>
+<t/>/&gt;<n/>
+</source>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Visit&nbsp;the&nbsp;shop&nbsp;on&nbsp;myhost</val>&gt;<n/>
+<t/>&lt;<tag>config</tag><n/>
+<t/><t/><att>host</att><val>www.myhost.com</val><n/>
+<t/><t/><att>port</att><val>8080</val><n/>
+<t/><t/><att>protocol</att><val>http</val><n/>
+<t/><t/><att>basepath</att><val>shop</val><n/>
+<t/><t/><att>saveresponse</att><val>true</val><n/>
+<t/><t/><att>resultpath</att><val>/tmp/results</val><n/>
+<t/>&gt;<n/>
+<t/><t/>&lt;<tag>header</tag>&nbsp;<att>name</att><val>User-Agent</val>&nbsp;<att>value</att><val>Mozilla/4.0</val>/&gt;<n/>
+<t/><t/>&lt;<tag>header</tag>&nbsp;<att>name</att><val>Accept-Language</val>&nbsp;<att>value</att><val>de-ch</val>/&gt;<n/>
+<t/>&lt;/<tag>config</tag>&gt;<n/>
+<t/>...<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Visit&nbsp;all&nbsp;pages&nbsp;without&nbsp;update</val>&gt;<n/>
+<t/>...<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

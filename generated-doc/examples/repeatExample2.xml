@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Iterate&nbsp;over&nbsp;all&nbsp;cells&nbsp;in&nbsp;a&nbsp;table</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>repeat</tag>&nbsp;<att>count</att><val>2</val>&nbsp;<att>countername</att><val>row</val>&gt;<n/>
+<t/><t/><t/>&lt;<tag>repeat</tag>&nbsp;<att>count</att><val>2</val>&nbsp;<att>countername</att><val>column</val>&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>Show&nbsp;a&nbsp;particular&nbsp;table&nbsp;cell</val><n/>
+<t/><t/><t/><t/><t/><att>url</att><val>showCell?column=#{column}&amp;amp;row=#{row}</val>/&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>verifyText</tag>&nbsp;<att>description</att><val>Check&nbsp;cell&nbsp;contents</val><n/>
+<t/><t/><t/><t/><t/>...&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;/<tag>repeat</tag>&gt;<n/>
+<t/><t/>&lt;/<tag>repeat</tag>&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testDocPermissionsAll.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyEncryptionPermissions</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>allow</att><val>printing,&nbsp;degradedPrinting,&nbsp;modifyContents,&nbsp;copy,&nbsp;modifyAnnotations,&nbsp;fillIn,&nbsp;screenReaders,&nbsp;assembly</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testDocPermissionsNoPrint.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyEncryptionPermissions</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>deny</att><val>printing,degradedPrinting</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testDocPermissionsOnlyFillIn.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyEncryptionPermissions</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>allow</att><val>fillIn</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>deny</att><val>printing&nbsp;,&nbsp;degradedPrinting,&nbsp;modifyContents,&nbsp;copy,&nbsp;modifyAnnotations,&nbsp;screenReaders,&nbsp;assembly</val>/&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

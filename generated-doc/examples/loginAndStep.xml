@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>?xml</tag>&nbsp;<att>version</att><val>1.0</val>?&gt;<n/>
+<n/>
+&lt;<tag>!DOCTYPE</tag>&nbsp;project&nbsp;SYSTEM&nbsp;"../dtd/Project.dtd"&gt;<n/>
+<n/>
+&lt;<tag>project</tag>&nbsp;<att>default</att><val>test</val>&gt;<n/>
+<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>test</val>&gt;<n/>
+<t/><t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>loginAndStep</val>&gt;<n/>
+<t/><t/><t/>&amp;login;<n/>
+<t/><t/><t/>&amp;step;<n/>
+<t/><t/>&lt;/<tag>webtest</tag>&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

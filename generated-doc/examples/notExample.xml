@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>No&nbsp;firstname&nbsp;input&nbsp;field</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/><t/>&lt;<tag>not</tag>&nbsp;<att>description</att><val>Input&nbsp;field&nbsp;firstname&nbsp;shall&nbsp;not&nbsp;be&nbsp;present</val>&gt;<n/>
+<t/><t/><t/>&lt;<tag>verifyElement</tag>&nbsp;<att>description</att><val>Check&nbsp;firstname</val><n/>
+<t/><t/><t/><t/><att>type</att><val>input</val><n/>
+<t/><t/><t/><t/><att>text</att><val>firstname</val>/&gt;<n/>
+<t/><t/>&lt;/<tag>not</tag>&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

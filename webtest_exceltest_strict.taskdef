@@ -1,0 +1,9 @@
+# strict taskdef generated during webtest's build
+# Following entries are extracted from javadoc.
+excelStructureFilter:com.canoo.webtest.plugins.exceltest.ExcelStructureFilter
+excelVerifyCellSum:com.canoo.webtest.plugins.exceltest.ExcelVerifyCellSum
+excelStoreCellValue:com.canoo.webtest.plugins.exceltest.ExcelStoreCellValue
+excelVerifyCellValue:com.canoo.webtest.plugins.exceltest.ExcelVerifyCellValue
+excelFindRow:com.canoo.webtest.plugins.exceltest.ExcelFindRow
+excelVerifyCellStyle:com.canoo.webtest.plugins.exceltest.ExcelVerifyCellStyle
+excelSelectSheet:com.canoo.webtest.plugins.exceltest.ExcelSelectSheet

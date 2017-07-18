@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailSetConfig</tag>&nbsp;.../&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;uuencoded&nbsp;message&nbsp;has&nbsp;2&nbsp;uuencoded&nbsp;attachments&nbsp;(parts)&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>/mailtest.*uu/</val>&nbsp;<att>property</att><val>mid1</val>&nbsp;<att>messageIndex</att><val>0</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStorePartCount</tag>&nbsp;<att>property</att><val>prop1</val>&nbsp;<att>messageId</att><val>#{mid1}</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>prop1</val>&nbsp;<att>text</att><val>2</val>/&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;MIME&nbsp;message&nbsp;has&nbsp;1&nbsp;plain&nbsp;body&nbsp;part&nbsp;plus&nbsp;gif&nbsp;and&nbsp;pdf&nbsp;attachment&nbsp;parts&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>/mailtest.*mime/</val>&nbsp;<att>property</att><val>mid2</val>&nbsp;<att>messageIndex</att><val>0</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStorePartCount</tag>&nbsp;<att>property</att><val>prop2</val>&nbsp;<att>messageId</att><val>#{mid2}</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>prop2</val>&nbsp;<att>text</att><val>3</val>/&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

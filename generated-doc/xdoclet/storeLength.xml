@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="storeLength"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"><level3 name="alert" url="alert.html"/><level3 name="antWrapper" url="antWrapper.html"/><level3 name="clickElement" url="clickElement.html"/><level3 name="closeWindow" url="closeWindow.html"/><level3 name="condition" url="condition.html"/><level3 name="confirm" url="confirm.html"/><level3 name="countWebtestResults" url="countWebtestResults.html"/><level3 name="dataDriven" url="dataDriven.html"/><level3 name="dragAndDrop" url="dragAndDrop.html"/><level3 name="enableJavaScript" url="enableJavaScript.html"/><level3 name="expectDialog" url="expectDialog.html"/><level3 name="expectDialogs" url="expectDialogs.html"/><level3 name="forceHiddenInputField" url="forceHiddenInputField.html"/><level3 name="forceInputFieldAttribute" url="forceInputFieldAttribute.html"/><level3 name="groovy" url="groovy.html"/><level3 name="ifStep" url="ifStep.html"/><level3 name="mouseOut" url="mouseOut.html"/><level3 name="mouseOver" url="mouseOver.html"/><level3 name="prompt" url="prompt.html"/><level3 name="reportLinks" url="reportLinks.html"/><level3 name="reportSite" url="reportSite.html"/><level3 name="retry" url="retry.html"/><level3 name="scriptStep" url="scriptStep.html"/><level3 name="selectWebClient" url="selectWebClient.html"/><level3 name="selectWindow" url="selectWindow.html"/><level3 name="storeDigest" url="storeDigest.html"/><level3 name="storeElementAttribute" url="storeElementAttribute.html"/><level3 name="storeInputFieldAttribute" url="storeInputFieldAttribute.html"/><level3 name="storeLength" url="storeLength.html"/><level3 name="storeLinkParameter" url="storeLinkParameter.html"/><level3 name="storeRandom" url="storeRandom.html"/><level3 name="storeResponseCode" url="storeResponseCode.html"/><level3 name="timedGroup" url="timedGroup.html"/><level3 name="verifyContent" url="verifyContent.html"/><level3 name="verifyDocumentURL" url="verifyDocumentURL.html"/><level3 name="verifyHeader" url="verifyHeader.html"/><level3 name="verifyImages" url="verifyImages.html"/><level3 name="verifyLinkedContent" url="verifyLinkedContent.html"/><level3 name="verifyNoDialogs" url="verifyNoDialogs.html"/></level2>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Extension Step| storeLength"/><section title="Description"><b>Stores a length value for the response (or part of the response) into a property. This is useful when you don't care about the content within a response but wish to ensure that at least the length hasn't changed from some expected value. Supports content filters such as <stepref name="lineSeparatorFilter" category=""/> and <stepref name="replaceFilter" category=""/> to allow you to filter out content that you are not interested in and the <stepref name="table" category="Core"/> locator step if you are interested in content within a table.</b></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>propertyType</name><description>The target property type. Either "ant" or "dynamic".</description><required>no, default is
+					the "defaultPropertyType" as specified in the "config" element is used.</required></attribute><attribute><name>property</name><description>The target property name.</description><required>yes</required></attribute><attribute><name>htmlId</name><description>The id of an <key>HTML</key> element. If present, processing will be limited to this element. Will be ignored if a nested <stepref name="table" category=""/> step is used.</description><required>no</required></attribute><attribute><name>xpath</name><description>An XPath expression identifying an <key>HTML</key> element. If present, processing will be limited to this element. Will be ignored if <em>htmlId</em> is set or if a nested <stepref name="table" category=""/> step is used.</description><required>no</required></attribute></attributes></section><section title="Nested Parameters"><attributes><attribute><name>table</name><description>To locate a specific cell in a specific table on the page.</description><required>no</required></attribute><attribute><name>step</name><description>A webtest step.</description><required>yes</required></attribute></attributes></section><section title="Details"><post>
+
+    <b>The following example illustrates how to use the <em>storeLength</em> step (illustrating
+        the use of the nested table locator step):</b>
+
+    <code caption="storeLength example">
+        <include src="examples/storeLengthExample.xml"/>
+    </code>
+
+    <b>One of the ways to calculate the length value (so that you can write the test) is to use a
+        dummy value (e.g. '999') and then run the test. Then when it fails it will tell you what it was expecting.
+        Simply copy that value into your test. Eventually we may store length values in a file and populate the
+        file for you the first time the test is run or we may have a tool (e.g. Mozilla plug-in or one of the
+        other recorder tools) to pre-calculate length values for you.</b>
+
+    <b><em>See also</em>: the <stepref name="verifyContent"/>,
+        <stepref name="storeDigest"/>,
+        <stepref name="lineSeparatorFilter"/>,
+        <stepref name="replaceFilter"/>,
+        <stepref name="tagStripper"/> and
+        <stepref name="contentStripper"/> steps.
+    </b>
+
+</post></section></manpage>

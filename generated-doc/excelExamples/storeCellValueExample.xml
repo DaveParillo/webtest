@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>exceltest&nbsp;-&nbsp;store&nbsp;cell&nbsp;value</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testExcel.xls</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;...<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;simple&nbsp;comparison&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>excelStoreCellValue</tag>&nbsp;<att>property</att><val>intValue</val>&nbsp;<att>cell</att><val>B26</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>property</att><val>intValue</val>&nbsp;<att>text</att><val>23</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;...<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;comparison&nbsp;with&nbsp;manipulation:&nbsp;cell&nbsp;contains&nbsp;'$9.50'&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>excelStoreCellValue</tag>&nbsp;<att>property</att><val>dollarValue</val>&nbsp;<att>cell</att><val>C26</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;remove&nbsp;'$'&nbsp;and&nbsp;account&nbsp;for&nbsp;rounding&nbsp;errors&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>groovy</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;junit.framework.Assert.assertEquals(9.5&nbsp;as&nbsp;double,<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'#{dollarValue}'.substring(1).toDouble(),<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0000001&nbsp;as&nbsp;double)<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>groovy</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;...<n/>
+&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+..<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;assumes&nbsp;defaultpropertytype&nbsp;not&nbsp;set&nbsp;in&nbsp;config&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeProperty</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>description</att><val>convert&nbsp;dynamic&nbsp;to&nbsp;Ant</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>name</att><val>ant_prop</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>propertyType</att><val>ant</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>value</att><val>#{dyn_prop}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeProperty</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>description</att><val>convert&nbsp;Ant&nbsp;to&nbsp;dynamic</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>name</att><val>dyn_prop</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>value</att><val>${ant_prop}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeProperty</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>description</att><val>convert&nbsp;combination&nbsp;to&nbsp;dynamic</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>name</att><val>dyn_prop2</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>value</att><val>text_mixed_with_${ant_prop}_and_#{dyn_prop1}</val>/&gt;<n/>
+..<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage siteid="Step Index">
+<site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"/>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html">
+            <level3 name="SQLUnit Integration" url="sqlunit.html"/>
+        </level2>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site>
+<head title="Step Index"/>
+<section title="A">
+<dl>
+<li>
+<dt>
+<stepref name="alert" category="Extension"/>
+</dt>
+<dd>Provides the ability to set expectations in relation to user responses to <key>javascript</key> Alert Dialog boxes. Must be nested within the <stepref name="expectDialogs" category=""/> step.</dd>
+</li>
+<li>
+<dt>
+<stepref name="antWrapper" category="Extension"/>
+</dt>
+<dd>DEPRECATED as native ant tasks are handled transparently. Behaves just like the group step</dd>
+</li>
+<li>
+<dt>
+<stepref name="applyFilters" category="Filter"/>
+</dt>
+<dd>Applies one or more filters to the current response and treats the result as if it was a new response.</dd>
+</li>
+</dl>
+</section>
+<section title="C">
+<dl>
+<li>
+<dt>
+<stepref name="clickButton" category="Core"/>
+</dt>
+<dd>This step is used to locate a form button and then click it.</dd>
+</li>
+<li>
+<dt>
+<stepref name="clickElement" category="Extension"/>
+</dt>
+<dd>Clicks an <key>HTML</key> element identified by its <em>id</em> or <em>xpath</em>. If the click triggers the load of a new page, then this page becomes the current one.</dd>
+</li>
+<li>
+<dt>
+<stepref name="clickLink" category="Core"/>
+</dt>
+<dd>This step tries to locate a link (like &lt;a href='thisIsAnotherPage.html'&gt;Follow me&lt;/a&gt;) and to click on it. The page where this click leads to will be the current one for further actions.</dd>
+</li>
+<li>
+<dt>
+<stepref name="closeWindow" category="Extension"/>
+</dt>
+<dd>Closes the current top level window. The content of the last previously opened window will become the current response.</dd>
+</li>
+<li>
+<dt>
+<stepref name="config" category="General"/>
+</dt>
+<dd>This is a nested task of <stepref name="webtest" category="General"/> and is used to configure the target host system to use for a particular <stepref name="webtest" category="General"/> and several other features such as reporting of test results and printing of debug information.</dd>
+</li>
+<li>
+<dt>
+<stepref name="confirm" category="Extension"/>
+</dt>
+<dd>Provides the ability to set expectations in relation to user responses to <key>javascript</key> Confirm Dialog boxes. Must be nested within the <stepref name="expectDialogs" category=""/> step.</dd>
+</li>
+<li>
+<dt>
+<stepref name="contentStripper" category="Filter"/>
+</dt>
+<dd>Removes all content within well-formed XML/XHTML leaving only tags.</dd>
+</li>
+<li>
+<dt>
+<stepref name="countWebtestResults" category="Extension"/>
+</dt>
+<dd>This <key>ANT</key> task counts the WebTest results in the provided result file and can produce a build failure when some webtests have failed</dd>
+</li>
+</dl>
+</section>
+<section title="D">
+<dl>
+<li>
+<dt>
+<stepref name="dataDriven" category="Extension"/>
+</dt>
+<dd>This is an Ant task that calls its nested element as often as specified by the tableContainer. In each run a new set of properties from the the tableContainer is made available to the nested steps</dd>
+</li>
+<li>
+<dt>
+<stepref name="dragAndDrop" category="Extension"/>
+</dt>
+<dd>Drags an element to an other one</dd>
+</li>
+</dl>
+</section>
+<section title="E">
+<dl>
+<li>
+<dt>
+<stepref name="emailDeleteMessage" category="Email"/>
+</dt>
+<dd>Deletes a message with a given <em>messageId</em>.</dd>
+</li>
+<li>
+<dt>
+<stepref name="emailMessageContentFilter" category="Email"/>
+</dt>
+<dd>Returns the content associated with a message (or message Part) as the current response.</dd>
+</li>
+<li>
+<dt>
+<stepref name="emailMessageStructureFilter" category="Email"/>
+</dt>
+<dd>Returns the structure (expressed in XML) associated with a particular message as the current response.</dd>
+</li>
+<li>
+<dt>
+<stepref name="emailSetConfig" category="Email"/>
+</dt>
+<dd>Sets Email Configuration information.</dd>
+</li>
+<li>
+<dt>
+<stepref name="emailStoreHeader" category="Email"/>
+</dt>
+<dd>Stores the value of a message (or message part) header field into a property.</dd>
+</li>
+<li>
+<dt>
+<stepref name="emailStoreMessageCount" category="Email"/>
+</dt>
+<dd>Stores the number of messages (optionally matching provided criteria) into a property.</dd>
+</li>
+<li>
+<dt>
+<stepref name="emailStoreMessageId" category="Email"/>
+</dt>
+<dd>Stores the message id (optionally matching specific criteria) of a particular message.</dd>
+</li>
+<li>
+<dt>
+<stepref name="emailStoreMessageType" category="Email"/>
+</dt>
+<dd>Stores a string representing the message type, either '<em>Simple</em>' or '<em>MultiPart</em>'.</dd>
+</li>
+<li>
+<dt>
+<stepref name="emailStorePartCount" category="Email"/>
+</dt>
+<dd>Stores the number of parts found within a message. For old-style (non-MIME) uuencoded messages, this returns the number of uuencoded attachments. For new style MIME messages, it returns the number of MIME parts found.</dd>
+</li>
+<li>
+<dt>
+<stepref name="emailStorePartFilename" category="Email"/>
+</dt>
+<dd>Stores the filename of a message part. Fails if the message contains no parts or if the partIndex is invalid or if the part is an inline part with no filename.</dd>
+</li>
+<li>
+<dt>
+<stepref name="enableJavaScript" category="Extension"/>
+</dt>
+<dd>Provides the ability to activate / deactivate <key>javascript</key> support. (Javascript support is enabled by default)</dd>
+</li>
+<li>
+<dt>
+<stepref name="excelFindRow" category="Excel"/>
+</dt>
+<dd>This step allows you to find a specific row on a sheet. This is useful for using with repeat when you don't know how many rows there will be on a table. It starts from a specified cell and searches down for a row matching the given text in an Excel spreadsheet and saves the resulting row as a property.</dd>
+</li>
+<li>
+<dt>
+<stepref name="excelSelectSheet" category="Excel"/>
+</dt>
+<dd>Provides the ability to select the current sheet. Any subsequent calls to excel steps will use the selected sheet if not overridden</dd>
+</li>
+<li>
+<dt>
+<stepref name="excelStoreCellValue" category="Excel"/>
+</dt>
+<dd>Provides the ability to store the value of a cell in a property for later checking. Note that this step tests the actual stored value of the cell, not what is displayed in the spreadsheet. In particular, formulas will not be evaluated.</dd>
+</li>
+<li>
+<dt>
+<stepref name="excelStructureFilter" category="Excel"/>
+</dt>
+<dd>Extracts the structure of the current <key>xls</key> document, as a xml file.</dd>
+</li>
+<li>
+<dt>
+<stepref name="excelVerifyCellStyle" category="Excel"/>
+</dt>
+<dd>This step verifies the style of a specified cell in an Excel spreadsheet. Only those properties set will be checked.</dd>
+</li>
+<li>
+<dt>
+<stepref name="excelVerifyCellSum" category="Excel"/>
+</dt>
+<dd>This step verifies that a cell represents the sum of a range of cells, either as a formula (=SUM(&lt;range&gt;)) or numeric value.</dd>
+</li>
+<li>
+<dt>
+<stepref name="excelVerifyCellValue" category="Excel"/>
+</dt>
+<dd>This step verifies the value of a specified cell in an Excel spreadsheet. Note that this step tests the actual stored value of the cell, not what is displayed in the spreadsheet. In particular, formulas will not be evaluated.</dd>
+</li>
+<li>
+<dt>
+<stepref name="expectDialog" category="Extension"/>
+</dt>
+<dd>Provides the ability to set expectations in relation to user responses to <key>javascript</key> Dialog boxes (Alert, Confirm and Prompt dialogs).</dd>
+</li>
+<li>
+<dt>
+<stepref name="expectDialogs" category="Extension"/>
+</dt>
+<dd>Provides the ability to set expectations in relation to user responses to <key>javascript</key> Dialog boxes (Alert, Confirm and Prompt dialogs). Supports nested dialog steps such as <stepref name="alert" category=""/>, <stepref name="confirm" category=""/> and <stepref name="prompt" category=""/>. See also the <stepref name="verifyNoDialogs" category=""/> step.</dd>
+</li>
+</dl>
+</section>
+<section title="F">
+<dl>
+<li>
+<dt>
+<stepref name="followFrame" category="Core"/>
+</dt>
+<dd>Locates a frame by its name (e.g. <em>&lt;FRAME NAME='myFrame' SRC='myPage.jsp'&gt;</em>) and defines it as the "current" response for the next steps.</dd>
+</li>
+<li>
+<dt>
+<stepref name="forceHiddenInputField" category="Extension"/>
+</dt>
+<dd>Sets the value of a hidden input field. An example usage would be for a hidden input field that would normally be set by some unsupported <key>javascript</key>.</dd>
+</li>
+<li>
+<dt>
+<stepref name="forceInputFieldAttribute" category="Extension"/>
+</dt>
+<dd>Sets (or removes) the attribute value of a selected input field. An example usage would be to enable a disabled input field (perhaps to mimic some unsupported <key>javascript</key>).</dd>
+</li>
+</dl>
+</section>
+<section title="G">
+<dl>
+<li>
+<dt>
+<stepref name="groovy" category="Extension"/>
+</dt>
+<dd>Executes the provided Groovy script (the binding is the same for all groovy steps within a webtest).</dd>
+</li>
+<li>
+<dt>
+<stepref name="group" category="Core"/>
+</dt>
+<dd>This step allows grouping and giving a description to a sequence of nested steps. Any kind of step can be nested.</dd>
+</li>
+</dl>
+</section>
+<section title="I">
+<dl>
+<li>
+<dt>
+<stepref name="ifStep" category="Extension"/>
+</dt>
+<dd>Step which allows conditional execution of inner steps.</dd>
+</li>
+<li>
+<dt>
+<stepref name="invoke" category="Core"/>
+</dt>
+<dd>This step executes a request to a particular URL.</dd>
+</li>
+</dl>
+</section>
+<section title="L">
+<dl>
+<li>
+<dt>
+<stepref name="lineSeparatorFilter" category="Filter"/>
+</dt>
+<dd>Replaces all <em>line.separator</em> combinations within (part of) a response by a <em>LF</em> to support platform independent content processing. For use with steps which take a <em>ContentFilter</em>.</dd>
+</li>
+</dl>
+</section>
+<section title="M">
+<dl>
+<li>
+<dt>
+<stepref name="matchLinesFilter" category="Filter"/>
+</dt>
+<dd>Removes or keeps lines which match a <key>regex</key>. For use with steps which take a <em>ContentFilter</em>.</dd>
+</li>
+<li>
+<dt>
+<stepref name="mouseOut" category="Extension"/>
+</dt>
+<dd>Triggers a <em>mouseOut</em> event on the <key>HTML</key> element identified by its <em>id</em> or <em>xpath</em>. If this triggers the load of a new page, then this page becomes the current one.</dd>
+</li>
+<li>
+<dt>
+<stepref name="mouseOver" category="Extension"/>
+</dt>
+<dd>Triggers a <em>mouseOver</em> event on the <key>HTML</key> element identified by its <em>id</em> or <em>xpath</em>. If this triggers the load of a new page, then this page becomes the current one.</dd>
+</li>
+</dl>
+</section>
+<section title="N">
+<dl>
+<li>
+<dt>
+<stepref name="normalizeXml" category="Filter"/>
+</dt>
+<dd>Normalizes XML content.</dd>
+</li>
+<li>
+<dt>
+<stepref name="not" category="Core"/>
+</dt>
+<dd>This step encapsulates one or more test steps that are ALL expected to fail. Any kind of step can be nested.</dd>
+</li>
+</dl>
+</section>
+<section title="P">
+<dl>
+<li>
+<dt>
+<stepref name="pdfDecryptDocument" category="PDF"/>
+</dt>
+<dd>This step decrypts the current <key>pdf</key> document. It fails if the <key>pdf</key> document is not encrypted or if the password is wrong. After decrypting the <key>pdf</key> document, it will be available in its decrypted state for later <key>pdf</key> test steps.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfToBookmarksFilter" category="PDF"/>
+</dt>
+<dd>Extracts all bookmarks from within the current <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfToFontsFilter" category="PDF"/>
+</dt>
+<dd>Extracts all font information from within the current <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfToLinksFilter" category="PDF"/>
+</dt>
+<dd>Extracts all links from within the current <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfToTextFilter" category="PDF"/>
+</dt>
+<dd>Extracts all text content from within the current <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyBookmark" category="PDF"/>
+</dt>
+<dd>This step verifies the existence of a bookmark within a <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyCheckboxField" category="PDF"/>
+</dt>
+<dd>This step verifies a checkbox field in a <key>pdf</key> document. According to the <key>pdf</key> specification, fields with the same name must have the same value.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyEncryption" category="PDF"/>
+</dt>
+<dd>This step verifies whether a <key>pdf</key> document is encrypted and whether the user password and owner password are correct. This step should only be executed before (and not after) decrypting an encrypted <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyEncryptionPermissions" category="PDF"/>
+</dt>
+<dd>This step verifies encryption permissions of an encrypted <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyEncryptionProperty" category="PDF"/>
+</dt>
+<dd>This step verifies a property of the <em>encrypt</em> dictionary from an encrypted <key>pdf</key> document. The step must either verify the existence of the <em>encrypt</em> dictionary property key or it must verify its value.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyEncryptionStrength" category="PDF"/>
+</dt>
+<dd>This step verifies the encryption strength of an encrypted <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyField" category="PDF"/>
+</dt>
+<dd>This step verifies the existence of a field in a <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyFieldCount" category="PDF"/>
+</dt>
+<dd>This step verifies the number of fields in the <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyFont" category="PDF"/>
+</dt>
+<dd>This step verifies the existence of a font within the current <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyInfoProperty" category="PDF"/>
+</dt>
+<dd>This step verifies a property from the <em>info</em> dictionary of the current <key>pdf</key> document. The step must either verify the existence of the <em>info</em> dictionary property key or it must verify its value.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyLink" category="PDF"/>
+</dt>
+<dd>This step verifies the existence of a link within a <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyPageCount" category="PDF"/>
+</dt>
+<dd>This step verifies the number of fields in the <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyReadOnlyField" category="PDF"/>
+</dt>
+<dd>This step verifies the read-only status of a field in the <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyText" category="PDF"/>
+</dt>
+<dd>This step verifies the existence of the specified text in the <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyTextField" category="PDF"/>
+</dt>
+<dd>Verifies a text field in the <key>pdf</key> document. According to the <key>pdf</key> specification, fields with the same name must have the same value.</dd>
+</li>
+<li>
+<dt>
+<stepref name="pdfVerifyTitle" category="PDF"/>
+</dt>
+<dd>This step verifies the title of the <key>pdf</key> document.</dd>
+</li>
+<li>
+<dt>
+<stepref name="previousResponse" category="Core"/>
+</dt>
+<dd>This step provides the ability to revert to the previously loaded response for further testing of the previous page if testing of the current response is complete.</dd>
+</li>
+<li>
+<dt>
+<stepref name="prompt" category="Extension"/>
+</dt>
+<dd>Provides the ability to set expectations in relation to user responses to <key>javascript</key> Prompt Dialog boxes. Must be nested within the <stepref name="expectDialogs" category=""/> step.</dd>
+</li>
+</dl>
+</section>
+<section title="R">
+<dl>
+<li>
+<dt>
+<stepref name="repeat" category="Core"/>
+</dt>
+<dd>This step encapsulates one or more test steps that shall be repeated a certain number of times. Any kind of step can be nested.</dd>
+</li>
+<li>
+<dt>
+<stepref name="replaceFilter" category="Filter"/>
+</dt>
+<dd>Replaces part of a response with some constant data. For use with steps which take a <em>ContentFilter</em>.</dd>
+</li>
+<li>
+<dt>
+<stepref name="reportLinks" category="Extension"/>
+</dt>
+<dd>Spider-like visit of all the pages.</dd>
+</li>
+<li>
+<dt>
+<stepref name="reportSite" category="Extension"/>
+</dt>
+<dd>This step is used to test a complete site.</dd>
+</li>
+<li>
+<dt>
+<stepref name="retry" category="Extension"/>
+</dt>
+<dd>This step encapsulates one or more test steps that should pass eventually but may fail initially. Any kind of step can be nested.</dd>
+</li>
+</dl>
+</section>
+<section title="S">
+<dl>
+<li>
+<dt>
+<stepref name="scriptStep" category="Extension"/>
+</dt>
+<dd>Provides the ability to use scripting code in your tests.</dd>
+</li>
+<li>
+<dt>
+<stepref name="selectForm" category="Core"/>
+</dt>
+<dd>This step can be used to specify a form in the document as the <em>current form</em>. The <em>current form</em> is given precedence when locating the form to use in form-related steps.</dd>
+</li>
+<li>
+<dt>
+<stepref name="selectLinesFilter" category="Filter"/>
+</dt>
+<dd>Removes or keeps lines starting at a <em>start</em> <key>regex</key> until a <em>stop</em> <key>regex</key>. For use with steps which take a <em>ContentFilter</em>.</dd>
+</li>
+<li>
+<dt>
+<stepref name="selectWebClient" category="Extension"/>
+</dt>
+<dd>Selects the WebClient to navigate with, creating it if none exists with this name. Useful when a test sequence requires actions to be performed by different users (e.g. an admin and an normal user). If used with nested steps, the previously selected WebClient is selected again when the execution of the nested tests ends.</dd>
+</li>
+<li>
+<dt>
+<stepref name="selectWindow" category="Extension"/>
+</dt>
+<dd>Selects the content of a window as the current response. Useful when a test sequence causes many windows to open. Only one from 'name', 'title', or 'index' can be specified.</dd>
+</li>
+<li>
+<dt>
+<stepref name="setCheckbox" category="Core"/>
+</dt>
+<dd>Provides the ability to check and uncheck checkboxes in <key>HTML</key> forms.</dd>
+</li>
+<li>
+<dt>
+<stepref name="setFileField" category="Core"/>
+</dt>
+<dd>Provides the ability to set an &lt;input type="file" ...&gt; form field.</dd>
+</li>
+<li>
+<dt>
+<stepref name="setInputField" category="Core"/>
+</dt>
+<dd>Provides the ability to update text-oriented input fields in <key>HTML</key> forms (supports input fields of type <em>text</em> and <em>password</em> as well as <em>textareas</em>).</dd>
+</li>
+<li>
+<dt>
+<stepref name="setRadioButton" category="Core"/>
+</dt>
+<dd>Provides the ability to check radio buttons in <key>HTML</key> forms.</dd>
+</li>
+<li>
+<dt>
+<stepref name="setSelectField" category="Core"/>
+</dt>
+<dd>Provides the ability to update select fields in <key>HTML</key> forms.</dd>
+</li>
+<li>
+<dt>
+<stepref name="steps" category="General"/>
+</dt>
+<dd>This is a nested task of <stepref name="webtest" category="General"/> and is used to define the sequence of test steps to be executed.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeCookie" category="Core"/>
+</dt>
+<dd>Provides the ability to store an <key>HTTP</key> Cookie value for later checking.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeDigest" category="Extension"/>
+</dt>
+<dd>Stores a digest value for the response (or part of the response) into a property. This is useful when you don't care what the value within a response is but you want to ensure that the generated content hasn't changed. If any single character in the response changes, so will the digest. Supports content filters such as <stepref name="lineSeparatorFilter" category=""/> and <stepref name="replaceFilter" category=""/> to allow you to filter out changes that you don't care about and the <stepref name="table" category="Core"/> locator step if you are interested in content within a table.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeElementAttribute" category="Extension"/>
+</dt>
+<dd>Retrieves a particular attribute value of an element. E.g. the <em>style</em> attribute could be retrieved for an <key>HTML</key> element such as &lt;TD style='color:green' ...&gt;</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeHeader" category="Core"/>
+</dt>
+<dd>Provides the ability to store an <key>HTTP</key> Header value for later checking</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeInputFieldAttribute" category="Extension"/>
+</dt>
+<dd>Retrieves the attribute value of a selected input field. Can be used to check whether an input field is enabled.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeLength" category="Extension"/>
+</dt>
+<dd>Stores a length value for the response (or part of the response) into a property. This is useful when you don't care about the content within a response but wish to ensure that at least the length hasn't changed from some expected value. Supports content filters such as <stepref name="lineSeparatorFilter" category=""/> and <stepref name="replaceFilter" category=""/> to allow you to filter out content that you are not interested in and the <stepref name="table" category="Core"/> locator step if you are interested in content within a table.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeLinkParameter" category="Extension"/>
+</dt>
+<dd>Extracts the value of the specified parameter in the link and stores it as a property.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeProperty" category="Core"/>
+</dt>
+<dd>Provides the ability to store a given value into a property. It supports both dynamic properties and traditional ant properties.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeRandom" category="Extension"/>
+</dt>
+<dd>Provides the ability to store a random number, string or token value for later processing. Useful to avoid setting (and maintaining) large numbers of properties containing test data when specific test values aren't important.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeRegEx" category="Core"/>
+</dt>
+<dd>This step stores the result of a <key>regex</key> into a property. By specifying a particular group of the <key>regex</key> it is easily to extract only a subset of a given <key>regex</key>.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeResponseCode" category="Extension"/>
+</dt>
+<dd>Provides the ability to store the <key>HTTP</key> Response Code value for later checking.</dd>
+</li>
+<li>
+<dt>
+<stepref name="storeXPath" category="Core"/>
+</dt>
+<dd>This step stores the result of an <key>XPATH</key> expression into a property.</dd>
+</li>
+</dl>
+</section>
+<section title="T">
+<dl>
+<li>
+<dt>
+<stepref name="tagStripper" category="Filter"/>
+</dt>
+<dd>Removes all tags within well-formed XML/XHTML content.</dd>
+</li>
+<li>
+<dt>
+<stepref name="testInfo" category="Core"/>
+</dt>
+<dd>Provides the ability to display 'static' information in report. This step does nothing. It just gets reported as it (with its attributes) in the report.</dd>
+</li>
+<li>
+<dt>
+<stepref name="timedGroup" category="Extension"/>
+</dt>
+<dd>This step allows nesting of other steps. Any kind of step can be nested. Execution of the group is deemed successful if all the nested steps are executed successfully and the total execution time for the group is less than the time given by the <em>maxSeconds</em> or <em>maxMillis</em> parameters.</dd>
+</li>
+</dl>
+</section>
+<section title="V">
+<dl>
+<li>
+<dt>
+<stepref name="verifyCheckbox" category="Core"/>
+</dt>
+<dd>This step is used to verify the state of a checkbox (checked/unchecked). A particular checkbox can be specified via <em>name</em> and optionally <em>value</em> (or alternatively by <em>fieldIndex</em>).</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyContent" category="Extension"/>
+</dt>
+<dd>Compares the current response with an expected file. Supports content filters such as <stepref name="lineSeparatorFilter" category=""/> and <stepref name="replaceFilter" category=""/> and the nested <stepref name="table" category="Core"/> step.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyCookie" category="Core"/>
+</dt>
+<dd>Provides the ability to check an <key>HTTP</key> Cookie value.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyDocumentURL" category="Extension"/>
+</dt>
+<dd>This step verifies that the document URL matches the supplied text (potentially using a <key>regex</key>).</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyElement" category="Core"/>
+</dt>
+<dd>This step verifies the existence of a particular <key>HTML</key> element (tag) in the result page. It is identified by its <key>HTML</key> element type (e.g. TITLE, HEAD, etc.) and the <em>text</em> value of the NAME attribute.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyElementText" category="Core"/>
+</dt>
+<dd>This step verifies whether the <key>HTML</key> element specified by <em>htmlId</em> or <em>type</em> and optional <em>name</em> encloses <em>text</em> between its opening and closing tags.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyHeader" category="Extension"/>
+</dt>
+<dd>Verifies that the current response contains the specified <key>HTTP</key> Header.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyImages" category="Extension"/>
+</dt>
+<dd>Verifies that all images referenced in the current response are available. May not correctly detect images referenced in JavaScript or CSS files or images set by JavaScript.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyInputField" category="Core"/>
+</dt>
+<dd>This step verifies the value of a particular input field. It is typically used to check that input field defaults are correctly set.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyLinkedContent" category="Extension"/>
+</dt>
+<dd>Verify all selected links on a page for existence and, optionally, mime-type.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyLinks" category="Core"/>
+</dt>
+<dd>This step checks the validity of all links on the current page. Non-<key>HTML</key> pages (CSS, <key>javascript</key>, <key>XML</key> files) are not checked for internal links. Non-<key>HTTP</key> links (mail addresses, ftp etc.) are not checked or followed.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyNoDialogs" category="Extension"/>
+</dt>
+<dd>Used in conjunction with the <stepref name="expectDialog" category="Extension"/> and <stepref name="expectDialogs" category="Extension"/> steps when dealing with <key>javascript</key> Dialog boxes. This step checks that all user responses expected were in fact "consumed" by <key>javascript</key>.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyProperty" category="Core"/>
+</dt>
+<dd>This step verifies whether the value of a webtest dynamic property or an ant property matches an expected text value. The text value can represent a <key>regex</key>. If the text value is omitted, the step simply checks for the presence of the property.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyRadioButton" category="Core"/>
+</dt>
+<dd>This step is used to verify the state of a radio button (checked/unchecked). A particular radio button can be specified via <em>name</em> and optionally <em>value</em> (or alternatively by <em>fieldIndex</em>).</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifySelectField" category="Core"/>
+</dt>
+<dd>This step verifies whether a particular SELECT - Option Selector exists and is marked as selected. The option selector may be chosen by either its <em>value</em> attribute or the <em>text</em> associated with the selector.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyText" category="Core"/>
+</dt>
+<dd>This step verifies the existence of the specified string somewhere in the response received from server (ie the changes that may have occured since the page has been loaded are not seen by this step). The text could represent an <key>HTML</key> fragment like "&lt;BODY&gt;" or a arbitrary static text in the page ("An application error has occurred!").</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyTextarea" category="Core"/>
+</dt>
+<dd>This step is a "shortcut" for <em>&lt;verifyElementText type="TEXTAREA" ...&gt;</em>.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyTitle" category="Core"/>
+</dt>
+<dd>This step verifies whether the text enclosed by the <key>HTML</key> title tag (&lt;TITLE&gt; ... &lt;/TITLE&gt;) matches some specified text. The specified text can represent a <key>regex</key>.</dd>
+</li>
+<li>
+<dt>
+<stepref name="verifyXPath" category="Core"/>
+</dt>
+<dd>This step verifies that an <key>XPATH</key> expression is true or has a certain value. Useful for <key>XML</key> and <key>HTML</key> pages.</dd>
+</li>
+</dl>
+</section>
+<section title="W">
+<dl>
+<li>
+<dt>
+<stepref name="webtest" category="General"/>
+</dt>
+<dd>This <key>ANT</key> task provides the ability to specify and execute functional tests for web-based applications. The steps of the test specification to execute are defined as a sequence of nested test steps. Each <em>&lt;webtest&gt;</em> task is executed in its own web session, i.e. two subsequent <em>&lt;webtest&gt;</em> tasks are executed in different sessions. This task was previously named "testSpec". For compatibility reasons, both names will work.</dd>
+</li>
+</dl>
+</section>
+</manpage>

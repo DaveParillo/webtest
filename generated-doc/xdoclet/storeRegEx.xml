@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="storeRegEx"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"><level3 name="clickButton" url="clickButton.html"/><level3 name="clickLink" url="clickLink.html"/><level3 name="followFrame" url="followFrame.html"/><level3 name="group" url="group.html"/><level3 name="invoke" url="invoke.html"/><level3 name="not" url="not.html"/><level3 name="previousResponse" url="previousResponse.html"/><level3 name="repeat" url="repeat.html"/><level3 name="selectForm" url="selectForm.html"/><level3 name="setCheckbox" url="setCheckbox.html"/><level3 name="setFileField" url="setFileField.html"/><level3 name="setInputField" url="setInputField.html"/><level3 name="setRadioButton" url="setRadioButton.html"/><level3 name="setSelectField" url="setSelectField.html"/><level3 name="storeCookie" url="storeCookie.html"/><level3 name="storeHeader" url="storeHeader.html"/><level3 name="storeProperty" url="storeProperty.html"/><level3 name="storeRegEx" url="storeRegEx.html"/><level3 name="storeXPath" url="storeXPath.html"/><level3 name="table" url="table.html"/><level3 name="testInfo" url="testInfo.html"/><level3 name="verifyCheckbox" url="verifyCheckbox.html"/><level3 name="verifyCookie" url="verifyCookie.html"/><level3 name="verifyElement" url="verifyElement.html"/><level3 name="verifyElementText" url="verifyElementText.html"/><level3 name="verifyInputField" url="verifyInputField.html"/><level3 name="verifyLinks" url="verifyLinks.html"/><level3 name="verifyProperty" url="verifyProperty.html"/><level3 name="verifyRadioButton" url="verifyRadioButton.html"/><level3 name="verifySelectField" url="verifySelectField.html"/><level3 name="verifyText" url="verifyText.html"/><level3 name="verifyTextarea" url="verifyTextarea.html"/><level3 name="verifyTitle" url="verifyTitle.html"/><level3 name="verifyXPath" url="verifyXPath.html"/></level2>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"/>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Core Step| storeRegEx"/><section title="Description"><b>This step stores the result of a <key>regex</key> into a property. By specifying a particular group of the <key>regex</key> it is easily to extract only a subset of a given <key>regex</key>.</b></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>text</name><description>The <key>regex</key> that shall be evaluated.</description><required>true</required></attribute><attribute><name>property</name><description>The name of the property that shall receive the extracted value.</description><required>true</required></attribute><attribute><name>group</name><description>The group within the <key>regex</key> to extract into the specified property.</description><required>no, default is
+					0 (result of the whole expression)</required></attribute><attribute><name>propertyType</name><description>The type of the property in which to store the retrieve value. Either "ant" or "dynamic".</description><required>no, default is
+					the "defaultPropertyType" as specified in the "config" element is used.</required></attribute></attributes></section><section title="Details"><post>
+
+    <b>The following example extracts a URL from a <key>javascript</key> statement associated with an <em>onclick</em> event handler.</b>
+
+    <code caption="storeRegEx">
+        <include src="examples/storeregexExample.xml"/>
+    </code>
+
+</post></section></manpage>

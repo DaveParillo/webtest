@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>antWrapper</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>echo</tag>&gt;Using&nbsp;SQL&nbsp;to&nbsp;check&nbsp;precondition:&nbsp;test&nbsp;name&nbsp;doesn't&nbsp;exist&lt;/<tag>echo</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>sql</tag>&nbsp;...&nbsp;<att>output</att><val>items.txt</val>&gt;select&nbsp;*&nbsp;from&nbsp;names&lt;/<tag>sql</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;/<tag>antWrapper</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>items.txt</val>/&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>not</tag>&nbsp;<att>description</att><val>should&nbsp;not&nbsp;be&nbsp;found</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>testvalue</val>/&gt;<n/>
+&nbsp;&nbsp;&lt;/<tag>not</tag>&gt;<n/>
+<n/>
+&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>http://mysite/adduser.jsp</val>/&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>setInputField</tag>&nbsp;<att>name</att><val>name</val>&nbsp;<att>value</att><val>testvalue</val>/&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>clickButton</tag>&nbsp;<att>name</att><val>add</val>/&gt;<n/>
+<n/>
+&nbsp;&nbsp;&lt;<tag>antWrapper</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>echo</tag>&gt;Using&nbsp;SQL&nbsp;to&nbsp;check&nbsp;name&nbsp;added&lt;/<tag>echo</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>sql</tag>&nbsp;...&nbsp;<att>output</att><val>items.txt</val>&gt;select&nbsp;*&nbsp;from&nbsp;names&lt;/<tag>sql</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;/<tag>antWrapper</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>items.txt</val>/&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>testvalue</val>/&gt;<n/>
+<n/>
+&nbsp;&nbsp;&lt;<tag>antWrapper</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>echo</tag>&gt;Using&nbsp;SQL&nbsp;to&nbsp;do&nbsp;post&nbsp;test&nbsp;cleanup&nbsp;(remove&nbsp;test&nbsp;name)&lt;/<tag>echo</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>sql</tag>&nbsp;...&gt;delete&nbsp;from&nbsp;names&nbsp;where&nbsp;name='testvalue'&lt;/<tag>sql</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;/<tag>antWrapper</tag>&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

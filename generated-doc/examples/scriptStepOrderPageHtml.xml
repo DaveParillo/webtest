@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>html</tag>&gt;<n/>
+...<n/>
+&lt;<tag>h1</tag>&gt;Your&nbsp;Order&lt;/<tag>h1</tag>&gt;<n/>
+&lt;<tag>table</tag>&nbsp;border='1'&nbsp;width='60%'&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>tr</tag>&gt;&lt;<tag>th</tag>&gt;Item&lt;/<tag>th</tag>&gt;&lt;<tag>th</tag>&gt;Qty&lt;/<tag>th</tag>&gt;&lt;<tag>th</tag>&gt;Unit&nbsp;Price&lt;/<tag>th</tag>&gt;&lt;<tag>th</tag>&gt;Amount&lt;/<tag>th</tag>&gt;&lt;/<tag>tr</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>tr</tag>&nbsp;class='lineitem'&gt;&lt;<tag>td</tag>&gt;Mouse&nbsp;Pad&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&gt;3&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&gt;5&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&gt;15&lt;/<tag>td</tag>&gt;&lt;/<tag>tr</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>tr</tag>&nbsp;class='lineitem'&gt;&lt;<tag>td</tag>&gt;USB&nbsp;Memory&nbsp;Stick&nbsp;512Mb&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&gt;1&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&gt;50&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&gt;50&lt;/<tag>td</tag>&gt;&lt;/<tag>tr</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>tr</tag>&nbsp;class='total'&gt;&lt;<tag>td</tag>&gt;Total&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&gt;4&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&gt;&amp;nbsp;&lt;/<tag>td</tag>&gt;&lt;<tag>td</tag>&gt;65&lt;/<tag>td</tag>&gt;&lt;/<tag>tr</tag>&gt;<n/>
+&lt;/<tag>table</tag>&gt;<n/>
+...<n/>
+&lt;/<tag>html</tag>&gt;<n/>
+</source>

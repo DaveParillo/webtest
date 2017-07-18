@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>forceHiddenInputField:&nbsp;Show&nbsp;working&nbsp;javascript&nbsp;example&nbsp;that&nbsp;sets&nbsp;hidden&nbsp;field</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifytitle</tag>&nbsp;<att>description</att><val>check&nbsp;we&nbsp;are&nbsp;on&nbsp;the&nbsp;test&nbsp;page</val>&nbsp;<att>text</att><val>Hidden&nbsp;Field&nbsp;Test&nbsp;Page</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>check&nbsp;original&nbsp;value&nbsp;of&nbsp;hidden&nbsp;field</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>xpath</att><val>//form/input[@id='real']/@value</val>&nbsp;<att>text</att><val>zzz</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>setInputField</tag>&nbsp;<att>description</att><val>anything&nbsp;here&nbsp;should&nbsp;change&nbsp;hidden&nbsp;field</val>&nbsp;<att>name</att><val>field1</val>&nbsp;<att>value</att><val>dummy</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>check&nbsp;updated&nbsp;value&nbsp;of&nbsp;hidden&nbsp;field</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>xpath</att><val>//form/input[@id='real']/@value</val>&nbsp;<att>text</att><val>xxx</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

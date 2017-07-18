@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>exceltest&nbsp;-&nbsp;verify&nbsp;cell&nbsp;sum</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testExcel.xls</val>/&gt;<n/>
+<t/><t/>...<n/>
+<t/><t/>&lt;<tag>excelVerifyCellSum</tag>&nbsp;<att>cell</att><val>C8</val>&nbsp;<att>range</att><val>C4:C7</val>/&gt;<n/>
+<t/><t/>...<n/>
+<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>!DOCTYPE</tag>&nbsp;project&nbsp;SYSTEM&nbsp;"../dtd/Project.dtd"&gt;<n/>
+<n/>
+&lt;<tag>project</tag>&nbsp;<att>default</att><val>test</val>&gt;<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>test</val>&gt;<n/>
+<t/><t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>my&nbsp;simple&nbsp;Test</val>&gt;<n/>
+<t/><t/><t/>&amp;goToLogin;<n/>
+<t/><t/><t/>&lt;<tag>setInputField</tag>&nbsp;<att>forLabel</att><val>Login</val>&nbsp;<att>text</att><val>John</val>/&gt;<n/>
+<t/><t/><t/>&lt;<tag>setInputField</tag>&nbsp;<att>forLabel</att><val>Password</val>&nbsp;<att>text</att><val>secret</val>/&gt;<n/>
+<t/><t/><t/>&lt;<tag>clickButton</tag>&nbsp;<att>label</att><val>Login</val>/&gt;<n/>
+<t/><t/><t/>...<n/>
+<t/><t/>&lt;/<tag>webtest</tag>&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

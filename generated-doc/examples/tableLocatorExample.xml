@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Locating&nbsp;cells&nbsp;in&nbsp;tables</val>&gt;<n/>
+<t/>&amp;sharedConfiguration;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>...<n/>
+<t/><t/>&lt;<tag>verifyText</tag>&nbsp;<att>description</att><val>verify&nbsp;text&nbsp;of&nbsp;located&nbsp;cell</val><n/>
+<t/><t/><t/><att>text</att><val>1:1</val>&nbsp;&gt;<n/>
+<t/><t/><t/>&lt;<tag>table</tag>&nbsp;<att>row</att><val>1</val>&nbsp;<att>column</att><val>1</val>&nbsp;<att>htmlid</att><val>test</val>/&gt;<n/>
+<t/><t/>&lt;/<tag>verifyText</tag>&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

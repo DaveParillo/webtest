@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>!ENTITY</tag>&nbsp;goToLogin&nbsp;SYSTEM&nbsp;"../includes/goToLogin.xml"&gt;<n/>
+</source>

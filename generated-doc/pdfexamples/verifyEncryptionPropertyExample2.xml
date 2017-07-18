@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>pdftest&nbsp;-&nbsp;verify&nbsp;encrypt&nbsp;property&nbsp;value</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyEncryptProperty</tag>&nbsp;<att>description</att><val>Encrypt&nbsp;property&nbsp;value</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>key</att><val>Filter</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>value</att><val>Stand.*</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;...<n/>
+&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

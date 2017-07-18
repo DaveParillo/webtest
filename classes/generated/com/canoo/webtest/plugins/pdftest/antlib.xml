@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<antlib>
+  <taskdef name="toLinksFilter" classname="com.canoo.webtest.plugins.pdftest.PdfToLinksFilter"/>
+  <taskdef name="verifyTitle" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyTitleStep"/>
+  <taskdef name="verifyPageCount" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyNumberOfPagesStep"/>
+  <taskdef name="toFontsFilter" classname="com.canoo.webtest.plugins.pdftest.PdfToFontsFilter"/>
+  <taskdef name="verifyLink" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyLinkStep"/>
+  <taskdef name="decryptDocument" classname="com.canoo.webtest.plugins.pdftest.PdfDecryptDocumentStep"/>
+  <taskdef name="verifyInfoProperty" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyInfoPropertyStep"/>
+  <taskdef name="verifyField" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyFieldStep"/>
+  <taskdef name="toBookmarksFilter" classname="com.canoo.webtest.plugins.pdftest.PdfToBookmarksFilter"/>
+  <taskdef name="verifyEncryption" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyEncryptionStep"/>
+  <taskdef name="verifyEncryptionPermissions" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyEncryptionPermissionsStep"/>
+  <taskdef name="verifyTextField" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyTextFieldStep"/>
+  <taskdef name="verifyFont" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyFontStep"/>
+  <taskdef name="verifyEncryptionStrength" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyEncryptionStrengthStep"/>
+  <taskdef name="verifyCheckboxField" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyCheckboxFieldStep"/>
+  <taskdef name="verifyText" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyTextStep"/>
+  <taskdef name="verifyReadOnlyField" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyReadOnlyFieldStep"/>
+  <taskdef name="verifyBookmark" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyBookmarkStep"/>
+  <taskdef name="verifyEncryptionProperty" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyEncryptionPropertyStep"/>
+  <taskdef name="toTextFilter" classname="com.canoo.webtest.plugins.pdftest.PdfToTextFilter"/>
+  <taskdef name="verifyFieldCount" classname="com.canoo.webtest.plugins.pdftest.PdfVerifyNumberOfFieldsStep"/>
+</antlib>

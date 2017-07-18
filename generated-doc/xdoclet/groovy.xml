@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="groovy"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"><level3 name="alert" url="alert.html"/><level3 name="antWrapper" url="antWrapper.html"/><level3 name="clickElement" url="clickElement.html"/><level3 name="closeWindow" url="closeWindow.html"/><level3 name="condition" url="condition.html"/><level3 name="confirm" url="confirm.html"/><level3 name="countWebtestResults" url="countWebtestResults.html"/><level3 name="dataDriven" url="dataDriven.html"/><level3 name="dragAndDrop" url="dragAndDrop.html"/><level3 name="enableJavaScript" url="enableJavaScript.html"/><level3 name="expectDialog" url="expectDialog.html"/><level3 name="expectDialogs" url="expectDialogs.html"/><level3 name="forceHiddenInputField" url="forceHiddenInputField.html"/><level3 name="forceInputFieldAttribute" url="forceInputFieldAttribute.html"/><level3 name="groovy" url="groovy.html"/><level3 name="ifStep" url="ifStep.html"/><level3 name="mouseOut" url="mouseOut.html"/><level3 name="mouseOver" url="mouseOver.html"/><level3 name="prompt" url="prompt.html"/><level3 name="reportLinks" url="reportLinks.html"/><level3 name="reportSite" url="reportSite.html"/><level3 name="retry" url="retry.html"/><level3 name="scriptStep" url="scriptStep.html"/><level3 name="selectWebClient" url="selectWebClient.html"/><level3 name="selectWindow" url="selectWindow.html"/><level3 name="storeDigest" url="storeDigest.html"/><level3 name="storeElementAttribute" url="storeElementAttribute.html"/><level3 name="storeInputFieldAttribute" url="storeInputFieldAttribute.html"/><level3 name="storeLength" url="storeLength.html"/><level3 name="storeLinkParameter" url="storeLinkParameter.html"/><level3 name="storeRandom" url="storeRandom.html"/><level3 name="storeResponseCode" url="storeResponseCode.html"/><level3 name="timedGroup" url="timedGroup.html"/><level3 name="verifyContent" url="verifyContent.html"/><level3 name="verifyDocumentURL" url="verifyDocumentURL.html"/><level3 name="verifyHeader" url="verifyHeader.html"/><level3 name="verifyImages" url="verifyImages.html"/><level3 name="verifyLinkedContent" url="verifyLinkedContent.html"/><level3 name="verifyNoDialogs" url="verifyNoDialogs.html"/></level2>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Extension Step| groovy"/><section title="Description"><b>Executes the provided Groovy script (the binding is the same for all groovy steps within a webtest).</b></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>replaceProperties</name><description>Indicates if properties (${...} and #{...}) present in the script should be replaced by their value. Use carefully as ${...} is although the syntax for GString.</description><required>no, default is
+					false</required></attribute><attribute><name>file</name><description>The name of the file containing the script code. You may omit this parameter if you have embedded script code.</description><required>yes/no</required></attribute></attributes></section><section title="Inline Text"><b>The
+							<em>inline text</em>
+							is all the text between the start tag (
+							<example>&lt;groovy&gt;</example>
+							) and the end tag (
+							<example>&lt;/groovy&gt;</example>
+							), including blanks, tabs or newlines. Using a pair of start/end tags (
+							<example>&lt;groovy&gt; &lt;/groovy&gt;</example>
+							) has not the same behavior than the seemingly equivalent empty element tag (
+							<example>&lt;groovy/&gt;</example>
+							)! See
+							<ext href="browse/WT-228" base="jira">this issue</ext>
+							for an example.
+						</b><attributes><attribute><name>text</name><description>The script to execute. You may omit this if you use the attribute file.</description><required>yes/no</required></attribute></attributes></section><section title="Details"><post>
+    <b>When you are supplying the scripting code you can define methods and variables
+        as needed. In addition, you can call any of the Java methods which would be available
+        to the <em>&lt;groovy&gt;</em> step. See the API documentation for WebTest to determine
+        what method calls are available.</b>
+    <b>As an example, the <em>GroovyStep</em> class extends
+        the <em>Step</em> class which has a <em>getContext()</em> method which returns the
+        current <em>Context</em> which has a method <em>getCurrentResponse()</em> which
+        returns the current response which has a method <em>getDocumentElement()</em>.
+        In groovy you can just use <em>step.context.currentResponse.documentElement</em> to
+        return the current HTML document.</b>
+    <b>In addition to the functionality available to the <em>GroovyStep</em> class, there
+        are additional convenience variables <em>step</em> and <em>out</em> available to let
+        the script access itself or its log respectively.</b>
+
+    <dl>
+        <li>
+            <dt>step</dt>
+            <dd>The groovy step itself.</dd>
+        </li>
+        <li>
+            <dt>out</dt>
+            <dd>Mapped to step's log (at the debug level).</dd>
+        </li>
+    </dl>
+
+    <b>Note that the groovy step does not provide all the convenience variables provided by scriptStep.
+        The value of the missing variables are easily computed as follows:</b>
+
+    <dl>
+        <li>
+            <dt>document, for an html page</dt>
+            <dd>step.context.currentResponse.documentElement</dd>
+            <dt>document, for an xml page</dt>
+            <dd>step.context.currentResponse.xmlDocumentElement</dd>
+            <dt>response</dt>
+            <dd>step.context.currentResponse.webResponse</dd>
+        </li>
+    </dl>
+
+    <b>
+        The examples reuse the scenario of the
+        <stepref name="scriptStep" category="Extension"/>
+        .
+    </b>
+
+    <b>
+        <em>Order Example</em>
+    </b>
+
+    <code caption="OrderTest">
+        <include src="examples/groovyStepOrderExample.xml"/>
+    </code>
+
+    <b>
+        <em>Traffic Light Example</em>
+    </b>
+
+    <code caption="GroovyTrafficLightTest">
+        <include src="examples/groovyStepTrafficLightExample.xml"/>
+    </code>
+
+    <b>Rather than having the scripting code inline, you can place
+        it in a file and reference that file as follows:</b>
+
+    <code caption="GroovyFileTrafficLightTest">
+        <include src="examples/groovyStepTrafficLightFileExample.xml"/>
+    </code>
+</post></section></manpage>

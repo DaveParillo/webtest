@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>clickElement:&nbsp;Click&nbsp;Table&nbsp;Cell</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>start</val>&nbsp;<att>url</att><val>colorChange.html</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;first&nbsp;row&nbsp;tests&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeElementAttribute</tag>&nbsp;<att>htmlId</att><val>red</val>&nbsp;<att>attributeName</att><val>style</val>&nbsp;<att>propertyName</att><val>colorBefore1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>colorBefore1</val>&nbsp;<att>text</att><val>.*backgroundColor:[&nbsp;]*red.*</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickElement</tag>&nbsp;<att>description</att><val>toggle&nbsp;color&nbsp;of&nbsp;first&nbsp;row</val>&nbsp;<att>htmlId</att><val>red</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeElementAttribute</tag>&nbsp;<att>htmlId</att><val>red</val>&nbsp;<att>attributeName</att><val>style</val>&nbsp;<att>propertyName</att><val>colorAfter1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>colorAfter1</val>&nbsp;<att>text</att><val>.*backgroundColor:[&nbsp;]*yellow.*</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickElement</tag>&nbsp;<att>description</att><val>toggle&nbsp;color&nbsp;of&nbsp;first&nbsp;row&nbsp;back</val>&nbsp;<att>htmlId</att><val>red</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeElementAttribute</tag>&nbsp;<att>htmlId</att><val>red</val>&nbsp;<att>attributeName</att><val>style</val>&nbsp;<att>propertyName</att><val>colorFinal1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>colorFinal1</val>&nbsp;<att>text</att><val>.*backgroundColor:[&nbsp;]*red.*</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;second&nbsp;row&nbsp;tests&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeElementAttribute</tag>&nbsp;<att>xpath</att><val>//tr[2]</val>&nbsp;<att>attributeName</att><val>style</val>&nbsp;<att>propertyName</att><val>colorBefore2</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>colorBefore2</val>&nbsp;<att>text</att><val>.*backgroundColor:[&nbsp;]*green.*</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickElement</tag>&nbsp;<att>description</att><val>toggle&nbsp;color&nbsp;of&nbsp;second&nbsp;row</val>&nbsp;<att>xpath</att><val>//tr[2]</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeElementAttribute</tag>&nbsp;<att>xpath</att><val>//tr[2]</val>&nbsp;<att>attributeName</att><val>style</val>&nbsp;<att>propertyName</att><val>colorAfter2</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>colorAfter2</val>&nbsp;<att>text</att><val>.*backgroundColor:[&nbsp;]*yellow.*</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

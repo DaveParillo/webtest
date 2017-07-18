@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>project</tag>&nbsp;<att>name</att><val>SimpleTest</val>&nbsp;<att>basedir</att><val>.</val>&nbsp;<att>default</att><val>wt.full</val>&gt;<n/>
+<n/>
+<t/>&lt;<tag>property</tag>&nbsp;<att>name</att><val>webtest.home</val>&nbsp;<att>location</att><val>C:/java/webtest</val>&nbsp;/&gt;<n/>
+<t/>&lt;<tag>import</tag>&nbsp;<att>file</att><val>${webtest.home}/webtest.xml</val>/&gt;<n/>
+<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>wt.testInWork</val>&gt;<n/>
+<t/><t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>my&nbsp;simple&nbsp;Test</val>&gt;<n/>
+<t/><t/><t/>&lt;<tag>invoke</tag><n/>
+<t/><t/><t/><t/><att>url</att><val>http://www.myserver.com:8080/myApp/login</val><n/>
+<t/><t/><t/><t/><att>description</att><val>get&nbsp;Login&nbsp;Page</val>&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;<tag>verifyTitle</tag>&nbsp;<n/>
+<t/><t/><t/><t/><att>text</att><val>Login&nbsp;Page</val><n/>
+<t/><t/><t/><t/><att>description</att><val>we&nbsp;should&nbsp;see&nbsp;the&nbsp;login&nbsp;title</val>&nbsp;/&gt;<n/>
+<t/><t/>&lt;/<tag>webtest</tag>&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

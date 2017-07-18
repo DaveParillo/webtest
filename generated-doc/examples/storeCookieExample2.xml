@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>cookie:&nbsp;visit&nbsp;count&nbsp;test&nbsp;example</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>header</tag>&nbsp;<att>name</att><val>Cookie</val>&nbsp;<att>value</att><val>visitCount=100</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>config</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>expect&nbsp;cookie-based&nbsp;counter&nbsp;to&nbsp;be&nbsp;100</val>&nbsp;<att>url</att><val>visitCount.jsp</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyTitle</tag>&nbsp;<att>description</att><val>confirm&nbsp;correct&nbsp;page</val>&nbsp;<att>regex</att><val>true</val>&nbsp;<att>text</att><val>Visit&nbsp;Counter.*</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyCookie</tag>&nbsp;<att>description</att><val>cookie-based&nbsp;counter&nbsp;should&nbsp;have&nbsp;been&nbsp;incremented&nbsp;from&nbsp;preset&nbsp;value</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>name</att><val>visitCount</val>&nbsp;<att>text</att><val>101</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

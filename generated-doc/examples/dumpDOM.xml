@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>groovy</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;println&nbsp;step.context.currentResponse.asXml()<n/>
+&lt;/<tag>groovy</tag>&gt;<n/>
+</source>

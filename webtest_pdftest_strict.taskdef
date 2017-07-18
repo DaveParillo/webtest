@@ -1,0 +1,23 @@
+# strict taskdef generated during webtest's build
+# Following entries are extracted from javadoc.
+pdfToLinksFilter:com.canoo.webtest.plugins.pdftest.PdfToLinksFilter
+pdfVerifyTitle:com.canoo.webtest.plugins.pdftest.PdfVerifyTitleStep
+pdfVerifyPageCount:com.canoo.webtest.plugins.pdftest.PdfVerifyNumberOfPagesStep
+pdfToFontsFilter:com.canoo.webtest.plugins.pdftest.PdfToFontsFilter
+pdfVerifyLink:com.canoo.webtest.plugins.pdftest.PdfVerifyLinkStep
+pdfDecryptDocument:com.canoo.webtest.plugins.pdftest.PdfDecryptDocumentStep
+pdfVerifyInfoProperty:com.canoo.webtest.plugins.pdftest.PdfVerifyInfoPropertyStep
+pdfVerifyField:com.canoo.webtest.plugins.pdftest.PdfVerifyFieldStep
+pdfToBookmarksFilter:com.canoo.webtest.plugins.pdftest.PdfToBookmarksFilter
+pdfVerifyEncryption:com.canoo.webtest.plugins.pdftest.PdfVerifyEncryptionStep
+pdfVerifyEncryptionPermissions:com.canoo.webtest.plugins.pdftest.PdfVerifyEncryptionPermissionsStep
+pdfVerifyTextField:com.canoo.webtest.plugins.pdftest.PdfVerifyTextFieldStep
+pdfVerifyFont:com.canoo.webtest.plugins.pdftest.PdfVerifyFontStep
+pdfVerifyEncryptionStrength:com.canoo.webtest.plugins.pdftest.PdfVerifyEncryptionStrengthStep
+pdfVerifyCheckboxField:com.canoo.webtest.plugins.pdftest.PdfVerifyCheckboxFieldStep
+pdfVerifyText:com.canoo.webtest.plugins.pdftest.PdfVerifyTextStep
+pdfVerifyReadOnlyField:com.canoo.webtest.plugins.pdftest.PdfVerifyReadOnlyFieldStep
+pdfVerifyBookmark:com.canoo.webtest.plugins.pdftest.PdfVerifyBookmarkStep
+pdfVerifyEncryptionProperty:com.canoo.webtest.plugins.pdftest.PdfVerifyEncryptionPropertyStep
+pdfToTextFilter:com.canoo.webtest.plugins.pdftest.PdfToTextFilter
+pdfVerifyFieldCount:com.canoo.webtest.plugins.pdftest.PdfVerifyNumberOfFieldsStep

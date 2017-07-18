@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>?xml</tag>&nbsp;<att>version</att><val>1.0</val>&nbsp;<att>encoding</att><val>utf-8</val>?&gt;<n/>
+&lt;<tag>soap:Envelope</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;<att>xmlns:soap</att><val>http://schemas.xmlsoap.org/soap/envelope/</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;<att>xmlns:xsi</att><val>http://www.w3.org/2001/XMLSchema-instance</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;<att>xmlns:xsd</att><val>http://www.w3.org/2001/XMLSchema</val>&gt;<n/>
+&lt;<tag>soap:Body</tag>&gt;<n/>
+&lt;<tag>GetAustralianPostCodeByLocationResponse</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;<att>xmlns</att><val>http://www.webserviceX.NET</val>&gt;<n/>
+&lt;<tag>GetAustralianPostCodeByLocationResult</tag>&gt;<n/>
+&amp;lt;NewDataSet&amp;gt;<n/>
+&nbsp;&nbsp;&amp;lt;Table&amp;gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;Location&amp;gt;Karalee&amp;lt;/Location&amp;gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;PostCode&amp;gt;&nbsp;QLD&nbsp;4306&amp;lt;/PostCode&amp;gt;<n/>
+&nbsp;&nbsp;&amp;lt;/Table&amp;gt;<n/>
+&amp;lt;/NewDataSet&amp;gt;<n/>
+&lt;/<tag>GetAustralianPostCodeByLocationResult</tag>&gt;<n/>
+&lt;/<tag>GetAustralianPostCodeByLocationResponse</tag>&gt;<n/>
+&lt;/<tag>soap:Body</tag>&gt;<n/>
+&lt;/<tag>soap:Envelope</tag>&gt;<n/>
+</source>

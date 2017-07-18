@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>pdftest&nbsp;-&nbsp;verify&nbsp;info&nbsp;property&nbsp;existence</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyInfoProperty</tag>&nbsp;<att>description</att><val>Info&nbsp;property&nbsp;existence</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>key</att><val>CreationDate</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>exists</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;...<n/>
+&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<antlib>
+  <taskdef name="structureFilter" classname="com.canoo.webtest.plugins.exceltest.ExcelStructureFilter"/>
+  <taskdef name="verifyCellSum" classname="com.canoo.webtest.plugins.exceltest.ExcelVerifyCellSum"/>
+  <taskdef name="storeCellValue" classname="com.canoo.webtest.plugins.exceltest.ExcelStoreCellValue"/>
+  <taskdef name="verifyCellValue" classname="com.canoo.webtest.plugins.exceltest.ExcelVerifyCellValue"/>
+  <taskdef name="findRow" classname="com.canoo.webtest.plugins.exceltest.ExcelFindRow"/>
+  <taskdef name="verifyCellStyle" classname="com.canoo.webtest.plugins.exceltest.ExcelVerifyCellStyle"/>
+  <taskdef name="selectSheet" classname="com.canoo.webtest.plugins.exceltest.ExcelSelectSheet"/>
+</antlib>

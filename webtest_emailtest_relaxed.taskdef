@@ -1,0 +1,12 @@
+# relaxed taskdef generated during webtest's build
+# Following entries are extracted from javadoc.
+emailMessageContentFilter:com.canoo.webtest.plugins.emailtest.EmailMessageContentFilter
+emailStoreHeader:com.canoo.webtest.plugins.emailtest.EmailStoreHeader
+emailMessageStructureFilter:com.canoo.webtest.plugins.emailtest.EmailMessageStructureFilter
+emailSetConfig:com.canoo.webtest.plugins.emailtest.EmailSetConfig
+emailStoreMessageId:com.canoo.webtest.plugins.emailtest.EmailStoreMessageId
+emailDeleteMessage:com.canoo.webtest.plugins.emailtest.EmailDeleteMessage
+emailStoreMessageCount:com.canoo.webtest.plugins.emailtest.EmailStoreMessageCount
+emailStorePartCount:com.canoo.webtest.plugins.emailtest.EmailStorePartCount
+emailStorePartFilename:com.canoo.webtest.plugins.emailtest.EmailStorePartFilename
+emailStoreMessageType:com.canoo.webtest.plugins.emailtest.EmailStoreMessageType

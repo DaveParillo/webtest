@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>project</tag>&nbsp;<att>default</att><val>all</val>&gt;<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>all</val>&gt;<n/>
+<t/><t/>&lt;<tag>ant</tag>&nbsp;<att>file</att><val>testFoo.xml</val>/&gt;<n/>
+<t/><t/>&lt;<tag>ant</tag>&nbsp;<att>file</att><val>testSomething.xml</val>/&gt;<n/>
+<t/><t/>&lt;<tag>ant</tag>&nbsp;<att>file</att><val>testSomethingElse.xml</val>/&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

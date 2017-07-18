@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Extract&nbsp;target&nbsp;location&nbsp;from&nbsp;Javascript&nbsp;command</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/><t/>&lt;<tag>storeRegEx</tag><n/>
+<t/><t/><t/><att>description</att><val>Extract&nbsp;target&nbsp;location&nbsp;from&nbsp;javascript&nbsp;command</val><n/>
+<t/><t/><t/><att>text</att><val>.*name=&amp;quot;onClick&amp;quot;.*onclick=&amp;quot;&nbsp;window\.open\('(.*)'\)</val><n/>
+<t/><t/><t/><att>group</att><val>1</val><n/>
+<t/><t/><t/><att>property</att><val>targetLocation</val>&nbsp;/&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag><n/>
+<t/><t/><t/><att>description</att><val>Invoke&nbsp;target&nbsp;page&nbsp;specified&nbsp;in&nbsp;the&nbsp;javascript&nbsp;statement</val><n/>
+<t/><t/><t/><att>url</att><val>#{targetLocation}</val><n/>
+<t/><t/><t/><att>save</att><val>targetPage</val>&nbsp;/&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

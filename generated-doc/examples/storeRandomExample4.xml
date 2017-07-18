@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;previous&nbsp;steps&nbsp;...&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;random&nbsp;two-word&nbsp;name&nbsp;(firstname&nbsp;up&nbsp;to&nbsp;10&nbsp;chars,&nbsp;lastname&nbsp;up&nbsp;to&nbsp;20&nbsp;chars)&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeRandom</tag>&nbsp;<att>description</att><val>first&nbsp;name&nbsp;first&nbsp;letter</val>&nbsp;<att>property</att><val>firstStart</val>&nbsp;<att>chars</att><val>${UCCHARS}</val>&nbsp;<att>length</att><val>1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeRandom</tag>&nbsp;<att>description</att><val>first&nbsp;name&nbsp;num&nbsp;remaining&nbsp;chars</val>&nbsp;<att>property</att><val>firstSizeRest</val>&nbsp;<att>from</att><val>3</val>&nbsp;<att>to</att><val>9</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeRandom</tag>&nbsp;<att>description</att><val>first&nbsp;name&nbsp;remaining&nbsp;chars</val>&nbsp;<att>property</att><val>firstRest</val>&nbsp;<att>chars</att><val>${LCCHARS}</val>&nbsp;<att>length</att><val>#{firstSizeRest}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeRandom</tag>&nbsp;<att>description</att><val>last&nbsp;name&nbsp;first&nbsp;letter</val>&nbsp;<att>property</att><val>lastStart</val>&nbsp;<att>chars</att><val>${UCCHARS}</val>&nbsp;<att>length</att><val>1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeRandom</tag>&nbsp;<att>description</att><val>last&nbsp;name&nbsp;num&nbsp;remaining&nbsp;chars</val>&nbsp;<att>property</att><val>lastSizeRest</val>&nbsp;<att>from</att><val>3</val>&nbsp;<att>to</att><val>19</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeRandom</tag>&nbsp;<att>description</att><val>last&nbsp;name&nbsp;remaining&nbsp;chars</val>&nbsp;<att>property</att><val>lastRest</val>&nbsp;<att>chars</att><val>${LCCHARS}</val>&nbsp;<att>length</att><val>#{lastSizeRest}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeProperty</tag>&nbsp;<att>name</att><val>expectedName</val>&nbsp;<att>value</att><val>#{firstStart}#{firstRest}&nbsp;#{lastStart}#{lastRest}</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>setInputField</tag>&nbsp;<att>name</att><val>name</val>&nbsp;<att>value</att><val>#{expectedName}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;additonal&nbsp;steps&nbsp;...&nbsp;--&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

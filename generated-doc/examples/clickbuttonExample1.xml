@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+...<n/>
+&lt;<tag>setInputField</tag>&nbsp;<att>description</att><val>Set&nbsp;the&nbsp;input&nbsp;field</val><n/>
+<t/><att>name</att><val>field1</val>&nbsp;<att>value</att><val>My&nbsp;simple&nbsp;value</val>&nbsp;/&gt;<n/>
+<n/>
+&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>Submit&nbsp;the&nbsp;simple&nbsp;form</val>&nbsp;<att>name</att><val>doIt</val>&nbsp;/&gt;<n/>
+<n/>
+&lt;<tag>verifyInputField</tag>&nbsp;<att>description</att><val>Check&nbsp;echo&nbsp;of&nbsp;previous&nbsp;input</val><n/>
+<t/><att>name</att><val>field1</val>&nbsp;<att>value</att><val>My&nbsp;simple&nbsp;value</val>&nbsp;/&gt;<n/>
+...<n/>
+</source>

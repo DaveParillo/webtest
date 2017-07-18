@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;...&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;random&nbsp;colour&nbsp;using&nbsp;tokens&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeRandom</tag>&nbsp;<att>description</att><val>choose&nbsp;colour</val>&nbsp;<att>property</att><val>expectedColour</val>&nbsp;<att>choice</att><val>red,green,blue,black</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>setSelectField</tag>&nbsp;<att>name</att><val>colour</val>&nbsp;<att>value</att><val>#{expectedColour}</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;additonal&nbsp;steps&nbsp;...&nbsp;--&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

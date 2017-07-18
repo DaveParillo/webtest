@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>html</tag>&gt;<n/>
+&lt;<tag>head</tag>&gt;<n/>
+&lt;<tag>title</tag>&gt;InputField&nbsp;Attribute&nbsp;Test&nbsp;Page&lt;/<tag>title</tag>&gt;<n/>
+&lt;<tag>script</tag>&nbsp;<att>type</att><val>text/javascript</val>&gt;<n/>
+&lt;--<n/>
+function&nbsp;checkEmpty(button,&nbsp;element)&nbsp;{<n/>
+&nbsp;&nbsp;if&nbsp;(element.value&nbsp;==&nbsp;"")&nbsp;button.disabled=true;<n/>
+&nbsp;&nbsp;else&nbsp;button.disabled=false;<n/>
+}<n/>
+//&nbsp;--&gt;<n/>
+&lt;/<tag>script</tag>&gt;<n/>
+&lt;/<tag>head</tag>&gt;<n/>
+&lt;<tag>body</tag>&gt;<n/>
+...<n/>
+&lt;<tag>h1</tag>&gt;Form&nbsp;1&lt;/<tag>h1</tag>&gt;<n/>
+&lt;<tag>form</tag>&nbsp;<att>action</att><val>dummy.html</val>&nbsp;&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;Enter&nbsp;Value&nbsp;(then&nbsp;click&nbsp;outside&nbsp;box):&nbsp;&lt;<tag>input</tag>&nbsp;<att>name</att><val>value1</val>&nbsp;<att>onchange</att><val>checkEmpty(button1,&nbsp;this)</val>&gt;&lt;<tag>br</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>input</tag>&nbsp;<att>type</att><val>submit</val>&nbsp;<att>value</att><val>Click&nbsp;Me</val>&nbsp;<att>name</att><val>button1</val>&nbsp;<att>id</att><val>button1</val>&nbsp;<att>disabled</att><val>true</val>&gt;<n/>
+&lt;/<tag>form</tag>&gt;<n/>
+...<n/>
+&lt;/<tag>html</tag>&gt;<n/>
+</source>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>storePropertyEvalTest</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;steps&nbsp;which&nbsp;extract&nbsp;some&nbsp;values&nbsp;from&nbsp;the&nbsp;page&nbsp;...&nbsp;--&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeProperty</tag>&nbsp;<att>description</att><val>setting&nbsp;MyName=7.0</val>&nbsp;<att>name</att><val>MyName</val>&nbsp;<att>value</att><val>3+4</val>&nbsp;<att>eval</att><val>true</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeProperty</tag>&nbsp;<att>name</att><val>tableSize</val>&nbsp;<att>value</att><val>#{tableWidth}&nbsp;*&nbsp;#{tableHeight}</val>&nbsp;<att>eval</att><val>true</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeProperty</tag>&nbsp;<att>name</att><val>gstAmount</val>&nbsp;<att>value</att><val>#{totalAmount}&nbsp;/&nbsp;11</val>&nbsp;<att>eval</att><val>true</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeProperty</tag>&nbsp;<att>name</att><val>adjusted</val>&nbsp;<att>value</att><val>(#{orig}&nbsp;-&nbsp;1)&nbsp;*&nbsp;(${fudgeFactor}&nbsp;+&nbsp;1)</val>&nbsp;<att>eval</att><val>true</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

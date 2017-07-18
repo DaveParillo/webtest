@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+def&nbsp;ant&nbsp;=&nbsp;new&nbsp;AntBuilder()<n/>
+<n/>
+def&nbsp;webtest_home&nbsp;=&nbsp;System.properties.'webtest.home'<n/>
+<n/>
+ant.taskdef(resource:'webtest.taskdef'){<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;classpath(){<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pathelement(location:"$webtest_home/lib")<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fileset(dir:"$webtest_home/lib",&nbsp;includes:"**/*.jar")<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<n/>
+}<n/>
+<n/>
+<n/>
+def&nbsp;config_map&nbsp;=&nbsp;[:]<n/>
+['protocol','host','port','basepath','resultfile',<n/>
+'resultpath',&nbsp;'saveresponse','defaultpropertytype'].each{<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;config_map[it]&nbsp;=&nbsp;System.properties['webtest.'+it]<n/>
+}<n/>
+<n/>
+ant.testSpec(name:'groovy:&nbsp;Test&nbsp;Groovy&nbsp;Scripting&nbsp;at&nbsp;creation&nbsp;time'){<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;config(config_map)<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;steps(){<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;invoke(url:'linkpage.html')<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i&nbsp;in&nbsp;1..10){<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verifyText(description:"verify&nbsp;number&nbsp;${i}&nbsp;is&nbsp;on&nbsp;pages",&nbsp;text:"${i}")<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<n/>
+}<n/>
+</source>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="clickLink"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"><level3 name="clickButton" url="clickButton.html"/><level3 name="clickLink" url="clickLink.html"/><level3 name="followFrame" url="followFrame.html"/><level3 name="group" url="group.html"/><level3 name="invoke" url="invoke.html"/><level3 name="not" url="not.html"/><level3 name="previousResponse" url="previousResponse.html"/><level3 name="repeat" url="repeat.html"/><level3 name="selectForm" url="selectForm.html"/><level3 name="setCheckbox" url="setCheckbox.html"/><level3 name="setFileField" url="setFileField.html"/><level3 name="setInputField" url="setInputField.html"/><level3 name="setRadioButton" url="setRadioButton.html"/><level3 name="setSelectField" url="setSelectField.html"/><level3 name="storeCookie" url="storeCookie.html"/><level3 name="storeHeader" url="storeHeader.html"/><level3 name="storeProperty" url="storeProperty.html"/><level3 name="storeRegEx" url="storeRegEx.html"/><level3 name="storeXPath" url="storeXPath.html"/><level3 name="table" url="table.html"/><level3 name="testInfo" url="testInfo.html"/><level3 name="verifyCheckbox" url="verifyCheckbox.html"/><level3 name="verifyCookie" url="verifyCookie.html"/><level3 name="verifyElement" url="verifyElement.html"/><level3 name="verifyElementText" url="verifyElementText.html"/><level3 name="verifyInputField" url="verifyInputField.html"/><level3 name="verifyLinks" url="verifyLinks.html"/><level3 name="verifyProperty" url="verifyProperty.html"/><level3 name="verifyRadioButton" url="verifyRadioButton.html"/><level3 name="verifySelectField" url="verifySelectField.html"/><level3 name="verifyText" url="verifyText.html"/><level3 name="verifyTextarea" url="verifyTextarea.html"/><level3 name="verifyTitle" url="verifyTitle.html"/><level3 name="verifyXPath" url="verifyXPath.html"/></level2>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"/>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Core Step| clickLink"/><section title="Description"><b>This step tries to locate a link (like &lt;a href='thisIsAnotherPage.html'&gt;Follow me&lt;/a&gt;) and to click on it. The page where this click leads to will be the current one for further actions.</b><pre>
+	<b>The different ways to locate a link are applied in this sequence:</b>
+	<dl>
+		<li>
+			<dd>If
+				<em>htmlid</em>
+				is set: the link with the given id is used (and the step fails if no link is found with this id)
+			</dd>
+		</li>
+		<li>
+			<dd>Else the first link containing the specified
+				<em>label</em>
+				(if specified) and
+				<em>href</em>
+				(if specified) is used
+			</dd>
+		</li>
+		<li>
+			<dd>If not found, the first link containing an image (IMG) tag with
+				<em>label</em>
+				as the ALT attribute is used (
+				<em>href</em>
+				is ignored)
+			</dd>
+		</li>
+	</dl>
+</pre></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>href</name><description>A substring of the <key>HTML</key> anchor tag's HREF attribute for the link of interest. Useful if (part of the <em>href</em>) uniquely identifies a link (for example, a unique parameter/value pair in the <em>href</em>). Also, useful for distinguisking between links with the same labels (in which case, use <em>label</em> and <em>href</em> combined). Either <em>label</em>, <em>href</em> or <em>htmlId</em> is required. Href has the lowest precedence.</description><required>yes/no</required></attribute><attribute><name>label</name><description>The label of the element to click. One of 'label', 'htmlid' or 'xpath' must be set.</description><required>yes/no</required></attribute><attribute><name>htmlId</name><description>The htmlId of the element to click. One of 'label', 'htmlid' or 'xpath' must be set.</description><required>yes/no</required></attribute><attribute><name>xpath</name><description>The xpath of the element to click. One of 'label', 'htmlid' or 'xpath' must be set.</description><required>yes/no</required></attribute><attribute><name>username</name><description>A username that can be provided for pages that require basic authentication. Typically only needed on the first step of any <stepref name="webtest" category=""/> accessing a secure site. Required if <em>password</em> is specified.</description><required>no</required></attribute><attribute><name>password</name><description>A password that can be provided for pages that require basic authentication. Required if <em>username</em> is specified.</description><required>no</required></attribute><attribute><name>save</name><description>A shorthand: <em>save='prefixName'</em> is the same as <em>savePrefix='prefixName' saveResponse='true'</em>.</description><required>no</required></attribute><attribute><name>savePrefix</name><description>A name prefix can be specified for making a permanent copy of received responses. A unique number and the file extension (depending on the MIME-Type) will be appended. The <em>resultpath</em> attribute of the &lt;config&gt; element is used for determining the location of the saved result.</description><required>no, default is
+					the 'savePrefix' parameter as specified in &lt;config&gt;.</required></attribute><attribute><name>saveResponse</name><description>Whether to make a permanent copy of received responses. Overrides the default value set in the &lt;config&gt; element.</description><required>no</required></attribute></attributes></section><section title="Inline Text"><b>The
+							<em>inline text</em>
+							is all the text between the start tag (
+							<example>&lt;clickLink&gt;</example>
+							) and the end tag (
+							<example>&lt;/clickLink&gt;</example>
+							), including blanks, tabs or newlines. Using a pair of start/end tags (
+							<example>&lt;clickLink&gt; &lt;/clickLink&gt;</example>
+							) has not the same behavior than the seemingly equivalent empty element tag (
+							<example>&lt;clickLink/&gt;</example>
+							)! See
+							<ext href="browse/WT-228" base="jira">this issue</ext>
+							for an example.
+						</b><attributes><attribute><name>text</name><description>Alternative way to set the 'label' attribute.</description><required>no</required></attribute></attributes></section><section title="Details"><post>
+
+    <code caption="clickLink">
+        <include src="examples/clicklinkExample.xml"/>
+    </code>
+
+</post></section></manpage>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailSetConfig</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>/mailtest.*mime/</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>mid2</val>&nbsp;<att>messageIndex</att><val>0</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;MIME&nbsp;message&nbsp;with&nbsp;plain&nbsp;body&nbsp;and&nbsp;gif&nbsp;and&nbsp;pdf&nbsp;attachments&nbsp;--&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreHeader</tag>&nbsp;<att>headerName</att><val>Content-Type</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>ct2</val>&nbsp;<att>messageId</att><val>#{mid2}</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>ct2</val>&nbsp;<att>text</att><val>multipart/mixed</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreHeader</tag>&nbsp;<att>headerName</att><val>Content-Type</val>&nbsp;<att>partIndex</att><val>0</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>ct2pt0</val>&nbsp;<att>messageId</att><val>#{mid2}</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>ct2pt0</val>&nbsp;<att>text</att><val>text/plain</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreHeader</tag>&nbsp;<att>headerName</att><val>Content-Type</val>&nbsp;<att>partIndex</att><val>1</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>ct2pt1</val>&nbsp;<att>messageId</att><val>#{mid2}</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>ct2pt1</val>&nbsp;<att>text</att><val>image/gif</val>&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreHeader</tag>&nbsp;<att>headerName</att><val>Content-Type</val>&nbsp;<att>partIndex</att><val>2</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>ct2pt2</val>&nbsp;<att>messageId</att><val>#{mid2}</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>ct2pt2</val>&nbsp;<att>text</att><val>application/octet-stream</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

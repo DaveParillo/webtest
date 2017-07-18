@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>project</tag>&nbsp;<att>default</att><val>test</val>&gt;<n/>
+&nbsp;&lt;<tag>target</tag>&nbsp;<att>name</att><val>test</val>&gt;<n/>
+<n/>
+&nbsp;&nbsp;&lt;<tag>webtest</tag>&nbsp;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>name</att><val>check&nbsp;that&nbsp;WebTest&nbsp;is&nbsp;Google's&nbsp;top&nbsp;'WebTest'&nbsp;result</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>http://www.google.com/ncr</val>&nbsp;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>description</att><val>Go&nbsp;to&nbsp;Google&nbsp;(in&nbsp;English)</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyTitle</tag>&nbsp;<att>text</att><val>Google</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>setInputField</tag>&nbsp;<att>name</att><val>q</val>&nbsp;<att>value</att><val>WebTest</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>clickButton</tag>&nbsp;<att>label</att><val>I'm&nbsp;Feeling&nbsp;Lucky</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyTitle</tag>&nbsp;<att>text</att><val>Canoo&nbsp;WebTest</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&lt;/<tag>webtest</tag>&gt;<n/>
+<n/>
+&nbsp;&lt;/<tag>target</tag>&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

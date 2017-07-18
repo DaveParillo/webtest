@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>login</val>&nbsp;&gt;&nbsp;<n/>
+<t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>normal</val>&nbsp;&gt;<n/>
+<t/><t/>&amp;config;<n/>
+<t/><t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/><t/>&lt;<tag>invoke</tag>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>description</att><val>get&nbsp;Login&nbsp;Page</val><n/>
+<t/><t/><t/><t/><att>url</att><val>login.jsp</val>&nbsp;&nbsp;&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;<tag>verifyTitle</tag>&nbsp;&nbsp;&nbsp;<att>description</att><val>we&nbsp;should&nbsp;see&nbsp;the&nbsp;login&nbsp;title</val>&nbsp;<n/>
+<t/><t/><t/><t/><att>text</att><val>Login&nbsp;Page</val>&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;<tag>setInputField</tag>&nbsp;<att>description</att><val>set&nbsp;user&nbsp;name</val>&nbsp;<n/>
+<t/><t/><t/><t/><att>name</att><val>username</val><n/>
+<t/><t/><t/><t/><att>value</att><val>scott</val>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;<tag>setInputField</tag>&nbsp;<att>description</att><val>set&nbsp;password</val>&nbsp;<n/>
+<t/><t/><t/><t/><att>name</att><val>password</val><n/>
+<t/><t/><t/><t/><att>value</att><val>tiger</val>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;<tag>clickButton</tag>&nbsp;&nbsp;&nbsp;<att>description</att><val>Click&nbsp;the&nbsp;submit&nbsp;button</val>&nbsp;<n/>
+<t/><t/><t/><t/><att>label</att><val>let&nbsp;me&nbsp;in</val>&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;<tag>verifyTitle</tag>&nbsp;&nbsp;&nbsp;<att>description</att><val>Home&nbsp;Page&nbsp;follows&nbsp;if&nbsp;login&nbsp;ok</val><n/>
+<t/><t/><t/><t/><att>text</att><val>Home&nbsp;Page</val>&nbsp;&nbsp;/&gt;<n/>
+<t/><t/>&lt;/<tag>steps</tag>&gt;<n/>
+<t/>&lt;/<tag>webtest</tag>&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+</source>

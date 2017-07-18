@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>groovy</tag>&gt;<n/>
+import&nbsp;com.gargoylesoftware.htmlunit.util.DebuggingWebConnection&nbsp;as&nbsp;DWC<n/>
+<n/>
+def&nbsp;w&nbsp;=&nbsp;step.context.webClient<n/>
+w.webConnection&nbsp;=&nbsp;new&nbsp;DWC(w.webConnection,&nbsp;"mytest")<n/>
+&lt;/<tag>groovy</tag>&gt;<n/>
+</source>

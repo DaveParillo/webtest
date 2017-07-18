@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>testInfo:&nbsp;simple&nbsp;usage&nbsp;scenario</val>&gt;<n/>
+<t/>&lt;<tag>testInfo</tag>&nbsp;<att>type</att><val>issueNumber</val>&nbsp;<att>info</att><val>WT-250</val><n/>
+<t/><t/><att>description</att><val>the&nbsp;related&nbsp;issue&nbsp;number&nbsp;in&nbsp;WebTest&nbsp;tracking&nbsp;system</val>/&gt;<n/>
+<t/>...&nbsp;the&nbsp;'real'&nbsp;steps&nbsp;here...<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

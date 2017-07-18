@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>?xml</tag>&nbsp;<att>version</att><val>1.0</val>?&gt;<n/>
+<n/>
+&lt;<tag>project</tag>&nbsp;<att>default</att><val>testSuite</val>&gt;<n/>
+<n/>
+<t/>&lt;<tag>property</tag>&nbsp;<att>name</att><val>start.page</val>&nbsp;<att>value</att><val>myStartPage</val>/&gt;<n/>
+<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>testSuite</val>&gt;<n/>
+<t/><t/>&lt;<tag>ant</tag>&nbsp;<att>antfile</att><val>loginAndStep.xml</val>/&gt;<n/>
+<t/><t/>&lt;<tag>ant</tag>&nbsp;<att>antfile</att><val>useCase2.xml</val>/&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

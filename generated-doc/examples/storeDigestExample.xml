@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>testStoreDigestSimple</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>property</tag>&nbsp;<att>name</att><val>variableNumberRegex</val>&nbsp;<att>value</att><val>(?&amp;lt;=&nbsp;)[0-9]+(?=&nbsp;time)</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>property</tag>&nbsp;<att>name</att><val>visitCountDigest</val>&nbsp;<att>value</att><val>c1&nbsp;e2&nbsp;29&nbsp;ad&nbsp;d4&nbsp;6b&nbsp;2a&nbsp;96&nbsp;2f&nbsp;18&nbsp;18&nbsp;f4&nbsp;71&nbsp;e6&nbsp;bb&nbsp;88&nbsp;73&nbsp;9a&nbsp;c7&nbsp;62</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>storeDigest:&nbsp;Show&nbsp;how&nbsp;to&nbsp;use&nbsp;storeDigest&nbsp;step</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>dummy.html</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeDigest</tag>&nbsp;<att>property</att><val>dummyDigestSHA1</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>lineSeparatorFilter</tag>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>storeDigest</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>dummyDigestSHA1</val>&nbsp;<att>text</att><val>4e&nbsp;7e&nbsp;c7&nbsp;59&nbsp;21&nbsp;9&nbsp;15&nbsp;44&nbsp;52&nbsp;f3&nbsp;45&nbsp;70&nbsp;76&nbsp;b9&nbsp;a1&nbsp;93&nbsp;e7&nbsp;b3&nbsp;78&nbsp;f2</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeDigest</tag>&nbsp;<att>property</att><val>dummyDigestMD5</val>&nbsp;<att>type</att><val>MD5</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>lineSeparatorFilter</tag>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>storeDigest</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>dummyDigestMD5</val>&nbsp;<att>text</att><val>27&nbsp;e2&nbsp;37&nbsp;6c&nbsp;ff&nbsp;d6&nbsp;ac&nbsp;13&nbsp;65&nbsp;8d&nbsp;80&nbsp;d9&nbsp;94&nbsp;0&nbsp;f7&nbsp;21</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>webtest</tag>&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+</source>

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>soap:Envelope</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;<att>xmlns:xsi</att><val>http://www.w3.org/2001/XMLSchema-instance</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;<att>xmlns:xsd</att><val>http://www.w3.org/2001/XMLSchema</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;<att>xmlns:soap</att><val>http://schemas.xmlsoap.org/soap/envelope/</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>soap:Body</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>GetAustralianPostCodeByLocation</tag><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>xmlns</att><val>http://www.webserviceX.NET</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>Location</tag>&gt;Karalee&lt;/<tag>Location</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>GetAustralianPostCodeByLocation</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;/<tag>soap:Body</tag>&gt;<n/>
+&lt;/<tag>soap:Envelope</tag>&gt;<n/>
+</source>

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Check&nbsp;freetext&nbsp;entry</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/><t/>&lt;<tag>verifyElementText</tag><n/>
+<t/><t/><t/><att>description</att><val>Checks&nbsp;for&nbsp;the&nbsp;existence&nbsp;of&nbsp;an&nbsp;TEXTAREA&nbsp;element&nbsp;named&nbsp;FreetextComment&nbsp;enclosing&nbsp;TEST</val><n/>
+<t/><t/><t/><att>type</att><val>TEXTAREA</val><n/>
+<t/><t/><t/><att>name</att><val>FreetextComment</val><n/>
+<t/><t/><t/><att>text</att><val>TEST</val>&nbsp;/&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

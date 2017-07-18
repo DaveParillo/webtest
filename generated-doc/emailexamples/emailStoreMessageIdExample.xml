@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>property</tag>&nbsp;<att>name</att><val>testaddress</val>&nbsp;<att>value</att><val>your_address@your.emailaddress.com</val>/&gt;<n/>
+...<n/>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailSetConfig</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailStoreMessageId</tag>&nbsp;<att>subject</att><val>mailtest&nbsp;-&nbsp;multifiles&nbsp;-&nbsp;plain</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>from</att><val>${testaddress}</val>&nbsp;<att>to</att><val>/${testaddress}/</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>replyto</att><val>/${testaddress}/</val>&nbsp;<att>cc</att><val>/${testaddress}/</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>mid1</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;further&nbsp;email&nbsp;test&nbsp;steps&nbsp;using&nbsp;messageId&nbsp;#{mid1}&nbsp;--&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>dataDriven</tag>&nbsp;<att>tableContainer</att><val>simple.xls</val>&gt;<n/>
+<t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Register&nbsp;${FirstName}&nbsp;${LastName}</val>&gt;<n/>
+<t/><t/>...&nbsp;go&nbsp;to&nbsp;registration&nbsp;page&nbsp;...<n/>
+<t/><t/>&lt;<tag>setInputField</tag>&nbsp;<att>forLabel</att><val>First&nbsp;name</val>&nbsp;<att>value</att><val>${FirstName}</val>/&gt;<n/>
+<t/><t/>&lt;<tag>setInputField</tag>&nbsp;<att>forLabel</att><val>Last&nbsp;name</val>&nbsp;<att>value</att><val>${LastName}</val>/&gt;<n/>
+<t/><t/>&lt;<tag>clickButton</tag>&nbsp;<att>label</att><val>Register</val>/&gt;<n/>
+<t/><t/>&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>${FirstName}&nbsp;${LastName}&nbsp;has&nbsp;been&nbsp;registered</val>/&gt;<n/>
+<t/>&lt;/<tag>webtest</tag>&gt;<n/>
+&lt;/<tag>dataDriven</tag>&gt;<n/>
+</source>

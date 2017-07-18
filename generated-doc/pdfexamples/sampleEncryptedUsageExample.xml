@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>project</tag>&nbsp;<att>name</att><val>Sample:&nbsp;EncryptedPDFTest</val>&nbsp;<att>basedir</att><val>.</val>&nbsp;<att>default</att><val>main</val>&gt;<n/>
+<n/>
+<t/>&lt;<tag>import</tag>&nbsp;<att>file</att><val>${webtest.home}/lib/taskdef.xml</val>/&gt;<n/>
+<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>main</val>&gt;<n/>
+<t/><t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>myPdfTest</val>&gt;<n/>
+<t/><t/><t/>&lt;<tag>config</tag><n/>
+<t/><t/><t/><t/><att>host</att><val>www.myserver.com</val><n/>
+<t/><t/><t/><t/><att>port</att><val>8080</val><n/>
+<t/><t/><t/><t/><att>protocol</att><val>http</val><n/>
+<t/><t/><t/><t/><att>basepath</att><val>myApp</val><n/>
+<t/><t/><t/><t/><att>saveresponse</att><val>true</val>/&gt;<n/>
+<t/><t/><t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>invoke</tag><n/>
+<t/><t/><t/><t/><t/><att>description</att><val>get&nbsp;overview&nbsp;page</val><n/>
+<t/><t/><t/><t/><t/><att>url</att><val>overview.html</val>&nbsp;/&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>invoke</tag><n/>
+<t/><t/><t/><t/><t/><att>description</att><val>get&nbsp;PDF&nbsp;document</val><n/>
+<t/><t/><t/><t/><t/><att>url</att><val>privateData.pdf</val>/&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>pdfDecryptDocument</tag><n/>
+<t/><t/><t/><t/><t/><att>password</att><val>mymaster</val>/&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>pdfVerifyText</tag><n/>
+<t/><t/><t/><t/><t/><att>startPage</att><val>2</val><n/>
+<t/><t/><t/><t/><t/><att>endPage</att><val>3</val><n/>
+<t/><t/><t/><t/><t/><att>text</att><val>All&nbsp;rights&nbsp;reserved.</val>/&gt;<n/>
+<t/><t/><t/>&lt;/<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;/<tag>webtest</tag>&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

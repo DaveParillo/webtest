@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="verifyLinks"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"><level3 name="clickButton" url="clickButton.html"/><level3 name="clickLink" url="clickLink.html"/><level3 name="followFrame" url="followFrame.html"/><level3 name="group" url="group.html"/><level3 name="invoke" url="invoke.html"/><level3 name="not" url="not.html"/><level3 name="previousResponse" url="previousResponse.html"/><level3 name="repeat" url="repeat.html"/><level3 name="selectForm" url="selectForm.html"/><level3 name="setCheckbox" url="setCheckbox.html"/><level3 name="setFileField" url="setFileField.html"/><level3 name="setInputField" url="setInputField.html"/><level3 name="setRadioButton" url="setRadioButton.html"/><level3 name="setSelectField" url="setSelectField.html"/><level3 name="storeCookie" url="storeCookie.html"/><level3 name="storeHeader" url="storeHeader.html"/><level3 name="storeProperty" url="storeProperty.html"/><level3 name="storeRegEx" url="storeRegEx.html"/><level3 name="storeXPath" url="storeXPath.html"/><level3 name="table" url="table.html"/><level3 name="testInfo" url="testInfo.html"/><level3 name="verifyCheckbox" url="verifyCheckbox.html"/><level3 name="verifyCookie" url="verifyCookie.html"/><level3 name="verifyElement" url="verifyElement.html"/><level3 name="verifyElementText" url="verifyElementText.html"/><level3 name="verifyInputField" url="verifyInputField.html"/><level3 name="verifyLinks" url="verifyLinks.html"/><level3 name="verifyProperty" url="verifyProperty.html"/><level3 name="verifyRadioButton" url="verifyRadioButton.html"/><level3 name="verifySelectField" url="verifySelectField.html"/><level3 name="verifyText" url="verifyText.html"/><level3 name="verifyTextarea" url="verifyTextarea.html"/><level3 name="verifyTitle" url="verifyTitle.html"/><level3 name="verifyXPath" url="verifyXPath.html"/></level2>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"/>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Core Step| verifyLinks"/><section title="Description"><b>This step checks the validity of all links on the current page. Non-<key>HTML</key> pages (CSS, <key>javascript</key>, <key>XML</key> files) are not checked for internal links. Non-<key>HTTP</key> links (mail addresses, ftp etc.) are not checked or followed.</b><pre>
+
+    <b>You can use this test recursively, so you can also check the links on the pages,
+    which are linked on the current page and so on. For this reason, you can specify the <em>depth</em> parameter.</b>
+
+    <b>To avoid scanning sub-links on other hosts, you can set the <em>onsiteonly</em> parameter.
+    If it is set to "true", only the first link on a foreign host is checked for validity.</b>
+
+</pre></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>depth</name><description>The <em>depth</em> parameter defines the depth of the recursive search for broken links on sub-pages.</description><required>no, default is
+					0</required></attribute><attribute><name>excludes</name><description>If <em>excludes</em> is set then each link found is compared to the defined string (via regexp), if it matches then the link is not followed.</description><required>no, default is
+					&lt;empty&gt;</required></attribute><attribute><name>includes</name><description>If <em>includes</em> is set then each link found is compared to the defined string (via regexp), if it matches then the link is processed, others are ignored.</description><required>no, default is
+					&lt;all&gt;</required></attribute><attribute><name>onsiteonly</name><description>If <em>onsiteonly</em> is set to <em>true</em>, the recursive search for invalid links is limited to the local host. Only the initial link to a foreign host is checked, but no deeper search is performed.</description><required>no, default is
+					false</required></attribute><attribute><name>ignoreForeignJSErrors</name><description>Indicates if JavaScript errors should be ignored on visited pages from a different host than the current page.</description><required>no, default is
+					false</required></attribute></attributes></section><section title="Details"><post>
+
+		<code caption="Don't forget invoke before verification">
+			<include src="examples/verifylinksExample1.xml"/>
+		</code>
+		<code>
+			<include src="examples/verifylinksExample2.xml"/>
+		</code>
+		<code>
+			<include src="examples/verifylinksExample3.xml"/>
+		</code>
+
+</post></section></manpage>

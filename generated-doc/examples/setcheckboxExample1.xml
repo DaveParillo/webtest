@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Choose&nbsp;all&nbsp;desired&nbsp;pizza&nbsp;toppings&nbsp;by&nbsp;checking&nbsp;them</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;<tag>setCheckbox</tag>&nbsp;<att>description</att><val>Select&nbsp;the&nbsp;cheese&nbsp;option</val><n/>
+<t/><t/><t/><t/><att>name</att><val>Cheese</val><n/>
+<t/><t/><t/><t/><att>checked</att><val>true</val>&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>Submit&nbsp;the&nbsp;selected&nbsp;options</val><n/>
+<t/><t/><t/><t/><att>label</att><val>Choose</val>&nbsp;/&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

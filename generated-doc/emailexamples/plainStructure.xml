@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>message</tag>&nbsp;<att>type</att><val>Simple</val>&nbsp;<att>contentType</att><val>text/plain</val>&gt;<n/>
+&lt;/<tag>message</tag>&gt;<n/>
+</source>

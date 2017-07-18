@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>property</tag>&nbsp;<att>name</att><val>username</val>&nbsp;<att>value</att><val>yourUsername</val>/&gt;<n/>
+&lt;<tag>property</tag>&nbsp;<att>name</att><val>password</val>&nbsp;<att>value</att><val>yourPassword</val>/&gt;<n/>
+&lt;<tag>property</tag>&nbsp;<att>name</att><val>mailserver</val>&nbsp;<att>value</att><val>your.mailserver.com</val>/&gt;<n/>
+&lt;<tag>property</tag>&nbsp;<att>name</att><val>servertype</val>&nbsp;<att>value</att><val>pop3</val>/&gt;<n/>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>emailSetConfig</tag>&nbsp;<att>server</att><val>${mailserver}</val>&nbsp;<att>type</att><val>${servertype}</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;<att>password</att><val>${password}</val>&nbsp;<att>username</att><val>${username}</val>&nbsp;<att>delay</att><val>5</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;...&nbsp;email&nbsp;tests&nbsp;go&nbsp;here&nbsp;...&nbsp;--&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

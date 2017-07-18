@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+...<n/>
+&lt;<tag>selectForm</tag>&nbsp;<att>name</att><val>form2</val>/&gt;<n/>
+&lt;<tag>clickButton</tag>&nbsp;<att>description</att><val>Submit&nbsp;the&nbsp;simple&nbsp;form</val>&nbsp;<att>name</att><val>doIt</val>/&gt;<n/>
+...<n/>
+</source>

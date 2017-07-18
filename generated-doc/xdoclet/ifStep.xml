@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="ifStep"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"><level3 name="alert" url="alert.html"/><level3 name="antWrapper" url="antWrapper.html"/><level3 name="clickElement" url="clickElement.html"/><level3 name="closeWindow" url="closeWindow.html"/><level3 name="condition" url="condition.html"/><level3 name="confirm" url="confirm.html"/><level3 name="countWebtestResults" url="countWebtestResults.html"/><level3 name="dataDriven" url="dataDriven.html"/><level3 name="dragAndDrop" url="dragAndDrop.html"/><level3 name="enableJavaScript" url="enableJavaScript.html"/><level3 name="expectDialog" url="expectDialog.html"/><level3 name="expectDialogs" url="expectDialogs.html"/><level3 name="forceHiddenInputField" url="forceHiddenInputField.html"/><level3 name="forceInputFieldAttribute" url="forceInputFieldAttribute.html"/><level3 name="groovy" url="groovy.html"/><level3 name="ifStep" url="ifStep.html"/><level3 name="mouseOut" url="mouseOut.html"/><level3 name="mouseOver" url="mouseOver.html"/><level3 name="prompt" url="prompt.html"/><level3 name="reportLinks" url="reportLinks.html"/><level3 name="reportSite" url="reportSite.html"/><level3 name="retry" url="retry.html"/><level3 name="scriptStep" url="scriptStep.html"/><level3 name="selectWebClient" url="selectWebClient.html"/><level3 name="selectWindow" url="selectWindow.html"/><level3 name="storeDigest" url="storeDigest.html"/><level3 name="storeElementAttribute" url="storeElementAttribute.html"/><level3 name="storeInputFieldAttribute" url="storeInputFieldAttribute.html"/><level3 name="storeLength" url="storeLength.html"/><level3 name="storeLinkParameter" url="storeLinkParameter.html"/><level3 name="storeRandom" url="storeRandom.html"/><level3 name="storeResponseCode" url="storeResponseCode.html"/><level3 name="timedGroup" url="timedGroup.html"/><level3 name="verifyContent" url="verifyContent.html"/><level3 name="verifyDocumentURL" url="verifyDocumentURL.html"/><level3 name="verifyHeader" url="verifyHeader.html"/><level3 name="verifyImages" url="verifyImages.html"/><level3 name="verifyLinkedContent" url="verifyLinkedContent.html"/><level3 name="verifyNoDialogs" url="verifyNoDialogs.html"/></level2>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Extension Step| ifStep"/><section title="Description"><b>Step which allows conditional execution of inner steps.</b><pre>
+<b>
+Provides the ability for conditional testing. The step takes either one of the two attributes
+<em>test</em> and <em>unless</em>, or a single nested element <em>condition</em>.
+Exactly one of these must have a value.</b>
+<b>If the <em>test</em> attribute is set and evaluates to <em>true</em>, the
+encapsulated steps will be executed. If the <em>unless</em> attribute is set
+and evaluates to <em>false</em>, the intermediate steps will be executed.
+</b>
+<b>If there is a nested element <em>condition</em>, the intermediate steps will be executed
+if all steps nested inside the <em>condition</em> are successful.</b>
+<b>
+<em>NOTE</em>: using this step too frequently can lead to overly
+complicated and difficult to understand test scripts.
+</b>
+</pre></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>test</name><description>Expression which if <em>true</em> should cause inner steps to be executed. One of <em>test</em> or <em>unless</em> should be set unless nested <em>condition</em> is used.</description><required>yes/no</required></attribute><attribute><name>unless</name><description>Expression which if <em>true</em> should cause inner steps NOT to be executed. One of <em>test</em> or <em>unless</em> should be set unless nested <em>condition</em> is used.</description><required>yes/no</required></attribute></attributes></section><section title="Nested Parameters"><attributes><attribute><name>condition</name><description>Group of steps which if <em>successful</em> should cause inner steps to be executed. Use instead of <em>test</em> or <em>unless</em> for more complex conditions.</description><required>yes/no</required></attribute><attribute><name>then</name><description>Group of steps which execute if the 'ifStep' condition passes. If neither 'then' or 'else' are explicitly set, any inner steps are treated as if they were in an implicit 'then' step.</description><required>no</required></attribute><attribute><name>else</name><description>Group of steps which execute if the 'ifStep' condition fails. If neither 'then' or 'else' are explicitly set, any inner steps are treated as if they were in an implicit 'then' step.</description><required>no</required></attribute><attribute><name>otherwise</name><description>Alias for else step.</description><required>no</required></attribute><attribute><name>step</name><description>A webtest step.</description><required>yes</required></attribute></attributes></section><section title="Details"><post>
+
+<b><em>Examples</em></b>
+
+<b>Place the <em>&lt;ifStep&gt;</em> around other steps, e.g.:</b>
+
+<code caption="ifStep example 1">
+    <include src="examples/ifStepExample1.xml"/>
+</code>
+
+<b>If you are using <key>XSLT</key> reporting, you should see something like this:</b>
+
+<b><img src="images/ifstep.gif"/></b>
+
+<b>In this next scenario, we simply look for span statements within
+the html of class 'debug' and if we find any we skip creating new users.
+This example shows how we can use a nested condition, in addition to ant
+or dynamic variables, to use more sophisticated tests.</b>
+
+<code caption="ifStep example 2">
+ <include src="examples/ifStepExample2.xml"/>
+</code>
+
+</post></section></manpage>

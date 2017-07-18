@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>testXPath</val>&gt;<n/>
+<t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>xpath</val>&nbsp;&gt;<n/>
+<t/><t/>&amp;sharedConfiguration;<n/>
+<t/><t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/><t/>..<n/>
+<t/><t/><t/>&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>simple&nbsp;match</val><n/>
+<t/><t/><t/><t/><att>xpath</att><val>/html/head/title</val>/&gt;<n/>
+<t/><t/><t/>&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>more&nbsp;complicated&nbsp;match</val><n/>
+<t/><t/><t/><t/><att>xpath</att><val>//img[@src='seibertec.gif']</val>/&gt;<n/>
+<t/><t/><t/>&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>simple&nbsp;match&nbsp;with&nbsp;value</val><n/>
+<t/><t/><t/><t/><att>xpath</att><val>/html/head/title</val><n/>
+<t/><t/><t/><t/><att>text</att><val>Canoo&nbsp;WebTest</val>/&gt;<n/>
+<t/><t/><t/>&lt;<tag>verifyXPath</tag>&nbsp;<att>description</att><val>simple&nbsp;boolean&nbsp;expression</val><n/>
+<t/><t/><t/><t/><att>xpath</att><val>1&nbsp;&amp;gt;&nbsp;0</val>/&gt;<n/>
+<t/><t/>&lt;/<tag>steps</tag>&gt;<n/>
+<t/>&lt;/<tag>webtest</tag>&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+</source>

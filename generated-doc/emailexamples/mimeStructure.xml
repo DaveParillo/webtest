@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>message</tag>&nbsp;<att>type</att><val>MIME</val>&nbsp;<att>contentType</att><val>multipart/mixed</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>header</tag>&nbsp;<att>name</att><val>Subject</val>&nbsp;<att>value</att><val>mailtest&nbsp;-&nbsp;multifiles&nbsp;-&nbsp;mime</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>part</tag>&nbsp;<att>type</att><val>inline</val>&nbsp;<att>contentType</att><val>text/plain</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>part</tag>&nbsp;<att>type</att><val>attachment</val>&nbsp;<att>filename</att><val>ok.gif</val>&nbsp;<att>contentType</att><val>image/gif</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>part</tag>&nbsp;<att>type</att><val>attachment</val>&nbsp;<att>filename</att><val>testDocLinks.pdf</val>&nbsp;<att>contentType</att><val>application/octet-stream</val>/&gt;<n/>
+&lt;/<tag>message</tag>&gt;<n/>
+</source>

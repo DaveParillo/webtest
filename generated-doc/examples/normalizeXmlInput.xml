@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>xml</tag>&gt;&lt;<tag>body</tag>&nbsp;style='123'&gt;<n/>
+&lt;/<tag>body</tag>&gt;&lt;/<tag>xml</tag>&gt;<n/>
+</source>

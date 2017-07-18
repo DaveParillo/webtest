@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="forceInputFieldAttribute"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"><level3 name="alert" url="alert.html"/><level3 name="antWrapper" url="antWrapper.html"/><level3 name="clickElement" url="clickElement.html"/><level3 name="closeWindow" url="closeWindow.html"/><level3 name="condition" url="condition.html"/><level3 name="confirm" url="confirm.html"/><level3 name="countWebtestResults" url="countWebtestResults.html"/><level3 name="dataDriven" url="dataDriven.html"/><level3 name="dragAndDrop" url="dragAndDrop.html"/><level3 name="enableJavaScript" url="enableJavaScript.html"/><level3 name="expectDialog" url="expectDialog.html"/><level3 name="expectDialogs" url="expectDialogs.html"/><level3 name="forceHiddenInputField" url="forceHiddenInputField.html"/><level3 name="forceInputFieldAttribute" url="forceInputFieldAttribute.html"/><level3 name="groovy" url="groovy.html"/><level3 name="ifStep" url="ifStep.html"/><level3 name="mouseOut" url="mouseOut.html"/><level3 name="mouseOver" url="mouseOver.html"/><level3 name="prompt" url="prompt.html"/><level3 name="reportLinks" url="reportLinks.html"/><level3 name="reportSite" url="reportSite.html"/><level3 name="retry" url="retry.html"/><level3 name="scriptStep" url="scriptStep.html"/><level3 name="selectWebClient" url="selectWebClient.html"/><level3 name="selectWindow" url="selectWindow.html"/><level3 name="storeDigest" url="storeDigest.html"/><level3 name="storeElementAttribute" url="storeElementAttribute.html"/><level3 name="storeInputFieldAttribute" url="storeInputFieldAttribute.html"/><level3 name="storeLength" url="storeLength.html"/><level3 name="storeLinkParameter" url="storeLinkParameter.html"/><level3 name="storeRandom" url="storeRandom.html"/><level3 name="storeResponseCode" url="storeResponseCode.html"/><level3 name="timedGroup" url="timedGroup.html"/><level3 name="verifyContent" url="verifyContent.html"/><level3 name="verifyDocumentURL" url="verifyDocumentURL.html"/><level3 name="verifyHeader" url="verifyHeader.html"/><level3 name="verifyImages" url="verifyImages.html"/><level3 name="verifyLinkedContent" url="verifyLinkedContent.html"/><level3 name="verifyNoDialogs" url="verifyNoDialogs.html"/></level2>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Extension Step| forceInputFieldAttribute"/><section title="Description"><b>Sets (or removes) the attribute value of a selected input field. An example usage would be to enable a disabled input field (perhaps to mimic some unsupported <key>javascript</key>).</b></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>tagName</name><description>The name of the tag of interest, e.g. "input" or "select".</description><required>no, default is
+					input</required></attribute><attribute><name>attributeName</name><description>The name of the attribute of interest, e.g. "disabled" or "checked".</description><required>yes</required></attribute><attribute><name>attributeValue</name><description>The value to set for the attribute of interest; causes the attribute to be removed if set to the empty string (i.e. "").</description><required>yes</required></attribute><attribute><name>value</name><description>The value to use when setting the field of interest.</description><required>yes</required></attribute><attribute><name>name</name><description>The name of the input field of interest. One of <em>forLabel</em>, <em>htmlId</em>, <em>name</em>, or <em>xpath</em> is required.</description><required>yes/no</required></attribute><attribute><name>forLabel</name><description>The text of the label field associated with the input field of interest. One of <em>forLabel</em>, <em>htmlId</em>, <em>name</em>, or <em>xpath</em> is required.</description><required>yes/no</required></attribute><attribute><name>xpath</name><description>The xpath of the input field of interest. One of <em>forLabel</em>, <em>htmlId</em>, <em>name</em>, or <em>xpath</em> is required.</description><required>yes/no</required></attribute><attribute><name>formName</name><description>The name of the form containing the field of interest. Ignored if <em>htmlId</em> is used.</description><required>no, default is
+					the last form selected using 'selectForm', otherwise searches all forms</required></attribute><attribute><name>htmlId</name><description>The id of the input field of interest. One of <em>forLabel</em>, <em>htmlId</em>, <em>name</em>, or <em>xpath</em> is required.</description><required>yes/no</required></attribute><attribute><name>fieldIndex</name><description>The index of the field of interest (starting at 0) if more than one field matches criteria. Ignored if <em>htmlId</em> or <em>xpath</em> is used.</description><required>no, default is
+					the first field found that matches criteria</required></attribute><attribute><name>save</name><description>A shorthand: <em>save='prefixName'</em> is the same as <em>savePrefix='prefixName' saveResponse='true'</em>.</description><required>no</required></attribute><attribute><name>savePrefix</name><description>A name prefix can be specified for making a permanent copy of received responses. A unique number and the file extension (depending on the MIME-Type) will be appended. The <em>resultpath</em> attribute of the &lt;config&gt; element is used for determining the location of the saved result.</description><required>no, default is
+					the 'savePrefix' parameter as specified in &lt;config&gt;.</required></attribute><attribute><name>saveResponse</name><description>Whether to make a permanent copy of received responses. Overrides the default value set in the &lt;config&gt; element.</description><required>no</required></attribute></attributes></section><section title="Inline Text"><b>The
+							<em>inline text</em>
+							is all the text between the start tag (
+							<example>&lt;forceInputFieldAttribute&gt;</example>
+							) and the end tag (
+							<example>&lt;/forceInputFieldAttribute&gt;</example>
+							), including blanks, tabs or newlines. Using a pair of start/end tags (
+							<example>&lt;forceInputFieldAttribute&gt; &lt;/forceInputFieldAttribute&gt;</example>
+							) has not the same behavior than the seemingly equivalent empty element tag (
+							<example>&lt;forceInputFieldAttribute/&gt;</example>
+							)! See
+							<ext href="browse/WT-228" base="jira">this issue</ext>
+							for an example.
+						</b><attributes><attribute><name>text</name><description>An alternative to the attribute value for e.g. large TextAreas.</description><required>no</required></attribute></attributes></section><section title="Details"><post>
+
+    <b>Consider the following <key>HTML</key> form:</b>
+
+    <code caption="inputFieldAttributePage.html">
+    <include src="examples/forceInputFieldAttributePageHtml.xml"/>
+    </code>
+
+    <b>This page contains some <key>javascript</key> validation. We would like to use the <stepref name="storeInputFieldAttribute"/>
+    step to check that the validation is working. When the form is first loaded, the "Click Me" button should
+    be disabled as the "value1" field is empty. We can then place some content into the field. However
+    because the onkeyup <key>javascript</key> event is not supported, we note that the "Click Me" button is still
+    disabled. We can use the <em>&lt;forceInputFieldAttribute&gt;</em> to force the button to become enabled.
+    For the enabled attribute, we need to remove the "disabled" attribute to enable the button. We do this
+    by setting the "attributeValue" to the empty string "".
+    Here is the script code:</b>
+
+    <code caption="forceInputFieldAttribute Example">
+        <include src="examples/forceInputFieldAttributeExample.xml"/>
+    </code>
+
+    <b><em>See also</em>: the <stepref name="storeInputFieldAttribute"/> step.</b>
+
+</post></section></manpage>

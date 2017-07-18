@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="Syntax Reference - Filter Steps"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"/>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"><level3 name="applyFilters" url="applyFilters.html"/><level3 name="contentStripper" url="contentStripper.html"/><level3 name="lineSeparatorFilter" url="lineSeparatorFilter.html"/><level3 name="matchLinesFilter" url="matchLinesFilter.html"/><level3 name="normalizeXml" url="normalizeXml.html"/><level3 name="replaceFilter" url="replaceFilter.html"/><level3 name="selectLinesFilter" url="selectLinesFilter.html"/><level3 name="tagStripper" url="tagStripper.html"/></level2>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Available Filter Steps">
+
+    <b>
+        This is the syntax documentation for the Filter steps.
+    </b>
+
+    <b>
+        These are steps that are used to manipulate (or <em>filter</em>) the current response.
+        They are typically used to change the content into a more suitable
+        form for testing, for example, perhaps you wish to check the contents
+        of a page which contains the current date. You can use a filter to remove
+        the date from the page - hence the ever changing date part of the page
+        will be gone and you will be left with a static page for testing purposes.
+        The Filter steps are less tested than some of the Core steps and only
+        have minimal documentation. They are subject to change in future builds.
+    </b>
+
+    <b>
+        To give you an example of a use case for filters, you may have a PDF file.
+        You can use a filter to convert the content from a binary PDF file into
+        extracted text. You could then select a portion of lines using a line
+        selecting filter - perhaps something that matches a table.
+        You could then use a <key>regex</key> filter to select a particular
+        column of text from the table - perhaps a column of figures.
+        You could then use <stepref name="scriptStep" category="Extension"/> or
+        <stepref name="groovy" category="Extension"/> to add up the figures.
+        You could then compare the result of ading up figures to some value
+        extracted from somewhere else, e.g. elsewhere within the PDF, or
+        from a web page or from a database table.
+    </b>
+
+    <b>
+        The main steps which make use of filters (in addition to the <stepref name="applyFilters"/>
+        step included here) are:
+        <stepref name="verifyContent" category="Extension"/>,
+        <stepref name="storeLength" category="Extension"/> and
+        <stepref name="storeDigest" category="Extension"/>.
+    </b>
+    <b>
+        In addition to the filter steps mentioned here, see also the following
+        PDF filters:
+        <stepref name="pdfToTextFilter" category="PDF"/>,
+        <stepref name="pdfToFontsFilter" category="PDF"/>,
+        <stepref name="pdfToBookmarksFilter" category="PDF"/> and
+        <stepref name="pdfToLinksFilter" category="PDF"/>.
+    </b>
+
+</head></manpage>

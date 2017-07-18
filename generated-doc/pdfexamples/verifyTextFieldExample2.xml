@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>pdftest&nbsp;-&nbsp;verify&nbsp;text&nbsp;field&nbsp;value</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;.../&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfVerifyTextField</tag>&nbsp;<att>description</att><val>Text&nbsp;field&nbsp;value</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>page</att><val>1</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>name</att><val>LastName</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>value</att><val>Stu[d,t]er</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>regex</att><val>true</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;...<n/>
+&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

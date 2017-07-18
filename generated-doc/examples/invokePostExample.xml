@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>method</att><val>POST</val>&nbsp;<att>contentFile</att><val>AustralianPostcodeByLocationRequest.xml</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>soapAction</att><val>http://www.webserviceX.NET/GetAustralianPostCodeByLocation</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>url</att><val>http://httpwww.webservicex.com/AustralianPostCode.asmx?op=GetAustralianPostCodeByLocation</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>Karalee</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>QLD</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>4306</val>/&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

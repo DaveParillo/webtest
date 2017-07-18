@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>appletRunner</tag>&nbsp;...&gt;<n/>
+&lt;<tag>parameterRef</tag><n/>
+<t/><att>regex</att><val>user.name.(\d+)</val><n/>
+<t/><att>name</att><val>name.\1</val><n/>
+<t/><att>propertyType</att><val>ant</val><n/>
+<t/>/&gt;<n/>
+&lt;<tag>parameterRef</tag><n/>
+<t/><att>regex</att><val>user.count.(\d+)</val><n/>
+<t/><att>name</att><val>count.\1</val><n/>
+<t/><att>propertyType</att><val>ant</val><n/>
+<t/>/&gt;<n/>
+&lt;/<tag>appletRunner</tag>&gt;<n/>
+</source>

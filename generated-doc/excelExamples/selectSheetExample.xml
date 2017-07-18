@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>exceltest&nbsp;-&nbsp;select&nbsp;sheet</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testExcel.xls</val>/&gt;<n/>
+<t/><t/>&lt;<tag>excelSelectSheet</tag>&nbsp;<att>sheetName</att><val>Sheet1</val>/&gt;<n/>
+<t/><t/>&lt;<tag>excelVerifyCellValue</tag>&nbsp;<att>cell</att><val>A1</val>&nbsp;<att>text</att><val>Sheet&nbsp;1&nbsp;Cell</val>/&gt;<n/>
+<t/><t/>...<n/>
+<t/><t/>&lt;<tag>excelSelectSheet</tag>&nbsp;<att>sheetIndex</att><val>1</val>/&gt;<n/>
+<t/><t/>&lt;<tag>excelVerifyCellValue</tag>&nbsp;<att>cell</att><val>A1</val>&nbsp;<att>text</att><val>Sheet&nbsp;2&nbsp;Cell</val>/&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

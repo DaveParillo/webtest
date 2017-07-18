@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Check&nbsp;all&nbsp;links&nbsp;on&nbsp;current&nbsp;page&nbsp;and&nbsp;on&nbsp;subpages&nbsp;except&nbsp;on&nbsp;foreign&nbsp;hosts</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/><t/>&lt;<tag>verifyLinks</tag>&nbsp;<att>description</att><val>Check&nbsp;Links</val>&nbsp;<n/>
+<t/><t/><t/><att>depth</att><val>1</val>&nbsp;<n/>
+<t/><t/><t/><att>onsiteonly</att><val>true</val>/&gt;<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

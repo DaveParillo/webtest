@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>Load&nbsp;Order&nbsp;Page</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>url</att><val>order.html</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>scriptStep</tag>&nbsp;<att>description</att><val>check&nbsp;qty&nbsp;and&nbsp;price</val>&nbsp;<att>language</att><val>groovy</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calc_qty&nbsp;=&nbsp;0<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calc_price&nbsp;=&nbsp;0<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getHtmlElementsByAttribute('tr',&nbsp;'class',&nbsp;'lineitem').each{<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table_cells&nbsp;=&nbsp;it.getHtmlElementsByTagName('td')<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qty&nbsp;=&nbsp;table_cells.get(1).asText().toInteger()<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_price&nbsp;=&nbsp;table_cells.get(2).asText().toInteger()<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total_line_price&nbsp;=&nbsp;table_cells.get(3).asText().toInteger()<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calc_qty&nbsp;+=&nbsp;qty<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calc_price&nbsp;+=&nbsp;total_line_price<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;qty&nbsp;*&nbsp;unit_price&nbsp;==&nbsp;total_line_price<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root&nbsp;=&nbsp;new&nbsp;XmlSlurper().parseText(document.asXml())<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totalCols&nbsp;=&nbsp;root.depthFirst().findAll{&nbsp;it.name()&nbsp;==&nbsp;"tr"&nbsp;}.find{&nbsp;it['@class']&nbsp;==&nbsp;'total'&nbsp;}.td<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;slightly&nbsp;shorter&nbsp;alternative&nbsp;to&nbsp;above&nbsp;if&nbsp;you&nbsp;don't&nbsp;mind&nbsp;explicitly&nbsp;specifying&nbsp;tr<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;totalCols&nbsp;=&nbsp;root.body.table.tbody.tr.find&nbsp;{&nbsp;it['@class']&nbsp;==&nbsp;'total'&nbsp;}.td<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;calc_qty&nbsp;==&nbsp;totalCols[1].text().trim().toInteger()<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;calc_price&nbsp;==&nbsp;totalCols[3].text().trim().toInteger()<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>scriptStep</tag>&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

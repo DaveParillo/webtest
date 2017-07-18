@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="dataDriven"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"><level3 name="alert" url="alert.html"/><level3 name="antWrapper" url="antWrapper.html"/><level3 name="clickElement" url="clickElement.html"/><level3 name="closeWindow" url="closeWindow.html"/><level3 name="condition" url="condition.html"/><level3 name="confirm" url="confirm.html"/><level3 name="countWebtestResults" url="countWebtestResults.html"/><level3 name="dataDriven" url="dataDriven.html"/><level3 name="dragAndDrop" url="dragAndDrop.html"/><level3 name="enableJavaScript" url="enableJavaScript.html"/><level3 name="expectDialog" url="expectDialog.html"/><level3 name="expectDialogs" url="expectDialogs.html"/><level3 name="forceHiddenInputField" url="forceHiddenInputField.html"/><level3 name="forceInputFieldAttribute" url="forceInputFieldAttribute.html"/><level3 name="groovy" url="groovy.html"/><level3 name="ifStep" url="ifStep.html"/><level3 name="mouseOut" url="mouseOut.html"/><level3 name="mouseOver" url="mouseOver.html"/><level3 name="prompt" url="prompt.html"/><level3 name="reportLinks" url="reportLinks.html"/><level3 name="reportSite" url="reportSite.html"/><level3 name="retry" url="retry.html"/><level3 name="scriptStep" url="scriptStep.html"/><level3 name="selectWebClient" url="selectWebClient.html"/><level3 name="selectWindow" url="selectWindow.html"/><level3 name="storeDigest" url="storeDigest.html"/><level3 name="storeElementAttribute" url="storeElementAttribute.html"/><level3 name="storeInputFieldAttribute" url="storeInputFieldAttribute.html"/><level3 name="storeLength" url="storeLength.html"/><level3 name="storeLinkParameter" url="storeLinkParameter.html"/><level3 name="storeRandom" url="storeRandom.html"/><level3 name="storeResponseCode" url="storeResponseCode.html"/><level3 name="timedGroup" url="timedGroup.html"/><level3 name="verifyContent" url="verifyContent.html"/><level3 name="verifyDocumentURL" url="verifyDocumentURL.html"/><level3 name="verifyHeader" url="verifyHeader.html"/><level3 name="verifyImages" url="verifyImages.html"/><level3 name="verifyLinkedContent" url="verifyLinkedContent.html"/><level3 name="verifyNoDialogs" url="verifyNoDialogs.html"/></level2>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Extension Step| dataDriven"/><section title="Description"><b>This is an Ant task that calls its nested element as often as specified by the tableContainer. In each run a new set of properties from the the tableContainer is made available to the nested steps</b><pre>
+    <b>
+        This is the integration into WebTest of the 
+<ext href="http://webtest-community.canoo.com/wiki/space/PropertyTable">propertyTable</ext> task that is available
+since a long time in WebTest Wiki. You may find usefull to look at this documation because it is
+currently more complete than this current page.
+    </b>
+</pre></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>replaceProperties</name><description>Specifies whether properties contained in the table's values should be expanded or not</description><required>no, default is
+					no</required></attribute><attribute><name>filterclass</name><description>The filter to apply on the foreign table after the lookup. One of "All", "Empty", "FirstEquals", "AllEquals" or "Group".</description><required>no, default is
+					FirstEquals</required></attribute><attribute><name>table</name><description>The name of the source table in the current container. For instance the name of the sheet when the table container is an Excel document.</description><required>no, default is
+					the first table</required></attribute><attribute><name>tableContainer</name><description>The container for the table containing the data. Typically this is the path to an Excel file but this can also be a directory structure.</description><required>yes</required></attribute><attribute><name>failASAP</name><description>Indicates if the task should fail at the first failure of the nested content (when set to true) or continue the execution for all records and then throw a BuildException when one or more error occurred (when set to false).</description><required>no, default is
+					false</required></attribute></attributes></section><section title="Nested Parameters"><attributes><attribute><name>task</name><description>Any Ant task.</description><required>yes</required></attribute></attributes></section><section title="Details"><post>
+	<b>
+	Imagine an Excel file like this one:<n/>
+	<n/>
+			<img src="images/dataDriven/simpleExcelFile.png"/>
+	<n/>
+	<n/>
+	You can use <em>dataDriven</em> to execute a set of Ant tasks for each property set:
+	</b>
+    <code caption="dataDrivenEcho.xml">
+        <include src="examples/dataDrivenEcho.xml"/>
+    </code>
+    <b>
+    This will give you following output:
+<code>
+	[echo] Hello Denis N. Antonioli<n/>
+	[echo] Hello Dierk König<n/>
+	[echo] Hello Marc Guillemot<n/>
+	[echo] Hello Paul King<n/>
+	[echo] Hello Tomi Schütz<n/>
+</code>
+    </b>
+    <b>
+    Naturally you can combine it with WebTest, lets say to register these persons to some event:
+    </b>
+    <code caption="dataDrivenWebtetst.xml">
+        <include src="examples/dataDrivenWebtest.xml"/>
+    </code>
+</post></section></manpage>

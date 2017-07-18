@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>target</tag>&nbsp;<att>name</att><val>testFibonacciRuby</val>&gt;<n/>
+&nbsp;&nbsp;&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>scriptStepManualTests:&nbsp;test&nbsp;numbers&nbsp;page&nbsp;with&nbsp;inlined&nbsp;ruby&nbsp;Script</val>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&amp;sharedConfiguration;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>description</att><val>Load&nbsp;Initial&nbsp;Page</val>&nbsp;<att>url</att><val>numbers.html</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>storeXPath</tag>&nbsp;<att>description</att><val>extract&nbsp;number&nbsp;to&nbsp;check</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>xpath</att><val>//span[@id='fibonacci']/text()</val><n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<att>property</att><val>number</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>scriptStep</tag>&nbsp;<att>description</att><val>check&nbsp;if&nbsp;number&nbsp;is&nbsp;indeed&nbsp;in&nbsp;Fibonacci&nbsp;series</val>&nbsp;<att>language</att><val>ruby</val>&gt;&lt;![CDATA[<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;isFib(n)<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;0,&nbsp;1<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;b,&nbsp;a&nbsp;+&nbsp;b&nbsp;while&nbsp;b&nbsp;&lt;&nbsp;n<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;n&nbsp;==&nbsp;0&nbsp;||&nbsp;b&nbsp;==&nbsp;n<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$bsf.lookupBean("step").setWebtestProperty("found",&nbsp;"true")&nbsp;if&nbsp;isFib(#{number})<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]&gt;&lt;/<tag>scriptStep</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyProperty</tag>&nbsp;<att>name</att><val>found</val>&nbsp;<att>text</att><val>true</val>&nbsp;/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&lt;/<tag>webtest</tag>&gt;<n/>
+&lt;/<tag>target</tag>&gt;<n/>
+</source>

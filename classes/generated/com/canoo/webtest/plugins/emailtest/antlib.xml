@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<antlib>
+  <taskdef name="messageContentFilter" classname="com.canoo.webtest.plugins.emailtest.EmailMessageContentFilter"/>
+  <taskdef name="storeHeader" classname="com.canoo.webtest.plugins.emailtest.EmailStoreHeader"/>
+  <taskdef name="messageStructureFilter" classname="com.canoo.webtest.plugins.emailtest.EmailMessageStructureFilter"/>
+  <taskdef name="setConfig" classname="com.canoo.webtest.plugins.emailtest.EmailSetConfig"/>
+  <taskdef name="storeMessageId" classname="com.canoo.webtest.plugins.emailtest.EmailStoreMessageId"/>
+  <taskdef name="deleteMessage" classname="com.canoo.webtest.plugins.emailtest.EmailDeleteMessage"/>
+  <taskdef name="storeMessageCount" classname="com.canoo.webtest.plugins.emailtest.EmailStoreMessageCount"/>
+  <taskdef name="storePartCount" classname="com.canoo.webtest.plugins.emailtest.EmailStorePartCount"/>
+  <taskdef name="storePartFilename" classname="com.canoo.webtest.plugins.emailtest.EmailStorePartFilename"/>
+  <taskdef name="storeMessageType" classname="com.canoo.webtest.plugins.emailtest.EmailStoreMessageType"/>
+</antlib>

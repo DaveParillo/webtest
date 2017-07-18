@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="option"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"><level3 name="config" url="config.html"/><level3 name="header" url="header.html"/><level3 name="option" url="option.html"/><level3 name="step" url="step.html"/><level3 name="steps" url="steps.html"/><level3 name="webtest" url="webtest.html"/></level2>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"/>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="General Type| option"/><section title="Description"><b>Backdoor to configure HtmlUnit directly.</b><pre>
+    <b>
+        Option elements belong to the config rather than to a specific invocation, because they
+        reflect browser settings. They are unlikely to change during a conversation.
+    </b>
+
+</pre><pre>
+    <b>Option settings provide a crude mechanism to alter settings provided by the underlying
+        browser client layer. This sometimes allows settings needed for a particular test to be changed
+        without coding. They may stop working if supporting jar file versions change or if
+        WebTest provides more complete support via a different approach in the future. See the JavaDoc
+        for
+        <em>Target</em>
+        for more details - look in the source as the relevant JavaDocs are
+        for private methods and do not show in the published JavaDocs.
+    </b>
+</pre></section><section title="Parameters"><attributes><attribute><name>name</name><description>The name of the option, e.g. <example>ThrowExceptionOnFailingStatusCode</example>, <example>ThrowExceptionOnScriptError</example> or <example>JavaScriptEnabled</example>.</description><required>yes</required></attribute><attribute><name>value</name><description>The option value. e.g. <example>false</example></description><required>yes</required></attribute></attributes></section><section title="Usage"><b><stepref name="config"/>.</b></section></manpage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+...<n/>
+&lt;<tag>form</tag>&nbsp;<att>name</att><val>form1</val>&nbsp;<att>action</att><val>formTest?mode=YYYY</val>&gt;<n/>
+<t/>Text:<n/>
+<t/>&lt;<tag>input</tag>&nbsp;<att>type</att><val>text</val>&nbsp;<att>name</att><val>field1</val>&nbsp;<att>value</att><val></val>/&gt;<n/>
+<t/>&lt;<tag>input</tag>&nbsp;<att>type</att><val>submit</val>&nbsp;<att>name</att><val>doIt</val>&nbsp;<att>value</att><val>doItThisWay</val>/&gt;<n/>
+<t/>&lt;<tag>input</tag>&nbsp;<att>type</att><val>submit</val>&nbsp;<att>name</att><val>doIt</val>&nbsp;<att>value</att><val>doItThisOtherWay</val>&nbsp;/&gt;<n/>
+&lt;/<tag>form</tag>&gt;<n/>
+...<n/>
+<n/>
+</source>

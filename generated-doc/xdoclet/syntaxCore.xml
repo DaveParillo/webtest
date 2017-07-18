@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="Syntax Reference - Core Steps"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"><level3 name="clickButton" url="clickButton.html"/><level3 name="clickLink" url="clickLink.html"/><level3 name="followFrame" url="followFrame.html"/><level3 name="group" url="group.html"/><level3 name="invoke" url="invoke.html"/><level3 name="not" url="not.html"/><level3 name="previousResponse" url="previousResponse.html"/><level3 name="repeat" url="repeat.html"/><level3 name="selectForm" url="selectForm.html"/><level3 name="setCheckbox" url="setCheckbox.html"/><level3 name="setFileField" url="setFileField.html"/><level3 name="setInputField" url="setInputField.html"/><level3 name="setRadioButton" url="setRadioButton.html"/><level3 name="setSelectField" url="setSelectField.html"/><level3 name="storeCookie" url="storeCookie.html"/><level3 name="storeHeader" url="storeHeader.html"/><level3 name="storeProperty" url="storeProperty.html"/><level3 name="storeRegEx" url="storeRegEx.html"/><level3 name="storeXPath" url="storeXPath.html"/><level3 name="table" url="table.html"/><level3 name="testInfo" url="testInfo.html"/><level3 name="verifyCheckbox" url="verifyCheckbox.html"/><level3 name="verifyCookie" url="verifyCookie.html"/><level3 name="verifyElement" url="verifyElement.html"/><level3 name="verifyElementText" url="verifyElementText.html"/><level3 name="verifyInputField" url="verifyInputField.html"/><level3 name="verifyLinks" url="verifyLinks.html"/><level3 name="verifyProperty" url="verifyProperty.html"/><level3 name="verifyRadioButton" url="verifyRadioButton.html"/><level3 name="verifySelectField" url="verifySelectField.html"/><level3 name="verifyText" url="verifyText.html"/><level3 name="verifyTextarea" url="verifyTextarea.html"/><level3 name="verifyTitle" url="verifyTitle.html"/><level3 name="verifyXPath" url="verifyXPath.html"/></level2>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"/>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"/>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Available Core Steps">
+    <b>This is the syntax documentation for the Core steps.</b>
+
+    <b>
+        The <stepref name="webtest"/>
+        task includes all information about a test specification. It contains
+        the nested tasks <stepref name="config"/>
+        (soon to be optional) which defines configuration information and
+        <stepref name="steps"/>
+        (soon to be optional) which defines a sequence of test steps.
+    </b>
+
+    <b>
+        The <stepref name="steps"/>
+        element can contain any number of Core, Extension, PDF or grouping test steps.
+        A recent feature is that you can also mix in normal
+        <key>ANT</key> tasks as well. You can use the <stepref name="antWrapper" category="extension"/>
+        step or just add them in and an
+        <stepref name="antWrapper" category="extension"/> step will be added implicitly for you.
+        This is fairly new and hasn't had extensive testing yet - use with caution.
+    </b>
+
+    <b>The main Core steps provide the ability to invoke pages, store and verify various
+        information about visited pages, and manipulate <key>HTML</key> forms and include:
+        <stepref name="invoke"/>
+        <stepref name="clickLink"/>
+        <stepref name="clickButton"/>
+        <stepref name="followFrame"/>
+        <stepref name="previousResponse"/>
+        <stepref name="verifyTitle"/>
+        <stepref name="verifyText"/>
+        <stepref name="verifyElement"/>
+        <stepref name="verifyElementText"/>
+        <stepref name="verifyTextarea"/>
+        <stepref name="verifyInputField"/>
+        <stepref name="verifySelectField"/>
+        <stepref name="verifyLinks"/>
+        <stepref name="verifyXPath"/>
+        <stepref name="verifyCheckbox"/>
+        <stepref name="verifyCookie"/>
+        <stepref name="setCheckbox"/>
+        <stepref name="setInputField"/>
+        <stepref name="setRadioButton"/>
+        <stepref name="setSelectField"/>
+        <stepref name="storeRegEx"/>
+        <stepref name="storeProperty"/>
+        <stepref name="storeXPath"/>
+        <stepref name="storeDynamicProperty"/>
+        <stepref name="storeCookie"/>
+        <stepref name="storeHeader"/>
+        <stepref name="verifyProperty"/>
+
+    </b>
+
+    <b>Test steps can be further grouped (and even nested) using the following steps:
+        <stepref name="group"/>
+        <stepref name="not"/>
+        <stepref name="repeat"/>
+        <stepref category="Extension" name="ifStep"/>
+        <stepref category="Extension" name="timedGroup"/>
+        <stepref category="Extension" name="retry"/>
+    </b>
+
+		<b>In addition, there are special steps which help set appropriate context information,
+        e.g. <stepref name="selectForm"/> can be used to select a particular form as the <em>current form</em>
+            and <stepref name="verifyText"/> can contain the
+						<stepref name="table"/> locating step.
+		</b>
+
+
+		<b>Most of the steps work on the "current page" (actions like <stepref name="clickLink"/>, <stepref name="clickButton"/>, ... as well as verifications like <stepref name="verifyTitle"/>, <stepref name="verifyInputField"/>, ...).
+		The notion of "current page" is quite simple when no JavaScript is involved: it is the result of the last action step triggering a request (<stepref name="invoke"/>, <stepref name="clickLink"/> or <stepref name="clickButton"/>) or the frame followed by <stepref name="followFrame"/> or the response restored by <stepref name="previousResponse"/>.
+		It becomes more complicated when JavaScript is involved but it aims to be as "natural" as possible. A newly loaded page becomes the new "current response" if one of the following conditions applies:
+		</b>
+
+		<dl>
+		<li><dd>the page is loaded in the window of the current response</dd></li>
+		<li><dd>the page is loaded in a new window</dd></li>
+		<li><dd>the page is loaded in a frame which enclosing page is already loaded and the load was not triggered by JavaScript</dd></li>
+		</dl>
+
+		<b>Furthermore if the window containing the "current response" is closed, then the content of the last opened window becomes the "current response".
+		</b>
+
+	<b>Proxy settings configured with the ant <em>&lt;setproxy&gt;</em> task prior to <stepref name="webtest"/> are used to access the website to test.
+	</b>
+</head></manpage>

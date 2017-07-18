@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>html</tag>&gt;<n/>
+&lt;<tag>head</tag>&gt;<n/>
+&lt;<tag>title</tag>&gt;Special&nbsp;Numbers&lt;/<tag>title</tag>&gt;<n/>
+&lt;/<tag>head</tag>&gt;<n/>
+&lt;<tag>body</tag>&gt;<n/>
+&lt;<tag>h1</tag>&gt;Today's&nbsp;Special&nbsp;Numbers&lt;/<tag>h1</tag>&gt;<n/>
+&lt;<tag>p</tag>&gt;The&nbsp;prime&nbsp;number&nbsp;of&nbsp;the&nbsp;day&nbsp;is&nbsp;&lt;<tag>span</tag>&nbsp;id='prime'&gt;233&lt;/<tag>span</tag>&gt;<n/>
+and&nbsp;the&nbsp;fibonacci&nbsp;number&nbsp;of&nbsp;the&nbsp;day&nbsp;is&nbsp;&lt;<tag>span</tag>&nbsp;id='fibonacci'&gt;233&lt;/<tag>span</tag>&gt;.<n/>
+&lt;/<tag>body</tag>&gt;<n/>
+&lt;/<tag>html</tag>&gt;<n/>
+</source>

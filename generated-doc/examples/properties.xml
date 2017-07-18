@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+..<n/>
+<t/>&lt;<tag>property</tag>&nbsp;<att>name</att><val>url</val>&nbsp;<att>value</att><val>login?scott=</val>/&gt;<n/>
+<n/>
+<t/>&lt;<tag>target</tag>&nbsp;<att>name</att><val>main</val>&gt;<n/>
+<t/><t/>&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>myTest</val>&gt;<n/>
+<t/><t/><t/>&amp;config;<n/>
+<t/><t/><t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>invoke</tag><n/>
+<t/><t/><t/><t/><t/><att>description</att><val>bad&nbsp;login</val><n/>
+<t/><t/><t/><t/><t/><att>url</att><val>${url}wolf</val>&nbsp;/&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>verifyTitle</tag>&nbsp;<att>text</att><val>Sorry,&nbsp;bad&nbsp;login</val>&nbsp;/&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>invoke</tag><n/>
+<t/><t/><t/><t/><t/><att>description</att><val>proper&nbsp;login</val><n/>
+<t/><t/><t/><t/><t/><att>url</att><val>${url}tiger</val>&nbsp;/&gt;<n/>
+<t/><t/><t/><t/>&lt;<tag>verifyTitle</tag>&nbsp;<att>text</att><val>Welcome</val>&nbsp;/&gt;<n/>
+<t/><t/><t/>&lt;/<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;/<tag>webtest</tag>&gt;<n/>
+<t/>&lt;/<tag>target</tag>&gt;<n/>
+..<n/>
+</source>

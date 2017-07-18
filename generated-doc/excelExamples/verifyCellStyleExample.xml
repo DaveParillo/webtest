@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>exceltest&nbsp;-&nbsp;verify&nbsp;cell&nbsp;style</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;.../&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testExcel.xls</val>/&gt;<n/>
+<t/><t/>&lt;<tag>excelVerifyCellStyle</tag>&nbsp;<att>cell</att><val>B37</val>&nbsp;<att>border</att><val>top:thick;&nbsp;bottom:dash&nbsp;dot;&nbsp;left:none;&nbsp;right:medium&nbsp;dash&nbsp;dot</val><n/>
+<t/><t/><t/><t/><t/><t/><t/>&nbsp;&nbsp;<att>borderColor</att><val>top:auto;&nbsp;bottom:plum;&nbsp;left:none;&nbsp;right:bright&nbsp;green</val><n/>
+<t/><t/><t/><t/><t/><t/><t/>&nbsp;&nbsp;<att>fillColor</att><val>tan</val>&nbsp;<att>fillBackgroundColor</att><val>red</val>&nbsp;<att>textColor</att><val>green</val><n/>
+<t/><t/><t/><t/><t/><t/><t/>&nbsp;&nbsp;<att>fontName</att><val>Arial</val>&nbsp;<att>fontSize</att><val>12</val>&nbsp;<att>fontStyle</att><val>strikethrough&nbsp;bold&nbsp;italic&nbsp;underline</val><n/>
+<t/><t/><t/><t/><t/><t/><t/>&nbsp;&nbsp;<att>align</att><val>center</val>&nbsp;<att>valign</att><val>top</val>&nbsp;<att>fillPattern</att><val>thin&nbsp;diagonal&nbsp;stripe</val><n/>
+<t/><t/><t/><t/><t/><t/><t/>&nbsp;&nbsp;<att>description</att><val>A&nbsp;bit&nbsp;of&nbsp;everything</val>/&gt;<n/>
+<n/>
+<t/><t/>&lt;<tag>excelVerifyCellStyle</tag>&nbsp;<att>cell</att><val>A6</val>&nbsp;<att>border</att><val>left:thin</val>/&gt;<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>

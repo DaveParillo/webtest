@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>steps</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>invoke</tag>&nbsp;<att>url</att><val>testDocBookmarks.pdf</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>applyFilters</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>pdfToTextFilter</tag>&nbsp;<att>mode</att><val>groupByLines</val>&nbsp;<att>description</att><val>extract&nbsp;PDF&nbsp;text&nbsp;(default&nbsp;mode:&nbsp;normal)</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>lineSeparatorFilter</tag>&nbsp;<att>description</att><val>normalise&nbsp;line&nbsp;separators</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<tag>applyFilters</tag>&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>Heading&nbsp;Two</val>/&gt;<n/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<tag>verifyText</tag>&nbsp;<att>text</att><val>NEW&nbsp;PAGE</val>/&gt;<n/>
+&lt;/<tag>steps</tag>&gt;<n/>
+</source>

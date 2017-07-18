@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?><manpage xmlns:java="http://xml.apache.org/xalan/java" siteid="excelVerifyCellStyle"><site name="WebTest">
+	<level1 name="Home" url="WebTestHome.html">
+		<level2 name="Home" url="WebTestHome.html"/>
+		<level2 name="Key Characteristics" url="keyCharacteristics.html"/>
+		<level2 name="White Paper" url="whitepaper.html"/>
+		<level2 name="Downloads" url="Downloads.html"/>
+		<level2 name="Install" url="install.html"/>
+		<level2 name="Troubleshooting" url="troubleshooting.html"/>
+		<level2 name="Acknowledgments" url="acknowledgments.html"/>
+		<level2 name="Issue tracker" url="https://github.com/DaveParillo/webtest/issues"/>
+		<level2 name="Source code" url="https://github.com/DaveParillo/webtest"/> 
+		<level2 name="License" url="license.html"/>
+	</level1>
+	<level1 name="Manual" url="manualOverview.html">
+		<level2 name="Manual Overview" url="manualOverview.html"/>
+		<level2 name="Samples" url="samples.html"/>
+		<level2 name="Properties" url="properties.html"/>
+		<level2 name="Syntax Reference - General Steps" url="syntaxGeneral.html"/>
+		<level2 name="Syntax Reference - Core Steps" url="syntaxCore.html"/>
+		<level2 name="Syntax Reference - Extension Steps" url="syntaxExtension.html"/>
+		<level2 name="Syntax Reference - Filter Steps" url="syntaxFilter.html"/>
+        <level2 name="Syntax Reference - PDF Steps" url="syntaxPDF.html"/>
+        <level2 name="Syntax Reference - Excel Steps" url="syntaxExcel.html"><level3 name="excelFindRow" url="excelFindRow.html"/><level3 name="excelSelectSheet" url="excelSelectSheet.html"/><level3 name="excelStoreCellValue" url="excelStoreCellValue.html"/><level3 name="excelStructureFilter" url="excelStructureFilter.html"/><level3 name="excelVerifyCellStyle" url="excelVerifyCellStyle.html"/><level3 name="excelVerifyCellSum" url="excelVerifyCellSum.html"/><level3 name="excelVerifyCellValue" url="excelVerifyCellValue.html"/></level2>
+        <level2 name="Syntax Reference - Email Steps" url="syntaxEmail.html"/>
+        <level2 name="Step Index" url="stepIndex.html"/>
+        <level2 name="Groovy Testing" url="groovyTesting.html"/>
+        <level2 name="Integration with other Tools" url="integration.html"/>
+		<level2 name="Annotated References" url="annotatedRefs.html"/>
+	</level1>
+	<level1 name="Develop" url="developOverview.html">
+		<level2 name="Develop Overview" url="developOverview.html"/>
+		<level2 name="Building" url="building.html"/>
+		<level2 name="Release" url="release.html"/>
+	</level1>
+	<level1 name="Build Info" url="buildOverview.html">
+		<level2 name="Build Overview" url="/webtest/manual/buildOverview.html"/>
+		<level2 name="Unit Test Report" url="/webtest/junit/index.html"/>
+		<level2 name="Self Test Report" url="/webtest/reports/selftest/index.html"/>
+		<level2 name="Release Test Report" url="/webtest/reports/releasetest/index.html"/>
+		<level2 name="API Doc" url="/webtest/api/"/>
+	</level1>
+</site><head title="Excel Step| excelVerifyCellStyle"/><section title="Description"><b>This step verifies the style of a specified cell in an Excel spreadsheet. Only those properties set will be checked.</b></section><section title="Parameters"><attributes><attribute><name>description</name><description>The description of this test step.</description><required>no</required></attribute><attribute><name>format</name><description>The format to check for. eg 0.00 for two decimal places.</description><required>no</required></attribute><attribute><name>type</name><description>The expected cell type. One of <em>blank, numeric, formula, string, boolean or error.</em></description><required>no</required></attribute><attribute><name>align</name><description>The expected horizontal alignment. One of center, center-selection, fill, general, justify, left, right</description><required>no</required></attribute><attribute><name>valign</name><description>The expected vertical alignment. One of bottom, center, justify, top</description><required>no</required></attribute><attribute><name>wrap</name><description>The expected wrap setting. true or false</description><required>no</required></attribute><attribute><name>fontStyle</name><description>The expected font style. A combination of bold, italic, strikethrough, subscript, superscript, underline, underline-accounting, underline-double, underline-double-accounting separated by spaces, or normal</description><required>no</required></attribute><attribute><name>locked</name><description>The expected locked status. true or false</description><required>no</required></attribute><attribute><name>fontName</name><description>The expected font name. eg. Arial or Times</description><required>no</required></attribute><attribute><name>fontSize</name><description>The expected font size in points. eg 10 or 12</description><required>no</required></attribute><attribute><name>border</name><description>The expected border style. One of <em>dash dot, dash dot dot, dashed, dotted, double, hair, medium, medium dash dot, medium dash dot dot, medium dashed, slanted dash dot, thick, thin, none</em>. See below for details on specifying sides.</description><required>no</required></attribute><attribute><name>borderColor</name><description>The expected border color. Specify as #rrggbb or use a standard name. See below for details on specifying sides.</description><required>no</required></attribute><attribute><name>textColor</name><description>The expected text color. Specify as #rrggbb or use a standard name.</description><required>no</required></attribute><attribute><name>fillColor</name><description>The expected foreground cell fill color. Specify as #rrggbb or use a standard name.</description><required>no</required></attribute><attribute><name>fillBackgroundColor</name><description>The expected background cell fill color. Specify as #rrggbb or use a standard name.</description><required>no</required></attribute><attribute><name>fillPattern</name><description>The expected fill pattern. One of <em>none, solid, 50% gray, 75% gray, 25% gray, horizontal stripe, vertical stripe, reverse diagonal stripe, diagonal stripe, diagonal crosshatch, thick diagonal crosshatch, thin horizontal stripe, thin vertical stripe, thin reverse diagonal stripe, thin diagonal stripe, thin horizontal crosshatch, thin diagonal crosshatch, 12.5% gray, 6.25% gray</em></description><required>no</required></attribute><attribute><name>cell</name><description>The spreadsheet cell to select. eg. A5. Either <em>cell</em> or <em>row</em> and <em>col</em> must be specified.</description><required>yes/no</required></attribute><attribute><name>row</name><description>The number of the row to select, starting at 1. Either <em>cell</em> or <em>row</em> and <em>col</em> must be specified.</description><required>yes/no</required></attribute><attribute><name>col</name><description>The name or number (starting at 1) of the column to select. eg 1 or A. Either <em>cell</em> or <em>row</em> and <em>col</em> must be specified.</description><required>no</required></attribute><attribute><name>sheetName</name><description>The name of the sheet to select. If no sheet is selected, the value of the last <em>excelSelectSheet</em> call is used, or defaults to the first sheet.</description><required>no</required></attribute><attribute><name>sheetIndex</name><description>The index of the sheet to select, starting at zero. If no sheet is selected, the value of the last <em>excelSelectSheet</em> call is used, or defaults to the first sheet.</description><required>no</required></attribute></attributes></section><section title="Details"><post>
+
+    <b>
+        Here is an example using the <em>excelVerifyCellStyle</em> step:
+    </b>
+
+    <code caption="excelVerifyCellStyle Example">
+        <include src="excelExamples/verifyCellStyleExample.xml"/>
+    </code>
+
+    <b>
+        For the <em>border</em> and <em>borderColor</em> properties, you can have fine grained control over what is
+        expected for the border on each side of the cell.  Here are some examples:
+    </b>
+            <code>border="thin"</code> <b>This tests for a thin border all the way around the cell.</b>
+            <code>borderColor="left:red"</code> <b>This tests for a red border on the left of the cell.  The other borders are ignored.</b>
+            <code>border="top,left:none;bottom:thin;right:dashed"</code> <b>This tests for no borders on the top and left of the cell, a thin border on bottom and a dashed one to the right</b>
+            <code>borderColor="#0000ff;top:none"</code> <b>This tests for a blue border on the left, right and top sides and no border on the top.</b>
+
+    <b>
+        For the <em>borderColor</em>, <em>textColor</em>, <em>fillColor</em> and <em>fillBackgroundColor</em> properties,
+        you can use the following standard color names instead of hex values: <em>aqua, black, blue, blue gray, bright green,
+        brown, coral, dark blue, dark green, dark purple, dark red, dark teal, dark yellow, gold, green, 25% gray, 40% gray,
+        50% gray, 80% gray, ice blue, indigo, ivory, lavender, light blue, light green, light orange, light turquoise,
+        light yellow, lime, maroon, ocean blue, olive green, orange, pale blue, periwinkle, pink, plum, red, rose, sea green,
+        sky blue, tan, teal, turquoise, violet, white, yellow.</em>
+    </b>
+</post></section></manpage>

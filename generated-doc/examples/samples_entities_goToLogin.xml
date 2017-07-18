@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>invoke</tag><n/>
+<t/><att>url</att><val>http://www.myserver.com:8080/myApp/login</val><n/>
+<t/><att>description</att><val>get&nbsp;Login&nbsp;Page</val>&nbsp;/&gt;<n/>
+&lt;<tag>verifyTitle</tag>&nbsp;<n/>
+<t/><att>text</att><val>Login&nbsp;Page</val><n/>
+<t/><att>description</att><val>we&nbsp;should&nbsp;see&nbsp;the&nbsp;login&nbsp;title</val>&nbsp;/&gt;<n/>
+</source>

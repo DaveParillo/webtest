@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>?xml</tag>&nbsp;<att>version</att><val>1.0</val>&nbsp;?&gt;<n/>
+&lt;<tag>project</tag>&nbsp;<att>name</att><val>webtestClasspath</val>&gt;<n/>
+<t/>&lt;<tag>description</tag>&gt;<n/>
+DEPRECATED&nbsp;since&nbsp;November&nbsp;2007:&nbsp;use&nbsp;webtest.xml&nbsp;instead&nbsp;of&nbsp;this&nbsp;file!<n/>
+<n/>
+<t/><t/>This&nbsp;project&nbsp;provides&nbsp;following&nbsp;elements&nbsp;to&nbsp;use&nbsp;in&nbsp;your&nbsp;test&nbsp;scripts:<n/>
+<n/>
+<t/><t/>(0)&nbsp;the&nbsp;path&nbsp;"webtest.path.id"&nbsp;that&nbsp;includes&nbsp;all&nbsp;of&nbsp;webtest's&nbsp;libraries,<n/>
+<n/>
+<t/><t/>Usage:<n/>
+<t/><t/>Set&nbsp;the&nbsp;property&nbsp;webtest.home&nbsp;to&nbsp;the&nbsp;directory&nbsp;in&nbsp;which&nbsp;the&nbsp;build.zip&nbsp;is&nbsp;extracted,<n/>
+<t/><t/>and&nbsp;calls:<n/>
+<t/><t/>&amp;lt;import&nbsp;<att>file</att><val>${webtest.home}/lib/classpath.xml</val>&nbsp;&amp;gt;<n/>
+<t/>&lt;/<tag>description</tag>&gt;<n/>
+<n/>
+<t/>&lt;<tag>echo</tag>&nbsp;<att>message</att><val>DEPRECATED&nbsp;since&nbsp;November&nbsp;2007:&nbsp;use&nbsp;webtest.xml&nbsp;instead&nbsp;of&nbsp;lib/classpath.xml!</val>&nbsp;<att>level</att><val>warning</val>/&gt;<n/>
+<n/>
+<t/>&lt;<tag>dirname</tag>&nbsp;<att>property</att><val>webtest.classpath.dir</val>&nbsp;<att>file</att><val>${ant.file.webtestClasspath}</val>&nbsp;/&gt;<n/>
+<t/>&lt;<tag>path</tag>&nbsp;<att>id</att><val>webtest.path.id</val>&gt;<n/>
+<t/><t/>&lt;--&nbsp;to&nbsp;find&nbsp;webtest's&nbsp;log4j&nbsp;properties&nbsp;--&gt;<n/>
+<t/><t/>&lt;<tag>pathelement</tag>&nbsp;<att>location</att><val>${webtest.classpath.dir}/</val>/&gt;<n/>
+<t/><t/>&lt;<tag>fileset</tag>&nbsp;<att>dir</att><val>${webtest.classpath.dir}</val>&nbsp;<att>includes</att><val>*.jar</val>/&gt;<n/>
+<t/><t/>&lt;<tag>fileset</tag>&nbsp;<att>dir</att><val>${webtest.classpath.dir}</val>&nbsp;<att>includes</att><val>optional/*.jar</val>/&gt;<n/>
+<t/><t/>&lt;<tag>fileset</tag>&nbsp;<att>dir</att><val>${webtest.classpath.dir}</val>&nbsp;<att>includes</att><val>plugins/**/*.jar</val>/&gt;<n/>
+<t/><t/>&lt;<tag>fileset</tag>&nbsp;<att>dir</att><val>${webtest.classpath.dir}</val>&nbsp;<att>includes</att><val>runtime/*.jar</val>/&gt;<n/>
+<t/>&lt;/<tag>path</tag>&gt;<n/>
+&lt;/<tag>project</tag>&gt;<n/>
+</source>

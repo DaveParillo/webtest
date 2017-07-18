@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE source [<!ENTITY nbsp "&#160;">]>
+<source>
+&lt;<tag>webtest</tag>&nbsp;<att>name</att><val>Visit&nbsp;all&nbsp;pages&nbsp;without&nbsp;update</val>&gt;<n/>
+<t/>&lt;<tag>config</tag>&nbsp;...&nbsp;/&gt;<n/>
+<t/>&lt;<tag>steps</tag>&gt;<n/>
+<t/><t/>&lt;<tag>invoke</tag><t/><att>description</att><val>Start&nbsp;the&nbsp;main&nbsp;controller</val><n/>
+<t/><t/><t/><att>url</att><val>KycController?partnerId=012345678912&amp;amp;portal=RM</val><n/>
+<t/><t/><t/><att>save</att><val>myResultPage</val>/&gt;<n/>
+<t/><t/>...<n/>
+<t/>&lt;/<tag>steps</tag>&gt;<n/>
+&lt;/<tag>webtest</tag>&gt;<n/>
+</source>
