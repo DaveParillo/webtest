@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="favicon.ico" type="image/x-icon" rel="icon">
+<link title="Home" href="WebTestHome.html" rel="chapter">
+<link title="Manual" href="manualOverview.html" rel="chapter">
+<link title="Manual Overview" href="manualOverview.html" rel="section">
+<link title="Samples" href="samples.html" rel="section">
+<link title="Properties" href="properties.html" rel="section">
+<link title="Syntax Reference - General Steps" href="syntaxGeneral.html" rel="section">
+<link title="Syntax Reference - Core Steps" href="syntaxCore.html" rel="section">
+<link title="clickButton" href="clickButton.html" rel="subsection">
+<link title="clickLink" href="clickLink.html" rel="subsection">
+<link title="condition" href="condition.html" rel="subsection">
+<link title="dataDriven" href="dataDriven.html" rel="subsection">
+<link title="else" href="else.html" rel="subsection">
+<link title="followFrame" href="followFrame.html" rel="subsection">
+<link title="groovy" href="groovy.html" rel="subsection">
+<link title="group" href="group.html" rel="subsection">
+<link title="ifStep" href="ifStep.html" rel="subsection">
+<link title="invoke" href="invoke.html" rel="subsection">
+<link title="not" href="not.html" rel="subsection">
+<link title="otherwise" href="otherwise.html" rel="subsection">
+<link title="previousResponse" href="previousResponse.html" rel="subsection">
+<link title="repeat" href="repeat.html" rel="subsection">
+<link title="selectForm" href="selectForm.html" rel="subsection">
+<link title="setCheckbox" href="setCheckbox.html" rel="subsection">
+<link title="setFileField" href="setFileField.html" rel="subsection">
+<link title="setInputField" href="setInputField.html" rel="subsection">
+<link title="setRadioButton" href="setRadioButton.html" rel="subsection">
+<link title="setSelectField" href="setSelectField.html" rel="subsection">
+<link title="storeCookie" href="storeCookie.html" rel="subsection">
+<link title="storeHeader" href="storeHeader.html" rel="subsection">
+<link title="storeProperty" href="storeProperty.html" rel="subsection">
+<link title="storeRegEx" href="storeRegEx.html" rel="subsection">
+<link title="storeResponseCode" href="storeResponseCode.html" rel="subsection">
+<link title="storeXPath" href="storeXPath.html" rel="subsection">
+<link title="table" href="table.html" rel="subsection">
+<link title="testInfo" href="testInfo.html" rel="subsection">
+<link title="then" href="then.html" rel="subsection">
+<link title="verifyCheckbox" href="verifyCheckbox.html" rel="subsection">
+<link title="verifyContent" href="verifyContent.html" rel="subsection">
+<link title="verifyCookie" href="verifyCookie.html" rel="subsection">
+<link title="verifyElement" href="verifyElement.html" rel="subsection">
+<link title="verifyElementText" href="verifyElementText.html" rel="subsection">
+<link title="verifyHeader" href="verifyHeader.html" rel="subsection">
+<link title="verifyInputField" href="verifyInputField.html" rel="subsection">
+<link title="verifyLinks" href="verifyLinks.html" rel="subsection">
+<link title="verifyProperty" href="verifyProperty.html" rel="subsection">
+<link title="verifyRadioButton" href="verifyRadioButton.html" rel="subsection">
+<link title="verifySelectField" href="verifySelectField.html" rel="subsection">
+<link title="verifyText" href="verifyText.html" rel="subsection">
+<link title="verifyTextarea" href="verifyTextarea.html" rel="subsection">
+<link title="verifyTitle" href="verifyTitle.html" rel="subsection">
+<link title="verifyXPath" href="verifyXPath.html" rel="subsection">
+<link title="Syntax Reference - Extension Steps" href="syntaxExtension.html" rel="section">
+<link title="Syntax Reference - Filter Steps" href="syntaxFilter.html" rel="section">
+<link title="Syntax Reference - PDF Steps" href="syntaxPDF.html" rel="section">
+<link title="Syntax Reference - Excel Steps" href="syntaxExcel.html" rel="section">
+<link title="Syntax Reference - Email Steps" href="syntaxEmail.html" rel="section">
+<link title="Step Index" href="stepIndex.html" rel="section">
+<link title="Groovy Testing" href="groovyTesting.html" rel="section">
+<link title="Integration with other Tools" href="integration.html" rel="section">
+<link title="Annotated References" href="annotatedRefs.html" rel="section">
+<link title="Develop" href="building.html" rel="chapter">
+<link href="website_base.css" type="text/css" rel="stylesheet">
+<link href="website_part.css" type="text/css" rel="stylesheet">
+<meta name="description" content="">
+<meta name="keywords" content="Canoo,
+						WebTest, web application testing, automatic, XP, ANT, httpunit, htmlunit, groovy,
+						acceptance testing, extreme programming, agile development,
+						Description,Parameters,Inline Text,Details,">
+<title>Core Step: groovy</title>
+</head>
+<body>
+<div id="page">
+<img alt="Webtest" height="89" width="949" usemap="#headerLinks" src="images/header.gif" class="mosaic"><map name="headerLinks">
+<area alt="WebTest GitHub Home" href="https://github.com/DaveParillo/webtest" coords="30px,30px,180px,55px" shape="rect">
+</map>
+<div id="navigation-top">
+<ul>
+<li>
+<a href="WebTestHome.html">Home</a>
+</li>
+<li>
+<a href="manualOverview.html" class="selected">Manual</a>
+</li>
+<li>
+<a href="building.html">Develop</a>
+</li>
+</ul>
+</div>
+<table style="border-collapse: collapse;" cellpadding="0" cellspacing="0" border="0" rules="none" frame="void" id="main">
+<col width="190">
+<col width="758">
+<tr valign="top">
+<td class="main-left" valign="top">
+<div id="search">
+<form id="searchForm" action="http://www.google.com/search">
+<input value="daveparillo.github.io/webtest/" name="sitesearch" type="hidden"><input alt="Search" title="Search" value="Search" name="go" id="searchButton" type="submit"><input title="Search" onfocus="this.select();" name="q" id="searchText" type="text">
+</form>
+</div>
+<div id="navigation-left">
+<ul>
+<li>
+<a href="manualOverview.html">Manual Overview</a>
+</li>
+<li>
+<a href="samples.html">Samples</a>
+</li>
+<li>
+<a href="properties.html">Properties</a>
+</li>
+<li>
+<a href="syntaxGeneral.html">Syntax Reference - General Steps</a>
+</li>
+<li>
+<a href="syntaxCore.html" class="selected">Syntax Reference - Core Steps</a>
+<ul>
+<li>
+<a href="clickButton.html">&gt; clickButton</a>
+</li>
+<li>
+<a href="clickLink.html">&gt; clickLink</a>
+</li>
+<li>
+<a href="condition.html">&gt; condition</a>
+</li>
+<li>
+<a href="dataDriven.html">&gt; dataDriven</a>
+</li>
+<li>
+<a href="else.html">&gt; else</a>
+</li>
+<li>
+<a href="followFrame.html">&gt; followFrame</a>
+</li>
+<li>
+<a href="groovy.html" class="selected">&gt; groovy</a>
+</li>
+<li>
+<a href="group.html">&gt; group</a>
+</li>
+<li>
+<a href="ifStep.html">&gt; ifStep</a>
+</li>
+<li>
+<a href="invoke.html">&gt; invoke</a>
+</li>
+<li>
+<a href="not.html">&gt; not</a>
+</li>
+<li>
+<a href="otherwise.html">&gt; otherwise</a>
+</li>
+<li>
+<a href="previousResponse.html">&gt; previousResponse</a>
+</li>
+<li>
+<a href="repeat.html">&gt; repeat</a>
+</li>
+<li>
+<a href="selectForm.html">&gt; selectForm</a>
+</li>
+<li>
+<a href="setCheckbox.html">&gt; setCheckbox</a>
+</li>
+<li>
+<a href="setFileField.html">&gt; setFileField</a>
+</li>
+<li>
+<a href="setInputField.html">&gt; setInputField</a>
+</li>
+<li>
+<a href="setRadioButton.html">&gt; setRadioButton</a>
+</li>
+<li>
+<a href="setSelectField.html">&gt; setSelectField</a>
+</li>
+<li>
+<a href="storeCookie.html">&gt; storeCookie</a>
+</li>
+<li>
+<a href="storeHeader.html">&gt; storeHeader</a>
+</li>
+<li>
+<a href="storeProperty.html">&gt; storeProperty</a>
+</li>
+<li>
+<a href="storeRegEx.html">&gt; storeRegEx</a>
+</li>
+<li>
+<a href="storeResponseCode.html">&gt; storeResponseCode</a>
+</li>
+<li>
+<a href="storeXPath.html">&gt; storeXPath</a>
+</li>
+<li>
+<a href="table.html">&gt; table</a>
+</li>
+<li>
+<a href="testInfo.html">&gt; testInfo</a>
+</li>
+<li>
+<a href="then.html">&gt; then</a>
+</li>
+<li>
+<a href="verifyCheckbox.html">&gt; verifyCheckbox</a>
+</li>
+<li>
+<a href="verifyContent.html">&gt; verifyContent</a>
+</li>
+<li>
+<a href="verifyCookie.html">&gt; verifyCookie</a>
+</li>
+<li>
+<a href="verifyElement.html">&gt; verifyElement</a>
+</li>
+<li>
+<a href="verifyElementText.html">&gt; verifyElementText</a>
+</li>
+<li>
+<a href="verifyHeader.html">&gt; verifyHeader</a>
+</li>
+<li>
+<a href="verifyInputField.html">&gt; verifyInputField</a>
+</li>
+<li>
+<a href="verifyLinks.html">&gt; verifyLinks</a>
+</li>
+<li>
+<a href="verifyProperty.html">&gt; verifyProperty</a>
+</li>
+<li>
+<a href="verifyRadioButton.html">&gt; verifyRadioButton</a>
+</li>
+<li>
+<a href="verifySelectField.html">&gt; verifySelectField</a>
+</li>
+<li>
+<a href="verifyText.html">&gt; verifyText</a>
+</li>
+<li>
+<a href="verifyTextarea.html">&gt; verifyTextarea</a>
+</li>
+<li>
+<a href="verifyTitle.html">&gt; verifyTitle</a>
+</li>
+<li>
+<a href="verifyXPath.html">&gt; verifyXPath</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="syntaxExtension.html">Syntax Reference - Extension Steps</a>
+</li>
+<li>
+<a href="syntaxFilter.html">Syntax Reference - Filter Steps</a>
+</li>
+<li>
+<a href="syntaxPDF.html">Syntax Reference - PDF Steps</a>
+</li>
+<li>
+<a href="syntaxExcel.html">Syntax Reference - Excel Steps</a>
+</li>
+<li>
+<a href="syntaxEmail.html">Syntax Reference - Email Steps</a>
+</li>
+<li>
+<a href="stepIndex.html">Step Index</a>
+</li>
+<li>
+<a href="groovyTesting.html">Groovy Testing</a>
+</li>
+<li>
+<a href="integration.html">Integration with other Tools</a>
+</li>
+<li>
+<a href="annotatedRefs.html">Annotated References</a>
+</li>
+</ul>
+</div>
+<div class="filler"></div>
+</td><td rowspan="2" valign="top">
+<div id="main-content">
+<h1>
+<span class="category">Core Step</span> groovy</h1>
+<h2>
+<a name="Description">Description</a>
+</h2>
+<p>Executes the provided Groovy script (the binding is the same for all groovy steps within a webtest).</p>
+<h2>
+<a name="Parameters">Parameters</a>
+</h2>
+<dl class="attributes">
+<dt>description</dt>
+<dd class="required">Required? no</dd>
+<dd>The description of this test step.</dd>
+<dt>file</dt>
+<dd class="required">Required? yes/no</dd>
+<dd>The name of the file containing the script code. You may omit this parameter if you have embedded script code.</dd>
+<dt>replaceProperties</dt>
+<dd class="required">Required? no, default is
+					false</dd>
+<dd>Indicates if properties (${...} and #{...}) present in the script should be replaced by their value. Use carefully as ${...} is although the syntax for GString.</dd>
+</dl>
+<h2>
+<a name="Inline Text">Inline Text</a>
+</h2>
+<p>The
+							<i>inline text</i>
+							is all the text between the start tag (
+							<span class="example">&lt;groovy&gt;</span>
+							) and the end tag (
+							<span class="example">&lt;/groovy&gt;</span>
+							), including blanks, tabs or newlines. Using a pair of start/end tags (
+							<span class="example">&lt;groovy&gt; &lt;/groovy&gt;</span>
+							) has not the same behavior than the seemingly equivalent empty element tag (
+							<span class="example">&lt;groovy/&gt;</span>
+							)! See
+							<a class="ext" title="external link: opens in new window" target="_blank" href="https://github.com/DaveParillo/webtest/issuesbrowse/WT-228">this issue</a>
+							for an example.
+						</p>
+<dl class="attributes">
+<dd class="required">Required? yes/no</dd>
+<dd>The script to execute. You may omit this if you use the attribute file.</dd>
+</dl>
+<h2>
+<a name="Details">Details</a>
+</h2>
+    
+<p>When you are supplying the scripting code you can define methods and variables
+        as needed. In addition, you can call any of the Java methods which would be available
+        to the <i>&lt;groovy&gt;</i> step. See the API documentation for WebTest to determine
+        what method calls are available.</p>
+    
+<p>As an example, the <i>GroovyStep</i> class extends
+        the <i>Step</i> class which has a <i>getContext()</i> method which returns the
+        current <i>Context</i> which has a method <i>getCurrentResponse()</i> which
+        returns the current response which has a method <i>getDocumentElement()</i>.
+        In groovy you can just use <i>step.context.currentResponse.documentElement</i> to
+        return the current HTML document.</p>
+    
+<p>In addition to the functionality available to the <i>GroovyStep</i> class, there
+        are additional convenience variables <i>step</i> and <i>out</i> available to let
+        the script access itself or its log respectively.</p>
+
+    
+<dl>
+        
+            
+<dt>step</dt>
+            
+<dd>The groovy step itself.</dd>
+        
+        
+            
+<dt>out</dt>
+            
+<dd>Mapped to step's log (at the debug level).</dd>
+        
+    
+</dl>
+
+    
+<p>Note that the groovy step does not provide all the convenience variables provided by scriptStep.
+        The value of the missing variables are easily computed as follows:</p>
+
+    
+<dl>
+        
+            
+<dt>document, for an html page</dt>
+            
+<dd>step.context.currentResponse.documentElement</dd>
+            
+<dt>document, for an xml page</dt>
+            
+<dd>step.context.currentResponse.xmlDocumentElement</dd>
+            
+<dt>response</dt>
+            
+<dd>step.context.currentResponse.webResponse</dd>
+        
+    
+</dl>
+
+    
+<p>
+        The examples reuse the scenario of the
+        <a href="scriptStep.html" class="stepref">scriptStep</a>
+        .
+    </p>
+
+    
+<p>
+        
+<i>Order Example</i>
+    
+</p>
+
+    
+<div class="code">
+<div class="caption">OrderTest</div>
+<div class="content">
+        
+&lt;<span class="tag">invoke</span>&nbsp;<span class="att">description</span>="<span class="val">Load&nbsp;Order&nbsp;Page</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">url</span>="<span class="val">order.html</span>"/&gt;<br>
+&lt;<span class="tag">groovy</span>&nbsp;<span class="att">description</span>="<span class="val">check&nbsp;qty&nbsp;and&nbsp;price</span>"&nbsp;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;document&nbsp;=&nbsp;step.context.currentResponse.documentElement<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;calc_qty&nbsp;=&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;calc_price&nbsp;=&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;document.getHtmlElementsByAttribute('tr',&nbsp;'class',&nbsp;'lineitem').each{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;table_cells&nbsp;=&nbsp;it.getHtmlElementsByTagName('td')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;qty&nbsp;=&nbsp;table_cells.get(1).asText().toInteger()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;unit_price&nbsp;=&nbsp;table_cells.get(2).asText().toInteger()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;total_line_price&nbsp;=&nbsp;table_cells.get(3).asText().toInteger()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calc_qty&nbsp;+=&nbsp;qty<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calc_price&nbsp;+=&nbsp;total_line_price<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;qty&nbsp;*&nbsp;unit_price&nbsp;==&nbsp;total_line_price<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;root&nbsp;=&nbsp;new&nbsp;XmlSlurper().parseText(document.asXml())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;totalCols&nbsp;=&nbsp;root.'**'.findAll{&nbsp;it.name()&nbsp;==&nbsp;"tr"&nbsp;}.find{&nbsp;it['@class']&nbsp;==&nbsp;'total'&nbsp;}.td<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;slightly&nbsp;shorter&nbsp;alternative&nbsp;to&nbsp;above&nbsp;if&nbsp;you&nbsp;don't&nbsp;mind&nbsp;explicitly&nbsp;specifying&nbsp;tr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;totalCols&nbsp;=&nbsp;root.body.table.tbody.tr.find&nbsp;{&nbsp;it['@class']&nbsp;==&nbsp;'total'&nbsp;}.td<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;calc_qty&nbsp;==&nbsp;totalCols[1].text().trim().toInteger()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;calc_price&nbsp;==&nbsp;totalCols[3].text().trim().toInteger()<br>
+&lt;/<span class="tag">groovy</span>&gt;<br>
+
+    
+</div>
+</div>
+
+    
+<p>
+        
+<i>Traffic Light Example</i>
+    
+</p>
+
+    
+<div class="code">
+<div class="caption">GroovyTrafficLightTest</div>
+<div class="content">
+        
+&lt;<span class="tag">target</span>&nbsp;<span class="att">name</span>="<span class="val">testInlineGroovy</span>"&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">property</span>&nbsp;<span class="att">name</span>="<span class="val">image_id</span>"&nbsp;<span class="att">value</span>="<span class="val">traffic_light</span>"/&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">webtest</span>&nbsp;<span class="att">name</span>="<span class="val">groovy:&nbsp;test&nbsp;groovy&nbsp;with&nbsp;inlined&nbsp;script</span>"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">invoke</span>&nbsp;<span class="att">description</span>="<span class="val">Load&nbsp;Initial&nbsp;Page</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">url</span>="<span class="val">trafficlight.html</span>"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">storeXPath</span>&nbsp;<span class="att">description</span>="<span class="val">extract&nbsp;src&nbsp;attribute&nbsp;from&nbsp;image&nbsp;with&nbsp;id=${image_id}</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">xpath</span>="<span class="val">//img[@id='${image_id}']/@src</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">property</span>="<span class="val">imagesrc</span>"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">groovy</span>&nbsp;<span class="att">description</span>="<span class="val">calculate&nbsp;expected&nbsp;alt&nbsp;text&nbsp;for&nbsp;src=#{imagesrc}</span>"&nbsp;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;src2alt&nbsp;=&nbsp;['red.gif':'stop',&nbsp;'orange.gif':'wait',&nbsp;'green.gif':'go']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step.setWebtestProperty('image_alt',&nbsp;src2alt[step.webtestProperties.imagesrc])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tag">groovy</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyXPath</span>&nbsp;<span class="att">description</span>="<span class="val">check&nbsp;alt&nbsp;value</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">xpath</span>="<span class="val">//img[@id='${image_id}']/@alt</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">text</span>="<span class="val">#{image_alt}</span>"/&gt;<br>
+&nbsp;&nbsp;&lt;/<span class="tag">webtest</span>&gt;<br>
+&lt;/<span class="tag">target</span>&gt;<br>
+
+    
+</div>
+</div>
+
+    
+<p>Rather than having the scripting code inline, you can place
+        it in a file and reference that file as follows:</p>
+
+    
+<div class="code">
+<div class="caption">GroovyFileTrafficLightTest</div>
+<div class="content">
+        
+&lt;<span class="tag">target</span>&nbsp;<span class="att">name</span>="<span class="val">testFileGroovy</span>"&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">property</span>&nbsp;<span class="att">name</span>="<span class="val">image_id</span>"&nbsp;<span class="att">value</span>="<span class="val">traffic_light</span>"/&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">webtest</span>&nbsp;<span class="att">name</span>="<span class="val">groovy:&nbsp;test&nbsp;Groovy&nbsp;code&nbsp;from&nbsp;file</span>"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">groovy</span>&nbsp;<span class="att">description</span>="<span class="val">use&nbsp;from&nbsp;file&nbsp;like&nbsp;a&nbsp;macro</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">src</span>="<span class="val">${basedir}/GMacroSteps.groovy</span>"/&gt;<br>
+&nbsp;&nbsp;&lt;/<span class="tag">webtest</span>&gt;<br>
+&lt;/<span class="tag">target</span>&gt;<br>
+
+    
+</div>
+</div>
+
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="filler"></div>
+</body>
+</html>
