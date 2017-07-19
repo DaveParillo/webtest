@@ -1,0 +1,17 @@
+<post>
+
+    <b><em>Examples</em></b>
+
+    <code caption='simple verifyHeader example'>
+        <include src='examples/verifyHeaderExample.xml'/>
+    </code>
+
+    <b>The following example checks the content type,
+        but excludes the charset that might follow the mime type.
+    </b>
+
+    <code caption='verifyHeader regex example'>
+        <include src='examples/verifyHeaderExampleRegex.xml'/>
+    </code>
+</post>
+

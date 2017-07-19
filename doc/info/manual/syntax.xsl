@@ -88,9 +88,7 @@
 							<example>&lt;<xsl:value-of select="name"/>> &lt;/<xsl:value-of select="name"/>></example>
 							) has not the same behavior than the seemingly equivalent empty element tag (
 							<example>&lt;<xsl:value-of select="name"/>/></example>
-							)! See
-							<ext base="jira" href="browse/WT-228">this issue</ext>
-							for an example.
+							).
 						</b>
 						<attributes>
 							<xsl:apply-templates select="nestedParameter[name='addText']"/>

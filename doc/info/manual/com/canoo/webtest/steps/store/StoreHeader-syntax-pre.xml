@@ -1,0 +1,14 @@
+<pre>
+  <b>
+    Most of the time, it is more straightforward to simply use the
+    <stepref name="verifyHeader"/> step directly.
+    The primary rationale for explitly storing a header value in a property
+    is to include the property value in a future <stepref name="invoke"/> step,
+    or if verification needs to be deferred after the stored response 
+    has been replaced  with a new one.
+  </b>
+  <b>In short, prefer <stepref name="verifyHeader"/> 
+    to a <stepref name="storeHeader"/> + <stepref name="verifyProperty"/> combination. 
+  </b>
+</pre>
+

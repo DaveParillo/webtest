@@ -26,7 +26,9 @@ import com.gargoylesoftware.htmlunit.xml.XmlPage;
  * @webtest.step
  *    category="Extension"
  *    name="scriptStep"
- *    description="Provides the ability to use scripting code in your tests."
+ *    description="Provides the ability to use scripting code in your tests. Deprecated in favor of using the apache script task."
+ * @deprecated since it is not needed at all anymore (Ant tasks are handled transparently).
+ *    Prefer the ant script task over this task.
  */
 public class ScriptStep extends Step {
 	private static final Logger LOG = Logger.getLogger(ScriptStep.class);

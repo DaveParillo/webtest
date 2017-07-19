@@ -1,0 +1,13 @@
+<pre>
+	<b>Normally, you can safely ignore <key>HTTP</key> response codes while using webtest.
+    Any response other than '200' automatically triggers a test failure.
+    </b>
+
+
+    <b>Sometimes however, it is useful to retrieve the response code, e.g. to distinguish
+    between server errors (typically code '500'), missing resources (code '404') and security
+    issues (typically codes 401 or 403). Or perhaps to verify the messages which these kind of errors
+     display to the user. This step allows you to achieve this requirement. In order for webtest
+     to forward non-'200' status codes as an error, you need to set an 
+     <key>htmlunit</key> option (see below).</b>
+</pre>

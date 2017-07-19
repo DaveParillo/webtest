@@ -1,0 +1,7 @@
+<webtest name="validate gif content header">
+    <config ...>
+    <invoke description="Load Image" url="ok.gif"/>
+    <verifyHeader description="should be a gif image"
+                  name="Content-Type" 
+                  text="image/gif"/>
+</webtest>

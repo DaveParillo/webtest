@@ -5,6 +5,8 @@
     need to set this option if you want to test for return status codes of '200' but if
     the step doesn't fail, you already know it is a '200' status code.</b>
 
+  <b>For these reasons, it is considered bad practice to store and check response code = 200.</b>
+
     <code caption='storeResponseCode Example'>
         <include src='examples/storeResponseCodeExample.xml'/>
     </code>

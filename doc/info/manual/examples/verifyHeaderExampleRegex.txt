@@ -1,0 +1,8 @@
+<webtest name="validate content header">
+    <config ...>
+    <invoke description="Get Document" url="foo.html"/>
+    <verifyHeader description="should be a html doc with any (or no) charset"
+                  regex="true" 
+                  name="Content-Type" 
+                  text="text/html.*"/>
+</webtest>

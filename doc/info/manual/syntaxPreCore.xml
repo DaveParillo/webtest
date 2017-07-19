@@ -4,51 +4,43 @@
     <b>
         The <stepref name="webtest"/>
         task includes all information about a test specification. It contains
-        the nested tasks <stepref name="config"/>
-        (soon to be optional) which defines configuration information and
+        the optional nested tasks <stepref name="config"/>
+        which defines configuration information and
         <stepref name="steps"/>
-        (soon to be optional) which defines a sequence of test steps.
+        which defines a sequence of test steps.
     </b>
 
     <b>
-        The <stepref name="steps"/>
-        element can contain any number of Core, Extension, PDF or grouping test steps.
-        A recent feature is that you can also mix in normal
-        <key>ANT</key> tasks as well. You can use the <stepref name="antWrapper" category="extension"/>
-        step or just add them in and an
-        <stepref name="antWrapper" category="extension"/> step will be added implicitly for you.
-        This is fairly new and hasn't had extensive testing yet - use with caution.
+        The <stepref name="webtest"/> and <stepref name="steps"/>
+        elements can contain any number of ant or webtest tasks.
     </b>
 
-    <b>The main Core steps provide the ability to invoke pages, store and verify various
-        information about visited pages, and manipulate <key>HTML</key> forms and include:
+    <b>The main Core steps provide the ability to invoke pages, store values, and verify various
+        information about visited pages. Examples include:
         <stepref name="invoke"/>
         <stepref name="clickLink"/>
         <stepref name="clickButton"/>
         <stepref name="followFrame"/>
         <stepref name="previousResponse"/>
-        <stepref name="verifyTitle"/>
-        <stepref name="verifyText"/>
-        <stepref name="verifyElement"/>
-        <stepref name="verifyElementText"/>
-        <stepref name="verifyTextarea"/>
-        <stepref name="verifyInputField"/>
-        <stepref name="verifySelectField"/>
-        <stepref name="verifyLinks"/>
-        <stepref name="verifyXPath"/>
-        <stepref name="verifyCheckbox"/>
-        <stepref name="verifyCookie"/>
         <stepref name="setCheckbox"/>
         <stepref name="setInputField"/>
         <stepref name="setRadioButton"/>
         <stepref name="setSelectField"/>
+        <stepref name="storeCookie"/>
         <stepref name="storeRegEx"/>
         <stepref name="storeProperty"/>
+        <stepref name="storeURLEncoded"/>
         <stepref name="storeXPath"/>
-        <stepref name="storeDynamicProperty"/>
-        <stepref name="storeCookie"/>
         <stepref name="storeHeader"/>
+        <stepref name="verifyCookie"/>
+        <stepref name="verifyElement"/>
+        <stepref name="verifyInputField"/>
+        <stepref name="verifyTitle"/>
+        <stepref name="verifyText"/>
+        <stepref name="verifyTextarea"/>
         <stepref name="verifyProperty"/>
+        <stepref name="verifyLinks"/>
+        <stepref name="verifyXPath"/>
 
     </b>
 
