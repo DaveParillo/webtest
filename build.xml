@@ -7,7 +7,8 @@
 	</description>
 	
 	<!-- the build number is set by the build server in cruise.xml -->
-	<property name="buildnumber" value="development"/>
+	<tstamp/>
+  <property name="buildnumber" value="development-${DSTAMP}.${TSTAMP}"/>
 	<property name="ant.library.dir" location="lib"/>
 
 	<property environment="env"/>
@@ -147,6 +148,7 @@
 		<delete dir="${build.dir}" includeEmptyDirs="true" quiet="true"/>
 		<delete dir="${deploy.dir}" includeEmptyDirs="true" quiet="true"/>
 		<delete dir="webtest-results" includeEmptyDirs="true" quiet="true"/>
+    <delete dir="${docs.dir}/info/manual/webtest-results" includeEmptyDirs="true" quiet="true"/>
 	</target>
 
 	<target name="compile.plain" unless="no.plain.code.changes">
@@ -790,6 +792,7 @@
 		</java>
 		<available property="manuals.witness.present" file="${manuals.witness}"/>
 		<fail if="manuals.witness.present">The manuals generation failed (see log: ${logFile})!</fail>
+    <copy file="${docs.dir}/index.html" todir="${build.docs}" />
 	</target>
 
 	<target name="apidoc" description="make new API doc if needed"
@@ -803,7 +806,7 @@
 		<javadoc destdir="${javadoc.dir}" author="true" version="true"
 				 windowtitle="${title} (${buildnumber})" doctitle="${title} (${buildnumber})"
 				 encoding="ISO-8859-1" useexternalfile="true"
-				 footer="Copyright &amp;copy; 2001-2007 Canoo Engineering AG, Basel. All rights reserved.">
+				 footer="Copyright &amp;copy; 2001-2017 Canoo Engineering AG and Dave Parillo. Apache licence.">
 			<classpath>
 				<path refid="webtestlib.cp"/>
 			</classpath>
@@ -815,11 +818,43 @@
 			<fileset dir="${src.main.dir}">
 				<include name="**/*.java"/>
 			</fileset>
-			<link href="http://docs.oracle.com/javase/6/docs/api/"/>
+			<link href="http://docs.oracle.com/javase/8/docs/api/"/>
 			<link href="http://docs.groovy-lang.org/docs/ant/api"/>
-            <link href="http://junit.sourceforge.net/junit3.8.1/javadoc"/>
+      <link href="http://junit.sourceforge.net/junit3.8.1/javadoc"/>
 			<link href="http://java.sun.com/products/servlet/2.3/javadoc"/>
 		</javadoc>
+	</target>
+  <target name="publish" description="publish docs to daveparillo.github.io/webtest" >
+    <available property="manuals.exist" file="${build.docs}/manual/WebTestHome.html"/>
+    <available property="javadoc.exist" file="${build.docs}/api/index.html"/>
+    <available property="junit.exist"   file="${build.docs}/junit/index.html"/>
+		<fail unless="manuals.exist">Publishing aborted - no manuals</fail>
+		<fail unless="javadoc.exist">Publishing aborted - no javadoc</fail>
+		<fail unless="junit.exist">Publishing aborted - no junit results</fail>
+    <exec dir="${build.docs}" executable="git" failonerror="true">
+        <arg value="init"/>
+    </exec>
+    <exec dir="${build.docs}" executable="git" failonerror="true">
+        <arg value="remote"/>
+        <arg value="add"/>
+        <arg value="docs"/>
+        <arg value="https://DaveParillo@github.com/DaveParillo/webtest.git"/>
+    </exec>
+    <exec dir="${build.docs}" executable="git" failonerror="true">
+        <arg line="fetch --depth=1 docs gh-pages"/>
+    </exec>
+    <exec dir="${build.docs}" executable="git" failonerror="true">
+        <arg line="add --all"/>
+    </exec>
+    <exec dir="${build.docs}" executable="git" failonerror="true">
+        <arg line="commit -m 'rebuild docs for build ${buildnumber}' "/>
+    </exec>
+    <exec dir="${build.docs}" executable="git" failonerror="true">
+        <arg line="merge --no-edit -s ours remotes/docs/gh-pages"/>
+    </exec>
+    <exec dir="${build.docs}" executable="git" failonerror="true">
+        <arg line="push docs master:gh-pages"/>
+    </exec>
 	</target>
 
 	<target name="zip" description="zip sources, docs and binary distributions">

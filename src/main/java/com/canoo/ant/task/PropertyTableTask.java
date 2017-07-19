@@ -31,7 +31,7 @@ import java.util.Properties;
  * @author Dierk König
  * @author Marc Guillemot
  * @webtest.step
- *   category="Extension"
+ *   category="Core"
  *   name="dataDriven"
  *   description="This is an Ant task that calls its nested element as often as specified by the tableContainer.
  *   In each run a new set of properties from the the tableContainer is made available to the nested steps"

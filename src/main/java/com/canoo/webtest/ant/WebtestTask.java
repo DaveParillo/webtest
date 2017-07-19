@@ -163,8 +163,8 @@ public class WebtestTask extends Task implements TaskContainer {
 	 *
 	 * @param steps the steps
      * @webtest.nested.parameter
-     * required="yes"
-     * description="All the webtest steps."
+     * required="yes/no"
+     * description="Any webtest steps or ant tasks."
      */
 	public void addSteps(final TestStepSequence steps) {
 		// first create config if needed

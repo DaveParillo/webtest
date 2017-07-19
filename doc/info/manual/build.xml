@@ -245,7 +245,7 @@
 				extension=".html"
 				includes="${includes}"
 				force="${force}"
-				excludes="build.xml, syntaxPre*.xml, references.xml, WebTestSite.xml, *_news.xml"
+				excludes="build.xml, syntaxPre*.xml, references.xml, WebTestSite.xml"
 				style="WhitePaperStyle.xsl"
 				reloadstylesheet="true"
 				>
@@ -267,9 +267,6 @@
 		</antcall>
 		<antcall target="verifyDocument">
 			<param name="doc.file" value="externalCitations"/>
-		</antcall>
-		<antcall target="verifyDocument">
-			<param name="doc.file" value="relatedProjects"/>
 		</antcall>
 		<antcall target="verifyDocument">
 			<param name="doc.file" value="troubleshooting"/>
@@ -294,13 +291,7 @@
 			<param name="doc.file" value="WebTestHome"/>
 		</antcall>
 		<antcall target="verifyDocument">
-			<param name="doc.file" value="buildOverview"/>
-		</antcall>
-		<antcall target="verifyDocument">
 			<param name="doc.file" value="Downloads"/>
-		</antcall>
-		<antcall target="verifyDocument">
-			<param name="doc.file" value="changeLog"/>
 		</antcall>
 	</target>
 
@@ -337,9 +328,6 @@
 					<verifyText description="Check for unresolved keys"
 								text="NO KEYREF FOUND FOR"/>
 				</not>
-				<verifyText description="Check for copyright statement"
-							text="Copyright.*?Canoo.*?All Rights Reserved."
-							regex="true"/>
 				<verifyImages/>
 			</steps>
 		</webtest>

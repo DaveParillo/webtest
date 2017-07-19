@@ -14,7 +14,7 @@ import com.gargoylesoftware.htmlunit.util.NameValuePair;
  * <p/>
  *
  * @author Marc Guillemot
- * @webtest.step category="Extension"
+ * @webtest.step category="Core"
  * name="verifyHeader"
  * description="Verifies that the current response contains the specified <key>HTTP</key> Header."
  */

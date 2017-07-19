@@ -17,9 +17,7 @@
         <b>Thanks to</b>
         <dl>
             <li>
-                <dt>Carsten Seibert,
-                    <key>seiberTEC</key>
-                </dt>
+                <dt>Carsten Seibert, seiberTEC</dt>
                 <dd>for his excellent development work.</dd>
             </li>
             <li>
@@ -32,10 +30,7 @@
                 <dt>Marcel R&#xfc;edi,
                     <key>canoo</key>
                 </dt>
-                <dd>for patching
-                    <key>httpunit</key>
-                    for use with HTTPS and ENTRUST.
-                </dd>
+                <dd>for patching httpunit for use with HTTPS and ENTRUST.</dd>
             </li>
             <li>
                 <dt>Marc Guillemot,</dt>
@@ -89,10 +84,7 @@
             </li>
             <li>
                 <dt>Ben Cox</dt>
-                <dd>for his help in the
-                    <key>mailingList</key>
-                    .
-                </dd>
+                <dd>for his help in the mailingList.</dd>
             </li>
             <li>
                 <dt>Erik Ostermueller</dt>
@@ -111,21 +103,15 @@
                 <dd>for his care about clean structures.</dd>
             </li>
             <li>
-                <dt>Katja Schulze,
-                    <key>cspb</key>
-                </dt>
+                <dt>Katja Schulze, Credit Suisse Private Banking</dt>
                 <dd>for pilot using Canoo WebTest.</dd>
             </li>
             <li>
-                <dt>Sara Camponovo,
-                    <key>cspb</key>
-                </dt>
-                <dd>for relentlessly hunting bugs with Canoo WebTest.</dd>
+              <dt>Sara Camponovo, Credit Suisse Private Banking</dt>
+              <dd>for relentlessly hunting bugs with Canoo WebTest.</dd>
             </li>
             <li>
-                <dt>Pascal St&#xf6;ckli,
-                    <key>csfs</key>
-                </dt>
+                <dt>Pascal St&#xf6;ckli, Credit Suisse Financial Services</dt>
                 <dd>for his bug reports and pilot use</dd>
             </li>
             <li>
@@ -173,6 +159,15 @@
                 <dd>for writing this section.</dd>
             </li>
             <li>
+                <dt>John Spann</dt>
+                <dd>for adding CSV support in data driven tags and bug fixes</dd>
+            </li>
+            <li>
+                <dt>Luke Campell</dt>
+                <dd>for the contentType type to the invoke tag</dd>
+            </li>
+
+            <li>
                 <dt>all the others that I just forgot to mention...</dt>
                 <dd></dd>
             </li>
@@ -202,12 +197,6 @@
                     <key>htmlunit</key>
                 </dt>
                 <dd>the "browser" used by webtest</dd>
-            </li>
-            <li>
-                <dt>
-                    <key>httpunit</key>
-                </dt>
-                <dd>the "browser" used by webtest before the switch to htmlunit</dd>
             </li>
             <li>
                 <dt>
@@ -241,49 +230,15 @@
         <dl>
             <li>
                 <dt>
-                    <ext href="http://www.atlassian.com/">Atlassian Software Systems</ext>
+                    <ext href="http://www.github.com/">GitHub</ext>
                 </dt>
-                <dd>for
-                    <key>Jira</key>.
-                </dd>
+                <dd>for hosting the webtest source and documentation</dd>
             </li>
             <li>
                 <dt>
                     <ext href="http://www.canoo.com">Canoo</ext>
                 </dt>
-                <dd>for the infrastructure (build server, repository)</dd>
-            </li>
-            <li>
-                <dt>
-                    <ext href="http://www.cenqua.com/">cenqua</ext>
-                </dt>
-                <dd>for
-                    <key>CLOVER</key>
-                    and for FishEye.
-                </dd>
-            </li>
-            <li>
-                <dt>
-                    <ext href="http://www.jetbrains.com/">JetBrains</ext>
-                </dt>
-                <dd>for
-                    <key>Intellij</key>
-                    and for TMate.
-                </dd>
-            </li>
-            <li>
-                <dt>
-                    <ext href="http://www.yourkit.com/">YourKit</ext>
-                </dt>
-                <dd>for YourKit Java Profiler.
-                </dd>
-            </li>
-            <li>
-                <dt>
-                    <ext href="http://www.denic.de/">DENIC eG</ext>
-                </dt>
-                <dd>for upgrading WebTest to Ant 1.8.4.
-                </dd>
+                <dd>for creating an excellent tool this version is forked from</dd>
             </li>
         </dl>
     </section>

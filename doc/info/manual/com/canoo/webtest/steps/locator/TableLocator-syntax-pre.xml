@@ -24,7 +24,7 @@
 		</li>
 		<li>
 			<dt>
-				<stepref name="verifyContent" category='Extension'/>
+				<stepref name="verifyContent" category='Core'/>
 			</dt>
 			<dd>To compare a selected table cell with a previously saved content of that table cell.</dd>
 		</li>

@@ -15,7 +15,7 @@ import com.canoo.webtest.util.ConversionUtil;
  * @author Jeanie Graham
  * @author Paul King
  * @author Gerald Klopp
- * @webtest.step category="Extension"
+ * @webtest.step category="Core"
  * name="ifStep"
  * description="Step which allows conditional execution of inner steps."
  */

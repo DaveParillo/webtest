@@ -22,7 +22,7 @@ import com.canoo.webtest.util.FileUtil;
  * <p>
  * @author Dierk Koenig
  * @author Marc Guillemot
- * @webtest.step category="Extension" name="groovy" 
+ * @webtest.step category="Core" name="groovy" 
  * 	description="Executes the provided Groovy script (the binding is the same for all
  * groovy steps within a webtest)."
  */

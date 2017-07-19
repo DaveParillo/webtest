@@ -21,11 +21,11 @@
 				<dt>A platform that is able to run Java.</dt>
 			</li>
 			<li>
-				<dt>An installed JDK version 6 or higher.</dt>
+				<dt>An installed JDK version 8 or higher.</dt>
 			</li>
 			<li>
-				<dt>Ant, version 1.8.4 or newer.</dt>
-				<dd>The distributions of webtest contain the necessary part from ant 1.8.4 ready to run.</dd>
+				<dt>Ant, version 1.10.1 or newer.</dt>
+				<dd>The distributions of webtest contain the necessary part from ant 1.10.1 ready to run.</dd>
 			</li>
 		</dl>
 	</section>
@@ -41,9 +41,9 @@
 			<example>&lt;WEBTEST_HOME&gt;</example>
 			:
 		</b>
-        <code>git clone git@github.com:canoo/webtest.git</code>
+        <code>git clone git@github.com:DaveParillo/webtest.git</code>
         or
-        <code>git clone https://github.com/canoo/webtest.git</code>
+        <code>git clone https://github.com/DaveParillo/webtest.git</code>
 		<b>Then call the build script. Depending from your operating system, it may be necessary to fiddle
 			with the execution rights of the scripts in the directory
 			<example>bin/</example>
@@ -64,9 +64,7 @@
 			</li>
 			<li>
 				<dt>full</dt>
-				<dd>Compiles and tests webtest, then generates all kinds of documentations and reports.
-					<n/>
-					This is the target used by the build server.
+				<dd>Runs clean, then compiles and tests webtest, then generates all kinds of documentations and reports.
 				</dd>
 			</li>
 			<li>

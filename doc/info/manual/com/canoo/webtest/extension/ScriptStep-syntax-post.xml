@@ -153,7 +153,7 @@
         <include src='examples/scriptStepFibonacciBeanShellExample.xml'/>
     </code>
 
-    <b><em>See also:</em> the <stepref name="groovy" category="extension"/> step which offers
+    <b><em>See also:</em> the <stepref name="groovy" category="core"/> step which offers
         the same functionality but specifically for the <key>groovy</key> language. The
         groovy functionality also allows test scripts to be written in groovy and
         call back into <key>ANT</key> and WebTest.</b>

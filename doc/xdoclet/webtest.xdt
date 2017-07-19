@@ -3,14 +3,14 @@
 <nested>
 <name>step</name>
 <category>General</category>
-<description>A step is a single command to be executed by webtest.</description>
+<description>A 'step' is a placeholder for any webtest task.</description>
 <pre>
 	<b>Test steps are grouped into three major categories:</b>
 	<dl>
 		<li>
 			<dt>Action</dt>
 			<dd>Issue an HTTP request and store the result, e.g. invoke the URL
-				&quot;http://www.seibertec.ch/wiki&quot;.</dd>
+				&quot;https://en.wikipedia.org/&quot;.</dd>
 		</li>
 		<li>
 			<dt>Verification</dt>
@@ -24,15 +24,84 @@
 	</dl>
 </pre>
 </nested>
+
+<nested>
+<name>task</name>
+<category>General</category>
+<description>A 'task' is a placeholder for any ant task.</description>
+<pre>
+  <b>Ant tasks used to be required to be contained within an 
+    <stepref name="antWrapper" category="Extension"/> webtest step.
+    This is no longer the case, and ant tasks and webtest steps may freely intermix within 
+    test files.
+  </b>
+  <b>Refer to the 
+    <ext href="https://ant.apache.org/manual/">Apache Ant Manual</ext> for descriptions
+    of the core ant tasks available.
+  </b>
+</pre>
+</nested>
+
 <nested>
 <name>condition</name>
-<category>Extension</category>
-<description>A condition is a group of step to be executed by webtest.</description>
+<category>Core</category>
+<description>A condition is a group of steps to be executed by webtest.</description>
 <pre>
     <b>A condition is a <stepref name="group" category="Core"/> of steps.
     The condition is true if all the first-level steps succeed.</b>
 </pre>
 </nested>
+
+<nested>
+<name>else</name>
+<category>Core</category>
+<description>An else step contains steps executed in the false block of an ifStep.</description>
+<pre>
+  <b>An else step is a <stepref name="group" category="Core"/> of steps which execute 
+    if the <stepref name="ifStep" category="Core"/> condition fails.
+    </b>
+</pre>
+<pre>
+  <b>An else task can only be used as a nested task within an <stepref name="ifStep" category="Core"/>.</b>
+</pre>
+<pre>
+  <b>The else task is synonymous with <stepref name="otherwise" category="Core"/>.</b>
+</pre>
+</nested>
+<nested>
+
+<name>otherwise</name>
+<category>Core</category>
+<description>An otherwise step contains steps executed in the false block of an ifStep.</description>
+<pre>
+  <b>An otherwise step is a <stepref name="group" category="Core"/> of steps which execute 
+    if the <stepref name="ifStep" category="Core"/> condition fails.
+    </b>
+</pre>
+<pre>
+  <b>An otherwise task can only be used as a nested task within an <stepref name="ifStep" category="Core"/>.</b>
+</pre>
+<pre>
+  <b>The otherwise task is synonymous with <stepref name="else" category="Core"/>.</b>
+</pre>
+</nested>
+
+<nested>
+<name>then</name>
+<category>Core</category>
+<description>A then step contains steps executed in the true block of an ifStep.</description>
+<pre>
+  <b>A then step is a <stepref name="group" category="Core"/> of steps which execute 
+    if the <stepref name="ifStep" category="Core"/> condition evaluates to true (passes).
+    </b>
+</pre>
+<pre>
+  <b>A then task can only be used as a nested task within an <stepref name="ifStep" category="Core"/>.</b>
+</pre>
+</nested>
+
+
+
 	<XDtClass:forAllClasses type="java.lang.Object">
         <XDtClass:ifIsClassNotAbstract>
             <XDtClass:ifHasClassTag tagName="webtest.step" paramName="name" superclasses="false" >

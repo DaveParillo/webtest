@@ -56,7 +56,7 @@
         <stepref name="group"/>
         <stepref name="not"/>
         <stepref name="repeat"/>
-        <stepref category="Extension" name="ifStep"/>
+        <stepref category="Core" name="ifStep"/>
         <stepref category="Extension" name="timedGroup"/>
         <stepref category="Extension" name="retry"/>
     </b>

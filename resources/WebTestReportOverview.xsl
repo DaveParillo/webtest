@@ -33,7 +33,6 @@ This XSL allows to generate the report overview.
     <xsl:variable name="img.todo" select="concat($resources.dir, '/images/todo.gif')"/>
     <xsl:variable name="img.optional" select="concat($resources.dir, '/images/optional.gif')"/>
     <xsl:variable name="img.expandPlus" select="concat($resources.dir, '/images/expandPlus.png')"/>
-    <xsl:variable name="img.canoo" select="concat($resources.dir, '/images/canoo.gif')"/>
     <xsl:variable name="img.favicon" select="concat($resources.dir, '/images/favicon.ico')"/>
 
 	<xsl:variable name="webtestVersion" select="/overview/@Implementation-Version"/>
@@ -75,7 +74,7 @@ This XSL allows to generate the report overview.
 			<tr>
 			<td valign="bottom">
                 <xsl:text>Created using&space;</xsl:text>
-                <a href="http://webtest.canoo.com">
+                <a href="https://github.com/DaveParillo/webtest">
                     <xsl:value-of select="/overview/@Implementation-Title"/>
                 </a>
                 <xsl:text>&space;(</xsl:text>
@@ -84,10 +83,8 @@ This XSL allows to generate the report overview.
                 <xsl:value-of select="$reporttime"/>
 			</td>
 			<td align="right">
-			<!-- remove this line if you want to avoid outgoing requests when looking at the results -->
-			<img alt="WebTest" src="http://webtest.canoo.com/webtest/manual/images/webtest.jpg?build={$webtestVersion}"/>
 			<xsl:text> is an Open Source project founded and hosted by </xsl:text>
-			<a href="http://www.canoo.com"><img alt="Canoo" src="{$img.canoo}"/></a>
+			<a href="http://www.canoo.com">Canoo</a>
 			</td>
 			</tr>
 			</table>

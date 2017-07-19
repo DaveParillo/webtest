@@ -23,19 +23,19 @@ div.code {
 	margin: 1.12em 0 0 0;
 	padding: 5px;
 	background: #ffffC0;
-	width: 475px;
+	width: 98%;
 }
 
 div.code div.caption {
 	text-align: right;
 	font-weight: bolder;
 	margin-bottom: 1em;
-	width: 464px;
+	width: 98%;
 }
 
 div.code div.content {
 	overflow: auto;
-	width: 464px;
+	width: 95%;
 }
 
 td.dt {

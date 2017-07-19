@@ -286,8 +286,7 @@
 		Every small change to your webapp causes a lot of these tests to fail. These failures
 		must be manually processed to separate the &quot;real&quot; failures from the &quot;false negatives&quot;.
 		Doing this is almost as tedious and error prone as the manual testing and is therefore
-		discouraged e.g. by the
-			<key>ats</key> group.
+		discouraged testing professionals.
 		</b>
 
 		<citeref>cost-effective</citeref>
@@ -300,8 +299,7 @@
 		that selftest. You can explore this behavior online, starting at the Build Info
 		link of the Canoo WebTest distribution page. Note that this is very convenient for
 		nightly builds and even for use with a continuous integration platform
-		like
-			<key>cruisecontrol</key>.
+		like cruisecontrol or travis-ci.
 		</b>
 
 		<b>If your build process is not <key>ANT</key> based, calling Canoo WebTest is still easy.
@@ -441,23 +439,6 @@
 		use cases.
 		</b>
 
-	</section>
-
-	<section title="Quotes and Success Stories">
-
-		<b>
-			Canoo WebTest has been used successfully in thousands of organizations ranging
-		from small internet startup companies up to global players, for intranet and internet
-		sites, for portals and B2B applications. Needless to say that we use it for our own
-
-			<key>OLS</key> as well.
-		</b>
-
-		<citeref>ffo-success</citeref>
-
-		<citeref>informit</citeref>
-
-		<citeref>raibleDesigns</citeref>
 	</section>
 
 </manpage>

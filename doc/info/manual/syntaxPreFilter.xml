@@ -23,7 +23,7 @@
         You could then use a <key>regex</key> filter to select a particular
         column of text from the table - perhaps a column of figures.
         You could then use <stepref name="scriptStep" category="Extension"/> or
-        <stepref name="groovy" category="Extension"/> to add up the figures.
+        <stepref name="groovy" category="Core"/> to add up the figures.
         You could then compare the result of ading up figures to some value
         extracted from somewhere else, e.g. elsewhere within the PDF, or
         from a web page or from a database table.
@@ -32,7 +32,7 @@
     <b>
         The main steps which make use of filters (in addition to the <stepref name="applyFilters"/>
         step included here) are:
-        <stepref name="verifyContent" category="Extension"/>,
+        <stepref name="verifyContent" category="Core"/>,
         <stepref name="storeLength" category="Extension"/> and
         <stepref name="storeDigest" category="Extension"/>.
     </b>

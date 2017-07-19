@@ -3,7 +3,7 @@
 <!DOCTYPE xsl:stylesheet [
 		<!ENTITY space "&#32;">
 		<!ENTITY nbsp "&#160;">
-		<!ENTITY jira "http://webtest-community.canoo.com/jira/">
+		<!ENTITY jira "https://github.com/DaveParillo/webtest/issues">
 		]>
 
 <xsl:stylesheet
@@ -72,11 +72,10 @@
 			<body>
 				<div id="page">
 					<img class="mosaic" src="images/header.gif" usemap="#headerLinks" width="949" height="89"
-						 alt="Canoo Webtest"/>
+						 alt="Webtest"/>
 					<map name="headerLinks">
-						<area shape="rect" coords="35px,35px,200px,70px" href="http://webtest.canoo.com/"
-							  alt="WebTest"/>
-						<area shape="rect" coords="770px,35px,856px,70px" href="http://www.canoo.com/" alt="Canoo"/>
+						<area shape="rect" coords="30px,30px,180px,55px" href="https://github.com/DaveParillo/webtest"
+							  alt="WebTest GitHub Home"/>
 					</map>
 
 					<div id="navigation-top">
@@ -88,46 +87,11 @@
 					<table id="main" frame="void" rules="none" border="0" cellspacing="0" cellpadding="0"
 						   style="border-collapse: collapse;">
 						<col width="190"/>
-						<col width="569"/>
-						<col width="189"/>
-						<xsl:choose>
-							<xsl:when test="/manpage/@siteid='Home'">
-								<tr valign="top">
-									<!-- height is the total height of the two img -->
-									<td valign="top" colspan="2" height="161">
-										<img class="mosaic"
-											 src="images/teaser.jpg" width="668" height="116"
-											 alt="The Most Effective Way to Test Your WebApp!"
-												/>
-										<img class="mosaic"
-											 src="images/motto.gif" width="421" height="45"
-											 alt="Free testing of web apps"
-												/>
-									</td>
-									<xsl:call-template name="main-right">
-										<xsl:with-param name="span" select="3"/>
-									</xsl:call-template>
-								</tr>
-								<tr valign="top">
-									<xsl:call-template name="main-left"/>
-									<xsl:call-template name="main-content"/>
-								</tr>
-							</xsl:when>
-							<xsl:otherwise>
-								<tr valign="top">
-									<xsl:call-template name="main-left"/>
-									<xsl:call-template name="main-content"/>
-									<xsl:call-template name="main-right">
-										<xsl:with-param name="span" select="2"/>
-									</xsl:call-template>
-								</tr>
-							</xsl:otherwise>
-						</xsl:choose>
-						<tr valign="top">
-							<td valign="bottom" class="main-left">
-								<xsl:call-template name="canooFooter"/>
-							</td>
-						</tr>
+						<col width="758"/>
+            <tr valign="top">
+              <xsl:call-template name="main-left"/>
+              <xsl:call-template name="main-content"/>
+            </tr>
 					</table>
 
 				</div>
@@ -140,8 +104,8 @@
 	<xsl:template name="main-left">
 		<td valign="top" class="main-left">
 			<div id="search">
-				<form action="http://www.google.de/search" id="searchForm">
-					<input type="hidden" name="sitesearch" value="webtest.canoo.com"/>
+				<form action="http://www.google.com/search" id="searchForm">
+					<input type="hidden" name="sitesearch" value="daveparillo.github.io/webtest/"/>
 					<input type="submit" id="searchButton" name="go" value="Search" title="Search" alt="Search"/>
 					<input type="text" id="searchText" name="q" onfocus="this.select();" title="Search"/>
 				</form>
@@ -150,11 +114,6 @@
 				<ul>
 					<xsl:apply-templates select="/manpage/site/level1[.//@name=/manpage/@siteid]/level2"/>
 				</ul>
-<div style="margin-top: 20px">
-<a style="border-bottom: none; padding-left: 40px" href="http://webtestrecorder.canoo.com/">
-<img alt="WebTestRecorder" src="images/WebTestRecorderFirefox.gif" style="position:absolute; left: 3px"/>
-WebTestRecorder<br/> the Firefox Extension for WebTest</a>
-</div>
 			</div>
 			<!-- make sure that the copyright is never too close to the navigation. -->
 			<div class="filler"/>
@@ -166,41 +125,6 @@ WebTestRecorder<br/> the Firefox Extension for WebTest</a>
 			<div id="main-content">
 				<xsl:apply-templates select="manpage/head"/>
 				<xsl:apply-templates select="manpage/section"/>
-			</div>
-		</td>
-	</xsl:template>
-
-	<xsl:template name="main-right">
-		<xsl:param name="span"/>
-		<td valign="top" id="main-right">
-			<xsl:if test="$span>1">
-				<xsl:attribute name="rowspan">
-					<xsl:value-of select="$span"/>
-				</xsl:attribute>
-			</xsl:if>
-
-			<h1>
-				<img src="images/news.gif" alt="news" height="18" width="97"/>
-			</h1>
-			<!-- To be included on every page-->
-			<xsl:apply-templates select="document('_news.xml')/news"/>
-			<!-- To be included on a single page ?
-							<xsl:apply-templates select="document(concat(/manpage/@siteid, '_news.xml'))/news" />
-						-->
-			<div id="blogs">
-				<h3>Committers' blogs</h3>
-				<ul>
-					<li>
-						<a href="http://www.jroller.com/page/dna">Denis N. Antonioli's blog</a>
-					</li>
-					<li>
-						<a href="http://www.amazon.com/gp/blog/A368TUB0Q1IE3F/103-4309468-8306223">Dierk König's blog
-						</a>
-					</li>
-					<li>
-						<a href="http://mguillem.wordpress.com/">Marc Guillemot's blog</a>
-					</li>
-				</ul>
 			</div>
 		</td>
 	</xsl:template>
@@ -283,17 +207,6 @@ WebTestRecorder<br/> the Firefox Extension for WebTest</a>
 	<!-- skip 3rd level if there is a single entry -->
 	<xsl:template match="/manpage/section[count(preceding-sibling::section)+count(following-sibling::section)=0]"
 				  mode="toc"/>
-
-	<xsl:template name="canooFooter">
-		<div id="copyright">
-			<xsl:text>Copyright &#169; 2002-2008</xsl:text><br/>
-			<xsl:text>Canoo Engineering AG</xsl:text><br/>
-			<xsl:text>Kirschgartenstrasse 7</xsl:text><br/>
-			<xsl:text>CH - 4051 Basel</xsl:text><br/>
-			<xsl:text>Phone: +41 61 228 94 44</xsl:text><br/>
-			<xsl:text>All Rights Reserved</xsl:text>
-		</div>
-	</xsl:template>
 
 	<xsl:template match="head">
 		<h1>

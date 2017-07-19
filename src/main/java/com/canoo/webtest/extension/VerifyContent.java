@@ -29,7 +29,7 @@ import com.gargoylesoftware.htmlunit.xml.XmlPage;
  * <p/>
  * @author Paul King, David Louvton
  * @author Marc Guillemot
- * @webtest.step category="Extension"
+ * @webtest.step category="Core"
  * name="verifyContent"
  * description="Compares the current response with an expected file. 
  * Supports content filters such as <stepref name='lineSeparatorFilter'/> 
