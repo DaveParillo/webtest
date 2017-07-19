@@ -1,0 +1,25 @@
+<post>
+
+  <b>A webtest task must contain a single optional 
+    <stepref name="config" category="General"/> block followed by either:</b>
+  <dl>
+    <li>
+      <dt>A steps task</dt>
+      <dd>
+        Exactly <em>one</em> <stepref name="steps" category="General"/>
+        task containing any number of nested
+        webtest <stepref name="step" category="General"/>s, or 
+        ant <stepref name="task" category="General"/>s.
+      </dd>
+    </li>
+    <li>
+      <dt>ant tasks and webtest steps</dt>
+      <dd>
+        Any number of nested
+        webtest <stepref name="step" category="General"/>s, or 
+        ant <stepref name="task" category="General"/>s.
+      </dd>
+    </li>
+  </dl>
+
+</post>

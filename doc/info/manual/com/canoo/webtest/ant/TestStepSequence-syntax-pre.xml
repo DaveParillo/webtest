@@ -1,0 +1,13 @@
+<pre>
+
+	<b>The <em>&lt;steps&gt;</em> element is a nested element of
+     <stepref name="webtest"/> and is used to <stepref name="group" category="Core"/> test steps.
+  </b>
+  <b>It is optional, as all steps after a 
+    <stepref name="webtest" category="General"/> 
+    <stepref name="config" category="General"/> block are implicitly considered to be either a
+    webtest <stepref name="step" category="General"/>, or an
+    ant <stepref name="task" category="General"/>. 
+  </b>
+      
+</pre>
