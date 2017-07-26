@@ -1,0 +1,15 @@
+<webtest name="demonstrateURLEncoded">
+  <config .../>
+    <!-- The default property type is set in the config settings.
+         In these examples, the default type is dynamic.
+    -->
+    <storeURLEncoded property="encodedDate" text="2016-02-10T00:00:00+00:00" />
+    <!-- encodedDate = "2016-02-10T00%3A00%3A00%2B00%3A00" -->
+    <invoke url="/path/to/service?date_time=#{encodedDate}" />
+
+    <!-- Explicitly set the property type -->
+    <storeURLEncoded property="point" text='{"latitude":2.98,"longitude":-128.31}' propertyType="ant" />
+    <!-- point = "%7B%22latitude%22%3A2.98%2C%22longitude%22%3A-128.31%7D" -->
+    <invoke url="/path/to/service?waypoints=${point}" />
+
+</webtest>

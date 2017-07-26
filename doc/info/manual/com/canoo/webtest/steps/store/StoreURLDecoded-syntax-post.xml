@@ -1,0 +1,14 @@
+<post>
+
+  <b>
+   The inverse operation of URLDecoded is the 
+    <stepref name="storeURLEncoded"/> step. 
+  </b>
+
+    <b>The following examples illustrate basic usage.</b>
+
+    <code caption="storeURLDecodedExamples">
+        <include src='examples/storeURLDecodedExamples.xml'/>
+    </code>
+
+</post>

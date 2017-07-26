@@ -1,0 +1,9 @@
+<post>
+
+    <b>The following examples illustrate basic usage.</b>
+
+    <code caption="storeURLEncodedExamples">
+        <include src='examples/storeURLEncodedExamples.xml'/>
+    </code>
+
+</post>

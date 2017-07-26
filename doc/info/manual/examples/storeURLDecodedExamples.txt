@@ -1,0 +1,28 @@
+<webtest name="demonstrateURLDecoded">
+  <config .../>
+    <!-- The default property type is set in the config settings.
+         In these examples, the default type is dynamic.
+    -->
+    <storeURLDecoded property="date" text="2016-02-10T00%3A00%3A00%2B00%3A00" />
+    <!-- date = "2016-02-10T00:00:00+00:00" -->
+    <verifyProperty description="Verify date is plain text"
+        name="date"
+        text="2016-02-10T00:00:00+00:00" />
+
+
+    <!-- Explicitly set the property type -->
+    <storeURLDecoded property="point" 
+         text="%7B%22latitude%22%3A2.98%2C%22longitude%22%3A-128.31%7D" 
+         propertyType="ant" />
+    <verifyJsonPath description="Verify decoded latitude"
+        from="point"
+        jpath="$.latitude"
+        text="2.98" />
+    <verifyJsonPath description="Verify entire object is JSON"
+        from="point"
+        jpath="$..*"
+        text='{"latitude":2.98,"longitude":-128.31}' />
+
+
+
+</webtest>

@@ -1,0 +1,16 @@
+<post>
+  <b>
+  <include src='examples/jsonPathSyntax.xml'/>
+  </b>
+
+
+    <code caption="verifyJsonPath Example">
+        TBD
+    </code>
+
+    <b>
+        <em>See also</em>: the <stepref name="storeJsonPath"/> step.
+    </b>
+
+</post>
+

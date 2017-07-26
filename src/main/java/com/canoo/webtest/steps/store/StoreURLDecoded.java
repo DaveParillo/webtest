@@ -25,7 +25,7 @@ import org.apache.tools.ant.BuildException;
  * @webtest.step
  *   category="Core"
  *   name="storeURLDecoded"
- *   description="Convert text to it's URLDecoded equivalent and store the result into a property."
+ *   description="Convert URLEncoded text to it's plain ASCII equivalent and store the result into a property."
  * @since July 2017
  */
 public class StoreURLDecoded extends BaseStoreStep {
