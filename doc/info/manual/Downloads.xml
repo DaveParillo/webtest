@@ -9,24 +9,26 @@
     &site;
 
     <head title="WebTest Downloads">
-        <b>This page contains links to the artefacts for the latest WebTest version, as well as for
+        <b>This page contains links to the artifacts for the latest WebTest version, as well as for
 previous releases.</b></head>
 
     <section title="Latest Snapshot">
 
         <b>Release class = development, build number = <buildNumber/></b>
 
-        <b>This snapshot represents the current stream of development.</b>
+        <b>This snapshot represents the current stream of development and
+          can always be found 
+          <ext href="https://github.com/DaveParillo/webtest/releases/latest">here</ext>.
+        </b>
 
         <b>All releases contain the same set of files. The primary artifacts of interest are:</b>
         <dl>
             <li>
                 <dt>
-                  webtest.zip
+                  <ext href="https://github.com/DaveParillo/webtest/releases/download/v4.0.0-rc1/webtest.zip">webtest.zip</ext>
                 </dt>
                 <dd>
-                  Currently not available for public download. 
-                  You'll need to consult <pageref name="Building"/> to build webtest from source.
+                  Consult <pageref name="Building"/> to build webtest from source.
                 </dd>
             </li>
             <li>
@@ -37,11 +39,37 @@ previous releases.</b></head>
                   All documentation is served as 
                   <ext href="https://daveparillo.github.io/webtest">GitHub pages</ext>.
                   Includes the ant tasks manual, javadoc API, and self test results.
-                  They may be downloaded from 
-                  <file>https://github.com/DaveParillo/webtest/archive/gh-pages.zip</file>
+                  They may be downloaded from the webtest gh-pages branch 
+                  <ext href="https://github.com/DaveParillo/webtest/archive/gh-pages.zip">archive</ext>.
+                  If you only want the webtest manual, you can download it 
+                  <ext href="https://github.com/DaveParillo/webtest/releases/download/v4.0.0-rc1/manual.zip">here</ext>.
                 </dd>
             </li>
+            <li>
+                <dt>
+                  Source code
+                </dt>
+                <dd>
+                  Available in both 
+                  <ext href="https://github.com/DaveParillo/webtest/archive/v4.0.0-rc1.zip">zip</ext> and
+                  <ext href="https://github.com/DaveParillo/webtest/archive/v4.0.0-rc1.tar.gz">tar.gz</ext>
+                  formats.
+                </dd>
+            </li>
+
         </dl>
     </section>
 
+    <section title="Archived Canoo Downloads">
+      <b>The latest webtest downloads from Canoo can be found 
+          <ext href="http://webtest.canoo.com/webtest/manual/Downloads.html">here</ext>.
+          At the time of this writing, the latest source snapshot was tag R_1826, Dec 2014.
+          The latest documentation is labeled 'development', Jul 2016.
+        </b>
+        <b>
+          If you are looking for something more stable and don't care about testing REST
+          services, I used this release for several years before bothering to make my own fork.
+        </b>
+
+    </section>
 </manpage>
