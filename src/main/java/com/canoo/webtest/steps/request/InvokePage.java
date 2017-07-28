@@ -91,7 +91,7 @@ public class InvokePage extends AbstractTargetAction {
      * @param contentType
      * @webtest.parameter 
      *   required="no"
-     *   description="Sets the content-type HTTP header for POST and PUT requests"
+     *   description="Sets the content-type HTTP header for POST, PATCH, and PUT requests"
      *   default="application/x-www-form-urlencoded"
      */
     public void setContentType(final String contentType) {
@@ -109,7 +109,9 @@ public class InvokePage extends AbstractTargetAction {
      * @webtest.parameter
      *   required="no"
      *   default="GET"
-     *   description="Sets the HTTP Method, i.e. whether the invoke is a GET, POST, PUT, etc."
+     *   description="Sets the HTTP Method.
+     *
+     *   Currently, GET, POST, PUT, DELETE, and PATCH are supported."
      */
     public void setMethod(final String method) {
         fMethod = method;
@@ -159,7 +161,9 @@ public class InvokePage extends AbstractTargetAction {
      * @param soapAction
      * @webtest.parameter
      *   required="no"
-     *   description="If the HTTP method is POST and is in fact a SOAP POST request, this allows the SOAP Action header to be set. Ignored for GETs."
+     *   description="Set the SOAP Action header on SOAP POST requests. 
+     *
+     *   If set, the contentType attribute must also be set, typically something like: 'text/xml; charset=UTF-8'."
      */
     public void setSoapAction(final String soapAction) {
         fSoapAction = soapAction;
@@ -174,14 +178,21 @@ public class InvokePage extends AbstractTargetAction {
         nullParamCheck(getUrl(), "url");
         paramCheck(getContent() != null && getContentFile() != null, 
             "Only one of 'content' and 'contentFile' must be set.");
-        paramCheck("POST".equals(fMethod) && isContentNull(), 
-            "One of 'content' or 'contentFile' must be set for POST.");
+
+        if ("POST".equals(fMethod)) {
+            paramCheck(isContentNull(), 
+                "One of 'content' or 'contentFile' must be set for POST.");
+            paramCheck(fSoapAction != null && fContentType == null, 
+                "If 'soapAction' is set, then 'contentType' must be set.");
+        }
         paramCheck("PUT".equals(fMethod) && isContentNull(), 
             "One of 'content' or 'contentFile' must be set for PUT.");
+        paramCheck("PATCH".equals(fMethod) && isContentNull(), 
+            "One of 'content' or 'contentFile' must be set for PATCH.");
     }
 
     protected Page findTarget() throws IOException, SAXException {
-        if ("POST".equals(fMethod) || "PUT".equals(fMethod)) {
+        if ("POST".equals(fMethod) || "PUT".equals(fMethod) || "PATCH".equals(fMethod)) {
             return findTargetByPost();
         }
         fCompleteUrl = getContext().getConfig().getUrlForPage(getUrl());
@@ -194,21 +205,17 @@ public class InvokePage extends AbstractTargetAction {
         String url = getContext().getConfig().getUrlForPage(getUrl());
         final WebRequest settings = new WebRequest(new URL(url), HttpMethod.valueOf(fMethod));
         
-        // get default encoding
-        final String charset = System.getProperty("file.encoding");
-        
         final Map headers = new HashMap();
         if (!StringUtils.isEmpty(fContentType)) {
             headers.put("Content-Type", fContentType);
         }
-        else if (!StringUtils.isEmpty(fSoapAction)) {
-            headers.put("Content-Type", "text/xml; charset=" + charset);
-            headers.put("SOAPAction", fSoapAction);
-        } 
         else {
-            // TODO: is this the correct Content-type for non-SOAP posts?
+            // default content-type is an HTML Form
             headers.put("Content-Type", "application/x-www-form-urlencoded");
         }
+        if (!StringUtils.isEmpty(fSoapAction)) {
+            headers.put("SOAPAction", fSoapAction);
+        } 
         settings.setAdditionalHeaders(headers);
         final String content;
         if (getContent() != null) {
@@ -218,7 +225,6 @@ public class InvokePage extends AbstractTargetAction {
             content = FileUtil.readFileToString(getContentFile(), this);
         }
         settings.setRequestBody(content);
-        settings.setCharset(charset);
         return getResponse(settings);
     }
 
