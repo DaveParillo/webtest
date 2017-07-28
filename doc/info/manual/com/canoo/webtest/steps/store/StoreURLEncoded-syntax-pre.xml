@@ -1,8 +1,6 @@
 <pre>
-
-  <b>
-   The inverse operation of URLEncoded is the 
-    <stepref name="storeURLDecoded"/> step. 
-  </b>
-
+    <b>
+        The inverse operation of URLEncoded is the 
+        <stepref name="storeURLDecoded"/> step. 
+    </b>
 </pre>

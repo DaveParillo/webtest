@@ -1,15 +1,19 @@
 <post>
-  <include src='examples/jsonPathSyntax.xml'/>
+    <include src='examples/jsonPathSyntax.xml'/>
 
-  <b>The following example extracts the last point from the <em>points</em> array 
-    in the following JSON and uses it for the next <em>invoke</em> step.</b>
-  <code caption="JSON points data">
-    <include src='examples/json-points.xml'/>
-  </code>
-  <code caption="storeJsonPath example">
-    <include src='examples/storeJsonPathExample.xml'/>
-  </code>
+    <b>
+        The following example extracts the last point from the <em>points</em> array 
+        in the following JSON and uses it for the next <em>invoke</em> step.
+    </b>
+    <code caption="JSON points data">
+        <include src='examples/json-points.xml'/>
+    </code>
+    <code caption="storeJsonPath example">
+        <include src='examples/storeJsonPathExample.xml'/>
+    </code>
 
-  <b><em>See also</em>: the <stepref name="verifyJsonPath"/> step.</b>
+    <b>
+        <em>See also</em>: the <stepref name="verifyJsonPath"/> step.
+    </b>
 
 </post>

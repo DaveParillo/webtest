@@ -1,12 +1,14 @@
 <pre>
+    <b>
+        More documentation for JsonPath, including descriptions of operators and functions available
+        can be found at the
+        <ext href="https://github.com/json-path/JsonPath#getting-started">Jway JsonPath</ext> Github site,
+        and at 
+        <ext href="http://goessner.net/articles/JsonPath/">Stefan Goessner's orginal article</ext>.
+    </b>
 
-  <b>More documentation for JsonPath, including descriptions of operators and functions available
-    can be found at the
-    <ext href="https://github.com/json-path/JsonPath#getting-started">Jway JsonPath</ext> Github site,
-    and at <ext href="http://goessner.net/articles/JsonPath/">Stefan Goessner's orginal article</ext>.
-  </b>
-
-  <b>The <ext href="http://jsonpath.herokuapp.com">Jayway JsonPath Evaluator</ext>, 
-    is a good online resource for testing out JsonPath expressions on your data.</b>
-
+    <b>
+        The <ext href="http://jsonpath.herokuapp.com">Jayway JsonPath Evaluator</ext>, 
+        is a good online resource for testing out JsonPath expressions on your data.
+    </b>
 </pre>
