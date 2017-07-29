@@ -1,0 +1,27 @@
+<webtest name="...">
+	<config ... />
+	<invoke ... an endpoint that returns the example JSON. ... />
+    <verifyJsonPath
+        description="Check all illumination values"
+        jpath="$..illuminance"
+        tolerance="0.001"
+        text="[ 23.614, 2.4E-5, 23.615, 0.038165, 0.0, 0.0387 ]" />
+
+    <verifyJsonPath
+        description="Check the sun azimuth @ 12:00"
+        jpath="$..[?(@.dateTime == '2016-02-10T12:00:00')].sun.azimuth"
+        text="100.89" />
+
+    <verifyJsonPath
+        description="Check the total object @ 12:00"
+        jpath="$..[?(@.dateTime == '2016-02-10T12:00:00')].total"
+        tolerance="0.001"
+        text="{ "illuminance" : 0.038665 }" />
+
+    <verifyJsonPath
+        description="Check both sun and moon alitude and azimuth @ T00"
+        jpath="$..[?(@.dateTime =~ /.*T00.*?/i)].['sun','moon'].['tAlt','azimuth']"
+        text="[ { "tAlt" : -4.25582, "azimuth" : 255.58 }, { "tAlt" : 13.4022, "azimuth" : 253.0 } ] " />
+
+</webtest>
+

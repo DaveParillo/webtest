@@ -1,0 +1,19 @@
+<webtest name="...">
+	<config ... />
+	<invoke ... />
+    <!-- given a response like: {"msg": "hello"} -->
+
+    <verifyJsonPath
+        description="Check hello"
+        jpath="$.msg"
+        text="hello" />
+
+    <!-- check floating point response: {"pi": 3.14159} -->
+
+    <verifyJsonPath
+        description="Check PI"
+        jpath="$.pi"
+        text="3.14" />
+
+</webtest>
+

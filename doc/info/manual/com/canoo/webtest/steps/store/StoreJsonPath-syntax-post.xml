@@ -1,5 +1,4 @@
 <post>
-    <include src='examples/jsonPathSyntax.xml'/>
 
     <b>
         The following example extracts the last point from the <em>points</em> array 

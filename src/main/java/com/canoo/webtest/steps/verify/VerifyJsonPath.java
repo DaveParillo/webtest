@@ -14,22 +14,22 @@
 package com.canoo.webtest.steps.verify;
 
 import org.apache.log4j.Logger;
-
-import com.jayway.jsonpath.JsonPath;
-import com.jayway.jsonpath.PathNotFoundException;
 import com.canoo.webtest.steps.Step;
 import com.canoo.webtest.engine.StepFailedException;
 import com.canoo.webtest.util.ConversionUtil;
 import com.gargoylesoftware.htmlunit.Page;
-import org.json.JSONArray; 
-import org.json.JSONObject; 
-import org.json.JSONException;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
-
-import com.jayway.jsonpath.spi.json.JsonOrgJsonProvider;
-import com.jayway.jsonpath.spi.mapper.JsonOrgMappingProvider;
+import com.jayway.jsonpath.InvalidJsonException;
+import com.jayway.jsonpath.PathNotFoundException;
+import com.jayway.jsonpath.spi.json.JacksonJsonNodeJsonProvider;
+import com.jayway.jsonpath.spi.json.JacksonJsonProvider;
+import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -61,8 +61,8 @@ public class VerifyJsonPath extends Step {
 
     private final Configuration CONF = Configuration
             .builder()
-            .mappingProvider(new JsonOrgMappingProvider())
-            .jsonProvider(new JsonOrgJsonProvider())
+            .mappingProvider(new JacksonMappingProvider())
+            .jsonProvider(new JacksonJsonNodeJsonProvider())
             .options(Option.ALWAYS_RETURN_LIST)
             .build();
 
@@ -97,7 +97,7 @@ public class VerifyJsonPath extends Step {
      * @webtest.parameter
      * 	 required="no"
      *   description="The maximum difference allowed between two floating point values in a response.
-     *   This value, if set, must be &gt; 0.0, otherwise it is ignored.
+     *   This value, if set, must be greater than 0.0, otherwise it is ignored.
      *   
      *   Default value = 0.01.
      *   "
@@ -142,55 +142,51 @@ public class VerifyJsonPath extends Step {
         }
     }
 
-    private void compareContent(final Object actual) {
+    private void compareContent(final JsonNode actual) {
         if (actual == null) {
             throw new StepFailedException("Null results received");
         }
         try {
-            JSONArray expected = new JSONArray(fText);
-            if (!areEqual(actual, expected)) {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode expected = mapper.readTree(fText);
+            if (!isSubset(actual, expected)) {
                throw new StepFailedException("actual and expected values differ. expected: '"
                        + expected.toString() + "', actual: '" 
                        + actual.toString() + "'.");
             }
         } 
-        catch (org.json.JSONException e) {
+        catch (java.io.IOException e) {
             throw new StepFailedException(e.getMessage());
         }
     }
 
-    private boolean areEqual(Object actual, Object expected) throws JSONException {
+    // True if the expected Node is a subset of the actual
+    private boolean isSubset(JsonNode actual, JsonNode expected) {
         Set<Object> actualSet   = (Set<Object>) convertJsonElement(actual);
         Set<Object> expectedSet = (Set<Object>) convertJsonElement(expected);
-        //System.out.println("actualSet: " + actualSet.toString()+ ", class: " + actualSet.getClass().getSimpleName());
-        //System.out.println("expectedSet: " + expectedSet.toString()+ ", class: " + expectedSet.getClass().getSimpleName());
 
         return actualSet.containsAll(expectedSet);
     }
 
-    private Object convertJsonElement(Object elem) throws JSONException {
-        if (elem instanceof JSONObject) {
-            JSONObject obj = (JSONObject) elem;
-            Iterator<String> keys = obj.keys();
+    private Object convertJsonElement(JsonNode element) {
+        if (element.isObject()) {
+            Iterator<String> keys = element.fieldNames();
             Map<String, Object> jsonMap = new HashMap<String, Object>();
             while (keys.hasNext()) {
                 String key = keys.next();
-                jsonMap.put(key, convertJsonElement(obj.get(key)));
+                jsonMap.put(key, convertJsonElement(element.get(key)));
             }
             return jsonMap;
-        } else if (elem instanceof JSONArray) {
-            JSONArray arr = (JSONArray) elem;
+        } else if (element.isArray()) {
             Set<Object> jsonSet = new HashSet<Object>();
-            for (int i = 0; i < arr.length(); i++) {
-                jsonSet.add(convertJsonElement(arr.get(i)));
+            for (final JsonNode item : element) {
+                jsonSet.add(convertJsonElement(item));
             }
             return jsonSet;
-        } else if (elem instanceof Double) {
-          long val = (long) Math.round(Double.valueOf(elem.toString())/fTolerance);
-            System.out.println("converted "+ elem + " to : " + val);
-          return val; //(long) Math.round(Double.valueOf(elem.toString())/0.01);
+        } else if (element.isFloatingPointNumber()) {
+          return (long) Math.round(Double.valueOf(element.toString())/fTolerance);
         } else {
-            return elem;
+            return element;
         }
     }
 
@@ -202,10 +198,10 @@ public class VerifyJsonPath extends Step {
      * @param results
      * @return false if the result is a naked type (not in either [] or {}).
      */
-    private boolean isValidJSON(final Object results) throws StepFailedException {
+    private boolean isValidJSON(final JsonNode results) throws StepFailedException {
         if( results == null) {
             throw new StepFailedException("Null results received");
-        } else if (!(results instanceof JSONArray)) {
+        } else if (!results.isArray()) {
             throw new StepFailedException("Response is not well-formed JSON");
         }
         return true;
@@ -219,12 +215,13 @@ public class VerifyJsonPath extends Step {
         return page.getWebResponse().getContentAsString();
     }
 
-    private Object getJSON(final String content) throws StepFailedException {
+    private JsonNode getJSON(final String content) throws StepFailedException {
         try {
-            //return JsonPath.read(content, fJpath);
             return JsonPath.using(CONF).parse(content).read(fJpath);
         } catch (PathNotFoundException e) {
             throw new StepFailedException("Path not found: " + e.getMessage());
+        } catch (InvalidJsonException e) {
+            throw new StepFailedException("Invalid JSON: " + e.getMessage());
         }
     }
 

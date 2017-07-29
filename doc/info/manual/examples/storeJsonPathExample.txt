@@ -1,14 +1,14 @@
 <webtest name="...">
 	<config ... />
-		<invoke ... an endpoint that returns the example JSON. ... />
-        <storeJsonPath
-            description="Extract last point in points array"
-            xpath="$..points[-1]"
-            property="point" />
-       <storeURLEncoded property="point_uri" text="point" />
-       <invoke
-            description="Invoke service using encoded point data"
-            url="/path/to/service?#{point_uri}" />
-		... work with the response ...
+	<invoke ... an endpoint that returns the example JSON. ... />
+    <storeJsonPath
+        description="Extract last point in points array"
+        jpath="$..points[-1]"
+        property="point" />
+    <storeURLEncoded property="point_uri" text="point" />
+    <invoke
+        description="Invoke service using encoded point data"
+        url="/path/to/service?#{point_uri}" />
+	... work with the response ...
 </webtest>
 

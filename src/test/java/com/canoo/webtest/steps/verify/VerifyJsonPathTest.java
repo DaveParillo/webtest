@@ -94,7 +94,7 @@ public class VerifyJsonPathTest extends BaseStepTestCase {
         getContext().setDefaultResponse(DOCUMENT, CONTENT_TYPE);
 
         fStep.setJpath("$.store.book[0]['author']");
-        fStep.setText("'Nigel Rees'");
+        fStep.setText("\"Nigel Rees\"");
         executeStep(fStep);
     }
     public void testGetInteger() throws Exception {
@@ -112,10 +112,7 @@ public class VerifyJsonPathTest extends BaseStepTestCase {
         executeStep(fStep);
     }
 
-    // TODO: The Org.json parser doesn't handle null well.
-    // May beed to use the JacksonJson parser instead.
-    //
-    public void _testGetNull() throws Exception {
+    public void testGetNull() throws Exception {
         getContext().setDefaultResponse("{\"a\":10,\"b\":null}", CONTENT_TYPE);
 
         fStep.setJpath("$..[?($.b == null)]");
@@ -150,6 +147,8 @@ public class VerifyJsonPathTest extends BaseStepTestCase {
         fStep.setText("[{\"category\":\"fiction\",\"price\":8.99,\"author\":\"Herman Melville\",\"title\":\"Moby Dick\",\"isbn\":\"0-553-21311-3\"}]");
         executeStep(fStep);
     }
+
+    // extract exactly 2 elements and compare to object
     public void testBook3Subset() throws Exception {
         getContext().setDefaultResponse(DOCUMENT, CONTENT_TYPE);
 
@@ -182,32 +181,31 @@ public class VerifyJsonPathTest extends BaseStepTestCase {
 
         fStep.setJpath("$..*");
         fStep.setTolerance("0.05");
-        fStep.setText("0.98");
+        fStep.setText("0.975");
         executeStep(fStep);
-        fStep.setText("1.02");
+        fStep.setText("1.0249");
         executeStep(fStep);
-        fStep.setText("0.97");
-        assertFailOnExecute(fStep, "failed to check double value 0.97", "");
-        fStep.setText("1.03");
-        assertFailOnExecute(fStep, "failed to check double value 1.03", "");
+        fStep.setText("0.9499");
+        assertFailOnExecute(fStep, "failed to check double value 0.9494", "");
+        fStep.setText("1.055");
+        assertFailOnExecute(fStep, "failed to check double value 1.055", "");
     }
 
     public void testGetTolerance3() throws Exception {
-        getContext().setDefaultResponse("{\"val\":0.9999}", CONTENT_TYPE);
+        getContext().setDefaultResponse("{\"val\":1.0}", CONTENT_TYPE);
 
         fStep.setJpath("$..*");
         // The default is 0.01
         //fStep.setTolerance("0.01");
         fStep.setText("0.995");
         executeStep(fStep);
-        fStep.setText("1.005");
+        fStep.setText("1.004");
         executeStep(fStep);
-        fStep.setText(":0.994");
+        fStep.setText("0.994");
         assertFailOnExecute(fStep, "failed to check double value 0.994", "");
-        fStep.setText("1.006");
-        assertFailOnExecute(fStep, "failed to check double value 1.006", "");
+        fStep.setText("1.0055");
+        assertFailOnExecute(fStep, "failed to check double value 1.0055", "");
     }
-
 
 
     public void testVerifyParameters() throws Exception {

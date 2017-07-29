@@ -1,0 +1,58 @@
+[
+   {
+      "sun" : {
+         "aRA" : 21.5376,
+         "aD" : -14.599,
+         "tRA" : 21.53750,
+         "tD" : -14.600645,
+         "tAlt" : -4.25582,
+         "azimuth" : 255.58,
+         "illuminance" : 23.6143
+      },
+      "moon" : {
+         "aRA" : 22.70083,
+         "aD" : -6.99388,
+         "tRA" : 22.6461,
+         "tD" : -7.52695,
+         "tAlt" : 13.4022,
+         "azimuth" : 253.00,
+         "illuminance" : 0.000024,
+         "percentIllumination" : "  3%+"
+      },
+      "total" : {
+         "illuminance" : 23.61486
+      },
+      "dateTime" : "2016-02-10T00:00:00",
+      "latitude" : 30.0,
+      "longitude" : -90.0,
+      "skyCondition" : "VISIBLE"
+   },
+   {
+      "sun" : {
+         "aRA" : 21.5706,
+         "aD" : -14.4379,
+         "tRA" : 21.5708,
+         "tD" : -14.4391,
+         "tAlt" : -10.1747,
+         "azimuth" : 100.89,
+         "illuminance" : 0.038165
+      },
+      "moon" : {
+         "aRA" : 23.1694,
+         "aD" : -4.81467,
+         "tRA" : 23.2205,
+         "tD" : -5.27338,
+         "tAlt" : -27.05082,
+         "azimuth" : 79.88,
+         "illuminance" : 4.23209E-25,
+         "percentIllumination" : "  5%+"
+      },
+      "total" : {
+         "illuminance" : 0.038665
+      },
+      "dateTime" : "2016-02-10T12:00:00",
+      "latitude" : 30.0,
+      "longitude" : -90.0,
+      "skyCondition" : "VISIBLE"
+   }
+]
