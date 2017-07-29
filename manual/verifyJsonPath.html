@@ -1,0 +1,637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="favicon.ico" type="image/x-icon" rel="icon">
+<link title="Home" href="WebTestHome.html" rel="chapter">
+<link title="Manual" href="manualOverview.html" rel="chapter">
+<link title="Manual Overview" href="manualOverview.html" rel="section">
+<link title="Samples" href="samples.html" rel="section">
+<link title="Properties" href="properties.html" rel="section">
+<link title="Syntax Reference - General Steps" href="syntaxGeneral.html" rel="section">
+<link title="Syntax Reference - Core Steps" href="syntaxCore.html" rel="section">
+<link title="clickButton" href="clickButton.html" rel="subsection">
+<link title="clickLink" href="clickLink.html" rel="subsection">
+<link title="condition" href="condition.html" rel="subsection">
+<link title="dataDriven" href="dataDriven.html" rel="subsection">
+<link title="else" href="else.html" rel="subsection">
+<link title="followFrame" href="followFrame.html" rel="subsection">
+<link title="group" href="group.html" rel="subsection">
+<link title="ifStep" href="ifStep.html" rel="subsection">
+<link title="invoke" href="invoke.html" rel="subsection">
+<link title="not" href="not.html" rel="subsection">
+<link title="otherwise" href="otherwise.html" rel="subsection">
+<link title="previousResponse" href="previousResponse.html" rel="subsection">
+<link title="repeat" href="repeat.html" rel="subsection">
+<link title="selectForm" href="selectForm.html" rel="subsection">
+<link title="setCheckbox" href="setCheckbox.html" rel="subsection">
+<link title="setFileField" href="setFileField.html" rel="subsection">
+<link title="setInputField" href="setInputField.html" rel="subsection">
+<link title="setRadioButton" href="setRadioButton.html" rel="subsection">
+<link title="setSelectField" href="setSelectField.html" rel="subsection">
+<link title="storeCookie" href="storeCookie.html" rel="subsection">
+<link title="storeHeader" href="storeHeader.html" rel="subsection">
+<link title="storeJsonPath" href="storeJsonPath.html" rel="subsection">
+<link title="storeProperty" href="storeProperty.html" rel="subsection">
+<link title="storeRegEx" href="storeRegEx.html" rel="subsection">
+<link title="storeResponseCode" href="storeResponseCode.html" rel="subsection">
+<link title="storeURLDecoded" href="storeURLDecoded.html" rel="subsection">
+<link title="storeURLEncoded" href="storeURLEncoded.html" rel="subsection">
+<link title="storeXPath" href="storeXPath.html" rel="subsection">
+<link title="table" href="table.html" rel="subsection">
+<link title="testInfo" href="testInfo.html" rel="subsection">
+<link title="then" href="then.html" rel="subsection">
+<link title="verifyCheckbox" href="verifyCheckbox.html" rel="subsection">
+<link title="verifyContent" href="verifyContent.html" rel="subsection">
+<link title="verifyCookie" href="verifyCookie.html" rel="subsection">
+<link title="verifyElement" href="verifyElement.html" rel="subsection">
+<link title="verifyElementText" href="verifyElementText.html" rel="subsection">
+<link title="verifyHeader" href="verifyHeader.html" rel="subsection">
+<link title="verifyInputField" href="verifyInputField.html" rel="subsection">
+<link title="verifyJsonPath" href="verifyJsonPath.html" rel="subsection">
+<link title="verifyLinks" href="verifyLinks.html" rel="subsection">
+<link title="verifyProperty" href="verifyProperty.html" rel="subsection">
+<link title="verifyRadioButton" href="verifyRadioButton.html" rel="subsection">
+<link title="verifySelectField" href="verifySelectField.html" rel="subsection">
+<link title="verifyText" href="verifyText.html" rel="subsection">
+<link title="verifyTextarea" href="verifyTextarea.html" rel="subsection">
+<link title="verifyTitle" href="verifyTitle.html" rel="subsection">
+<link title="verifyXPath" href="verifyXPath.html" rel="subsection">
+<link title="Syntax Reference - Extension Steps" href="syntaxExtension.html" rel="section">
+<link title="Syntax Reference - Filter Steps" href="syntaxFilter.html" rel="section">
+<link title="Syntax Reference - PDF Steps" href="syntaxPDF.html" rel="section">
+<link title="Syntax Reference - Excel Steps" href="syntaxExcel.html" rel="section">
+<link title="Syntax Reference - Email Steps" href="syntaxEmail.html" rel="section">
+<link title="Step Index" href="stepIndex.html" rel="section">
+<link title="Groovy Testing" href="groovyTesting.html" rel="section">
+<link title="Integration with other Tools" href="integration.html" rel="section">
+<link title="Annotated References" href="annotatedRefs.html" rel="section">
+<link title="Develop" href="building.html" rel="chapter">
+<link href="website_base.css" type="text/css" rel="stylesheet">
+<link href="website_part.css" type="text/css" rel="stylesheet">
+<meta name="description" content="">
+<meta name="keywords" content="Canoo,
+						WebTest, web application testing, automatic, XP, ANT, httpunit, htmlunit, groovy,
+						acceptance testing, extreme programming, agile development,
+						Description,Parameters,Details,">
+<title>Core Step: verifyJsonPath</title>
+</head>
+<body>
+<div id="page">
+<img alt="Webtest" height="89" width="949" usemap="#headerLinks" src="images/header.gif" class="mosaic"><map name="headerLinks">
+<area alt="WebTest GitHub Home" href="https://github.com/DaveParillo/webtest" coords="30px,30px,180px,55px" shape="rect">
+</map>
+<div id="navigation-top">
+<ul>
+<li>
+<a href="WebTestHome.html">Home</a>
+</li>
+<li>
+<a href="manualOverview.html" class="selected">Manual</a>
+</li>
+<li>
+<a href="building.html">Develop</a>
+</li>
+</ul>
+</div>
+<table style="border-collapse: collapse;" cellpadding="0" cellspacing="0" border="0" rules="none" frame="void" id="main">
+<col width="190">
+<col width="758">
+<tr valign="top">
+<td class="main-left" valign="top">
+<div id="search">
+<form id="searchForm" action="http://www.google.com/search">
+<input value="daveparillo.github.io/webtest/" name="sitesearch" type="hidden"><input alt="Search" title="Search" value="Search" name="go" id="searchButton" type="submit"><input title="Search" onfocus="this.select();" name="q" id="searchText" type="text">
+</form>
+</div>
+<div id="navigation-left">
+<ul>
+<li>
+<a href="manualOverview.html">Manual Overview</a>
+</li>
+<li>
+<a href="samples.html">Samples</a>
+</li>
+<li>
+<a href="properties.html">Properties</a>
+</li>
+<li>
+<a href="syntaxGeneral.html">Syntax Reference - General Steps</a>
+</li>
+<li>
+<a href="syntaxCore.html" class="selected">Syntax Reference - Core Steps</a>
+<ul>
+<li>
+<a href="clickButton.html">&gt; clickButton</a>
+</li>
+<li>
+<a href="clickLink.html">&gt; clickLink</a>
+</li>
+<li>
+<a href="condition.html">&gt; condition</a>
+</li>
+<li>
+<a href="dataDriven.html">&gt; dataDriven</a>
+</li>
+<li>
+<a href="else.html">&gt; else</a>
+</li>
+<li>
+<a href="followFrame.html">&gt; followFrame</a>
+</li>
+<li>
+<a href="group.html">&gt; group</a>
+</li>
+<li>
+<a href="ifStep.html">&gt; ifStep</a>
+</li>
+<li>
+<a href="invoke.html">&gt; invoke</a>
+</li>
+<li>
+<a href="not.html">&gt; not</a>
+</li>
+<li>
+<a href="otherwise.html">&gt; otherwise</a>
+</li>
+<li>
+<a href="previousResponse.html">&gt; previousResponse</a>
+</li>
+<li>
+<a href="repeat.html">&gt; repeat</a>
+</li>
+<li>
+<a href="selectForm.html">&gt; selectForm</a>
+</li>
+<li>
+<a href="setCheckbox.html">&gt; setCheckbox</a>
+</li>
+<li>
+<a href="setFileField.html">&gt; setFileField</a>
+</li>
+<li>
+<a href="setInputField.html">&gt; setInputField</a>
+</li>
+<li>
+<a href="setRadioButton.html">&gt; setRadioButton</a>
+</li>
+<li>
+<a href="setSelectField.html">&gt; setSelectField</a>
+</li>
+<li>
+<a href="storeCookie.html">&gt; storeCookie</a>
+</li>
+<li>
+<a href="storeHeader.html">&gt; storeHeader</a>
+</li>
+<li>
+<a href="storeJsonPath.html">&gt; storeJsonPath</a>
+</li>
+<li>
+<a href="storeProperty.html">&gt; storeProperty</a>
+</li>
+<li>
+<a href="storeRegEx.html">&gt; storeRegEx</a>
+</li>
+<li>
+<a href="storeResponseCode.html">&gt; storeResponseCode</a>
+</li>
+<li>
+<a href="storeURLDecoded.html">&gt; storeURLDecoded</a>
+</li>
+<li>
+<a href="storeURLEncoded.html">&gt; storeURLEncoded</a>
+</li>
+<li>
+<a href="storeXPath.html">&gt; storeXPath</a>
+</li>
+<li>
+<a href="table.html">&gt; table</a>
+</li>
+<li>
+<a href="testInfo.html">&gt; testInfo</a>
+</li>
+<li>
+<a href="then.html">&gt; then</a>
+</li>
+<li>
+<a href="verifyCheckbox.html">&gt; verifyCheckbox</a>
+</li>
+<li>
+<a href="verifyContent.html">&gt; verifyContent</a>
+</li>
+<li>
+<a href="verifyCookie.html">&gt; verifyCookie</a>
+</li>
+<li>
+<a href="verifyElement.html">&gt; verifyElement</a>
+</li>
+<li>
+<a href="verifyElementText.html">&gt; verifyElementText</a>
+</li>
+<li>
+<a href="verifyHeader.html">&gt; verifyHeader</a>
+</li>
+<li>
+<a href="verifyInputField.html">&gt; verifyInputField</a>
+</li>
+<li>
+<a href="verifyJsonPath.html" class="selected">&gt; verifyJsonPath</a>
+</li>
+<li>
+<a href="verifyLinks.html">&gt; verifyLinks</a>
+</li>
+<li>
+<a href="verifyProperty.html">&gt; verifyProperty</a>
+</li>
+<li>
+<a href="verifyRadioButton.html">&gt; verifyRadioButton</a>
+</li>
+<li>
+<a href="verifySelectField.html">&gt; verifySelectField</a>
+</li>
+<li>
+<a href="verifyText.html">&gt; verifyText</a>
+</li>
+<li>
+<a href="verifyTextarea.html">&gt; verifyTextarea</a>
+</li>
+<li>
+<a href="verifyTitle.html">&gt; verifyTitle</a>
+</li>
+<li>
+<a href="verifyXPath.html">&gt; verifyXPath</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="syntaxExtension.html">Syntax Reference - Extension Steps</a>
+</li>
+<li>
+<a href="syntaxFilter.html">Syntax Reference - Filter Steps</a>
+</li>
+<li>
+<a href="syntaxPDF.html">Syntax Reference - PDF Steps</a>
+</li>
+<li>
+<a href="syntaxExcel.html">Syntax Reference - Excel Steps</a>
+</li>
+<li>
+<a href="syntaxEmail.html">Syntax Reference - Email Steps</a>
+</li>
+<li>
+<a href="stepIndex.html">Step Index</a>
+</li>
+<li>
+<a href="groovyTesting.html">Groovy Testing</a>
+</li>
+<li>
+<a href="integration.html">Integration with other Tools</a>
+</li>
+<li>
+<a href="annotatedRefs.html">Annotated References</a>
+</li>
+</ul>
+</div>
+<div class="filler"></div>
+</td><td rowspan="2" valign="top">
+<div id="main-content">
+<h1>
+<span class="category">Core Step</span> verifyJsonPath</h1>
+<h2>
+<a name="Description">Description</a>
+</h2>
+<p>This step verifies that an JsonPath expression is true or has a certain value.</p>
+
+  
+<p>More documentation for JsonPath, including descriptions of operators and functions available
+    can be found at the
+    <a class="ext" title="external link: opens in new window" target="_blank" href="https://github.com/json-path/JsonPath#getting-started">Jway JsonPath</a> Github site,
+    and at <a class="ext" title="external link: opens in new window" target="_blank" href="http://goessner.net/articles/JsonPath/">Stefan Goessner's orginal article</a>.
+  </p>
+
+  
+<p>The <a class="ext" title="external link: opens in new window" target="_blank" href="http://jsonpath.herokuapp.com">Jayway JsonPath Evaluator</a>, 
+    is a good online resource for testing out JsonPath expressions on your data.</p>
+
+
+<h2>
+<a name="Parameters">Parameters</a>
+</h2>
+<dl class="attributes">
+<dt>description</dt>
+<dd class="required">Required? no</dd>
+<dd>The description of this test step.</dd>
+<dt>jpath</dt>
+<dd class="required">Required? true</dd>
+<dd>The JsonPath expression to evaluate.</dd>
+<dt>text</dt>
+<dd class="required">Required? no</dd>
+<dd>The expected value of the JSON path evaluation. If omitted the step checks that the JsonPath exists and not empty.</dd>
+<dt>tolerance</dt>
+<dd class="required">Required? no</dd>
+<dd>The maximum difference allowed between two floating point values in a response. This value, if set, must be greater than 0.0, otherwise it is ignored. Default value = 0.01. </dd>
+</dl>
+<h2>
+<a name="Details">Details</a>
+</h2>
+    
+<p>
+        JsonPath expressions always refer to a JSON structure in the same way as 
+        XPath expression are used in combination with an XML document. 
+        The "root member object" in JsonPath is always referred to as <i>$</i> 
+        whether it is an object or array.
+    </p>
+
+    
+<p>JsonPath expressions can use the dot&ndash;notation:</p>
+
+    
+<div class="code">
+<div class="content">
+        $.store.book[0].title
+    </div>
+</div>
+
+    
+<p>or the bracket&ndash;notation:</p>
+
+    
+<div class="code">
+<div class="content">
+        $['store']['book'][0]['title']
+    </div>
+</div>
+
+    
+<p>
+        Operators
+    </p>
+    
+<p>
+        
+<dl>
+            
+                
+<dt>
+                    $
+                </dt>
+                
+<dd>
+                    The root element to query. This starts all path expressions.
+                </dd>
+            
+            
+                
+<dt>
+                    @
+                </dt>
+                
+<dd>
+                    The current node being processed by a filter predicate.
+                </dd>
+            
+            
+                
+<dt>
+                    *
+                </dt>
+                
+<dd>Wildcard.
+                    Available anywhere a name or numeric are required.
+                </dd>
+            
+            
+                
+<dt>
+                    ..
+                </dt>
+                
+<dd>Deep scan.
+                    Available anywhere a name is required.
+                </dd>
+            
+            
+                
+<dt>
+                    .&lt;name&gt;
+                </dt>
+                
+<dd>Child reference using dot notation.
+                </dd>
+            
+            
+                
+<dt>
+                    ['&lt;name&gt;' (, '&lt;name&gt;')]
+                </dt>
+                
+<dd>Child reference using bracket notation.
+                    Multiple children can be listed in the brackets.
+                </dd>
+            
+            
+                
+<dt>
+                    [&lt;number&gt; (, &lt;number&gt;)]
+                </dt>
+                
+<dd>Array index (or multiple idexes).
+                </dd>
+            
+            
+                
+<dt>
+                    [start:end]
+                </dt>
+                
+<dd>Array slice operator.
+                </dd>
+            
+            
+                
+<dt>
+                    [?(&lt;expression&gt;)]
+                </dt>Filter expression.
+                <dd>Expression must evaluate to a boolean value.
+                </dd>
+            
+
+        
+</dl>
+    
+</p>
+
+    
+<p>Simple usage examples:
+    </p>
+    
+<div class="code">
+<div class="caption">verifyJsonPath Simple example</div>
+<div class="content">
+        
+&lt;<span class="tag">webtest</span>&nbsp;<span class="att">name</span>="<span class="val">...</span>"&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">config</span>&nbsp;...&nbsp;/&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">invoke</span>&nbsp;...&nbsp;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;given&nbsp;a&nbsp;response&nbsp;like:&nbsp;{"msg":&nbsp;"hello"}&nbsp;--&gt;<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyJsonPath</span>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">description</span>="<span class="val">Check&nbsp;hello</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">jpath</span>="<span class="val">$.msg</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">text</span>="<span class="val">hello</span>"&nbsp;/&gt;<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;--&nbsp;check&nbsp;floating&nbsp;point&nbsp;response:&nbsp;{"pi":&nbsp;3.14159}&nbsp;--&gt;<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyJsonPath</span>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">description</span>="<span class="val">Check&nbsp;PI</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">jpath</span>="<span class="val">$.pi</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">text</span>="<span class="val">3.14</span>"&nbsp;/&gt;<br>
+
+<br>
+&lt;/<span class="tag">webtest</span>&gt;<br>
+
+<br>
+
+    
+</div>
+</div>
+
+    
+<p>
+        The following examples extract a variety of subsets from the following JSON.
+    </p>
+    
+<div class="code">
+<div class="caption">JSON solar-lunar example data</div>
+<div class="content">
+        
+[<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sun"&nbsp;:&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aRA"&nbsp;:&nbsp;21.5376,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aD"&nbsp;:&nbsp;-14.599,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tRA"&nbsp;:&nbsp;21.53750,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tD"&nbsp;:&nbsp;-14.600645,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tAlt"&nbsp;:&nbsp;-4.25582,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"azimuth"&nbsp;:&nbsp;255.58,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"illuminance"&nbsp;:&nbsp;23.6143<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"moon"&nbsp;:&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aRA"&nbsp;:&nbsp;22.70083,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aD"&nbsp;:&nbsp;-6.99388,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tRA"&nbsp;:&nbsp;22.6461,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tD"&nbsp;:&nbsp;-7.52695,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tAlt"&nbsp;:&nbsp;13.4022,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"azimuth"&nbsp;:&nbsp;253.00,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"illuminance"&nbsp;:&nbsp;0.000024,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"percentIllumination"&nbsp;:&nbsp;"&nbsp;&nbsp;3%+"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"total"&nbsp;:&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"illuminance"&nbsp;:&nbsp;23.61486<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dateTime"&nbsp;:&nbsp;"2016-02-10T00:00:00",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"latitude"&nbsp;:&nbsp;30.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"longitude"&nbsp;:&nbsp;-90.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skyCondition"&nbsp;:&nbsp;"VISIBLE"<br>
+&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sun"&nbsp;:&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aRA"&nbsp;:&nbsp;21.5706,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aD"&nbsp;:&nbsp;-14.4379,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tRA"&nbsp;:&nbsp;21.5708,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tD"&nbsp;:&nbsp;-14.4391,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tAlt"&nbsp;:&nbsp;-10.1747,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"azimuth"&nbsp;:&nbsp;100.89,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"illuminance"&nbsp;:&nbsp;0.038165<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"moon"&nbsp;:&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aRA"&nbsp;:&nbsp;23.1694,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aD"&nbsp;:&nbsp;-4.81467,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tRA"&nbsp;:&nbsp;23.2205,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tD"&nbsp;:&nbsp;-5.27338,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tAlt"&nbsp;:&nbsp;-27.05082,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"azimuth"&nbsp;:&nbsp;79.88,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"illuminance"&nbsp;:&nbsp;4.23209E-25,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"percentIllumination"&nbsp;:&nbsp;"&nbsp;&nbsp;5%+"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"total"&nbsp;:&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"illuminance"&nbsp;:&nbsp;0.038665<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dateTime"&nbsp;:&nbsp;"2016-02-10T12:00:00",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"latitude"&nbsp;:&nbsp;30.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"longitude"&nbsp;:&nbsp;-90.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skyCondition"&nbsp;:&nbsp;"VISIBLE"<br>
+&nbsp;&nbsp;&nbsp;}<br>
+]<br>
+
+    
+</div>
+</div>
+
+    
+<div class="code">
+<div class="caption">verifyJsonPath Solar-Lunar Data Examples</div>
+<div class="content">
+        
+&lt;<span class="tag">webtest</span>&nbsp;<span class="att">name</span>="<span class="val">...</span>"&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">config</span>&nbsp;...&nbsp;/&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">invoke</span>&nbsp;...&nbsp;an&nbsp;endpoint&nbsp;that&nbsp;returns&nbsp;the&nbsp;example&nbsp;JSON.&nbsp;...&nbsp;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyJsonPath</span>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">description</span>="<span class="val">Check&nbsp;all&nbsp;illumination&nbsp;values</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">jpath</span>="<span class="val">$..illuminance</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">tolerance</span>="<span class="val">0.001</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">text</span>="<span class="val">[&nbsp;23.614,&nbsp;2.4E-5,&nbsp;23.615,&nbsp;0.038165,&nbsp;0.0,&nbsp;0.0387&nbsp;]</span>"&nbsp;/&gt;<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyJsonPath</span>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">description</span>="<span class="val">Check&nbsp;the&nbsp;sun&nbsp;azimuth&nbsp;@&nbsp;12:00</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">jpath</span>="<span class="val">$..[?(@.dateTime&nbsp;==&nbsp;'2016-02-10T12:00:00')].sun.azimuth</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">text</span>="<span class="val">100.89</span>"&nbsp;/&gt;<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyJsonPath</span>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">description</span>="<span class="val">Check&nbsp;the&nbsp;total&nbsp;object&nbsp;@&nbsp;12:00</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">jpath</span>="<span class="val">$..[?(@.dateTime&nbsp;==&nbsp;'2016-02-10T12:00:00')].total</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">tolerance</span>="<span class="val">0.001</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">text</span>="<span class="val">{&nbsp;</span>"illuminance"&nbsp;:&nbsp;0.038665&nbsp;}"&nbsp;/&gt;<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyJsonPath</span>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">description</span>="<span class="val">Check&nbsp;both&nbsp;sun&nbsp;and&nbsp;moon&nbsp;alitude&nbsp;and&nbsp;azimuth&nbsp;@&nbsp;T00</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">jpath</span>="<span class="val">$..[?(@.dateTime&nbsp;=~&nbsp;/.*T00.*?/i)].['sun','moon'].['tAlt','azimuth']</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">text</span>="<span class="val">[&nbsp;{&nbsp;</span>"tAlt"&nbsp;:&nbsp;-4.25582,&nbsp;"azimuth"&nbsp;:&nbsp;255.58&nbsp;},&nbsp;{&nbsp;"tAlt"&nbsp;:&nbsp;13.4022,&nbsp;"azimuth"&nbsp;:&nbsp;253.0&nbsp;}&nbsp;]&nbsp;"&nbsp;/&gt;<br>
+
+<br>
+&lt;/<span class="tag">webtest</span>&gt;<br>
+
+<br>
+
+    
+</div>
+</div>
+
+    
+<p>
+        
+<i>See also</i>: the <a href="storeJsonPath.html" class="stepref">storeJsonPath</a> step.
+    </p>
+
+
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="filler"></div>
+</body>
+</html>
