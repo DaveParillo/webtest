@@ -552,7 +552,7 @@ public class PdfBoxPDFPage implements PDFPage {
     private static List extractAnnotations(final PDPage page, final PDFTextStripperByArea stripper, 
     		final List<PDAnnotationLink> linkAnnotations, final List<Rectangle2D.Float> linkRegions) throws IOException {
     	int annotationIndex = 0;
-    	@SuppressWarnings("unchecked")
+    	//@SuppressWarnings("unchecked")
 		final List<PDAnnotation> annotations = page.getAnnotations();
         for (int j = 0; j < annotations.size(); j++) {
         	final PDAnnotation annot = (PDAnnotation) annotations.get(j);
