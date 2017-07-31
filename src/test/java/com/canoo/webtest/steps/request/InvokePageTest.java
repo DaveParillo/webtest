@@ -2,6 +2,8 @@
 package com.canoo.webtest.steps.request;
 
 import java.io.File;
+import java.util.List;
+import java.util.ArrayList;
 
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -30,7 +32,34 @@ public class InvokePageTest extends BaseStepTestCase
 		assertErrorOnExecute(getStep(), "no Url", "");
 	}
 
-	public void testExecuteFailsWithTooManyParams() {
+    private List<String> getVerbs() {
+        List<String> verbs = new ArrayList<>();
+        verbs.add("PUT");
+        verbs.add("POST");
+        //verbs.add("PATCH");
+        return verbs;
+    }
+
+     /**
+     * Happy path for PUT, POST
+     */
+    public void testExecuteVerbs() throws Exception {
+        InvokePage step = (InvokePage) getStep();
+        step.setUrl("http://myhost.mydomain/");
+        step.setContentType("text/xml; charset=\"UTF-8\"");
+        step.setContent("dummy");
+        List<String> verbs = getVerbs();
+
+        for (String method: verbs) {
+            step.setMethod(method);
+            executeStep(step);
+        }
+	}
+
+    /**
+	 * Tests that POST requests may set either content or contentFile, but not both.
+	 */
+	public void testExecutePOSTFailsWithBadContent() {
         InvokePage step = (InvokePage) getStep();
         step.setMethod("POST");
         assertErrorOnExecute(step, "post with no content or contentFile", "");
@@ -38,6 +67,64 @@ public class InvokePageTest extends BaseStepTestCase
         step.setContentFile(new File("dummy"));
         assertErrorOnExecute(step, "both content and contentFile", "");
 	}
+
+    /**
+	 * Tests that PUT requests may set either content or contentFile, but not both.
+	 */
+	public void testExecutePUTFailsWithBadContent() {
+        InvokePage step = (InvokePage) getStep();
+        step.setMethod("PUT");
+        assertErrorOnExecute(step, "put with no content or contentFile", "");
+        step.setContent("dummy");
+        step.setContentFile(new File("dummy"));
+        assertErrorOnExecute(step, "both content and contentFile", "");
+	}
+    /**
+	 * Tests that PATCH requests may set either content or contentFile, but not both.
+	 */
+	public void testExecutePATCHFailsWithBadContent() {
+        InvokePage step = (InvokePage) getStep();
+        step.setMethod("PATCH");
+        assertErrorOnExecute(step, "put with no content or contentFile", "");
+        step.setContent("dummy");
+        step.setContentFile(new File("dummy"));
+        assertErrorOnExecute(step, "both content and contentFile", "");
+	}
+
+    /**
+	 * Tests that DELETE requests must not set content
+	 */
+	public void testExecuteDELETEFailsWithContent() {
+        InvokePage step = (InvokePage) getStep();
+        step.setMethod("DELETE");
+        step.setContent("dummy");
+        assertErrorOnExecute(step, "DELETE must not set content", "");
+	}
+
+    /**
+	 * Tests that DELETE requests must not set contentFile
+	 */
+	public void testExecuteDELETEFailsWithContentFile() {
+        InvokePage step = (InvokePage) getStep();
+        step.setMethod("DELETE");
+        step.setContentFile(new File("dummy"));
+        assertErrorOnExecute(step, "DELETE must not set contentFile", "");
+	}
+
+
+    /**
+	 * Tests that POST requests with a soapAction must set contentType
+	 */
+    public void testExecuteFailsWithSoapActionNoContentType() {
+        InvokePage step = (InvokePage) getStep();
+        step.setUrl("http://myhost.mydomain/");
+        step.setMethod("POST");
+        step.setSoapAction("http://myhost.mydomain/myAction");
+        step.setContent("dummy");
+        //step.setContentType("text/xml; charset=\"UTF-8\"");
+        assertErrorOnExecute(step, "SOAP post with no content-type", "");
+	}
+
 
 	/**
 	 * Tests that javascript errors are caught and correctly reported
