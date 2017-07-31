@@ -104,7 +104,7 @@ public class ExcelColorUtils {
             if (xssfcolor.isAuto()) {
                 return "auto";
             }
-            final byte[] triplet = xssfcolor.getRgb();
+            final byte[] triplet = xssfcolor.getRGB();
             final String colorString = "#"+toHex(triplet[0]) +toHex(triplet[1])+toHex(triplet[2]);
             return lookupStandardColorName(colorString);
 

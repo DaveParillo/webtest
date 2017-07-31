@@ -3,45 +3,20 @@
     <groupId>com.canoo.webtest</groupId>
     <artifactId>webtest</artifactId>
     <packaging>jar</packaging>
-    <version>3.1-SNAPSHOT</version>
-    <description>Free open-source tool for automated testing of web applications.</description>
-    <url>http://webtest.canoo.com/</url>
+    <version>4.0.0-daveparillo-SNAPSHOT</version>
+    <description>open-source automated web application testing tool</description>
+    <url>https://daveparillo.github.io/webtest/</url>
     <licenses>
         <license>
-            <name>Canoo WebTest Software License</name>
-            <url>http://webtest.canoo.com/webtest/manual/license.html</url>
+            <name>WebTest Software License</name>
+            <url>https://daveparillo.github.io/webtest/manual/license.html</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git://git@github.com:canoo/webtest.git</connection>
-        <url>https://github.com/canoo/webtest</url>
+        <connection>scm:git:git://git@github.com:DaveParillo/webtest.git</connection>
+        <url>https://github.com/DaveParillo/webtest</url>
     </scm>
-    <build>
-        <directory>build</directory>
-        <outputDirectory>build/classes/plain</outputDirectory>
-        <testOutputDirectory>build/classes-test/plain</testOutputDirectory>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-idea-plugin</artifactId>
-                <configuration>
-                    <jdkName>1.5</jdkName>
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>true</downloadJavadocs>
-                    <dependenciesAsLibraries>true</dependenciesAsLibraries>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.9</version>
-                <configuration>
-                    <downloadSources>true</downloadSources>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <properties>
         <version.ant>1.10.1</version.ant>
@@ -61,7 +36,7 @@
         </dependency>
 
         <dependency>
-          <groupId>org.json</groupId>
+            <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20170516</version>
             <scope>runtime</scope>
@@ -73,13 +48,11 @@
         </dependency>
 
 
-        <!-- seems that it is not retrieved automatically when depending on a snapshot -->
         <dependency>
-            <groupId>rhino</groupId>
-            <artifactId>js</artifactId>
-            <version>1.7R1</version>
-            <scope>runtime</scope>
-        </dependency>
+            <groupId>org.mozilla</groupId>
+            <artifactId>rhino</artifactId>
+            <version>1.7.7.1</version>
+        </dependency> 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -131,16 +104,15 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>easymock</groupId>
+            <groupId>org.easymock</groupId>
             <artifactId>easymock</artifactId>
-            <version>1.0</version>
+            <version>3.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>bsf</groupId>
-            <artifactId>bsf</artifactId>
-            <version>2.4.0</version>
-            <scope>compile</scope>
+            <groupId>org.apache.bsf</groupId>
+            <artifactId>bsf-api</artifactId>
+            <version>3.1</version>
         </dependency>
         <dependency>
             <groupId>com.agical.rmock</groupId>
@@ -151,15 +123,16 @@
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
-            <version>1.2</version>
+            <version>1.3.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
+            <!-- outdated -->
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
             <version>2.6</version>
-            <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
@@ -173,6 +146,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <!-- outdated -->
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
@@ -180,11 +154,13 @@
         </dependency>
         <dependency>
             <!-- emailtest -->
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4</version>
-            <scope>compile</scope>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.0</version>
         </dependency>
+
+
+
         <dependency>
             <groupId>org.netbeans</groupId>
             <artifactId>jemmy</artifactId>
@@ -195,13 +171,13 @@
             <!-- excel -->
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>3.7</version>
+            <version>3.16</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>3.7</version>
+            <version>3.16</version>
         </dependency>
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
@@ -210,6 +186,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <!-- outdated -->
             <groupId>net.sf.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>2.3</version>
@@ -217,16 +194,19 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcmail-jdk15</artifactId>
-            <version>1.44</version>
+            <artifactId>bcmail-jdk16</artifactId>
+            <version>1.46</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.4</version>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.0-b07</version>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
 
     <repositories>

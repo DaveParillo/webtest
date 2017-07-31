@@ -129,23 +129,49 @@ public class ExcelVerifyCellStyleTest extends BaseExcelStepTestCase {
         executeStep(step);
     }
 
-    public void testUnknownProperties() throws Exception {
+
+
+    public void testUnknownTopBorder() throws Exception {
         final ExcelVerifyCellStyle step = (ExcelVerifyCellStyle) getStep();
         step.setCell("B2");
-        final CellStyle cellStyle = step.getExcelCell().getCellStyle();
-        cellStyle.setBorderTop(Short.MAX_VALUE);
-        cellStyle.setAlignment(Short.MAX_VALUE);
-        cellStyle.setVerticalAlignment(Short.MAX_VALUE);
-        cellStyle.setFillPattern(Short.MAX_VALUE);
-        final Font fontAt = step.getExcelWorkbook().getFontAt(cellStyle.getFontIndex());
-        fontAt.setUnderline(Byte.MAX_VALUE);
         step.setBorder("top:unknown");
-        step.setAlign("unknown");
-        step.setValign("unknown");
-        step.setFillPattern("unknown");
-        step.setFontStyle("bold underline-unknown");
+        assertFailOnExecute(step, "", "");
+        step.setBorder("top:none");
         executeStep(step);
     }
+    public void testUnknownHorizAlign() throws Exception {
+        final ExcelVerifyCellStyle step = (ExcelVerifyCellStyle) getStep();
+        step.setCell("B2");
+        step.setAlign("unknown");
+        assertFailOnExecute(step, "", "");
+        step.setAlign("general");
+        executeStep(step);
+    }
+    public void testUnknownVerticalAlign() throws Exception {
+        final ExcelVerifyCellStyle step = (ExcelVerifyCellStyle) getStep();
+        step.setCell("B2");
+        step.setValign("unknown");
+        assertFailOnExecute(step, "", "");
+        step.setValign("bottom");
+        executeStep(step);
+    }
+    public void testUnknownFillPattern() throws Exception {
+        final ExcelVerifyCellStyle step = (ExcelVerifyCellStyle) getStep();
+        step.setCell("B2");
+        step.setFillPattern("unknown");
+        assertFailOnExecute(step, "", "");
+        step.setFillPattern("none");
+        executeStep(step);
+    }
+    public void testUnknownFontStyle() throws Exception {
+        final ExcelVerifyCellStyle step = (ExcelVerifyCellStyle) getStep();
+        step.setCell("B2");
+        step.setFontStyle("unknown");
+        assertFailOnExecute(step, "", "");
+        step.setFontStyle("bold");
+        executeStep(step);
+    }
+
 
     public void testUnknownCellType() {
         assertEquals("unknown", ExcelCellUtils.getCellType(6));
