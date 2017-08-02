@@ -25,7 +25,7 @@ public class FormUtil
      * Tests if the form contains the desired field.
      */
     private static boolean hasField(final HtmlForm form, final String tag, final String type, final String name) {
-        List elements = form.getHtmlElementsByTagName(tag);
+        List elements = form.getElementsByTagName(tag);
         for (Iterator iter = elements.iterator(); iter.hasNext();) {
             HtmlElement element = (HtmlElement) iter.next();
             if (name.equals(element.getAttribute(HtmlConstants.NAME))

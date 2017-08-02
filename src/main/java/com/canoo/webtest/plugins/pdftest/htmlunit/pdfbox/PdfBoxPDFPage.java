@@ -75,12 +75,21 @@ public class PdfBoxPDFPage implements PDFPage {
 	private static int allocated = 0;
 	private final byte[] bytes;
 	
-	public void cleanUp() throws IOException {
+	public void cleanUp() {
 		cleanUpCalled = true;
 		allocated--;
-		if (pdfDocument_ != null)
-			pdfDocument_.close();
+		if (pdfDocument_ != null) {
+            try {
+                pdfDocument_.close();
+            } catch (final IOException e) {
+                getLog().warn("Failed to properly close PDF document: " + e.getMessage(), e);
+            }
+        }
 	}
+
+    public boolean isHtmlPage() {
+        return false;
+    }
 
 	public PdfBoxPDFPage(final WebResponse webResponse, final WebWindow webWindow) throws IOException {
 		webWindow_ = webWindow;

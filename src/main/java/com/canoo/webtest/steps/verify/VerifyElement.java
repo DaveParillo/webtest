@@ -83,7 +83,7 @@ public class VerifyElement extends AbstractVerifyTextStep {
      * @return a list of {@link com.gargoylesoftware.htmlunit.html.HtmlElement}
      */
     protected static List getAllElementsOfType(final Context context, final String type) {
-        return ((HtmlPage) context.getCurrentResponse()).getDocumentElement().getHtmlElementsByTagName(type);
+        return ((HtmlPage) context.getCurrentResponse()).getDocumentElement().getElementsByTagName(type);
     }
 
     /**

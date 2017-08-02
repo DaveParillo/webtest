@@ -18,7 +18,7 @@ import com.canoo.webtest.util.ConversionUtil;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebWindow;
-import com.gargoylesoftware.htmlunit.html.BaseFrame;
+import com.gargoylesoftware.htmlunit.html.BaseFrameElement;
 import com.gargoylesoftware.htmlunit.html.FrameWindow;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -190,10 +190,10 @@ public class FollowFrame extends AbstractBrowserAction {
 		try
 		{
 			elt = htmlPage.getHtmlElementById(htmlId);
-			if (elt instanceof BaseFrame)
+			if (elt instanceof BaseFrameElement)
 			{
 				LOG.debug("it's the right one");
-				return ((BaseFrame) elt).getEnclosedWindow();
+				return ((BaseFrameElement) elt).getEnclosedWindow();
 			}
 		}
 		catch (final ElementNotFoundException e)

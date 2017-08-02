@@ -25,15 +25,15 @@ public class EnableJavaScriptTest extends BaseStepTestCase {
 	public void testDoExecute() throws Exception {
 		fStep.setEnable(null);
 		executeStep(fStep);
-		assertFalse(getContext().getWebClient().isJavaScriptEnabled());
+		assertFalse(getContext().getWebClient().getOptions().isJavaScriptEnabled());
 
 		fStep.setEnable("true");
 		executeStep(fStep);
-		assertTrue(getContext().getWebClient().isJavaScriptEnabled());
+		assertTrue(getContext().getWebClient().getOptions().isJavaScriptEnabled());
 
 		fStep.setEnable("false");
 		BaseStepTestCase.executeStep(fStep);
-		assertFalse(getContext().getWebClient().isJavaScriptEnabled());
+		assertFalse(getContext().getWebClient().getOptions().isJavaScriptEnabled());
 	}
 
 }

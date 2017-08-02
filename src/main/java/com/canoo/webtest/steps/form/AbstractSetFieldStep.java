@@ -162,7 +162,7 @@ public abstract class AbstractSetFieldStep extends AbstractBrowserAction {
 	HtmlElement findFieldByLabel(final HtmlPage page, final String labelText)
 	{
 		LOG.debug("Searching label tag with text: " + labelText);
-		final List labels = page.getDocumentElement().getHtmlElementsByTagName("label");
+		final List labels = page.getDocumentElement().getElementsByTagName("label");
 		LOG.debug(labels.size() + " found in the page");
 		
 		final IStringVerifier verifier = getVerifier(false);

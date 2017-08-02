@@ -95,8 +95,7 @@ public class StoreCookie extends BaseStoreStep {
      */
     public static Cookie[] getCookies(final Context context) {
         final URL url = context.getCurrentResponse().getUrl();
-        final WebClient webClient = context.getWebClient();
-        final Set/*<Cookie>*/ cookies = webClient.getCookieManager().getCookies(url);
+        final Set<Cookie> cookies = context.getWebClient().getCookies(url);
         return (Cookie[]) cookies.toArray(new Cookie[]{});
     }
 

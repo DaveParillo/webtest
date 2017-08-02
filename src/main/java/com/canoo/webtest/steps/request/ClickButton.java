@@ -293,7 +293,7 @@ public class ClickButton extends AbstractIdOrLabelTarget {
 	}
 
 	private HtmlElement findInputButton(final HtmlForm form) {
-		final Collection inputButtons = form.getHtmlElementsByTagName(HtmlConstants.INPUT);
+		final Collection inputButtons = form.getElementsByTagName(HtmlConstants.INPUT);
 		return findInputButton(inputButtons.iterator());
 	}
 

@@ -8,6 +8,7 @@ import com.canoo.webtest.self.ThrowAssert;
 import com.canoo.webtest.steps.BaseStepTestCase;
 import com.canoo.webtest.steps.Step;
 import com.canoo.webtest.steps.form.AbstractSetFieldStep;
+import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlInput;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
@@ -59,7 +60,7 @@ public class ForceHiddenInputFieldTest extends BaseStepTestCase
 		ThrowAssert.assertThrows(StepFailedException.class, new TestBlock() {
 			public void call() throws Throwable {
 				fStep.setValue("foo");
-				fStep.setField(page.createElement("img"));
+				fStep.setField((HtmlElement) page.createElement("img"));
 			}
 		});
 

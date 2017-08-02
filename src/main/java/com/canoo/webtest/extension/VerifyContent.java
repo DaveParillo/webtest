@@ -17,11 +17,12 @@ import com.canoo.webtest.engine.StepFailedException;
 import com.canoo.webtest.engine.WebClientContext;
 import com.canoo.webtest.steps.Step;
 import com.canoo.webtest.util.FileUtil;
-import com.gargoylesoftware.htmlunit.JavaScriptPage;
 import com.gargoylesoftware.htmlunit.Page;
+import com.gargoylesoftware.htmlunit.SgmlPage;
 import com.gargoylesoftware.htmlunit.TextPage;
 import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.html.XHtmlPage;
 import com.gargoylesoftware.htmlunit.xml.XmlPage;
 
 /**
@@ -209,6 +210,6 @@ public class VerifyContent extends AbstractProcessFiltersStep
     static boolean isTextResponse(final Page _page) 
 	{
     	// don't rely on mime type as not only text/* are "text" answers (for instance application/xhtml+xml)
-    	return _page instanceof HtmlPage || _page instanceof TextPage || _page instanceof XmlPage || _page instanceof JavaScriptPage;
+    	return _page instanceof HtmlPage || _page instanceof TextPage || _page instanceof XmlPage || _page instanceof XHtmlPage || _page instanceof SgmlPage;
 	}
 }

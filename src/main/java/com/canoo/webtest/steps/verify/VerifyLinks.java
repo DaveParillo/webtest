@@ -159,14 +159,14 @@ public class VerifyLinks extends Step
     }
 
     protected void visit(final HtmlPage referingPage, final URL url, final WebClient webClient) {
-    	final boolean ignoreJSErrorsOriginal = webClient.isThrowExceptionOnScriptError();
+    	final boolean ignoreJSErrorsOriginal = webClient.getOptions().isThrowExceptionOnScriptError();
     	if (fIgnoreForeignJSErrors && isForeignHost(url))
     	{
     		LOG.info("Ignore JS errors (if any) for " + url); 
-    		webClient.setThrowExceptionOnScriptError(false);
+    		webClient.getOptions().setThrowExceptionOnScriptError(false);
     	}
         final Page response = HtmlUnitBoundary.tryGetPageNoFail(url, webClient);
-        webClient.setThrowExceptionOnScriptError(ignoreJSErrorsOriginal);
+        webClient.getOptions().setThrowExceptionOnScriptError(ignoreJSErrorsOriginal);
 
 		fVisitedUrls.add(url);
         if (response == null) {

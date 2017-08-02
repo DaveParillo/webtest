@@ -181,6 +181,9 @@ public class Configuration extends Task {
         webClient = fContext.getWebtest().getWebtestCustomizer().customizeWebClient(webClient);
         fContext.setWebClient(webClient);
 
+        /*
+         * TODO: verify this is no longer needed
+         * 
         // catcher for JS background errors (as long as HtmlUnit doesn't provide a better solution to handle this)
         final Thread mainThread = Thread.currentThread();
         final JavaScriptEngine myEngine = new JavaScriptEngine(webClient) {
@@ -192,6 +195,7 @@ public class Configuration extends Task {
             }
         };
         webClient.setJavaScriptEngine(myEngine);
+        */
 
         // CSV report about sent/received requests/responses
         final File csvFile = new File(getWebTestResultDir(), "requests.csv");
@@ -215,7 +219,7 @@ public class Configuration extends Task {
             if (!existingProps.contains(propName)) {
                 final String propValue = getProject().getProperty("wt.config." + propName);
                 if (propValue != null) {
-                    LOG.info("Using " + propName + " from project property wt.config." + propName + ": " + propValue);
+                    LOG.debug("Using " + propName + " from project property wt.config." + propName + ": " + propValue);
                     ih.setAttribute(getProject(), this, propName, propValue);
                 }
             }
@@ -230,7 +234,7 @@ public class Configuration extends Task {
 
         // compute subdir for this test
         fWebtestResultDir = computeSubFolder(resultDir);
-        LOG.info("Creating result directory: " + fWebtestResultDir.getAbsolutePath());
+        LOG.debug("Creating result directory: " + fWebtestResultDir.getAbsolutePath());
 
         if (!fWebtestResultDir.mkdirs()) {
             throw new BuildException("Failed to create result dir: " + fWebtestResultDir.getAbsolutePath());
@@ -615,31 +619,33 @@ public class Configuration extends Task {
         final BrowserVersion browserVersion = setupBrowserVersion(fBrowser, strUserAgent);
         fBrowser = browserVersion.getNickname(); // to see it in the reports
         final WebClient webClient = setupWebClient(browserVersion);
+        WebClientOptions options = webClient.getOptions();
+        options.setTimeout(getTimeout() * 1000);
 
-        webClient.setTimeout(getTimeout() * 1000);
+
 
         setupHtmlParser(webClient, cfg);
         setupRefreshHandler(webClient, cfg); // auto refresh settings
-        webClient.setThrowExceptionOnScriptError(true); // option for this and report js errors?
+        options.setThrowExceptionOnScriptError(true); // option for this and report js errors?
         try {
-            setupSSLIfNeeded(webClient);
+            setupSSLIfNeeded(options);
         } catch (final GeneralSecurityException e) {
             throw new RuntimeException(e);
         }
         setupHttpHeaders(webClient, cfg);
-        setupOptions(webClient, cfg);
+        setupOptions(webClient.getOptions(), cfg);
 
         configurePageCreator(webClient);
 
         return webClient;
     }
 
-    private void setupSSLIfNeeded(WebClient webClient) throws GeneralSecurityException {
+    private void setupSSLIfNeeded(WebClientOptions options) throws GeneralSecurityException {
         if (shouldUseClientCert()) {
-            webClient.setSSLClientCertificate(getCertUrl(), getCertPassword(), getCertType());
+            options.setSSLClientCertificate(getCertUrl(), getCertPassword(), getCertType());
         }
         if (getUseInsecureSSL()) {
-            webClient.setUseInsecureSSL(getUseInsecureSSL());
+            options.setUseInsecureSSL(getUseInsecureSSL());
         }
     }
 
@@ -693,18 +699,22 @@ public class Configuration extends Task {
 
         if (browserName != null) {
             final String browserNameLC = browserName.toLowerCase().trim();
-            if ("ff3".equals(browserNameLC) || "firefox3".equals(browserNameLC))
-                browserVersion = BrowserVersion.FIREFOX_3;
-            else if ("ff3.6".equals(browserNameLC) || "firefox3.6".equals(browserNameLC))
-                browserVersion = BrowserVersion.FIREFOX_3_6;
-            else if ("ff10".equals(browserNameLC) || "firefox10".equals(browserNameLC))
-                browserVersion = BrowserVersion.FIREFOX_10;
-            else if ("ie6".equals(browserNameLC) || "internetexplorer6".equals(browserNameLC))
-                browserVersion = BrowserVersion.INTERNET_EXPLORER_6;
-            else if ("ie7".equals(browserNameLC) || "internetexplorer7".equals(browserNameLC))
-                browserVersion = BrowserVersion.INTERNET_EXPLORER_7;
-            else if ("ie8".equals(browserNameLC) || "internetexplorer8".equals(browserNameLC))
-                browserVersion = BrowserVersion.INTERNET_EXPLORER_8;
+            if ("best".equals(browserNameLC))
+                browserVersion = BrowserVersion.BEST_SUPPORTED;
+            else if ("ff45".equals(browserNameLC) || "firefox45".equals(browserNameLC))
+                browserVersion = BrowserVersion.FIREFOX_45;
+            else if ("ff52".equals(browserNameLC) || "firefox52".equals(browserNameLC))
+                browserVersion = BrowserVersion.FIREFOX_52;
+            else if ("ff".equals(browserNameLC) || "firefox".equals(browserNameLC))
+                browserVersion = BrowserVersion.FIREFOX_52;
+            else if ("chrome".equals(browserNameLC))
+                browserVersion = BrowserVersion.CHROME;
+            else if ("edge".equals(browserNameLC))
+                browserVersion = BrowserVersion.EDGE;
+            else if ("ie11".equals(browserNameLC) || "internetexplorer11".equals(browserNameLC))
+                browserVersion = BrowserVersion.INTERNET_EXPLORER;
+            else if ("ie".equals(browserNameLC) || "internetexplorer".equals(browserNameLC))
+                browserVersion = BrowserVersion.INTERNET_EXPLORER;
             else
                 throw new IllegalArgumentException("Illegal browser version: >" + browserName + "<");
         }
@@ -716,9 +726,9 @@ public class Configuration extends Task {
             if (browserVersion != null) {
                 baseBrowser = browserVersion;
             } else if (strUserAgent.indexOf("Gecko") != -1) {
-                baseBrowser = BrowserVersion.FIREFOX_3;
+                baseBrowser = BrowserVersion.FIREFOX_52;
             } else {
-                baseBrowser = BrowserVersion.INTERNET_EXPLORER_6;
+                baseBrowser = BrowserVersion.BEST_SUPPORTED;
             }
 
             browserVersion = new BrowserVersion(baseBrowser.getApplicationName(),
@@ -729,7 +739,7 @@ public class Configuration extends Task {
                     + ", " + browserVersion.getBrowserVersionNumeric()
                     + "). If the javascript support is not as expected, then it's time to go into the sources");
         } else if (browserVersion == null) { // nothing specified
-            browserVersion = BrowserVersion.INTERNET_EXPLORER_6;
+            browserVersion = BrowserVersion.BEST_SUPPORTED;
             LOG.info("Surfing with default browser " + browserVersion.getUserAgent());
         } else {
             LOG.info("Surfing with browser " + browserVersion.getNickname());
@@ -751,7 +761,7 @@ public class Configuration extends Task {
 
             // the proxy setting
             final int proxyPort = Integer.parseInt(System.getProperty("http.proxyPort", "80"));
-            LOG.info("Configuring proxy from http.proxyHost* system properties: "
+            LOG.debug("Configuring proxy from http.proxyHost* system properties: "
                     + proxyHost + ":" + proxyPort);
             webClient = new WebClient(browserVersion, proxyHost, proxyPort);
 
@@ -771,7 +781,7 @@ public class Configuration extends Task {
     static void configureProxy(final WebClient webClient, final DefaultCredentialsProvider credentialProvider) {
         // the non proxy hosts if any
         final String nonProxyHostsSetting = System.getProperty("http.nonProxyHosts");
-        LOG.info("Configuring proxy from http.nonProxyHosts system property: " + nonProxyHostsSetting);
+        LOG.debug("Configuring proxy from http.nonProxyHosts system property: " + nonProxyHostsSetting);
         if (nonProxyHostsSetting != null) {
             final String[] nonProxyHosts = nonProxyHostsSetting.split("\\|");
             for (int i = 0; i < nonProxyHosts.length; ++i) {
@@ -779,7 +789,7 @@ public class Configuration extends Task {
                 nonProxyHost = nonProxyHost.replaceAll("\\.", "\\\\."); // escape "."
                 nonProxyHost = nonProxyHost.replaceAll("\\*", ".*"); // give regex meaning to *
                 LOG.debug("addHostsToProxyBypass: >" + nonProxyHost + "<");
-                webClient.getProxyConfig().addHostsToProxyBypass(nonProxyHost);
+                webClient.getOptions().getProxyConfig().addHostsToProxyBypass(nonProxyHost);
             }
         }
 
@@ -787,7 +797,7 @@ public class Configuration extends Task {
         if (System.getProperty("http.proxyUser") != null) {
             final String proxyUser = System.getProperty("http.proxyUser");
             final String proxyPassword = System.getProperty("http.proxyPassword");
-            LOG.info("Configuring proxy credentials from http.proxyHost* system properties: "
+            LOG.debug("Configuring proxy credentials from http.proxyHost* system properties: "
                     + proxyUser + ", " + proxyPassword);
             credentialProvider.addCredentials(proxyUser, proxyPassword);
         }
@@ -845,7 +855,7 @@ public class Configuration extends Task {
      */
     private static void setupHttpHeaders(final WebClient webClient, final Configuration cfg) {
         if (cfg.getHeaderList().size() > 0) {
-            LOG.info("Configuring " + cfg.getHeaderList().size() + " HTTP header field(s)");
+            LOG.debug("Configuring " + cfg.getHeaderList().size() + " HTTP header field(s)");
         }
         // default value for Accept-Language (gets overwritten below if configured in headers)
         webClient.addRequestHeader("Accept-Language", "en-us,en;q=0.5");
@@ -856,16 +866,13 @@ public class Configuration extends Task {
             if ("User-Agent".equals(header.getName())) {
                 LOG.info("Skipped User-Agent header as it has already been configured in the BrowserVersion");
             } else if ("Cookie".equals(header.getName())) {
-                try {
-                    webClient.getCookieManager().addCookie(
-                            HTMLDocument.buildCookie(header.getValue(),
-                                    new URL(cfg.getUrlForPage("/"))));
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                }
+                webClient.getCookieManager().addCookie(new Cookie(
+                        cfg.getUrlForPage("/"),
+                        header.getName(),
+                        header.getValue()));
             } else {
                 webClient.addRequestHeader(header.getName(), header.getValue());
-                LOG.info("Configured header \"" + header.getName() + "\": " + header.getValue());
+                LOG.debug("Configured header \"" + header.getName() + "\": " + header.getValue());
             }
         }
     }
@@ -873,16 +880,16 @@ public class Configuration extends Task {
 
     /**
      * Prepares the underlying browser client using option subelements
-     * in the config. Currently calls setXXX methods in the WebClient
+     * in the config. Currently calls setXXX methods in the WebClientOptions
      * API. See the HtmlUnit JavaDocs for more details.
      */
-    private static void setupOptions(final WebClient webClient, final Configuration cfg) {
+    private static void setupOptions(final WebClientOptions wcOptions, final Configuration cfg) {
         final List options = cfg.getOptionList();
         for (Iterator iter = options.iterator(); iter.hasNext(); ) {
             final Option option = (Option) iter.next();
-            boolean found = tryBooleanCallingMethod(option, webClient);
+            boolean found = tryBooleanCallingMethod(option, wcOptions);
             if (!found) {
-                found = tryIntCallingMethod(option, webClient);
+                found = tryIntCallingMethod(option, wcOptions);
             }
             if (!found) {
                 LOG.warn("Unknown option <" + option.getName() + ">. Ignored.");
@@ -904,7 +911,7 @@ public class Configuration extends Task {
             tryCallMethod(optionObject, option, booleanClass, new Object[]{Boolean.valueOf(option.getValue())});
             return true;
         } catch (Exception e) {
-            LOG.info("Exception while trying to set boolean option: " + e.getMessage());
+            LOG.warn("Exception while trying to set boolean option: " + e.getMessage());
             return false;
         }
     }
@@ -923,7 +930,7 @@ public class Configuration extends Task {
             tryCallMethod(optionObject, option, intClass, new Object[]{Integer.valueOf(option.getValue())});
             return true;
         } catch (Exception e) {
-            LOG.info("Exception while trying to set integer option: " + e.getMessage());
+            LOG.warn("Exception while trying to set integer option: " + e.getMessage());
             return false;
         }
     }
@@ -932,7 +939,7 @@ public class Configuration extends Task {
                                       final Class[] typeSpec, final Object[] params) throws Exception {
         final Method method = optionObject.getClass().getDeclaredMethod("set" + option.getName(), typeSpec);
         method.invoke(optionObject, params);
-        LOG.info("set option <" + option.getName() + "> to value <" + option.getValue() + ">");
+        LOG.debug("set option <" + option.getName() + "> to value <" + option.getValue() + ">");
     }
 
     /**

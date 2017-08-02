@@ -10,7 +10,7 @@ import com.canoo.webtest.util.ConversionUtil;
  * Enables / disables javascript execution in the HtmlUnit "browser".<p>
  *
  * @author Marc Guillemot
- * @webtest.step category="Extension"
+ * @webtest.step category="Core"
  * name="enableJavaScript"
  * alias="enablejavascript"
  * description="Provides the ability to activate / deactivate <key>javascript</key> support. 
@@ -21,7 +21,8 @@ public class EnableJavaScript extends Step {
     private String fEnable;
 
     public void doExecute() throws Exception {
-        getContext().getWebClient().setJavaScriptEnabled(ConversionUtil.convertToBoolean(getEnable(), false));
+        getContext().getWebClient().getOptions()
+            .setJavaScriptEnabled(ConversionUtil.convertToBoolean(getEnable(), false));
     }
 
     /**

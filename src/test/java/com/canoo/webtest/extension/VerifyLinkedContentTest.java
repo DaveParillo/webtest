@@ -148,9 +148,9 @@ public class VerifyLinkedContentTest extends BaseStepTestCase {
 		final MockWebConnection webConnection = (MockWebConnection) webClient .getWebConnection();
 		webConnection.setResponse(htmlPage.getFullyQualifiedUrl("1.png"), new byte[0], 200, "OK", "image/png", emptyHeadersList);
 
-		final boolean previousThrow = webClient.isThrowExceptionOnFailingStatusCode();		
+		final boolean previousThrow = webClient.getOptions().isThrowExceptionOnFailingStatusCode();		
 		StringBuffer sb = fStep.verifyLinksOnPage(htmlPage);
-		assertEquals(previousThrow, webClient.isThrowExceptionOnFailingStatusCode());
+		assertEquals(previousThrow, webClient.getOptions().isThrowExceptionOnFailingStatusCode());
 		assertNotNull(sb);
 		assertEquals(0, sb.length());
 	}

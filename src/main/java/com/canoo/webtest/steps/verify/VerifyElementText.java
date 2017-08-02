@@ -74,7 +74,9 @@ public class VerifyElementText extends AbstractVerifyTextStep {
 	}
 
     private HtmlElement findElementByTypeAndOptionalName() {
-        final List li = ((HtmlPage) getContext().getCurrentResponse()).getDocumentElement().getHtmlElementsByTagName(getType());
+        final List li = ((HtmlPage) getContext().getCurrentResponse())
+            .getDocumentElement().getElementsByTagName(getType());
+
         LOG.debug(li.size() + " elts found of type \"" + getType() + "\"");
         if (li.isEmpty()) {
             throw new StepFailedException("No element found of type \"" + getType() + "\"", this);

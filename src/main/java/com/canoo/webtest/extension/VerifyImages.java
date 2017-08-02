@@ -70,9 +70,9 @@ public class VerifyImages extends Step
         final Set uris = collectImageUris(htmlPage);
 
         // store original status code setting
-        final boolean bPreviousThrowExceptionOnFailingStatusCode = webClient.isThrowExceptionOnFailingStatusCode();
+        final boolean bPreviousThrowExceptionOnFailingStatusCode = webClient.getOptions().isThrowExceptionOnFailingStatusCode();
         // adjust setting to be sure to get an exception for failing http code
-        webClient.setThrowExceptionOnFailingStatusCode(true);
+        webClient.getOptions().setThrowExceptionOnFailingStatusCode(true);
 
         final Iterator iter = uris.iterator();
         while (iter.hasNext()) {
@@ -81,7 +81,7 @@ public class VerifyImages extends Step
         }
 
         // reset status code setting
-        webClient.setThrowExceptionOnFailingStatusCode(bPreviousThrowExceptionOnFailingStatusCode);
+        webClient.getOptions().setThrowExceptionOnFailingStatusCode(bPreviousThrowExceptionOnFailingStatusCode);
 
         if (!uris.isEmpty()) {
             LOG.info("Number of failing images found: " + uris.size());
@@ -113,7 +113,7 @@ public class VerifyImages extends Step
         final Set uris = new TreeSet();
 
         // look for img tags
-        for (final Iterator iter = htmlPage.getDocumentElement().getHtmlElementsByTagName(HtmlConstants.IMG).iterator(); iter.hasNext();) {
+        for (final Iterator iter = htmlPage.getDocumentElement().getElementsByTagName(HtmlConstants.IMG).iterator(); iter.hasNext();) {
             final HtmlImage img = (HtmlImage) iter.next();
             uris.add(img.getSrcAttribute());
         }

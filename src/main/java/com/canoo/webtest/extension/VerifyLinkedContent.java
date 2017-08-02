@@ -100,7 +100,7 @@ public class VerifyLinkedContent extends Step {
 	WebClient setupWebClient() {
 		final WebClient webClient = getContext().getConfig().createWebClient();
 
-		webClient.setThrowExceptionOnFailingStatusCode(true);
+		webClient.getOptions().setThrowExceptionOnFailingStatusCode(true);
 		webClient.setWebConnection(getContext().getWebClient().getWebConnection());
 		return webClient;
 	}

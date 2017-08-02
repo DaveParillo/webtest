@@ -76,10 +76,11 @@ public class HtmlParserMessage implements Comparable
     public static class MessageCollector implements HTMLParserListener
     {
         private List<HtmlParserMessage> fMessages = new ArrayList<HtmlParserMessage>();
-        public void error(final String message, final URL url, final int line, final int column, final String key) {
+        // TODO: Add html parameter to enclosing class
+        public void error(final String message, final URL url, final String html, final int line, final int column, final String key) {
             fMessages.add(new HtmlParserMessage(Type.ERROR, url, message, line, column));
         }
-        public void warning(final String message, final URL url, final int line, final int column, final String key) {
+        public void warning(final String message, final URL url, final String html, final int line, final int column, final String key) {
             fMessages.add(new HtmlParserMessage(Type.WARNING, url, message, line, column));
         }
         /**

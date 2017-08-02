@@ -147,12 +147,7 @@ public class ContextStub extends Context
     {
     	final Page currentResponse = getCurrentResponse();
     	if (currentResponse != null) {
-			try {
-				currentResponse.cleanUp();
-			}
-    		catch (final IOException e) {
-				throw new RuntimeException(e);
-			}
+            currentResponse.cleanUp();
     	}
     	fFakeLastResponse = true;
     	fFakedLastReponse = page;

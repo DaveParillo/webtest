@@ -53,11 +53,11 @@ public class HtmlParserMessageTest extends TestCase {
     public static void testMessageCollector() {
         HtmlParserMessage.MessageCollector collector = new HtmlParserMessage.MessageCollector();
         assertEquals(0, collector.popAll().size());
-        collector.error(null, null, 0, 0, null);
+        collector.error(null, null, null, 0, 0, null);
         assertEquals(1, collector.popAll().size());
         assertEquals(0, collector.popAll().size());
-        collector.error(null, null, 0, 0, null);
-        collector.warning(null, null, 0, 0, null);
+        collector.error(null, null, null, 0, 0, null);
+        collector.warning(null, null, null, 0, 0, null);
         assertEquals(2, collector.popAll().size());
     }
 

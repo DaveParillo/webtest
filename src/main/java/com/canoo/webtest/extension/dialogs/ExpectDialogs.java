@@ -88,9 +88,9 @@ public class ExpectDialogs extends AbstractStepContainer
             return ConversionUtil.convertToBoolean(thisDialog.getResponse(), true);
         }
 
-        public String handlePrompt(final Page page, final String message) {
+        public String handlePrompt(final Page page, final String message, final String defaultValue) {
         	checkContext();
-            final AbstractDialogStep thisDialog = checkDialog(message, "PromptDialog");
+            final AbstractDialogStep thisDialog = checkDialog(message, defaultValue);
             return thisDialog.getResponse();
         }
 
