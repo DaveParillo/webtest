@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="favicon.ico" type="image/x-icon" rel="icon">
+<link title="Home" href="WebTestHome.html" rel="chapter">
+<link title="Manual" href="manualOverview.html" rel="chapter">
+<link title="Manual Overview" href="manualOverview.html" rel="section">
+<link title="Samples" href="samples.html" rel="section">
+<link title="Properties" href="properties.html" rel="section">
+<link title="Syntax Reference - General Steps" href="syntaxGeneral.html" rel="section">
+<link title="Syntax Reference - Core Steps" href="syntaxCore.html" rel="section">
+<link title="clickButton" href="clickButton.html" rel="subsection">
+<link title="clickLink" href="clickLink.html" rel="subsection">
+<link title="condition" href="condition.html" rel="subsection">
+<link title="dataDriven" href="dataDriven.html" rel="subsection">
+<link title="else" href="else.html" rel="subsection">
+<link title="enableJavaScript" href="enableJavaScript.html" rel="subsection">
+<link title="followFrame" href="followFrame.html" rel="subsection">
+<link title="group" href="group.html" rel="subsection">
+<link title="ifStep" href="ifStep.html" rel="subsection">
+<link title="invoke" href="invoke.html" rel="subsection">
+<link title="not" href="not.html" rel="subsection">
+<link title="otherwise" href="otherwise.html" rel="subsection">
+<link title="previousResponse" href="previousResponse.html" rel="subsection">
+<link title="repeat" href="repeat.html" rel="subsection">
+<link title="selectForm" href="selectForm.html" rel="subsection">
+<link title="setCheckbox" href="setCheckbox.html" rel="subsection">
+<link title="setFileField" href="setFileField.html" rel="subsection">
+<link title="setInputField" href="setInputField.html" rel="subsection">
+<link title="setRadioButton" href="setRadioButton.html" rel="subsection">
+<link title="setSelectField" href="setSelectField.html" rel="subsection">
+<link title="storeCookie" href="storeCookie.html" rel="subsection">
+<link title="storeHeader" href="storeHeader.html" rel="subsection">
+<link title="storeJsonPath" href="storeJsonPath.html" rel="subsection">
+<link title="storeProperty" href="storeProperty.html" rel="subsection">
+<link title="storeRegEx" href="storeRegEx.html" rel="subsection">
+<link title="storeResponseCode" href="storeResponseCode.html" rel="subsection">
+<link title="storeURLDecoded" href="storeURLDecoded.html" rel="subsection">
+<link title="storeURLEncoded" href="storeURLEncoded.html" rel="subsection">
+<link title="storeXPath" href="storeXPath.html" rel="subsection">
+<link title="table" href="table.html" rel="subsection">
+<link title="testInfo" href="testInfo.html" rel="subsection">
+<link title="then" href="then.html" rel="subsection">
+<link title="verifyCheckbox" href="verifyCheckbox.html" rel="subsection">
+<link title="verifyContent" href="verifyContent.html" rel="subsection">
+<link title="verifyCookie" href="verifyCookie.html" rel="subsection">
+<link title="verifyElement" href="verifyElement.html" rel="subsection">
+<link title="verifyElementText" href="verifyElementText.html" rel="subsection">
+<link title="verifyHeader" href="verifyHeader.html" rel="subsection">
+<link title="verifyInputField" href="verifyInputField.html" rel="subsection">
+<link title="verifyJsonPath" href="verifyJsonPath.html" rel="subsection">
+<link title="verifyLinks" href="verifyLinks.html" rel="subsection">
+<link title="verifyProperty" href="verifyProperty.html" rel="subsection">
+<link title="verifyRadioButton" href="verifyRadioButton.html" rel="subsection">
+<link title="verifySelectField" href="verifySelectField.html" rel="subsection">
+<link title="verifyText" href="verifyText.html" rel="subsection">
+<link title="verifyTextarea" href="verifyTextarea.html" rel="subsection">
+<link title="verifyTitle" href="verifyTitle.html" rel="subsection">
+<link title="verifyXPath" href="verifyXPath.html" rel="subsection">
+<link title="Syntax Reference - Extension Steps" href="syntaxExtension.html" rel="section">
+<link title="Syntax Reference - Filter Steps" href="syntaxFilter.html" rel="section">
+<link title="Syntax Reference - PDF Steps" href="syntaxPDF.html" rel="section">
+<link title="Syntax Reference - Excel Steps" href="syntaxExcel.html" rel="section">
+<link title="Syntax Reference - Email Steps" href="syntaxEmail.html" rel="section">
+<link title="Step Index" href="stepIndex.html" rel="section">
+<link title="Groovy Testing" href="groovyTesting.html" rel="section">
+<link title="Integration with other Tools" href="integration.html" rel="section">
+<link title="Annotated References" href="annotatedRefs.html" rel="section">
+<link title="Develop" href="building.html" rel="chapter">
+<link href="website_base.css" type="text/css" rel="stylesheet">
+<link href="website_part.css" type="text/css" rel="stylesheet">
+<meta name="description" content="">
+<meta name="keywords" content="Canoo,
+						WebTest, web application testing, automatic, XP, ANT, httpunit, htmlunit, groovy,
+						acceptance testing, extreme programming, agile development,
+						Description,Parameters,Nested Parameters,Details,">
+<title>Core Step: verifyContent</title>
+</head>
+<body>
+<div id="page">
+<img alt="Webtest" height="89" width="949" usemap="#headerLinks" src="images/header.gif" class="mosaic"><map name="headerLinks">
+<area alt="WebTest GitHub Home" href="https://github.com/DaveParillo/webtest" coords="30px,30px,180px,55px" shape="rect">
+</map>
+<div id="navigation-top">
+<ul>
+<li>
+<a href="WebTestHome.html">Home</a>
+</li>
+<li>
+<a href="manualOverview.html" class="selected">Manual</a>
+</li>
+<li>
+<a href="building.html">Develop</a>
+</li>
+</ul>
+</div>
+<table style="border-collapse: collapse;" cellpadding="0" cellspacing="0" border="0" rules="none" frame="void" id="main">
+<col width="190">
+<col width="758">
+<tr valign="top">
+<td class="main-left" valign="top">
+<div id="search">
+<form id="searchForm" action="http://www.google.com/search">
+<input value="daveparillo.github.io/webtest/" name="sitesearch" type="hidden"><input alt="Search" title="Search" value="Search" name="go" id="searchButton" type="submit"><input title="Search" onfocus="this.select();" name="q" id="searchText" type="text">
+</form>
+</div>
+<div id="navigation-left">
+<ul>
+<li>
+<a href="manualOverview.html">Manual Overview</a>
+</li>
+<li>
+<a href="samples.html">Samples</a>
+</li>
+<li>
+<a href="properties.html">Properties</a>
+</li>
+<li>
+<a href="syntaxGeneral.html">Syntax Reference - General Steps</a>
+</li>
+<li>
+<a href="syntaxCore.html" class="selected">Syntax Reference - Core Steps</a>
+<ul>
+<li>
+<a href="clickButton.html">&gt; clickButton</a>
+</li>
+<li>
+<a href="clickLink.html">&gt; clickLink</a>
+</li>
+<li>
+<a href="condition.html">&gt; condition</a>
+</li>
+<li>
+<a href="dataDriven.html">&gt; dataDriven</a>
+</li>
+<li>
+<a href="else.html">&gt; else</a>
+</li>
+<li>
+<a href="enableJavaScript.html">&gt; enableJavaScript</a>
+</li>
+<li>
+<a href="followFrame.html">&gt; followFrame</a>
+</li>
+<li>
+<a href="group.html">&gt; group</a>
+</li>
+<li>
+<a href="ifStep.html">&gt; ifStep</a>
+</li>
+<li>
+<a href="invoke.html">&gt; invoke</a>
+</li>
+<li>
+<a href="not.html">&gt; not</a>
+</li>
+<li>
+<a href="otherwise.html">&gt; otherwise</a>
+</li>
+<li>
+<a href="previousResponse.html">&gt; previousResponse</a>
+</li>
+<li>
+<a href="repeat.html">&gt; repeat</a>
+</li>
+<li>
+<a href="selectForm.html">&gt; selectForm</a>
+</li>
+<li>
+<a href="setCheckbox.html">&gt; setCheckbox</a>
+</li>
+<li>
+<a href="setFileField.html">&gt; setFileField</a>
+</li>
+<li>
+<a href="setInputField.html">&gt; setInputField</a>
+</li>
+<li>
+<a href="setRadioButton.html">&gt; setRadioButton</a>
+</li>
+<li>
+<a href="setSelectField.html">&gt; setSelectField</a>
+</li>
+<li>
+<a href="storeCookie.html">&gt; storeCookie</a>
+</li>
+<li>
+<a href="storeHeader.html">&gt; storeHeader</a>
+</li>
+<li>
+<a href="storeJsonPath.html">&gt; storeJsonPath</a>
+</li>
+<li>
+<a href="storeProperty.html">&gt; storeProperty</a>
+</li>
+<li>
+<a href="storeRegEx.html">&gt; storeRegEx</a>
+</li>
+<li>
+<a href="storeResponseCode.html">&gt; storeResponseCode</a>
+</li>
+<li>
+<a href="storeURLDecoded.html">&gt; storeURLDecoded</a>
+</li>
+<li>
+<a href="storeURLEncoded.html">&gt; storeURLEncoded</a>
+</li>
+<li>
+<a href="storeXPath.html">&gt; storeXPath</a>
+</li>
+<li>
+<a href="table.html">&gt; table</a>
+</li>
+<li>
+<a href="testInfo.html">&gt; testInfo</a>
+</li>
+<li>
+<a href="then.html">&gt; then</a>
+</li>
+<li>
+<a href="verifyCheckbox.html">&gt; verifyCheckbox</a>
+</li>
+<li>
+<a href="verifyContent.html" class="selected">&gt; verifyContent</a>
+</li>
+<li>
+<a href="verifyCookie.html">&gt; verifyCookie</a>
+</li>
+<li>
+<a href="verifyElement.html">&gt; verifyElement</a>
+</li>
+<li>
+<a href="verifyElementText.html">&gt; verifyElementText</a>
+</li>
+<li>
+<a href="verifyHeader.html">&gt; verifyHeader</a>
+</li>
+<li>
+<a href="verifyInputField.html">&gt; verifyInputField</a>
+</li>
+<li>
+<a href="verifyJsonPath.html">&gt; verifyJsonPath</a>
+</li>
+<li>
+<a href="verifyLinks.html">&gt; verifyLinks</a>
+</li>
+<li>
+<a href="verifyProperty.html">&gt; verifyProperty</a>
+</li>
+<li>
+<a href="verifyRadioButton.html">&gt; verifyRadioButton</a>
+</li>
+<li>
+<a href="verifySelectField.html">&gt; verifySelectField</a>
+</li>
+<li>
+<a href="verifyText.html">&gt; verifyText</a>
+</li>
+<li>
+<a href="verifyTextarea.html">&gt; verifyTextarea</a>
+</li>
+<li>
+<a href="verifyTitle.html">&gt; verifyTitle</a>
+</li>
+<li>
+<a href="verifyXPath.html">&gt; verifyXPath</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="syntaxExtension.html">Syntax Reference - Extension Steps</a>
+</li>
+<li>
+<a href="syntaxFilter.html">Syntax Reference - Filter Steps</a>
+</li>
+<li>
+<a href="syntaxPDF.html">Syntax Reference - PDF Steps</a>
+</li>
+<li>
+<a href="syntaxExcel.html">Syntax Reference - Excel Steps</a>
+</li>
+<li>
+<a href="syntaxEmail.html">Syntax Reference - Email Steps</a>
+</li>
+<li>
+<a href="stepIndex.html">Step Index</a>
+</li>
+<li>
+<a href="groovyTesting.html">Groovy Testing</a>
+</li>
+<li>
+<a href="integration.html">Integration with other Tools</a>
+</li>
+<li>
+<a href="annotatedRefs.html">Annotated References</a>
+</li>
+</ul>
+</div>
+<div class="filler"></div>
+</td><td rowspan="2" valign="top">
+<div id="main-content">
+<h1>
+<span class="category">Core Step</span> verifyContent</h1>
+<h2>
+<a name="Description">Description</a>
+</h2>
+<p>Compares the current response with an expected file. Supports content filters such as <a href="lineSeparatorFilter.html" class="stepref">lineSeparatorFilter</a> and <a href="replaceFilter.html" class="stepref">replaceFilter</a> and the nested <a href="table.html" class="stepref">table</a> step.</p>
+<h2>
+<a name="Parameters">Parameters</a>
+</h2>
+<dl class="attributes">
+<dt>referenceFile</dt>
+<dd class="required">Required? yes</dd>
+<dd>The file to compare to</dd>
+<dt>description</dt>
+<dd class="required">Required? no</dd>
+<dd>The description of this test step.</dd>
+<dt>htmlId</dt>
+<dd class="required">Required? no</dd>
+<dd>The id of an <a title="Hypertext Markup Language." href="annotatedRefs.html#HTML">HTML</a> element. If present, processing will be limited to this element. Will be ignored if a nested <a href="table.html" class="stepref">table</a> step is used.</dd>
+<dt>mode</dt>
+<dd class="required">Required? no</dd>
+<dd>The diff mod to use for comparison. Possible values are "auto" (the default, uses "text" or "bin" depending on the type of the content to compare), "text" (performs a unified diff like diff), "bin" (compares byte per byte and displays differences in hex format), and "regexPerLine" (each line of the reference file is a regex that should match the actual content).</dd>
+<dt>readFiltered</dt>
+<dd class="required">Required? no, default is
+					true</dd>
+<dd>Indicates that when reading <i>referenceFile</i> that the content should be filtered.</dd>
+<dt>xpath</dt>
+<dd class="required">Required? no</dd>
+<dd>An XPath expression identifying an <a title="Hypertext Markup Language." href="annotatedRefs.html#HTML">HTML</a> element. If present, processing will be limited to this element. Will be ignored if <i>htmlId</i> is set or if a nested <a href="table.html" class="stepref">table</a> step is used.</dd>
+</dl>
+<h2>
+<a name="Nested Parameters">Nested Parameters</a>
+</h2>
+<dl class="attributes">
+<dt>
+<a href="step.html">step</a>
+</dt>
+<dd class="required">Required? yes</dd>
+<dd>A webtest step.</dd>
+<dt>
+<a href="table.html">table</a>
+</dt>
+<dd class="required">Required? no</dd>
+<dd>To locate a specific cell in a specific table on the page.</dd>
+</dl>
+<h2>
+<a name="Details">Details</a>
+</h2>
+
+    
+<p>The following example illustrates how to use the <i>verifyContent</i> step (illustrating the use of the
+        nested regular expression replacement filters to remove dynamically changing content which would otherwise make
+        the comparison fail):</p>
+
+    
+<div class="code">
+<div class="caption">verifyContent example</div>
+<div class="content">
+        
+&lt;<span class="tag">target</span>&nbsp;<span class="att">name</span>="<span class="val">testVerifyContentRegex</span>"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">property</span>&nbsp;<span class="att">name</span>="<span class="val">variableNumberRegex</span>"&nbsp;<span class="att">value</span>="<span class="val">(?&amp;lt;=&nbsp;)[0-9]+(?=&nbsp;time)</span>"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">webtest</span>&nbsp;<span class="att">name</span>="<span class="val">verifyContent:&nbsp;verifyContent&nbsp;with&nbsp;regex&nbsp;replace</span>"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">config</span>&nbsp;...&nbsp;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">steps</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">invoke</span>&nbsp;<span class="att">url</span>="<span class="val">visitCount.jsp</span>"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyContent</span>&nbsp;<span class="att">referenceFile</span>="<span class="val">verifyContent/expectedVisitCount.html</span>"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">replaceFilter</span>&nbsp;<span class="att">regex</span>="<span class="val">(as&nbsp;at&nbsp;).*(&amp;lt;/title&amp;gt;)</span>"&nbsp;<span class="att">replacement</span>="<span class="val">$1[DATE&nbsp;REMOVED]$2</span>"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">replaceFilter</span>&nbsp;<span class="att">regex</span>="<span class="val">${variableNumberRegex}</span>"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">lineSeparatorFilter</span>/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tag">verifyContent</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">invoke</span>&nbsp;<span class="att">description</span>="<span class="val">load&nbsp;page&nbsp;again&nbsp;-&nbsp;content&nbsp;will&nbsp;change</span>"&nbsp;<span class="att">url</span>="<span class="val">visitCount.jsp</span>"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyContent</span>&nbsp;<span class="att">referenceFile</span>="<span class="val">verifyContent/expectedVisitCount.html</span>"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">replaceFilter</span>&nbsp;<span class="att">regex</span>="<span class="val">(as&nbsp;at&nbsp;).*(&amp;lt;/title&amp;gt;)</span>"&nbsp;<span class="att">replacement</span>="<span class="val">$1[DATE&nbsp;REMOVED]$2</span>"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">replaceFilter</span>&nbsp;<span class="att">regex</span>="<span class="val">${variableNumberRegex}</span>"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">lineSeparatorFilter</span>/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tag">verifyContent</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tag">steps</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tag">webtest</span>&gt;<br>
+&lt;/<span class="tag">target</span>&gt;<br>
+
+    
+</div>
+</div>
+
+    
+<p>If the files differ, you should see a message indicating the differences in your logs (depending
+    on what logging levels you have set), for example:</p>
+
+    
+<div class="code">
+<div class="caption">verifyContent error</div>
+<div class="content">
+        
+&lt;<span class="tag">log</span>&gt;<br>
+****&nbsp;The&nbsp;last&nbsp;response&nbsp;and&nbsp;the&nbsp;expected&nbsp;file&nbsp;'expected/expectedDummyWithChanges.html'&nbsp;differ.<br>
+The&nbsp;differences&nbsp;are:<br>
+[3]&nbsp;&gt;&gt;&nbsp;&lt;<span class="tag">title</span>&gt;Dummy&lt;/<span class="tag">title</span>&gt;<br>
+[3]&nbsp;&lt;&lt;&nbsp;&lt;<span class="tag">title</span>&gt;Dummy&nbsp;with&nbsp;Changes&lt;/<span class="tag">title</span>&gt;<br>
+[7]&nbsp;&gt;&gt;&nbsp;Dummy&nbsp;page<br>
+[7]&nbsp;&lt;&lt;&nbsp;Altered&nbsp;Dummy&nbsp;page<br>
+&lt;/<span class="tag">log</span>&gt;<br>
+
+    
+</div>
+</div>
+
+    
+<p>
+<i>See also</i>: the <a href="storeDigest.html" class="stepref">storeDigest</a>,
+        <a href="storeLength.html" class="stepref">storeLength</a>,
+        <a href="lineSeparatorFilter.html" class="stepref">lineSeparatorFilter</a>,
+        <a href="replaceFilter.html" class="stepref">replaceFilter</a>,
+        <a href="tagStripper.html" class="stepref">tagStripper</a> and
+        <a href="contentStripper.html" class="stepref">contentStripper</a> steps.
+    </p>
+
+
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="filler"></div>
+</body>
+</html>
