@@ -7,6 +7,7 @@ import com.canoo.webtest.steps.HtmlParserMessage;
 import com.canoo.webtest.util.Checker;
 import com.canoo.webtest.util.MapUtil;
 import com.gargoylesoftware.htmlunit.*;
+import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
 import com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine;
 import com.gargoylesoftware.htmlunit.javascript.host.html.HTMLDocument;
 import com.gargoylesoftware.htmlunit.util.Cookie;
@@ -196,6 +197,7 @@ public class Configuration extends Task {
         };
         webClient.setJavaScriptEngine(myEngine);
         */
+        webClient.setAjaxController(new NicelyResynchronizingAjaxController());
 
         // CSV report about sent/received requests/responses
         final File csvFile = new File(getWebTestResultDir(), "requests.csv");
