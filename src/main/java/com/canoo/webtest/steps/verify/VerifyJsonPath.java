@@ -24,7 +24,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
-import com.jayway.jsonpath.Option;
 import com.jayway.jsonpath.InvalidJsonException;
 import com.jayway.jsonpath.PathNotFoundException;
 import com.jayway.jsonpath.spi.json.JacksonJsonNodeJsonProvider;
@@ -63,7 +62,6 @@ public class VerifyJsonPath extends Step {
             .builder()
             .mappingProvider(new JacksonMappingProvider())
             .jsonProvider(new JacksonJsonNodeJsonProvider())
-            .options(Option.ALWAYS_RETURN_LIST)
             .build();
 
     /**
@@ -74,11 +72,7 @@ public class VerifyJsonPath extends Step {
      *   If omitted the step checks that the JsonPath exists and not empty."
      */
     public void setText(String text) {
-        if (text.trim().charAt(0) == '[') {
-            fText = text;
-        } else {
-            fText = "[" + text + "]";
-        }
+        fText = text;
     }
     
     /**
@@ -149,7 +143,7 @@ public class VerifyJsonPath extends Step {
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode expected = mapper.readTree(fText);
-            if (!isSubset(actual, expected)) {
+            if (!isEqualTo(actual, expected)) {
                throw new StepFailedException("actual and expected values differ. expected: '"
                        + expected.toString() + "', actual: '" 
                        + actual.toString() + "'.");
@@ -161,11 +155,10 @@ public class VerifyJsonPath extends Step {
     }
 
     // True if the expected Node is a subset of the actual
-    private boolean isSubset(JsonNode actual, JsonNode expected) {
-        Set<Object> actualSet   = (Set<Object>) convertJsonElement(actual);
-        Set<Object> expectedSet = (Set<Object>) convertJsonElement(expected);
-
-        return actualSet.containsAll(expectedSet);
+    private boolean isEqualTo(JsonNode actual, JsonNode expected) {
+        Object act = convertJsonElement(actual);
+        Object exp = convertJsonElement(expected);
+        return act.equals(exp);
     }
 
     private Object convertJsonElement(JsonNode element) {
@@ -217,7 +210,7 @@ public class VerifyJsonPath extends Step {
 
     private JsonNode getJSON(final String content) throws StepFailedException {
         try {
-            return JsonPath.using(CONF).parse(content).read(fJpath);
+            return JsonPath.using(CONF).parse(content).read(fJpath, JsonNode.class);
         } catch (PathNotFoundException e) {
             throw new StepFailedException("Path not found: " + e.getMessage());
         } catch (InvalidJsonException e) {

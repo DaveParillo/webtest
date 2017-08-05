@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="us-ascii"?><!--Generated on 02-Aug-2017 06:51 for build 4.0.0-RC2-->
-<!ENTITY % step "(pdfToLinksFilter | selectWebClient | pdfVerifyPageCount | excelStoreCellValue | verifyCheckbox | ifStep | setRadioButton | enableJavaScript | forceInputFieldAttribute | replaceFilter | verifyNoDialogs | pdfVerifyBookmark | storeJsonPath | storeRegEx | verifyContent | not | confirm | verifyLinks | applyFilters | pdfVerifyInfoProperty | pdfVerifyField | verifyText | pdfVerifyFont | emailStoreHeader | verifyElement | pdfVerifyCheckboxField | emailStoreMessageId | normalizeXml | excelFindRow | groovy | contentStripper | verifyElementText | setInputField | reportLinks | emailSetConfig | pdfDecryptDocument | storeURLEncoded | verifyHeader | verifyRadioButton | invoke | retry | pdfVerifyEncryptionPermissions | group | pdfVerifyEncryptionStrength | clickLink | selectWindow | pdfToTextFilter | selectForm | pdfVerifyTitle | closeWindow | testInfo | expectDialog | dataDriven | alert | storeInputFieldAttribute | reportSite | pdfToBookmarksFilter | pdfVerifyEncryption | storeCookie | storeDigest | previousResponse | emailMessageStructureFilter | storeProperty | timedGroup | verifyDocumentURL | mouseOut | steps | matchLinesFilter | setFileField | storeURLDecoded | pdfVerifyLink | verifyProperty | verifyImages | verifyTextarea | repeat | verifyJsonPath | verifyLinkedContent | config | prompt | storeHeader | webtest | tagStripper | dragAndDrop | pdfVerifyFieldCount | verifyCookie | lineSeparatorFilter | excelStructureFilter | followFrame | pdfToFontsFilter | emailStorePartCount | verifyInputField | countWebtestResults | storeRandom | pdfVerifyTextField | selectLinesFilter | expectDialogs | storeLength | emailDeleteMessage | excelSelectSheet | antWrapper | storeLinkParameter | excelVerifyCellStyle | verifyTitle | setCheckbox | storeElementAttribute | excelVerifyCellSum | verifyXPath | pdfVerifyText | clickElement | verifySelectField | forceHiddenInputField | emailStorePartFilename | clickButton | emailStoreMessageType | setSelectField | scriptStep | storeXPath | emailMessageContentFilter | storeResponseCode | excelVerifyCellValue | pdfVerifyReadOnlyField | emailStoreMessageCount | mouseOver | pdfVerifyEncryptionProperty)" >
+<?xml version="1.0" encoding="us-ascii"?><!--Generated on 04-Aug-2017 16:44 for build development-20170804.1643-->
+<!ENTITY % step "(pdfToLinksFilter | selectWebClient | pdfVerifyPageCount | excelStoreCellValue | verifyCheckbox | ifStep | setRadioButton | forceInputFieldAttribute | replaceFilter | verifyNoDialogs | pdfVerifyBookmark | storeJsonPath | storeRegEx | verifyContent | not | confirm | verifyLinks | applyFilters | pdfVerifyInfoProperty | pdfVerifyField | verifyText | pdfVerifyFont | emailStoreHeader | verifyElement | pdfVerifyCheckboxField | emailStoreMessageId | normalizeXml | excelFindRow | groovy | contentStripper | verifyElementText | setInputField | reportLinks | emailSetConfig | pdfDecryptDocument | storeURLEncoded | verifyHeader | verifyRadioButton | invoke | retry | pdfVerifyEncryptionPermissions | group | pdfVerifyEncryptionStrength | clickLink | selectWindow | pdfToTextFilter | selectForm | pdfVerifyTitle | closeWindow | testInfo | expectDialog | dataDriven | alert | storeInputFieldAttribute | reportSite | pdfToBookmarksFilter | pdfVerifyEncryption | storeCookie | storeDigest | previousResponse | emailMessageStructureFilter | storeProperty | timedGroup | verifyDocumentURL | enableJavaScript | mouseOut | steps | matchLinesFilter | setFileField | storeURLDecoded | pdfVerifyLink | verifyProperty | verifyImages | verifyTextarea | repeat | verifyJsonPath | verifyLinkedContent | config | prompt | storeHeader | webtest | tagStripper | dragAndDrop | pdfVerifyFieldCount | verifyCookie | lineSeparatorFilter | excelStructureFilter | followFrame | pdfToFontsFilter | emailStorePartCount | verifyInputField | countWebtestResults | storeRandom | pdfVerifyTextField | selectLinesFilter | expectDialogs | storeLength | emailDeleteMessage | excelSelectSheet | antWrapper | storeLinkParameter | excelVerifyCellStyle | verifyTitle | setCheckbox | storeElementAttribute | excelVerifyCellSum | verifyXPath | pdfVerifyText | clickElement | verifySelectField | forceHiddenInputField | emailStorePartFilename | clickButton | emailStoreMessageType | setSelectField | scriptStep | storeXPath | emailMessageContentFilter | storeResponseCode | excelVerifyCellValue | pdfVerifyReadOnlyField | emailStoreMessageCount | mouseOver | pdfVerifyEncryptionProperty)" >
 <!ELEMENT step EMPTY >
 <!ELEMENT task EMPTY >
 <!ELEMENT condition EMPTY >
@@ -61,11 +61,6 @@
 	saveResponse CDATA #IMPLIED
 	value CDATA #IMPLIED
 	xpath CDATA #IMPLIED
->
-<!ELEMENT enableJavaScript EMPTY >
-<!ATTLIST enableJavaScript
-	description CDATA #IMPLIED
-	enable CDATA #IMPLIED
 >
 <!ELEMENT forceInputFieldAttribute ( #PCDATA )* >
 <!ATTLIST forceInputFieldAttribute
@@ -512,6 +507,12 @@
 	description CDATA #IMPLIED
 	regex CDATA #IMPLIED
 	text CDATA #REQUIRED
+>
+<!ELEMENT enableJavaScript EMPTY >
+<!ATTLIST enableJavaScript
+	description CDATA #IMPLIED
+	enable CDATA #IMPLIED
+	wait CDATA #IMPLIED
 >
 <!ELEMENT mouseOut EMPTY >
 <!ATTLIST mouseOut

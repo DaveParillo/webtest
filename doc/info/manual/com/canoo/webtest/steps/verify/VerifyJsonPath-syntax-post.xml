@@ -1,4 +1,5 @@
 <post>
+
     <b>
         JsonPath expressions always refer to a JSON structure in the same way as 
         XPath expression are used in combination with an XML document. 
@@ -93,6 +94,30 @@
             </li>
 
         </dl>
+    </b>
+    <b>
+        What gets returned from JsonPath?
+    </b>
+    <b>
+        When evaluating a path you need to understand the concept of when a path is <em>indefinite</em>. 
+        A path is <em>indefinite</em> if it contains:
+        <dl>
+            <li>
+                <dt>..</dt>
+                <dd>A deep scan operator </dd>
+            </li>
+            <li>
+                <dt>?(&lt;expression&gt;)</dt>
+                <dd>An expression </dd>
+            </li>
+            <li>
+                <dt>[&lt;number&gt;, &lt;number&gt; (, &lt;number&gt;)]</dt>
+                <dd>multiple array indexes</dd>
+            </li>
+        </dl>
+
+        Indefinite paths always returns a JsonArray.
+        Anything else will return either a JsonObject or one of the primitive json types.
     </b>
 
     <b>Simple usage examples:

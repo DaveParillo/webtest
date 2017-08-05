@@ -116,7 +116,7 @@ public class VerifyJsonPathTest extends BaseStepTestCase {
         getContext().setDefaultResponse("{\"a\":10,\"b\":null}", CONTENT_TYPE);
 
         fStep.setJpath("$..[?($.b == null)]");
-        fStep.setText("{\"a\":10,\"b\":null}");
+        fStep.setText("[{\"a\":10,\"b\":null}]");
         executeStep(fStep);
     }
 
@@ -126,10 +126,20 @@ public class VerifyJsonPathTest extends BaseStepTestCase {
 
         getContext().setDefaultResponse(actual, CONTENT_TYPE);
 
-        String expected = "{\"sun\":{\"apparentRightAscension\":21.13,\"apparentDeclination\":-16.496,\"topocentricRightAscension\":21.127,\"topocentricDeclination\":-16.497,\"topocentricAltitude\":-49.7758,\"azimuth\":79.929,\"illuminance\":1.0E-16},\"moon\":{\"apparentRightAscension\":8.55,\"apparentDeclination\":13.8499,\"topocentricRightAscension\":8.509,\"topocentricDeclination\":13.529,\"topocentricAltitude\":40.48,\"azimuth\":262.10,\"illuminance\":0.1138,\"percentIllumination\":\" 99%+\"},\"total\":{\"illuminance\":0.1143},\"dateTime\":\"1996-02-04T00:00:00\",\"latitude\":30.0,\"longitude\":45.0,\"skyCondition\":\"VISIBLE\"}";
+        String expected = "[{\"sun\":{\"apparentRightAscension\":21.13,\"apparentDeclination\":-16.496,\"topocentricRightAscension\":21.127,\"topocentricDeclination\":-16.497,\"topocentricAltitude\":-49.7758,\"azimuth\":79.929,\"illuminance\":1.0E-16},\"moon\":{\"apparentRightAscension\":8.55,\"apparentDeclination\":13.8499,\"topocentricRightAscension\":8.509,\"topocentricDeclination\":13.529,\"topocentricAltitude\":40.48,\"azimuth\":262.10,\"illuminance\":0.1138,\"percentIllumination\":\" 99%+\"},\"total\":{\"illuminance\":0.1143},\"dateTime\":\"1996-02-04T00:00:00\",\"latitude\":30.0,\"longitude\":45.0,\"skyCondition\":\"VISIBLE\"}]";
 
         fStep.setJpath("$..[?(@.latitude == 30)]");
         fStep.setText(expected);
+        executeStep(fStep);
+        fStep.setJpath("$.length()");
+        fStep.setText("7");
+        executeStep(fStep);
+    }
+
+    public void testMaxPrice() throws Exception {
+        getContext().setDefaultResponse(DOCUMENT, CONTENT_TYPE);
+        fStep.setJpath("$.max($.store.book[0].price, $.store.book[1].price, $.store.book[2].price, $.store.book[3].price)");
+        fStep.setText("22.99");
         executeStep(fStep);
     }
 
@@ -137,14 +147,14 @@ public class VerifyJsonPathTest extends BaseStepTestCase {
         getContext().setDefaultResponse(DOCUMENT, CONTENT_TYPE);
 
         fStep.setJpath("$.store.book[2]");
-        fStep.setText("[ { \"category\" : \"fiction\", \"author\" : \"Herman Melville\", \"title\" : \"Moby Dick\", \"isbn\" : \"0-553-21311-3\", \"price\" : 8.99 } ]");
+        fStep.setText("{ \"category\" : \"fiction\", \"author\" : \"Herman Melville\", \"title\" : \"Moby Dick\", \"isbn\" : \"0-553-21311-3\", \"price\" : 8.99 }");
         executeStep(fStep);
     }
     public void testBook3Mixed() throws Exception {
         getContext().setDefaultResponse(DOCUMENT, CONTENT_TYPE);
 
         fStep.setJpath("$.store.book[2]");
-        fStep.setText("[{\"category\":\"fiction\",\"price\":8.99,\"author\":\"Herman Melville\",\"title\":\"Moby Dick\",\"isbn\":\"0-553-21311-3\"}]");
+        fStep.setText("{\"category\":\"fiction\",\"price\":8.99,\"author\":\"Herman Melville\",\"title\":\"Moby Dick\",\"isbn\":\"0-553-21311-3\"}");
         executeStep(fStep);
     }
 
@@ -171,15 +181,15 @@ public class VerifyJsonPathTest extends BaseStepTestCase {
 
         fStep.setJpath("$..*");
         fStep.setTolerance("0.1");
-        fStep.setText("0.955");
+        fStep.setText("[0.955]");
         executeStep(fStep);
-        fStep.setText("1.04");
+        fStep.setText("[1.04]");
         executeStep(fStep);
     }
     public void testGetTolerance2() throws Exception {
         getContext().setDefaultResponse("{\"val\":0.9999}", CONTENT_TYPE);
 
-        fStep.setJpath("$..*");
+        fStep.setJpath("$.val");
         fStep.setTolerance("0.05");
         fStep.setText("0.975");
         executeStep(fStep);
@@ -194,7 +204,7 @@ public class VerifyJsonPathTest extends BaseStepTestCase {
     public void testGetTolerance3() throws Exception {
         getContext().setDefaultResponse("{\"val\":1.0}", CONTENT_TYPE);
 
-        fStep.setJpath("$..*");
+        fStep.setJpath("$.val");
         // The default is 0.01
         //fStep.setTolerance("0.01");
         fStep.setText("0.995");
