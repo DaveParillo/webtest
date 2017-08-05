@@ -15,7 +15,7 @@
     <b>
         Note: the <em>soapAction</em> attribute is only needed for
         SOAP Web Service requests. For RESTful web services or to do an
-        invoke of a tricky form normally submitted through JavaScript
+        invoke of a form normally submitted through JavaScript
         you can leave it out.
     </b>
 
