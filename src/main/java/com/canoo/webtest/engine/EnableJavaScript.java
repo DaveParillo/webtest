@@ -20,12 +20,18 @@ import com.gargoylesoftware.htmlunit.WebClient;
  */
 public class EnableJavaScript extends Step {
     private boolean fEnable = true;
-    private long fWait = 500;
+    private long fWait = 500L;
 
     public void doExecute() throws Exception {
         WebClient wc = getContext().getWebClient();
         wc.getOptions().setJavaScriptEnabled(fEnable);
-        wc.waitForBackgroundJavaScript(fWait);
+        
+        final long endTime = System.currentTimeMillis() + 30000L;
+        while (wc.waitForBackgroundJavaScriptStartingBefore(fWait) > 0 && 
+                System.currentTimeMillis() < endTime ) {
+            wc.waitForBackgroundJavaScriptStartingBefore(fWait); 
+        }
+
     }
 
     /**
