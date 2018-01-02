@@ -1,0 +1,15 @@
+<post>
+
+    <p>
+        The interface for <em>invokeWithHeaders</em> is the same as
+        <em>invoke</em> with the exception that the inner XML elements allow
+        for special configuration of the HTTP request by embedding
+        <em>httpHeader</em> elements.
+    </p>
+
+    <b>Here is an example of with headers:</b>
+
+    <code caption="invokeWithHeaders">
+        <include src='examples/invokeWithHeaders.xml'/>
+    </code>
+</post>

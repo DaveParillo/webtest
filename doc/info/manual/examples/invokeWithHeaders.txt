@@ -1,0 +1,8 @@
+<invokeWithHeaders
+  url="${root.url}?${encoded.params}" 
+  method="POST" 
+  contentType="application/json"
+  content='${content}'>
+  <httpHeader name="${csrf.header}" value="${csrf.token}" />
+  <httpHeader name="Cookie" value="JSESSIONID=${csrf.session}" />
+</invokeWithHeaders>
