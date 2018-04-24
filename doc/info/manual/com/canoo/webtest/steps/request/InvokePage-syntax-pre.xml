@@ -14,4 +14,11 @@
     parameter separation, it must be expressed using the XML element notion with
     &quot;&amp;amp;&quot;.</b>
 
+    <p>
+        <em>invoke</em> elements allow
+        for special configuration of the HTTP request using nested
+        <em>httpHeader</em> elements.
+    </p>
+
+
 </pre>

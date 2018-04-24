@@ -1,8 +1,17 @@
-<invokeWithHeaders
-  url="${root.url}?${encoded.params}" 
-  method="POST" 
-  contentType="application/json"
-  content='${content}'>
+<invoke description="Get default page" url="/service/index.jsp" />
+
+<storeCookie name="JSESSIONID" property="csrf.session" />
+<storeXPath description="Extract CSRF Token"
+            xpath="//meta[@name='_csrf']/@content"
+            property="csrf.token" />
+<storeXPath description="Extract HTTP Header for CSRF"
+            xpath="//meta[@name='_csrf_header']/@content"
+            property="csrf.header" />
+
+<invoke url="/service?${query.params}" 
+        method="POST" 
+        contentType="application/json"
+        content='${content}'>
   <httpHeader name="${csrf.header}" value="${csrf.token}" />
   <httpHeader name="Cookie" value="JSESSIONID=${csrf.session}" />
-</invokeWithHeaders>
+</invoke>
