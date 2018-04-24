@@ -28,7 +28,7 @@ import com.gargoylesoftware.htmlunit.WebRequest;
  * properties of the &lt;config&gt; step will be used to build a complete url.
  * </p>
  * <p>
- * This step accepts optional <httpHeader> nested elements
+ * This step accepts optional &lt;httpHeader&gt; nested elements
  * to define the custom request headers.
  * </p>
  * @author unknown
@@ -44,7 +44,7 @@ import com.gargoylesoftware.htmlunit.WebRequest;
 public class InvokePage extends AbstractTargetAction {
     private static final Logger LOG = Logger.getLogger(InvokePage.class);
     /** A list of the nested HttpHeader elements */
-    private final List<HttpHeader> headers = new ArrayList<>();
+    private final List<HttpHeader> headers = new ArrayList<HttpHeader>();
 
     private String fUrl;
     private String fCompleteUrl;
@@ -158,7 +158,7 @@ public class InvokePage extends AbstractTargetAction {
      * @param header The HTTP header
      * @webtest.nested.parameter
      *    required="no"
-     *    description="Add additional HTTP Headers to the current invoke"
+     *    description="Add additional HTTP Headers to the current invoke."
      */
     public void addHttpHeader(HttpHeader header) {
         headers.add(header);
@@ -198,7 +198,7 @@ public class InvokePage extends AbstractTargetAction {
         String completeUrl = getContext().getConfig().getUrlForPage(getUrl());
         setCompleteUrl(completeUrl);
         final WebRequest settings = new WebRequest(new URL(completeUrl));
-        final Map<String, String> httpHeaders = new HashMap<>();
+        final Map<String, String> httpHeaders = new HashMap<String, String>();
         for (HttpHeader header : headers) {
             httpHeaders.put(header.getName(), header.getValue());
         }
@@ -219,7 +219,7 @@ public class InvokePage extends AbstractTargetAction {
         final WebRequest settings = new WebRequest(new URL(url), HttpMethod.valueOf(getMethod()));
         
         // Store each extra header
-        final Map<String, String> requestHeaders = new HashMap<>();
+        final Map<String, String> requestHeaders = new HashMap<String, String>();
         if (!StringUtils.isEmpty(contentType)) {
             requestHeaders.put("Content-Type", contentType);
         } else {
@@ -263,11 +263,11 @@ public class InvokePage extends AbstractTargetAction {
     
     /**
      * Container for HTTP Headers.
-     * @author devel
+     * @author Luke Campbell
      * @webtest.nested
-     *   category="Core"
+     *   required="no"
      *   name="httpHeader"
-     *   description="Container for HTTP Headers
+     *   description="Container for HTTP Headers.
      *   Can be used like 
      *   <invoke ...>
      *     <httpHeader name="X-Extra-Header" value="value" />
@@ -313,7 +313,6 @@ public class InvokePage extends AbstractTargetAction {
     }
 
 
-
-
-
 }
+
+
