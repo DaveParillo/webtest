@@ -827,38 +827,49 @@
 			<link href="http://java.sun.com/products/servlet/2.3/javadoc"/>
 		</javadoc>
 	</target>
-  <target name="publish" description="publish docs to daveparillo.github.io/webtest" >
-    <available property="manuals.exist" file="${build.docs}/manual/WebTestHome.html"/>
-    <available property="javadoc.exist" file="${build.docs}/api/index.html"/>
-    <available property="junit.exist"   file="${build.docs}/junit/index.html"/>
-		<fail unless="manuals.exist">Publishing aborted - no manuals</fail>
-		<fail unless="javadoc.exist">Publishing aborted - no javadoc</fail>
-		<fail unless="junit.exist">Publishing aborted - no junit results</fail>
-    <exec dir="${build.docs}" executable="git" failonerror="true">
-        <arg value="init"/>
-    </exec>
-    <exec dir="${build.docs}" executable="git" failonerror="true">
-        <arg value="remote"/>
-        <arg value="add"/>
-        <arg value="docs"/>
-        <arg value="https://DaveParillo@github.com/DaveParillo/webtest.git"/>
-    </exec>
-    <exec dir="${build.docs}" executable="git" failonerror="true">
-        <arg line="fetch --depth=1 docs gh-pages"/>
-    </exec>
-    <exec dir="${build.docs}" executable="git" failonerror="true">
-        <arg line="add --all"/>
-    </exec>
-    <exec dir="${build.docs}" executable="git" failonerror="true">
-        <arg line="commit -m 'rebuild docs for build ${buildnumber}' "/>
-    </exec>
-    <exec dir="${build.docs}" executable="git" failonerror="true">
-        <arg line="merge --no-edit -s ours remotes/docs/gh-pages"/>
-    </exec>
-    <exec dir="${build.docs}" executable="git" failonerror="true">
-        <arg line="push docs master:gh-pages"/>
-    </exec>
-	</target>
+    <target name="publish" description="publish docs to daveparillo.github.io/webtest" >
+        <available property="manuals.exist" file="${build.docs}/manual/WebTestHome.html"/>
+        <available property="javadoc.exist" file="${build.docs}/api/index.html"/>
+        <available property="junit.exist"   file="${build.docs}/junit/index.html"/>
+        <fail unless="manuals.exist">Publishing aborted - no manuals</fail>
+        <fail unless="javadoc.exist">Publishing aborted - no javadoc</fail>
+        <fail unless="junit.exist">Publishing aborted - no junit results</fail>
+
+        <property name="gh.docs" value="${build.dir}/gh_docs"/>
+        <mkdir dir="${gh.docs}" />
+        <exec dir="${gh.docs}" executable="git" failonerror="true">
+            <arg value="init"/>
+        </exec>
+        <exec dir="${gh.docs}" executable="git" failonerror="true">
+            <arg value="remote"/>
+            <arg value="add"/>
+            <arg value="docs"/>
+            <arg value="https://DaveParillo@github.com/DaveParillo/webtest.git"/>
+        </exec>
+        <exec dir="${gh.docs}" executable="git" failonerror="true">
+            <arg line="pull --depth=1 docs gh-pages"/>
+        </exec>
+        <delete includeemptydirs="true">
+            <fileset dir="${gh.docs}/api" />
+            <fileset dir="${gh.docs}/junit" />
+            <fileset dir="${gh.docs}/manual" />
+        </delete>
+        <copy  todir="${gh.docs}">
+            <fileset file="${build.docs}/index.html" />
+            <fileset dir="${build.docs}/api" />
+            <fileset dir="${build.docs}/junit" />
+            <fileset dir="${build.docs}/manual" />
+        </copy>
+        <exec dir="${gh.docs}" executable="git" failonerror="true">
+            <arg line="add --all"/>
+        </exec>
+        <exec dir="${gh.docs}" executable="git" failonerror="true">
+            <arg line="commit -m 'rebuild docs for build ${buildnumber}' "/>
+        </exec>
+        <exec dir="${build.docs}" executable="git" failonerror="true">
+            <arg line="push docs master:gh-pages"/>
+        </exec>
+    </target>
 
 	<target name="zip" description="zip sources, docs and binary distributions">
 		<property name="currentCount.file" location="${build.dir}/BuildNumber.txt"/>
