@@ -135,15 +135,18 @@
             <attribute>
                 <name>browser</name>
                 <description>Specifies the browser that should be simulated.
+                All values are evaluated case insensitive.
                 Allowed values are 
-                <example>Firefox3</example> (or <example>FF3</example>) (deprecated),
-                <example>Firefox3.6</example> (or <example>FF3.6</example>),
-                <example>Firefox10</example> (or <example>FF10</example>),
-                <example>InternetExplorer6</example> (or <example>IE6</example>),
-                <example>InternetExplorer7</example> (or <example>IE7</example>),
-                <example>InternetExplorer8</example> (or <example>IE8</example>).
+                <example>best</example> (emulates <example>Chrome</example>),
+                <example>chrome</example>,
+                <example>Firefox45</example> (or <example>FF45</example>),
+                <example>Firefox52</example> (or <example>FF52</example>),
+                <example>Firefox</example> (or <example>FF</example>) will emulate FF52,
+                <example>Edge</example>,
+                <example>InternetExplorer11</example> (or <example>IE11</example>),
+                <example>InternetExplorer</example> (or <example>IE</example>).
                 </description>
-                <required>No, default is &quot;InternetExplorer6&quot;</required>
+                <required>No, default is &quot;best&quot;</required>
             </attribute>
             <attribute>
                 <name>useInsecureSSL</name>
