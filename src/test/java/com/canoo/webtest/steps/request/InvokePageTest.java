@@ -40,7 +40,7 @@ public class InvokePageTest extends BaseStepTestCase
         return verbs;
     }
 
-     /**
+    /**
      * Happy path for PUT, POST
      */
     public void testExecuteVerbs() throws Exception {
@@ -112,20 +112,6 @@ public class InvokePageTest extends BaseStepTestCase
 	}
 
 
-    /**
-	 * Tests that POST requests with a soapAction must set contentType
-	 */
-    public void testExecuteFailsWithSoapActionNoContentType() {
-        InvokePage step = (InvokePage) getStep();
-        step.setUrl("http://myhost.mydomain/");
-        step.setMethod("POST");
-        step.setSoapAction("http://myhost.mydomain/myAction");
-        step.setContent("dummy");
-        //step.setContentType("text/xml; charset=\"UTF-8\"");
-        assertErrorOnExecute(step, "SOAP post with no content-type", "");
-	}
-
-
 	/**
 	 * Tests that javascript errors are caught and correctly reported
 	 * @throws Exception if the test fails
@@ -169,16 +155,6 @@ public class InvokePageTest extends BaseStepTestCase
         };
         return ThrowAssert.assertThrows("", StepFailedException.class, block);
 	}
-
-    public void testNestedText() throws Exception {
-    	InvokePage invokeStep = (InvokePage) getStep();
-    	testNestedTextEquivalent(invokeStep, "url");
-    	
-    	invokeStep = (InvokePage) createAndConfigureStep();
-    	invokeStep.setUrl("http://my.web.site/foo");
-    	testNestedTextEquivalent(invokeStep, "content");
-    	
-    }
 
     /**
      * Test that credentials gets updated.
