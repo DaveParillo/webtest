@@ -68,8 +68,8 @@
   <b>The else task is synonymous with <stepref name="otherwise" category="Core"/>.</b>
 </pre>
 </nested>
-<nested>
 
+<nested>
 <name>otherwise</name>
 <category>Core</category>
 <description>An otherwise step contains steps executed in the false block of an ifStep.</description>
@@ -100,6 +100,56 @@
 </pre>
 </nested>
 
+
+<nested>
+<name>httpHeader</name>
+<category>Core</category>
+<description>
+    The httpHeader step appends new or replaces existing HTTP header fields sent during an invoke step.
+</description>
+<pre>
+    HTTP headers define the operating parameters of an HTTP transaction and are specified as a single
+    name-value pair for each httpHeader element used. For example:
+</pre>
+<pre>
+    <code>
+        <include src='examples/invokeHttpHeader.xml'/>
+    </code>
+</pre>
+<pre>
+<attributes>
+        <attribute>
+            <name>name</name>
+            <description>The name of the HTTP header as defined by the HTTP spec., e.g. 
+                <example>User-Agent</example>, 
+                <example>Accept-Language</example> or 
+                <example>Cookie</example>.
+            </description>
+            <required>yes</required>
+       </attribute>
+       <attribute>
+           <name>value</name>
+           <description>The header value. Range and format are restricted by the HTTP spec., e.g. 
+               <example>Mozilla/4.0</example>, 
+               <example>de-ch</example> or 
+               <example>cookieName=cookieValue</example>
+           </description>
+           <required>yes</required>
+       </attribute>
+   </attributes>
+</pre>
+
+<post>
+    <b>
+        Some HTTP headers such as Content-Type are built into the <stepref name="invoke" category="Core"/> step.
+        Use the invoke version when it exists.
+    </b>
+    <code caption="invoke with CSRF headers">
+        <include src='examples/invokeWithHeaders.xml'/>
+    </code>
+
+</post>
+</nested>
 
 
 	<XDtClass:forAllClasses type="java.lang.Object">

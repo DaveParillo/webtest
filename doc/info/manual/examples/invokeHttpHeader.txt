@@ -1,0 +1,4 @@
+<invoke url="http://foo.com/api/v2/bar/">
+  <httpHeader name="Accept" value="text/plain" />
+  <httpHeader name="Authorization" value="Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==" />
+</invoke>
