@@ -265,15 +265,18 @@
                     If set to an integer value only refresh request with a delay less or equal to the specified value will be executed. 
                 </dd>
 <dt>browser</dt>
-<dd class="required">Required? No, default is "InternetExplorer6"</dd>
+<dd class="required">Required? No, default is "best"</dd>
 <dd>Specifies the browser that should be simulated.
+                All values are evaluated case insensitive.
                 Allowed values are 
-                <span class="example">Firefox3</span> (or <span class="example">FF3</span>) (deprecated),
-                <span class="example">Firefox3.6</span> (or <span class="example">FF3.6</span>),
-                <span class="example">Firefox10</span> (or <span class="example">FF10</span>),
-                <span class="example">InternetExplorer6</span> (or <span class="example">IE6</span>),
-                <span class="example">InternetExplorer7</span> (or <span class="example">IE7</span>),
-                <span class="example">InternetExplorer8</span> (or <span class="example">IE8</span>).
+                <span class="example">best</span> (emulates <span class="example">Chrome</span>),
+                <span class="example">chrome</span>,
+                <span class="example">Firefox45</span> (or <span class="example">FF45</span>),
+                <span class="example">Firefox52</span> (or <span class="example">FF52</span>),
+                <span class="example">Firefox</span> (or <span class="example">FF</span>) will emulate FF52,
+                <span class="example">Edge</span>,
+                <span class="example">InternetExplorer11</span> (or <span class="example">IE11</span>),
+                <span class="example">InternetExplorer</span> (or <span class="example">IE</span>).
                 </dd>
 <dt>defaultpropertytype</dt>
 <dd class="required">Required? No, default is "dynamic",</dd>

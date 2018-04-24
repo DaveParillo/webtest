@@ -75,7 +75,7 @@
 <meta name="keywords" content="Canoo,
 						WebTest, web application testing, automatic, XP, ANT, httpunit, htmlunit, groovy,
 						acceptance testing, extreme programming, agile development,
-						Description,Parameters,Inline Text,Details,">
+						Description,Parameters,Details,">
 <title>Core Step: invoke</title>
 </head>
 <body>
@@ -326,31 +326,20 @@
     parameter separation, it must be expressed using the XML element notion with
     "&amp;amp;".</p>
 
+    
+        
+<i>invoke</i> elements allow
+        for special configuration of the HTTP request using nested
+        <i>httpHeader</i> elements.
+    
 
 <h2>
 <a name="Parameters">Parameters</a>
 </h2>
 <dl class="attributes">
-<dt>url</dt>
-<dd class="required">Required? yes</dd>
-<dd>A complete URL or the 'relative' part of an URL which will be appended to the 'static' parts created from the configuration information defined with the &lt;config&gt; step.</dd>
-<dt>content</dt>
-<dd class="required">Required? no</dd>
-<dd>Form data in 'application/x-www-form-urlencoded' format, which will be sent in the body of a POST request. Ignored for GET requests. Only one of <i>content</i> and <i>contentFile</i> should be set.</dd>
-<dt>contentFile</dt>
-<dd class="required">Required? no</dd>
-<dd>Filename to extract request contents from. Ignored for GET requests. Only one of <i>content</i> and <i>contentFile</i> should be set.</dd>
-<dt>contentType</dt>
-<dd class="required">Required? no, default is
-					application/x-www-form-urlencoded</dd>
-<dd>Sets the content-type HTTP header for POST, PATCH, and PUT requests</dd>
 <dt>description</dt>
 <dd class="required">Required? no</dd>
 <dd>The description of this test step.</dd>
-<dt>method</dt>
-<dd class="required">Required? no, default is
-					GET</dd>
-<dd>Sets the HTTP Method. Currently, GET, POST, PUT, DELETE, and PATCH are supported.</dd>
 <dt>password</dt>
 <dd class="required">Required? no</dd>
 <dd>A password that can be provided for pages that require basic authentication. Required if <i>username</i> is specified.</dd>
@@ -364,31 +353,9 @@
 <dt>saveResponse</dt>
 <dd class="required">Required? no</dd>
 <dd>Whether to make a permanent copy of received responses. Overrides the default value set in the &lt;config&gt; element.</dd>
-<dt>soapAction</dt>
-<dd class="required">Required? no</dd>
-<dd>Set the SOAP Action header on SOAP POST requests. If set, the contentType attribute must also be set, typically something like: 'text/xml; charset=UTF-8'.</dd>
 <dt>username</dt>
 <dd class="required">Required? no</dd>
 <dd>A username that can be provided for pages that require basic authentication. Typically only needed on the first step of any <a href="webtest.html" class="stepref">webtest</a> accessing a secure site. Required if <i>password</i> is specified.</dd>
-</dl>
-<h2>
-<a name="Inline Text">Inline Text</a>
-</h2>
-<p>The
-							<i>inline text</i>
-							is all the text between the start tag (
-							<span class="example">&lt;invoke&gt;</span>
-							) and the end tag (
-							<span class="example">&lt;/invoke&gt;</span>
-							), including blanks, tabs or newlines. Using a pair of start/end tags (
-							<span class="example">&lt;invoke&gt; &lt;/invoke&gt;</span>
-							) has not the same behavior than the seemingly equivalent empty element tag (
-							<span class="example">&lt;invoke/&gt;</span>
-							).
-						</p>
-<dl class="attributes">
-<dd class="required">Required? no</dd>
-<dd>An alternative way to set the 'url' or the 'content' attribute. When the 'url' attribute is not specified the nested text is considered as the url value. Otherwise this is used to set the 'content' attribute for e.g. large content (properties get evaluated in this content).</dd>
 </dl>
 <h2>
 <a name="Details">Details</a>
@@ -399,7 +366,7 @@
 
     
 <div class="code">
-<div class="caption">invoke</div>
+<div class="caption">simple invoke</div>
 <div class="content">
         
 &lt;<span class="tag">webtest</span>&nbsp;<span class="att">name</span>="<span class="val">Visit&nbsp;all&nbsp;pages&nbsp;without&nbsp;update</span>"&gt;<br>
@@ -417,33 +384,59 @@
 </div>
 
     
-<p>Here is an example of a SOAP invoke:</p>
+<p>Here is an example with additional request headers defined:</p>
 
     
 <div class="code">
-<div class="caption">invoke</div>
+<div class="caption">invoke with headers</div>
 <div class="content">
         
-&lt;<span class="tag">steps</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">invoke</span>&nbsp;<span class="att">method</span>="<span class="val">POST</span>"&nbsp;<span class="att">contentFile</span>="<span class="val">AustralianPostcodeByLocationRequest.xml</span>"<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">soapAction</span>="<span class="val">http://www.webserviceX.NET/GetAustralianPostCodeByLocation</span>"<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">url</span>="<span class="val">http://httpwww.webservicex.com/AustralianPostCode.asmx?op=GetAustralianPostCodeByLocation</span>"/&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyText</span>&nbsp;<span class="att">text</span>="<span class="val">Karalee</span>"/&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyText</span>&nbsp;<span class="att">text</span>="<span class="val">QLD</span>"/&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">verifyText</span>&nbsp;<span class="att">text</span>="<span class="val">4306</span>"/&gt;<br>
-&lt;/<span class="tag">steps</span>&gt;<br>
+&lt;<span class="tag">invoke</span>&nbsp;<span class="att">description</span>="<span class="val">Get&nbsp;default&nbsp;page</span>"&nbsp;<span class="att">url</span>="<span class="val">/service/index.jsp</span>"&nbsp;/&gt;<br>
+
+<br>
+&lt;<span class="tag">storeCookie</span>&nbsp;<span class="att">name</span>="<span class="val">JSESSIONID</span>"&nbsp;<span class="att">property</span>="<span class="val">csrf.session</span>"&nbsp;/&gt;<br>
+&lt;<span class="tag">storeXPath</span>&nbsp;<span class="att">description</span>="<span class="val">Extract&nbsp;CSRF&nbsp;Token</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">xpath</span>="<span class="val">//meta[@name='_csrf']/@content</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">property</span>="<span class="val">csrf.token</span>"&nbsp;/&gt;<br>
+&lt;<span class="tag">storeXPath</span>&nbsp;<span class="att">description</span>="<span class="val">Extract&nbsp;HTTP&nbsp;Header&nbsp;for&nbsp;CSRF</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">xpath</span>="<span class="val">//meta[@name='_csrf_header']/@content</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">property</span>="<span class="val">csrf.header</span>"&nbsp;/&gt;<br>
+
+<br>
+&lt;<span class="tag">invoke</span>&nbsp;<span class="att">url</span>="<span class="val">/service?${query.params}</span>"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">method</span>="<span class="val">POST</span>"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">contentType</span>="<span class="val">application/json</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content='${content}'&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">httpHeader</span>&nbsp;<span class="att">name</span>="<span class="val">${csrf.header}</span>"&nbsp;<span class="att">value</span>="<span class="val">${csrf.token}</span>"&nbsp;/&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">httpHeader</span>&nbsp;<span class="att">name</span>="<span class="val">Cookie</span>"&nbsp;<span class="att">value</span>="<span class="val">JSESSIONID=${csrf.session}</span>"&nbsp;/&gt;<br>
+&lt;/<span class="tag">invoke</span>&gt;<br>
 
     
 </div>
 </div>
 
     
-<p>
-        Note: the <i>soapAction</i> attribute is only needed for
-        SOAP Web Service requests. For RESTful web services or to do an
-        invoke of a tricky form normally submitted through JavaScript
-        you can leave it out.
-    </p>
+<p>Another httpHeader example performing a SOAP invoke:</p>
+
+    
+<div class="code">
+<div class="caption">Passing SOAPAction HTTP header</div>
+<div class="content">
+        
+&lt;<span class="tag">invoke</span>&nbsp;<span class="att">method</span>="<span class="val">POST</span>"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">contentFile</span>="<span class="val">AustralianPostcodeByLocationRequest.xml</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">contentType</span>="<span class="val">text/xml;&nbsp;charset=UTF-8</span>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">url</span>="<span class="val">http://httpwww.webservicex.com/AustralianPostCode.asmx?op=GetAustralianPostCodeByLocation</span>"&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">httpHeader</span>&nbsp;<span class="att">name</span>="<span class="val">SOAPAction</span>"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="att">value</span>="<span class="val">http://www.webserviceX.NET/GetAustralianPostCodeByLocation</span>"&nbsp;/&gt;<br>
+&lt;/<span class="tag">invoke</span>&gt;<br>
+&lt;<span class="tag">verifyText</span>&nbsp;<span class="att">text</span>="<span class="val">Karalee</span>"/&gt;<br>
+&lt;<span class="tag">verifyText</span>&nbsp;<span class="att">text</span>="<span class="val">QLD</span>"/&gt;<br>
+&lt;<span class="tag">verifyText</span>&nbsp;<span class="att">text</span>="<span class="val">4306</span>"/&gt;<br>
+
+    
+</div>
+</div>
 
     
 <p>Here is what the <i>AustralianPostcodeByLocationRequest.xml</i> file
@@ -451,7 +444,7 @@
 
     
 <div class="code">
-<div class="caption">invoke</div>
+<div class="caption">soap input</div>
 <div class="content">
         
 &lt;<span class="tag">soap:Envelope</span>
@@ -477,7 +470,7 @@
 
     
 <div class="code">
-<div class="caption">invoke</div>
+<div class="caption">soap output</div>
 <div class="content">
         
 &lt;<span class="tag">?xml</span>&nbsp;<span class="att">version</span>="<span class="val">1.0</span>"&nbsp;<span class="att">encoding</span>="<span class="val">utf-8</span>"?&gt;<br>

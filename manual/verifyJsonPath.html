@@ -340,6 +340,7 @@
 <h2>
 <a name="Details">Details</a>
 </h2>
+
     
 <p>
         JsonPath expressions always refer to a JSON structure in the same way as 
@@ -466,6 +467,39 @@
 </dl>
     
 </p>
+    
+<p>
+        What gets returned from JsonPath?
+    </p>
+    
+<p>
+        When evaluating a path you need to understand the concept of when a path is <i>indefinite</i>. 
+        A path is <i>indefinite</i> if it contains:
+        <dl>
+            
+                
+<dt>..</dt>
+                
+<dd>A deep scan operator </dd>
+            
+            
+                
+<dt>?(&lt;expression&gt;)</dt>
+                
+<dd>An expression </dd>
+            
+            
+                
+<dt>[&lt;number&gt;, &lt;number&gt; (, &lt;number&gt;)]</dt>
+                
+<dd>multiple array indexes</dd>
+            
+        
+</dl>
+
+        Indefinite paths always returns a JsonArray.
+        Anything else will return either a JsonObject or one of the primitive json types.
+    </p>
 
     
 <p>Simple usage examples:
