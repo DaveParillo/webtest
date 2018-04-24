@@ -15,8 +15,8 @@
 </head>
     <section title="Issue Tracker">
         <b>
-            When in trouble, you may want to visit Canoo WebTest's
-            <ext base="jira" href="">JIRA Issue Tracker</ext>.
+            When in trouble, you may want to visit the WebTest
+            <ext href="https://github.com/DaveParillo/webtest/issues">GitHub Issue Tracker</ext>.
         </b>
     </section>
 
