@@ -1,7 +1,7 @@
 webtest
 =======
 
-The most effective way to test your webapp - http://webtest.canoo.com/
+Web application testing powered by HtmlUnit and and Apache Ant https://daveparillo.github.io/webtest/
 
 Building webtest
 ----------------
