@@ -194,7 +194,7 @@ public class VerifyJsonPath extends Step {
     private boolean isValidJSON(final JsonNode results) throws StepFailedException {
         if( results == null) {
             throw new StepFailedException("Null results received");
-        } else if (!results.isArray()) {
+        } else if (!results.isArray() && !results.isObject()) {
             throw new StepFailedException("Response is not well-formed JSON");
         }
         return true;
